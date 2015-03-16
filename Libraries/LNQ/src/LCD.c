@@ -50,7 +50,7 @@ void LCD_Init(void){
                          //使能PORTB,D,E,G以及AFIO复用功能时钟
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF; //复用推挽输出
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 
   //PORTD复用推挽输出
@@ -90,9 +90,6 @@ void LCD_Init(void){
   GPIO_PinAFConfig(GPIOE, GPIO_PinSource15, GPIO_AF_FSMC);
   GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_FSMC);
 
-
-
-
   FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;
   FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Enable;
   FSMC_NORSRAMInitStructure.FSMC_MemoryType = FSMC_MemoryType_NOR;
@@ -113,10 +110,10 @@ void LCD_Init(void){
     &FSMC_NORSRAMTimingInitStructure;
   FSMC_NORSRAMTimingInitStructure.FSMC_AddressSetupTime = 7;
   //3<8，TFT控制芯片的地址建立时间最快是10ns，所以这个和下一行的参数加起来要保证能让地址建立的时间高于这个数字，
-  FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 3; //1or2<16
-  FSMC_NORSRAMTimingInitStructure.FSMC_DataSetupTime = 5;
+  FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 4; //1or2<16
+  FSMC_NORSRAMTimingInitStructure.FSMC_DataSetupTime = 20;
   //5<64（+1）,相比译码写入的速度慢很多 因此加大写入延时可以提高数据稳定性，这也是与tft和fpga通形唯一差异的地方
-  FSMC_NORSRAMTimingInitStructure.FSMC_CLKDivision = 1;
+  FSMC_NORSRAMTimingInitStructure.FSMC_CLKDivision = 0xf;
   //以上参数通过调试已经比极限要高一点，极限要求低于10MHz的点数据传输速度。
   //FSMC_NORSRAMTimingInitStructure.FSMC_AccessMode = FSMC_AccessMode_A;
   //也许模式B更好？

@@ -14,7 +14,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t uwTimingDelay;
-RCC_ClocksTypeDef RCC_Clocks;
+//RCC_ClocksTypeDef RCC_Clocks;
 
 /* Private function prototypes -----------------------------------------------*/
 static void Delay(__IO uint32_t nTime);
@@ -82,6 +82,8 @@ void Lcd_Show_Line(u16 x,u16 y,u16 color)
   * @retval None
   */
 Lcd_Curve Lcd_Curve1;
+int count = 0;
+int count2 = 0;
 int main(void)
 {
   /* SysTick end of count event each 10ms */
@@ -99,7 +101,7 @@ int main(void)
   Lcd_Show_Line(10,10,GREEN);
   while (1)
   {
-    if(MAIN_KEY.keysign)
+    /*if(MAIN_KEY.keysign)
     {
       char a[10];
       sprintf(a,"%d  count:%d  ",MAIN_KEY.keycode,MAIN_KEY.count);
@@ -114,6 +116,20 @@ int main(void)
       (Lcd_Curve1.Now_x) = 0;
     }
     //delay_ms(10);
+  }*/
+  (*((volatile unsigned short *) 0x600a0002)) = 150;
+  int temp = (*((volatile unsigned short *) 0x600a0002));
+  char a[10];
+  LCD_ShowNumBig(0,0,temp,RED);
+  if(temp != 150){
+    count++;
+    LCD_ShowNumBig(0,100,count,RED);
+  }
+  else{
+    count2++;
+    LCD_ShowNumBig(0,200,count2,RED);
+  }
+  delay_ms(100);
   }
 }
 
