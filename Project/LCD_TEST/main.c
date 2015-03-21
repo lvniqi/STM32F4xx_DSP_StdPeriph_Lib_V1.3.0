@@ -101,7 +101,7 @@ int main(void)
   Lcd_Show_Line(10,10,GREEN);
   while (1)
   {
-    /*if(MAIN_KEY.keysign)
+    if(MAIN_KEY.keysign)
     {
       char a[10];
       sprintf(a,"%d  count:%d  ",MAIN_KEY.keycode,MAIN_KEY.count);
@@ -116,12 +116,13 @@ int main(void)
       (Lcd_Curve1.Now_x) = 0;
     }
     //delay_ms(10);
-  }*/
-  (*((volatile unsigned short *) 0x600a0002)) = 150;
+//  }
+    i++;
+  (*((volatile unsigned short *) 0x600a0002)) = i;
   int temp = (*((volatile unsigned short *) 0x600a0002));
   char a[10];
   LCD_ShowNumBig(0,0,temp,RED);
-  if(temp != 150){
+  if(temp != i){
     count++;
     LCD_ShowNumBig(0,100,count,RED);
   }

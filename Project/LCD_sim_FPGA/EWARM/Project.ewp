@@ -3850,6 +3850,9 @@
     <group>
       <name>LCD</name>
       <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\FONT.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\FONT.h</name>
       </file>
       <file>
@@ -3857,6 +3860,15 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\LCD.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\LCD_Curve.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\LCD_String.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\LCD_Tools.c</name>
       </file>
     </group>
     <file>

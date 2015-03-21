@@ -113,7 +113,7 @@ void LCD_Init(void){
   FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 4; //1or2<16
   FSMC_NORSRAMTimingInitStructure.FSMC_DataSetupTime = 20;
   //5<64（+1）,相比译码写入的速度慢很多 因此加大写入延时可以提高数据稳定性，这也是与tft和fpga通形唯一差异的地方
-  FSMC_NORSRAMTimingInitStructure.FSMC_CLKDivision = 0xf;
+  FSMC_NORSRAMTimingInitStructure.FSMC_CLKDivision = 0x00;
   //以上参数通过调试已经比极限要高一点，极限要求低于10MHz的点数据传输速度。
   //FSMC_NORSRAMTimingInitStructure.FSMC_AccessMode = FSMC_AccessMode_A;
   //也许模式B更好？

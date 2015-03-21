@@ -17,7 +17,6 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t uwTimingDelay;
-RCC_ClocksTypeDef RCC_Clocks;
 
 /* Private function prototypes -----------------------------------------------*/
 static void Delay(__IO uint32_t nTime);
@@ -53,6 +52,7 @@ void GPIO_Init_Test(void)
   * @retval None
   */
 u8 a[4096];
+Lcd_Curve Lcd_Curve1;
 int main(void)
 {
   /* SysTick end of count event each 10ms */
