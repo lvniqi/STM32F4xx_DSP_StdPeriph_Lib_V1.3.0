@@ -50,12 +50,13 @@ void LCD_Init(void){
                          //使能PORTB,D,E,G以及AFIO复用功能时钟
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF; //复用推挽输出
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 
   //PORTD复用推挽输出
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_4 |
     GPIO_Pin_5 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |
+    GPIO_Pin_12 | GPIO_Pin_13|
     GPIO_Pin_14 | GPIO_Pin_15; //	//PORTD复用推挽输出
   GPIO_Init(GPIOD, &GPIO_InitStructure);
 
@@ -77,6 +78,8 @@ void LCD_Init(void){
   GPIO_PinAFConfig(GPIOD, GPIO_PinSource9, GPIO_AF_FSMC);
   GPIO_PinAFConfig(GPIOD, GPIO_PinSource10, GPIO_AF_FSMC);
   GPIO_PinAFConfig(GPIOD, GPIO_PinSource11, GPIO_AF_FSMC);
+  GPIO_PinAFConfig(GPIOD, GPIO_PinSource12, GPIO_AF_FSMC);
+  GPIO_PinAFConfig(GPIOD, GPIO_PinSource13, GPIO_AF_FSMC);
   GPIO_PinAFConfig(GPIOD, GPIO_PinSource14, GPIO_AF_FSMC);
   GPIO_PinAFConfig(GPIOD, GPIO_PinSource15, GPIO_AF_FSMC);
   GPIO_PinAFConfig(GPIOE, GPIO_PinSource7, GPIO_AF_FSMC);
