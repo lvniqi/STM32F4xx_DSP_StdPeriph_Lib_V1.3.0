@@ -1,0 +1,2 @@
+Warning (10273): Verilog HDL warning at FPGA2MCU.v(40): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FPGA2MCU.v(63): extended using "x" or "z"

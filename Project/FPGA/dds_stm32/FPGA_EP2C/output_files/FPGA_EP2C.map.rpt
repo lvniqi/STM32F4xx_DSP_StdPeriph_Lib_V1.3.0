@@ -1,0 +1,423 @@
+Analysis & Synthesis report for FPGA_EP2C
+Wed Mar 18 10:43:08 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar 18 10:43:08 2015            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; FPGA_EP2C                                        ;
+; Top-level Entity Name              ; FPGA_EP2C                                        ;
+; Family                             ; Cyclone II                                       ;
+; Total logic elements               ; 39                                               ;
+;     Total combinational functions  ; 23                                               ;
+;     Dedicated logic registers      ; 16                                               ;
+; Total registers                    ; 16                                               ;
+; Total pins                         ; 24                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                      ; FPGA_EP2C          ; FPGA_EP2C          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
+; FPGA2MCU.v                       ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/FPGA/FPGA_EP2C/FPGA2MCU.v    ;         ;
+; FPGA_EP2C.bdf                    ; yes             ; User Block Diagram/Schematic File  ; E:/WORKSPACE/FPGA/FPGA_EP2C/FPGA_EP2C.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                              ;
++---------------------------------------------+----------------------------+
+; Resource                                    ; Usage                      ;
++---------------------------------------------+----------------------------+
+; Estimated Total logic elements              ; 39                         ;
+;                                             ;                            ;
+; Total combinational functions               ; 23                         ;
+; Logic element usage by number of LUT inputs ;                            ;
+;     -- 4 input functions                    ; 6                          ;
+;     -- 3 input functions                    ; 16                         ;
+;     -- <=2 input functions                  ; 1                          ;
+;                                             ;                            ;
+; Logic elements by mode                      ;                            ;
+;     -- normal mode                          ; 23                         ;
+;     -- arithmetic mode                      ; 0                          ;
+;                                             ;                            ;
+; Total registers                             ; 16                         ;
+;     -- Dedicated logic registers            ; 16                         ;
+;     -- I/O registers                        ; 0                          ;
+;                                             ;                            ;
+; I/O pins                                    ; 24                         ;
+; Embedded Multiplier 9-bit elements          ; 0                          ;
+; Maximum fan-out node                        ; SELECT_ADDR:inst1|Equal0~0 ;
+; Maximum fan-out                             ; 17                         ;
+; Total fan-out                               ; 154                        ;
+; Average fan-out                             ; 2.44                       ;
++---------------------------------------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                  ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+
+; |FPGA_EP2C                 ; 23 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |FPGA_EP2C                   ; work         ;
+;    |BUFF:inst3|            ; 16 (16)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|BUFF:inst3        ; work         ;
+;    |SELECT_ADDR:inst1|     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SELECT_ADDR:inst1 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; BUFF_SEND_DATA:inst2|DATA_OUT[15]$latch             ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[0]_64                 ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[14]$latch             ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[13]$latch             ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[12]$latch             ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[11]$latch             ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[10]$latch             ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[9]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[8]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[7]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[6]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[5]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[4]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[3]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[2]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[1]$latch              ; VCC                 ; yes                    ;
+; BUFF_SEND_DATA:inst2|DATA_OUT[0]$latch              ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[15]$latch                       ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[14]$latch                       ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[13]$latch                       ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[12]$latch                       ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[11]$latch                       ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[10]$latch                       ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[9]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[8]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[7]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[6]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[5]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[4]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[3]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[2]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[1]$latch                        ; VCC                 ; yes                    ;
+; BUFF:inst3|DATA_OUT[0]$latch                        ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[2]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[1]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[0]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[4]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[3]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[5]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[6]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[7]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[8]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[9]                              ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[10]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[11]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[12]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[13]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[14]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[15]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[16]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[17]                             ; VCC                 ; yes                    ;
+; SAVE_ADDR:inst|ADDR[18]                             ; VCC                 ; yes                    ;
+; Number of user-specified and inferred latches = 52  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 16    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Mar 18 10:42:56 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 4 design units, including 4 entities, in source file fpga2mcu.v
+    Info (12023): Found entity 1: SAVE_ADDR
+    Info (12023): Found entity 2: SELECT_ADDR
+    Info (12023): Found entity 3: BUFF_SEND_DATA
+    Info (12023): Found entity 4: BUFF
+Info (12021): Found 1 design units, including 1 entities, in source file fpga_ep2c.bdf
+    Info (12023): Found entity 1: FPGA_EP2C
+Warning (12019): Can't analyze file -- file FPGA2AR9331.v is missing
+Info (12127): Elaborating entity "FPGA_EP2C" for the top level hierarchy
+Warning (275043): Pin "INT0" is missing source
+Warning (275043): Pin "INT4" is missing source
+Info (12128): Elaborating entity "BUFF_SEND_DATA" for hierarchy "BUFF_SEND_DATA:inst2"
+Critical Warning (10237): Verilog HDL warning at FPGA2MCU.v(41): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(36): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
+Warning (10755): Verilog HDL warning at FPGA2MCU.v(36): assignments to FINISH create a combinational loop
+Info (10041): Inferred latch for "DATA_OUT[0]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[1]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[2]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[3]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[4]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[5]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[6]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[7]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[8]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[9]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[10]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[11]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[12]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[13]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[14]" at FPGA2MCU.v(36)
+Info (10041): Inferred latch for "DATA_OUT[15]" at FPGA2MCU.v(36)
+Info (12128): Elaborating entity "BUFF" for hierarchy "BUFF:inst3"
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(59): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "DATA_OUT[0]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[1]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[2]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[3]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[4]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[5]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[6]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[7]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[8]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[9]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[10]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[11]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[12]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[13]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[14]" at FPGA2MCU.v(59)
+Info (10041): Inferred latch for "DATA_OUT[15]" at FPGA2MCU.v(59)
+Info (12128): Elaborating entity "SELECT_ADDR" for hierarchy "SELECT_ADDR:inst1"
+Info (12128): Elaborating entity "SAVE_ADDR" for hierarchy "SAVE_ADDR:inst"
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(9): inferring latch(es) for variable "ADDR", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "ADDR[0]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[1]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[2]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[3]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[4]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[5]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[6]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[7]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[8]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[9]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[10]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[11]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[12]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[13]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[14]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[15]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[16]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[17]" at FPGA2MCU.v(9)
+Info (10041): Inferred latch for "ADDR[18]" at FPGA2MCU.v(9)
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "BUFF:inst3|DATA_OUT[15]" feeding internal logic into a wire
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "INT0" is stuck at GND
+    Warning (13410): Pin "INT4" is stuck at GND
+Info (144001): Generated suppressed messages file E:/WORKSPACE/FPGA/FPGA_EP2C/output_files/FPGA_EP2C.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 39 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 468 megabytes
+    Info: Processing ended: Wed Mar 18 10:43:08 2015
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/WORKSPACE/FPGA/FPGA_EP2C/output_files/FPGA_EP2C.map.smsg.
+
+

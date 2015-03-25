@@ -1,0 +1,2821 @@
+TimeQuest Timing Analyzer report for FPGA_EP2C
+Wed Mar 18 10:43:40 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Minimum Pulse Width: 'NWE'
+ 12. Setup Times
+ 13. Hold Times
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Propagation Delay
+ 17. Minimum Propagation Delay
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Minimum Pulse Width: 'NWE'
+ 24. Setup Times
+ 25. Hold Times
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Propagation Delay
+ 29. Minimum Propagation Delay
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Progagation Delay
+ 36. Minimum Progagation Delay
+ 37. Clock Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; FPGA_EP2C                                                          ;
+; Device Family      ; Cyclone II                                                         ;
+; Device Name        ; EP2C5T144C8                                                        ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Combined                                                           ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; NWE        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { NWE } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
+
+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; NWE   ; -1.941 ; -25.685               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'NWE'                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; -1.941 ; 1.000        ; 2.941          ; Port Rate        ; NWE   ; Rise       ; NWE                     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[10]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[10]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[11]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[11]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[12]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[12]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[13]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[13]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[14]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[14]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[15]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[15]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[4]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[4]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[5]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[5]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[6]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[6]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[7]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[7]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[8]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[8]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[9]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[9]|clk   ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A16        ; NWE        ; 8.400  ; 8.400  ; Rise       ; NWE             ;
+; A17        ; NWE        ; 8.179  ; 8.179  ; Rise       ; NWE             ;
+; A18        ; NWE        ; 8.387  ; 8.387  ; Rise       ; NWE             ;
+; AD_IN[*]   ; NWE        ; 10.197 ; 10.197 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 10.197 ; 10.197 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 9.567  ; 9.567  ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 9.745  ; 9.745  ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 9.377  ; 9.377  ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 8.986  ; 8.986  ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 8.859  ; 8.859  ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 9.132  ; 9.132  ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 8.801  ; 8.801  ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 8.959  ; 8.959  ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 8.601  ; 8.601  ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 8.437  ; 8.437  ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 8.544  ; 8.544  ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 8.825  ; 8.825  ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 8.802  ; 8.802  ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 8.991  ; 8.991  ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 9.161  ; 9.161  ; Rise       ; NWE             ;
+; NADV       ; NWE        ; 3.848  ; 3.848  ; Rise       ; NWE             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A16        ; NWE        ; -7.156 ; -7.156 ; Rise       ; NWE             ;
+; A17        ; NWE        ; -6.935 ; -6.935 ; Rise       ; NWE             ;
+; A18        ; NWE        ; -7.143 ; -7.143 ; Rise       ; NWE             ;
+; AD_IN[*]   ; NWE        ; -3.968 ; -3.968 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; -4.361 ; -4.361 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; -3.975 ; -3.975 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; -3.968 ; -3.968 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; -3.973 ; -3.973 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; -4.793 ; -4.793 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; -4.765 ; -4.765 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; -4.752 ; -4.752 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; -4.454 ; -4.454 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; -4.446 ; -4.446 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; -4.425 ; -4.425 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; -4.079 ; -4.079 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; -3.998 ; -3.998 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; -4.088 ; -4.088 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; -4.083 ; -4.083 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; -4.406 ; -4.406 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; -4.393 ; -4.393 ; Rise       ; NWE             ;
+; NADV       ; NWE        ; -2.604 ; -2.604 ; Rise       ; NWE             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; AD_IN[*]   ; NWE        ; 8.275 ; 8.275 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 7.888 ; 7.888 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 7.486 ; 7.486 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 7.639 ; 7.639 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 7.638 ; 7.638 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 8.275 ; 8.275 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 7.899 ; 7.899 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 7.891 ; 7.891 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 7.886 ; 7.886 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 7.890 ; 7.890 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 7.889 ; 7.889 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 7.885 ; 7.885 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 7.889 ; 7.889 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 7.541 ; 7.541 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 7.541 ; 7.541 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 7.895 ; 7.895 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 7.885 ; 7.885 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; AD_IN[*]   ; NWE        ; 7.486 ; 7.486 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 7.888 ; 7.888 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 7.486 ; 7.486 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 7.639 ; 7.639 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 7.638 ; 7.638 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 8.275 ; 8.275 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 7.899 ; 7.899 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 7.891 ; 7.891 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 7.886 ; 7.886 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 7.890 ; 7.890 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 7.889 ; 7.889 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 7.885 ; 7.885 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 7.889 ; 7.889 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 7.541 ; 7.541 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 7.541 ; 7.541 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 7.895 ; 7.895 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 7.885 ; 7.885 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A16        ; AD_IN[0]    ; 13.726 ;        ;        ; 13.726 ;
+; A16        ; AD_IN[1]    ; 13.322 ;        ;        ; 13.322 ;
+; A16        ; AD_IN[2]    ; 13.481 ;        ;        ; 13.481 ;
+; A16        ; AD_IN[3]    ; 13.480 ;        ;        ; 13.480 ;
+; A16        ; AD_IN[4]    ; 14.829 ;        ;        ; 14.829 ;
+; A16        ; AD_IN[5]    ; 14.458 ;        ;        ; 14.458 ;
+; A16        ; AD_IN[6]    ; 14.450 ;        ;        ; 14.450 ;
+; A16        ; AD_IN[7]    ; 14.446 ;        ;        ; 14.446 ;
+; A16        ; AD_IN[8]    ; 14.438 ;        ;        ; 14.438 ;
+; A16        ; AD_IN[9]    ; 14.445 ;        ;        ; 14.445 ;
+; A16        ; AD_IN[10]   ; 14.436 ;        ;        ; 14.436 ;
+; A16        ; AD_IN[11]   ; 14.438 ;        ;        ; 14.438 ;
+; A16        ; AD_IN[12]   ; 14.099 ;        ;        ; 14.099 ;
+; A16        ; AD_IN[13]   ; 14.094 ;        ;        ; 14.094 ;
+; A16        ; AD_IN[14]   ; 14.439 ;        ;        ; 14.439 ;
+; A16        ; AD_IN[15]   ; 14.442 ;        ;        ; 14.442 ;
+; A17        ; AD_IN[0]    ;        ; 13.505 ; 13.505 ;        ;
+; A17        ; AD_IN[1]    ;        ; 13.101 ; 13.101 ;        ;
+; A17        ; AD_IN[2]    ;        ; 13.260 ; 13.260 ;        ;
+; A17        ; AD_IN[3]    ;        ; 13.259 ; 13.259 ;        ;
+; A17        ; AD_IN[4]    ;        ; 14.608 ; 14.608 ;        ;
+; A17        ; AD_IN[5]    ;        ; 14.237 ; 14.237 ;        ;
+; A17        ; AD_IN[6]    ;        ; 14.229 ; 14.229 ;        ;
+; A17        ; AD_IN[7]    ;        ; 14.225 ; 14.225 ;        ;
+; A17        ; AD_IN[8]    ;        ; 14.217 ; 14.217 ;        ;
+; A17        ; AD_IN[9]    ;        ; 14.224 ; 14.224 ;        ;
+; A17        ; AD_IN[10]   ;        ; 14.215 ; 14.215 ;        ;
+; A17        ; AD_IN[11]   ;        ; 14.217 ; 14.217 ;        ;
+; A17        ; AD_IN[12]   ;        ; 13.878 ; 13.878 ;        ;
+; A17        ; AD_IN[13]   ;        ; 13.873 ; 13.873 ;        ;
+; A17        ; AD_IN[14]   ;        ; 14.218 ; 14.218 ;        ;
+; A17        ; AD_IN[15]   ;        ; 14.221 ; 14.221 ;        ;
+; A18        ; AD_IN[0]    ; 13.713 ;        ;        ; 13.713 ;
+; A18        ; AD_IN[1]    ; 13.309 ;        ;        ; 13.309 ;
+; A18        ; AD_IN[2]    ; 13.468 ;        ;        ; 13.468 ;
+; A18        ; AD_IN[3]    ; 13.467 ;        ;        ; 13.467 ;
+; A18        ; AD_IN[4]    ; 14.816 ;        ;        ; 14.816 ;
+; A18        ; AD_IN[5]    ; 14.445 ;        ;        ; 14.445 ;
+; A18        ; AD_IN[6]    ; 14.437 ;        ;        ; 14.437 ;
+; A18        ; AD_IN[7]    ; 14.433 ;        ;        ; 14.433 ;
+; A18        ; AD_IN[8]    ; 14.425 ;        ;        ; 14.425 ;
+; A18        ; AD_IN[9]    ; 14.432 ;        ;        ; 14.432 ;
+; A18        ; AD_IN[10]   ; 14.423 ;        ;        ; 14.423 ;
+; A18        ; AD_IN[11]   ; 14.425 ;        ;        ; 14.425 ;
+; A18        ; AD_IN[12]   ; 14.086 ;        ;        ; 14.086 ;
+; A18        ; AD_IN[13]   ; 14.081 ;        ;        ; 14.081 ;
+; A18        ; AD_IN[14]   ; 14.426 ;        ;        ; 14.426 ;
+; A18        ; AD_IN[15]   ; 14.429 ;        ;        ; 14.429 ;
+; AD_IN[0]   ; AD_IN[0]    ; 15.250 ;        ;        ; 15.250 ;
+; AD_IN[0]   ; AD_IN[1]    ; 14.848 ;        ;        ; 14.848 ;
+; AD_IN[0]   ; AD_IN[2]    ; 15.004 ;        ;        ; 15.004 ;
+; AD_IN[0]   ; AD_IN[3]    ; 15.003 ;        ;        ; 15.003 ;
+; AD_IN[0]   ; AD_IN[4]    ; 15.035 ;        ;        ; 15.035 ;
+; AD_IN[0]   ; AD_IN[5]    ; 14.666 ;        ;        ; 14.666 ;
+; AD_IN[0]   ; AD_IN[6]    ; 14.658 ;        ;        ; 14.658 ;
+; AD_IN[0]   ; AD_IN[7]    ; 14.654 ;        ;        ; 14.654 ;
+; AD_IN[0]   ; AD_IN[8]    ; 14.643 ;        ;        ; 14.643 ;
+; AD_IN[0]   ; AD_IN[9]    ; 14.654 ;        ;        ; 14.654 ;
+; AD_IN[0]   ; AD_IN[10]   ; 14.642 ;        ;        ; 14.642 ;
+; AD_IN[0]   ; AD_IN[11]   ; 14.646 ;        ;        ; 14.646 ;
+; AD_IN[0]   ; AD_IN[12]   ; 14.307 ;        ;        ; 14.307 ;
+; AD_IN[0]   ; AD_IN[13]   ; 14.301 ;        ;        ; 14.301 ;
+; AD_IN[0]   ; AD_IN[14]   ; 14.642 ;        ;        ; 14.642 ;
+; AD_IN[0]   ; AD_IN[15]   ; 14.651 ;        ;        ; 14.651 ;
+; AD_IN[1]   ; AD_IN[0]    ;        ; 14.620 ; 14.620 ;        ;
+; AD_IN[1]   ; AD_IN[1]    ;        ; 14.218 ; 14.218 ;        ;
+; AD_IN[1]   ; AD_IN[2]    ;        ; 14.374 ; 14.374 ;        ;
+; AD_IN[1]   ; AD_IN[3]    ;        ; 14.373 ; 14.373 ;        ;
+; AD_IN[1]   ; AD_IN[4]    ;        ; 14.405 ; 14.405 ;        ;
+; AD_IN[1]   ; AD_IN[5]    ;        ; 14.036 ; 14.036 ;        ;
+; AD_IN[1]   ; AD_IN[6]    ;        ; 14.028 ; 14.028 ;        ;
+; AD_IN[1]   ; AD_IN[7]    ;        ; 14.024 ; 14.024 ;        ;
+; AD_IN[1]   ; AD_IN[8]    ;        ; 14.013 ; 14.013 ;        ;
+; AD_IN[1]   ; AD_IN[9]    ;        ; 14.024 ; 14.024 ;        ;
+; AD_IN[1]   ; AD_IN[10]   ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[1]   ; AD_IN[11]   ;        ; 14.016 ; 14.016 ;        ;
+; AD_IN[1]   ; AD_IN[12]   ;        ; 13.677 ; 13.677 ;        ;
+; AD_IN[1]   ; AD_IN[13]   ;        ; 13.671 ; 13.671 ;        ;
+; AD_IN[1]   ; AD_IN[14]   ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[1]   ; AD_IN[15]   ;        ; 14.021 ; 14.021 ;        ;
+; AD_IN[2]   ; AD_IN[0]    ;        ; 14.798 ; 14.798 ;        ;
+; AD_IN[2]   ; AD_IN[1]    ;        ; 14.396 ; 14.396 ;        ;
+; AD_IN[2]   ; AD_IN[2]    ;        ; 14.552 ; 14.552 ;        ;
+; AD_IN[2]   ; AD_IN[3]    ;        ; 14.551 ; 14.551 ;        ;
+; AD_IN[2]   ; AD_IN[4]    ;        ; 14.583 ; 14.583 ;        ;
+; AD_IN[2]   ; AD_IN[5]    ;        ; 14.214 ; 14.214 ;        ;
+; AD_IN[2]   ; AD_IN[6]    ;        ; 14.206 ; 14.206 ;        ;
+; AD_IN[2]   ; AD_IN[7]    ;        ; 14.202 ; 14.202 ;        ;
+; AD_IN[2]   ; AD_IN[8]    ;        ; 14.191 ; 14.191 ;        ;
+; AD_IN[2]   ; AD_IN[9]    ;        ; 14.202 ; 14.202 ;        ;
+; AD_IN[2]   ; AD_IN[10]   ;        ; 14.190 ; 14.190 ;        ;
+; AD_IN[2]   ; AD_IN[11]   ;        ; 14.194 ; 14.194 ;        ;
+; AD_IN[2]   ; AD_IN[12]   ;        ; 13.855 ; 13.855 ;        ;
+; AD_IN[2]   ; AD_IN[13]   ;        ; 13.849 ; 13.849 ;        ;
+; AD_IN[2]   ; AD_IN[14]   ;        ; 14.190 ; 14.190 ;        ;
+; AD_IN[2]   ; AD_IN[15]   ;        ; 14.199 ; 14.199 ;        ;
+; AD_IN[3]   ; AD_IN[0]    ;        ; 14.430 ; 14.430 ;        ;
+; AD_IN[3]   ; AD_IN[1]    ;        ; 14.028 ; 14.028 ;        ;
+; AD_IN[3]   ; AD_IN[2]    ;        ; 14.184 ; 14.184 ;        ;
+; AD_IN[3]   ; AD_IN[3]    ;        ; 14.183 ; 14.183 ;        ;
+; AD_IN[3]   ; AD_IN[4]    ;        ; 14.215 ; 14.215 ;        ;
+; AD_IN[3]   ; AD_IN[5]    ;        ; 13.846 ; 13.846 ;        ;
+; AD_IN[3]   ; AD_IN[6]    ;        ; 13.838 ; 13.838 ;        ;
+; AD_IN[3]   ; AD_IN[7]    ;        ; 13.834 ; 13.834 ;        ;
+; AD_IN[3]   ; AD_IN[8]    ;        ; 13.823 ; 13.823 ;        ;
+; AD_IN[3]   ; AD_IN[9]    ;        ; 13.834 ; 13.834 ;        ;
+; AD_IN[3]   ; AD_IN[10]   ;        ; 13.822 ; 13.822 ;        ;
+; AD_IN[3]   ; AD_IN[11]   ;        ; 13.826 ; 13.826 ;        ;
+; AD_IN[3]   ; AD_IN[12]   ;        ; 13.487 ; 13.487 ;        ;
+; AD_IN[3]   ; AD_IN[13]   ;        ; 13.481 ; 13.481 ;        ;
+; AD_IN[3]   ; AD_IN[14]   ;        ; 13.822 ; 13.822 ;        ;
+; AD_IN[3]   ; AD_IN[15]   ;        ; 13.831 ; 13.831 ;        ;
+; AD_IN[4]   ; AD_IN[0]    ;        ; 14.039 ; 14.039 ;        ;
+; AD_IN[4]   ; AD_IN[1]    ;        ; 13.637 ; 13.637 ;        ;
+; AD_IN[4]   ; AD_IN[2]    ;        ; 13.793 ; 13.793 ;        ;
+; AD_IN[4]   ; AD_IN[3]    ;        ; 13.792 ; 13.792 ;        ;
+; AD_IN[4]   ; AD_IN[4]    ;        ; 13.824 ; 13.824 ;        ;
+; AD_IN[4]   ; AD_IN[5]    ;        ; 13.455 ; 13.455 ;        ;
+; AD_IN[4]   ; AD_IN[6]    ;        ; 13.447 ; 13.447 ;        ;
+; AD_IN[4]   ; AD_IN[7]    ;        ; 13.443 ; 13.443 ;        ;
+; AD_IN[4]   ; AD_IN[8]    ;        ; 13.432 ; 13.432 ;        ;
+; AD_IN[4]   ; AD_IN[9]    ;        ; 13.443 ; 13.443 ;        ;
+; AD_IN[4]   ; AD_IN[10]   ;        ; 13.431 ; 13.431 ;        ;
+; AD_IN[4]   ; AD_IN[11]   ;        ; 13.435 ; 13.435 ;        ;
+; AD_IN[4]   ; AD_IN[12]   ;        ; 13.096 ; 13.096 ;        ;
+; AD_IN[4]   ; AD_IN[13]   ;        ; 13.090 ; 13.090 ;        ;
+; AD_IN[4]   ; AD_IN[14]   ;        ; 13.431 ; 13.431 ;        ;
+; AD_IN[4]   ; AD_IN[15]   ;        ; 13.440 ; 13.440 ;        ;
+; AD_IN[5]   ; AD_IN[0]    ;        ; 13.912 ; 13.912 ;        ;
+; AD_IN[5]   ; AD_IN[1]    ;        ; 13.510 ; 13.510 ;        ;
+; AD_IN[5]   ; AD_IN[2]    ;        ; 13.666 ; 13.666 ;        ;
+; AD_IN[5]   ; AD_IN[3]    ;        ; 13.665 ; 13.665 ;        ;
+; AD_IN[5]   ; AD_IN[4]    ;        ; 13.697 ; 13.697 ;        ;
+; AD_IN[5]   ; AD_IN[5]    ;        ; 13.328 ; 13.328 ;        ;
+; AD_IN[5]   ; AD_IN[6]    ;        ; 13.320 ; 13.320 ;        ;
+; AD_IN[5]   ; AD_IN[7]    ;        ; 13.316 ; 13.316 ;        ;
+; AD_IN[5]   ; AD_IN[8]    ;        ; 13.305 ; 13.305 ;        ;
+; AD_IN[5]   ; AD_IN[9]    ;        ; 13.316 ; 13.316 ;        ;
+; AD_IN[5]   ; AD_IN[10]   ;        ; 13.304 ; 13.304 ;        ;
+; AD_IN[5]   ; AD_IN[11]   ;        ; 13.308 ; 13.308 ;        ;
+; AD_IN[5]   ; AD_IN[12]   ;        ; 12.969 ; 12.969 ;        ;
+; AD_IN[5]   ; AD_IN[13]   ;        ; 12.963 ; 12.963 ;        ;
+; AD_IN[5]   ; AD_IN[14]   ;        ; 13.304 ; 13.304 ;        ;
+; AD_IN[5]   ; AD_IN[15]   ;        ; 13.313 ; 13.313 ;        ;
+; AD_IN[6]   ; AD_IN[0]    ;        ; 14.185 ; 14.185 ;        ;
+; AD_IN[6]   ; AD_IN[1]    ;        ; 13.783 ; 13.783 ;        ;
+; AD_IN[6]   ; AD_IN[2]    ;        ; 13.939 ; 13.939 ;        ;
+; AD_IN[6]   ; AD_IN[3]    ;        ; 13.938 ; 13.938 ;        ;
+; AD_IN[6]   ; AD_IN[4]    ;        ; 13.970 ; 13.970 ;        ;
+; AD_IN[6]   ; AD_IN[5]    ;        ; 13.601 ; 13.601 ;        ;
+; AD_IN[6]   ; AD_IN[6]    ;        ; 13.593 ; 13.593 ;        ;
+; AD_IN[6]   ; AD_IN[7]    ;        ; 13.589 ; 13.589 ;        ;
+; AD_IN[6]   ; AD_IN[8]    ;        ; 13.578 ; 13.578 ;        ;
+; AD_IN[6]   ; AD_IN[9]    ;        ; 13.589 ; 13.589 ;        ;
+; AD_IN[6]   ; AD_IN[10]   ;        ; 13.577 ; 13.577 ;        ;
+; AD_IN[6]   ; AD_IN[11]   ;        ; 13.581 ; 13.581 ;        ;
+; AD_IN[6]   ; AD_IN[12]   ;        ; 13.242 ; 13.242 ;        ;
+; AD_IN[6]   ; AD_IN[13]   ;        ; 13.236 ; 13.236 ;        ;
+; AD_IN[6]   ; AD_IN[14]   ;        ; 13.577 ; 13.577 ;        ;
+; AD_IN[6]   ; AD_IN[15]   ;        ; 13.586 ; 13.586 ;        ;
+; AD_IN[7]   ; AD_IN[0]    ;        ; 13.854 ; 13.854 ;        ;
+; AD_IN[7]   ; AD_IN[1]    ;        ; 13.452 ; 13.452 ;        ;
+; AD_IN[7]   ; AD_IN[2]    ;        ; 13.608 ; 13.608 ;        ;
+; AD_IN[7]   ; AD_IN[3]    ;        ; 13.607 ; 13.607 ;        ;
+; AD_IN[7]   ; AD_IN[4]    ;        ; 13.639 ; 13.639 ;        ;
+; AD_IN[7]   ; AD_IN[5]    ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[7]   ; AD_IN[6]    ;        ; 13.262 ; 13.262 ;        ;
+; AD_IN[7]   ; AD_IN[7]    ;        ; 13.258 ; 13.258 ;        ;
+; AD_IN[7]   ; AD_IN[8]    ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[7]   ; AD_IN[9]    ;        ; 13.258 ; 13.258 ;        ;
+; AD_IN[7]   ; AD_IN[10]   ;        ; 13.246 ; 13.246 ;        ;
+; AD_IN[7]   ; AD_IN[11]   ;        ; 13.250 ; 13.250 ;        ;
+; AD_IN[7]   ; AD_IN[12]   ;        ; 12.911 ; 12.911 ;        ;
+; AD_IN[7]   ; AD_IN[13]   ;        ; 12.905 ; 12.905 ;        ;
+; AD_IN[7]   ; AD_IN[14]   ;        ; 13.246 ; 13.246 ;        ;
+; AD_IN[7]   ; AD_IN[15]   ;        ; 13.255 ; 13.255 ;        ;
+; AD_IN[8]   ; AD_IN[0]    ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[8]   ; AD_IN[1]    ;        ; 13.610 ; 13.610 ;        ;
+; AD_IN[8]   ; AD_IN[2]    ;        ; 13.766 ; 13.766 ;        ;
+; AD_IN[8]   ; AD_IN[3]    ;        ; 13.765 ; 13.765 ;        ;
+; AD_IN[8]   ; AD_IN[4]    ;        ; 13.797 ; 13.797 ;        ;
+; AD_IN[8]   ; AD_IN[5]    ;        ; 13.428 ; 13.428 ;        ;
+; AD_IN[8]   ; AD_IN[6]    ;        ; 13.420 ; 13.420 ;        ;
+; AD_IN[8]   ; AD_IN[7]    ;        ; 13.416 ; 13.416 ;        ;
+; AD_IN[8]   ; AD_IN[8]    ;        ; 13.405 ; 13.405 ;        ;
+; AD_IN[8]   ; AD_IN[9]    ;        ; 13.416 ; 13.416 ;        ;
+; AD_IN[8]   ; AD_IN[10]   ;        ; 13.404 ; 13.404 ;        ;
+; AD_IN[8]   ; AD_IN[11]   ;        ; 13.408 ; 13.408 ;        ;
+; AD_IN[8]   ; AD_IN[12]   ;        ; 13.069 ; 13.069 ;        ;
+; AD_IN[8]   ; AD_IN[13]   ;        ; 13.063 ; 13.063 ;        ;
+; AD_IN[8]   ; AD_IN[14]   ;        ; 13.404 ; 13.404 ;        ;
+; AD_IN[8]   ; AD_IN[15]   ;        ; 13.413 ; 13.413 ;        ;
+; AD_IN[9]   ; AD_IN[0]    ;        ; 13.654 ; 13.654 ;        ;
+; AD_IN[9]   ; AD_IN[1]    ;        ; 13.252 ; 13.252 ;        ;
+; AD_IN[9]   ; AD_IN[2]    ;        ; 13.408 ; 13.408 ;        ;
+; AD_IN[9]   ; AD_IN[3]    ;        ; 13.407 ; 13.407 ;        ;
+; AD_IN[9]   ; AD_IN[4]    ;        ; 13.439 ; 13.439 ;        ;
+; AD_IN[9]   ; AD_IN[5]    ;        ; 13.070 ; 13.070 ;        ;
+; AD_IN[9]   ; AD_IN[6]    ;        ; 13.062 ; 13.062 ;        ;
+; AD_IN[9]   ; AD_IN[7]    ;        ; 13.058 ; 13.058 ;        ;
+; AD_IN[9]   ; AD_IN[8]    ;        ; 13.047 ; 13.047 ;        ;
+; AD_IN[9]   ; AD_IN[9]    ;        ; 13.058 ; 13.058 ;        ;
+; AD_IN[9]   ; AD_IN[10]   ;        ; 13.046 ; 13.046 ;        ;
+; AD_IN[9]   ; AD_IN[11]   ;        ; 13.050 ; 13.050 ;        ;
+; AD_IN[9]   ; AD_IN[12]   ;        ; 12.711 ; 12.711 ;        ;
+; AD_IN[9]   ; AD_IN[13]   ;        ; 12.705 ; 12.705 ;        ;
+; AD_IN[9]   ; AD_IN[14]   ;        ; 13.046 ; 13.046 ;        ;
+; AD_IN[9]   ; AD_IN[15]   ;        ; 13.055 ; 13.055 ;        ;
+; AD_IN[10]  ; AD_IN[0]    ;        ; 13.490 ; 13.490 ;        ;
+; AD_IN[10]  ; AD_IN[1]    ;        ; 13.088 ; 13.088 ;        ;
+; AD_IN[10]  ; AD_IN[2]    ;        ; 13.244 ; 13.244 ;        ;
+; AD_IN[10]  ; AD_IN[3]    ;        ; 13.243 ; 13.243 ;        ;
+; AD_IN[10]  ; AD_IN[4]    ;        ; 13.275 ; 13.275 ;        ;
+; AD_IN[10]  ; AD_IN[5]    ;        ; 12.906 ; 12.906 ;        ;
+; AD_IN[10]  ; AD_IN[6]    ;        ; 12.898 ; 12.898 ;        ;
+; AD_IN[10]  ; AD_IN[7]    ;        ; 12.894 ; 12.894 ;        ;
+; AD_IN[10]  ; AD_IN[8]    ;        ; 12.883 ; 12.883 ;        ;
+; AD_IN[10]  ; AD_IN[9]    ;        ; 12.894 ; 12.894 ;        ;
+; AD_IN[10]  ; AD_IN[10]   ;        ; 12.882 ; 12.882 ;        ;
+; AD_IN[10]  ; AD_IN[11]   ;        ; 12.886 ; 12.886 ;        ;
+; AD_IN[10]  ; AD_IN[12]   ;        ; 12.547 ; 12.547 ;        ;
+; AD_IN[10]  ; AD_IN[13]   ;        ; 12.541 ; 12.541 ;        ;
+; AD_IN[10]  ; AD_IN[14]   ;        ; 12.882 ; 12.882 ;        ;
+; AD_IN[10]  ; AD_IN[15]   ;        ; 12.891 ; 12.891 ;        ;
+; AD_IN[11]  ; AD_IN[0]    ;        ; 13.597 ; 13.597 ;        ;
+; AD_IN[11]  ; AD_IN[1]    ;        ; 13.195 ; 13.195 ;        ;
+; AD_IN[11]  ; AD_IN[2]    ;        ; 13.351 ; 13.351 ;        ;
+; AD_IN[11]  ; AD_IN[3]    ;        ; 13.350 ; 13.350 ;        ;
+; AD_IN[11]  ; AD_IN[4]    ;        ; 13.382 ; 13.382 ;        ;
+; AD_IN[11]  ; AD_IN[5]    ;        ; 13.013 ; 13.013 ;        ;
+; AD_IN[11]  ; AD_IN[6]    ;        ; 13.005 ; 13.005 ;        ;
+; AD_IN[11]  ; AD_IN[7]    ;        ; 13.001 ; 13.001 ;        ;
+; AD_IN[11]  ; AD_IN[8]    ;        ; 12.990 ; 12.990 ;        ;
+; AD_IN[11]  ; AD_IN[9]    ;        ; 13.001 ; 13.001 ;        ;
+; AD_IN[11]  ; AD_IN[10]   ;        ; 12.989 ; 12.989 ;        ;
+; AD_IN[11]  ; AD_IN[11]   ;        ; 12.993 ; 12.993 ;        ;
+; AD_IN[11]  ; AD_IN[12]   ;        ; 12.654 ; 12.654 ;        ;
+; AD_IN[11]  ; AD_IN[13]   ;        ; 12.648 ; 12.648 ;        ;
+; AD_IN[11]  ; AD_IN[14]   ;        ; 12.989 ; 12.989 ;        ;
+; AD_IN[11]  ; AD_IN[15]   ;        ; 12.998 ; 12.998 ;        ;
+; AD_IN[12]  ; AD_IN[0]    ;        ; 13.878 ; 13.878 ;        ;
+; AD_IN[12]  ; AD_IN[1]    ;        ; 13.476 ; 13.476 ;        ;
+; AD_IN[12]  ; AD_IN[2]    ;        ; 13.632 ; 13.632 ;        ;
+; AD_IN[12]  ; AD_IN[3]    ;        ; 13.631 ; 13.631 ;        ;
+; AD_IN[12]  ; AD_IN[4]    ;        ; 13.663 ; 13.663 ;        ;
+; AD_IN[12]  ; AD_IN[5]    ;        ; 13.294 ; 13.294 ;        ;
+; AD_IN[12]  ; AD_IN[6]    ;        ; 13.286 ; 13.286 ;        ;
+; AD_IN[12]  ; AD_IN[7]    ;        ; 13.282 ; 13.282 ;        ;
+; AD_IN[12]  ; AD_IN[8]    ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[12]  ; AD_IN[9]    ;        ; 13.282 ; 13.282 ;        ;
+; AD_IN[12]  ; AD_IN[10]   ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[12]  ; AD_IN[11]   ;        ; 13.274 ; 13.274 ;        ;
+; AD_IN[12]  ; AD_IN[12]   ;        ; 12.935 ; 12.935 ;        ;
+; AD_IN[12]  ; AD_IN[13]   ;        ; 12.929 ; 12.929 ;        ;
+; AD_IN[12]  ; AD_IN[14]   ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[12]  ; AD_IN[15]   ;        ; 13.279 ; 13.279 ;        ;
+; AD_IN[13]  ; AD_IN[0]    ;        ; 13.855 ; 13.855 ;        ;
+; AD_IN[13]  ; AD_IN[1]    ;        ; 13.453 ; 13.453 ;        ;
+; AD_IN[13]  ; AD_IN[2]    ;        ; 13.609 ; 13.609 ;        ;
+; AD_IN[13]  ; AD_IN[3]    ;        ; 13.608 ; 13.608 ;        ;
+; AD_IN[13]  ; AD_IN[4]    ;        ; 13.640 ; 13.640 ;        ;
+; AD_IN[13]  ; AD_IN[5]    ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[13]  ; AD_IN[6]    ;        ; 13.263 ; 13.263 ;        ;
+; AD_IN[13]  ; AD_IN[7]    ;        ; 13.259 ; 13.259 ;        ;
+; AD_IN[13]  ; AD_IN[8]    ;        ; 13.248 ; 13.248 ;        ;
+; AD_IN[13]  ; AD_IN[9]    ;        ; 13.259 ; 13.259 ;        ;
+; AD_IN[13]  ; AD_IN[10]   ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[13]  ; AD_IN[11]   ;        ; 13.251 ; 13.251 ;        ;
+; AD_IN[13]  ; AD_IN[12]   ;        ; 12.912 ; 12.912 ;        ;
+; AD_IN[13]  ; AD_IN[13]   ;        ; 12.906 ; 12.906 ;        ;
+; AD_IN[13]  ; AD_IN[14]   ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[13]  ; AD_IN[15]   ;        ; 13.256 ; 13.256 ;        ;
+; AD_IN[14]  ; AD_IN[0]    ;        ; 14.044 ; 14.044 ;        ;
+; AD_IN[14]  ; AD_IN[1]    ;        ; 13.642 ; 13.642 ;        ;
+; AD_IN[14]  ; AD_IN[2]    ;        ; 13.798 ; 13.798 ;        ;
+; AD_IN[14]  ; AD_IN[3]    ;        ; 13.797 ; 13.797 ;        ;
+; AD_IN[14]  ; AD_IN[4]    ;        ; 13.829 ; 13.829 ;        ;
+; AD_IN[14]  ; AD_IN[5]    ;        ; 13.460 ; 13.460 ;        ;
+; AD_IN[14]  ; AD_IN[6]    ;        ; 13.452 ; 13.452 ;        ;
+; AD_IN[14]  ; AD_IN[7]    ;        ; 13.448 ; 13.448 ;        ;
+; AD_IN[14]  ; AD_IN[8]    ;        ; 13.437 ; 13.437 ;        ;
+; AD_IN[14]  ; AD_IN[9]    ;        ; 13.448 ; 13.448 ;        ;
+; AD_IN[14]  ; AD_IN[10]   ;        ; 13.436 ; 13.436 ;        ;
+; AD_IN[14]  ; AD_IN[11]   ;        ; 13.440 ; 13.440 ;        ;
+; AD_IN[14]  ; AD_IN[12]   ;        ; 13.101 ; 13.101 ;        ;
+; AD_IN[14]  ; AD_IN[13]   ;        ; 13.095 ; 13.095 ;        ;
+; AD_IN[14]  ; AD_IN[14]   ;        ; 13.436 ; 13.436 ;        ;
+; AD_IN[14]  ; AD_IN[15]   ;        ; 13.445 ; 13.445 ;        ;
+; AD_IN[15]  ; AD_IN[0]    ;        ; 14.214 ; 14.214 ;        ;
+; AD_IN[15]  ; AD_IN[1]    ;        ; 13.812 ; 13.812 ;        ;
+; AD_IN[15]  ; AD_IN[2]    ;        ; 13.968 ; 13.968 ;        ;
+; AD_IN[15]  ; AD_IN[3]    ;        ; 13.967 ; 13.967 ;        ;
+; AD_IN[15]  ; AD_IN[4]    ;        ; 13.999 ; 13.999 ;        ;
+; AD_IN[15]  ; AD_IN[5]    ;        ; 13.630 ; 13.630 ;        ;
+; AD_IN[15]  ; AD_IN[6]    ;        ; 13.622 ; 13.622 ;        ;
+; AD_IN[15]  ; AD_IN[7]    ;        ; 13.618 ; 13.618 ;        ;
+; AD_IN[15]  ; AD_IN[8]    ;        ; 13.607 ; 13.607 ;        ;
+; AD_IN[15]  ; AD_IN[9]    ;        ; 13.618 ; 13.618 ;        ;
+; AD_IN[15]  ; AD_IN[10]   ;        ; 13.606 ; 13.606 ;        ;
+; AD_IN[15]  ; AD_IN[11]   ;        ; 13.610 ; 13.610 ;        ;
+; AD_IN[15]  ; AD_IN[12]   ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[15]  ; AD_IN[13]   ;        ; 13.265 ; 13.265 ;        ;
+; AD_IN[15]  ; AD_IN[14]   ;        ; 13.606 ; 13.606 ;        ;
+; AD_IN[15]  ; AD_IN[15]   ;        ; 13.615 ; 13.615 ;        ;
+; NADV       ; AD_IN[0]    ; 9.174  ;        ;        ; 9.174  ;
+; NADV       ; AD_IN[1]    ; 8.770  ;        ;        ; 8.770  ;
+; NADV       ; AD_IN[2]    ; 8.929  ;        ;        ; 8.929  ;
+; NADV       ; AD_IN[3]    ; 8.928  ;        ;        ; 8.928  ;
+; NADV       ; AD_IN[4]    ; 10.277 ;        ;        ; 10.277 ;
+; NADV       ; AD_IN[5]    ; 9.906  ;        ;        ; 9.906  ;
+; NADV       ; AD_IN[6]    ; 9.898  ;        ;        ; 9.898  ;
+; NADV       ; AD_IN[7]    ; 9.894  ;        ;        ; 9.894  ;
+; NADV       ; AD_IN[8]    ; 9.886  ;        ;        ; 9.886  ;
+; NADV       ; AD_IN[9]    ; 9.893  ;        ;        ; 9.893  ;
+; NADV       ; AD_IN[10]   ; 9.884  ;        ;        ; 9.884  ;
+; NADV       ; AD_IN[11]   ; 9.886  ;        ;        ; 9.886  ;
+; NADV       ; AD_IN[12]   ; 9.547  ;        ;        ; 9.547  ;
+; NADV       ; AD_IN[13]   ; 9.542  ;        ;        ; 9.542  ;
+; NADV       ; AD_IN[14]   ; 9.887  ;        ;        ; 9.887  ;
+; NADV       ; AD_IN[15]   ; 9.890  ;        ;        ; 9.890  ;
+; NOE        ; AD_IN[0]    ; 7.072  ; 7.072  ; 7.072  ; 7.072  ;
+; NOE        ; AD_IN[1]    ; 7.047  ; 7.047  ; 7.047  ; 7.047  ;
+; NOE        ; AD_IN[2]    ; 7.037  ; 7.037  ; 7.037  ; 7.037  ;
+; NOE        ; AD_IN[3]    ; 7.037  ; 7.037  ; 7.037  ; 7.037  ;
+; NOE        ; AD_IN[4]    ; 6.743  ; 6.743  ; 6.743  ; 6.743  ;
+; NOE        ; AD_IN[5]    ; 6.753  ; 6.753  ; 6.753  ; 6.753  ;
+; NOE        ; AD_IN[6]    ; 6.753  ; 6.753  ; 6.753  ; 6.753  ;
+; NOE        ; AD_IN[7]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[8]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[9]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[10]   ; 7.085  ; 7.085  ; 7.085  ; 7.085  ;
+; NOE        ; AD_IN[11]   ; 7.075  ; 7.075  ; 7.075  ; 7.075  ;
+; NOE        ; AD_IN[12]   ; 6.733  ; 6.733  ; 6.733  ; 6.733  ;
+; NOE        ; AD_IN[13]   ; 6.730  ; 6.730  ; 6.730  ; 6.730  ;
+; NOE        ; AD_IN[14]   ; 6.723  ; 6.723  ; 6.723  ; 6.723  ;
+; NOE        ; AD_IN[15]   ; 6.703  ; 6.703  ; 6.703  ; 6.703  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A16        ; AD_IN[0]    ; 13.726 ;        ;        ; 13.726 ;
+; A16        ; AD_IN[1]    ; 13.322 ;        ;        ; 13.322 ;
+; A16        ; AD_IN[2]    ; 13.481 ;        ;        ; 13.481 ;
+; A16        ; AD_IN[3]    ; 13.480 ;        ;        ; 13.480 ;
+; A16        ; AD_IN[4]    ; 14.829 ;        ;        ; 14.829 ;
+; A16        ; AD_IN[5]    ; 14.458 ;        ;        ; 14.458 ;
+; A16        ; AD_IN[6]    ; 14.450 ;        ;        ; 14.450 ;
+; A16        ; AD_IN[7]    ; 14.446 ;        ;        ; 14.446 ;
+; A16        ; AD_IN[8]    ; 14.438 ;        ;        ; 14.438 ;
+; A16        ; AD_IN[9]    ; 14.445 ;        ;        ; 14.445 ;
+; A16        ; AD_IN[10]   ; 14.436 ;        ;        ; 14.436 ;
+; A16        ; AD_IN[11]   ; 14.438 ;        ;        ; 14.438 ;
+; A16        ; AD_IN[12]   ; 14.099 ;        ;        ; 14.099 ;
+; A16        ; AD_IN[13]   ; 14.094 ;        ;        ; 14.094 ;
+; A16        ; AD_IN[14]   ; 14.439 ;        ;        ; 14.439 ;
+; A16        ; AD_IN[15]   ; 14.442 ;        ;        ; 14.442 ;
+; A17        ; AD_IN[0]    ;        ; 13.505 ; 13.505 ;        ;
+; A17        ; AD_IN[1]    ;        ; 13.101 ; 13.101 ;        ;
+; A17        ; AD_IN[2]    ;        ; 13.260 ; 13.260 ;        ;
+; A17        ; AD_IN[3]    ;        ; 13.259 ; 13.259 ;        ;
+; A17        ; AD_IN[4]    ;        ; 14.608 ; 14.608 ;        ;
+; A17        ; AD_IN[5]    ;        ; 14.237 ; 14.237 ;        ;
+; A17        ; AD_IN[6]    ;        ; 14.229 ; 14.229 ;        ;
+; A17        ; AD_IN[7]    ;        ; 14.225 ; 14.225 ;        ;
+; A17        ; AD_IN[8]    ;        ; 14.217 ; 14.217 ;        ;
+; A17        ; AD_IN[9]    ;        ; 14.224 ; 14.224 ;        ;
+; A17        ; AD_IN[10]   ;        ; 14.215 ; 14.215 ;        ;
+; A17        ; AD_IN[11]   ;        ; 14.217 ; 14.217 ;        ;
+; A17        ; AD_IN[12]   ;        ; 13.878 ; 13.878 ;        ;
+; A17        ; AD_IN[13]   ;        ; 13.873 ; 13.873 ;        ;
+; A17        ; AD_IN[14]   ;        ; 14.218 ; 14.218 ;        ;
+; A17        ; AD_IN[15]   ;        ; 14.221 ; 14.221 ;        ;
+; A18        ; AD_IN[0]    ; 13.713 ;        ;        ; 13.713 ;
+; A18        ; AD_IN[1]    ; 13.309 ;        ;        ; 13.309 ;
+; A18        ; AD_IN[2]    ; 13.468 ;        ;        ; 13.468 ;
+; A18        ; AD_IN[3]    ; 13.467 ;        ;        ; 13.467 ;
+; A18        ; AD_IN[4]    ; 14.816 ;        ;        ; 14.816 ;
+; A18        ; AD_IN[5]    ; 14.445 ;        ;        ; 14.445 ;
+; A18        ; AD_IN[6]    ; 14.437 ;        ;        ; 14.437 ;
+; A18        ; AD_IN[7]    ; 14.433 ;        ;        ; 14.433 ;
+; A18        ; AD_IN[8]    ; 14.425 ;        ;        ; 14.425 ;
+; A18        ; AD_IN[9]    ; 14.432 ;        ;        ; 14.432 ;
+; A18        ; AD_IN[10]   ; 14.423 ;        ;        ; 14.423 ;
+; A18        ; AD_IN[11]   ; 14.425 ;        ;        ; 14.425 ;
+; A18        ; AD_IN[12]   ; 14.086 ;        ;        ; 14.086 ;
+; A18        ; AD_IN[13]   ; 14.081 ;        ;        ; 14.081 ;
+; A18        ; AD_IN[14]   ; 14.426 ;        ;        ; 14.426 ;
+; A18        ; AD_IN[15]   ; 14.429 ;        ;        ; 14.429 ;
+; AD_IN[0]   ; AD_IN[0]    ; 15.250 ;        ;        ; 15.250 ;
+; AD_IN[0]   ; AD_IN[1]    ; 14.848 ;        ;        ; 14.848 ;
+; AD_IN[0]   ; AD_IN[2]    ; 15.004 ;        ;        ; 15.004 ;
+; AD_IN[0]   ; AD_IN[3]    ; 15.003 ;        ;        ; 15.003 ;
+; AD_IN[0]   ; AD_IN[4]    ; 15.035 ;        ;        ; 15.035 ;
+; AD_IN[0]   ; AD_IN[5]    ; 14.666 ;        ;        ; 14.666 ;
+; AD_IN[0]   ; AD_IN[6]    ; 14.658 ;        ;        ; 14.658 ;
+; AD_IN[0]   ; AD_IN[7]    ; 14.654 ;        ;        ; 14.654 ;
+; AD_IN[0]   ; AD_IN[8]    ; 14.643 ;        ;        ; 14.643 ;
+; AD_IN[0]   ; AD_IN[9]    ; 14.654 ;        ;        ; 14.654 ;
+; AD_IN[0]   ; AD_IN[10]   ; 14.642 ;        ;        ; 14.642 ;
+; AD_IN[0]   ; AD_IN[11]   ; 14.646 ;        ;        ; 14.646 ;
+; AD_IN[0]   ; AD_IN[12]   ; 14.307 ;        ;        ; 14.307 ;
+; AD_IN[0]   ; AD_IN[13]   ; 14.301 ;        ;        ; 14.301 ;
+; AD_IN[0]   ; AD_IN[14]   ; 14.642 ;        ;        ; 14.642 ;
+; AD_IN[0]   ; AD_IN[15]   ; 14.651 ;        ;        ; 14.651 ;
+; AD_IN[1]   ; AD_IN[0]    ;        ; 14.620 ; 14.620 ;        ;
+; AD_IN[1]   ; AD_IN[1]    ;        ; 14.218 ; 14.218 ;        ;
+; AD_IN[1]   ; AD_IN[2]    ;        ; 14.374 ; 14.374 ;        ;
+; AD_IN[1]   ; AD_IN[3]    ;        ; 14.373 ; 14.373 ;        ;
+; AD_IN[1]   ; AD_IN[4]    ;        ; 14.405 ; 14.405 ;        ;
+; AD_IN[1]   ; AD_IN[5]    ;        ; 14.036 ; 14.036 ;        ;
+; AD_IN[1]   ; AD_IN[6]    ;        ; 14.028 ; 14.028 ;        ;
+; AD_IN[1]   ; AD_IN[7]    ;        ; 14.024 ; 14.024 ;        ;
+; AD_IN[1]   ; AD_IN[8]    ;        ; 14.013 ; 14.013 ;        ;
+; AD_IN[1]   ; AD_IN[9]    ;        ; 14.024 ; 14.024 ;        ;
+; AD_IN[1]   ; AD_IN[10]   ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[1]   ; AD_IN[11]   ;        ; 14.016 ; 14.016 ;        ;
+; AD_IN[1]   ; AD_IN[12]   ;        ; 13.677 ; 13.677 ;        ;
+; AD_IN[1]   ; AD_IN[13]   ;        ; 13.671 ; 13.671 ;        ;
+; AD_IN[1]   ; AD_IN[14]   ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[1]   ; AD_IN[15]   ;        ; 14.021 ; 14.021 ;        ;
+; AD_IN[2]   ; AD_IN[0]    ;        ; 14.798 ; 14.798 ;        ;
+; AD_IN[2]   ; AD_IN[1]    ;        ; 14.396 ; 14.396 ;        ;
+; AD_IN[2]   ; AD_IN[2]    ;        ; 14.552 ; 14.552 ;        ;
+; AD_IN[2]   ; AD_IN[3]    ;        ; 14.551 ; 14.551 ;        ;
+; AD_IN[2]   ; AD_IN[4]    ;        ; 14.583 ; 14.583 ;        ;
+; AD_IN[2]   ; AD_IN[5]    ;        ; 14.214 ; 14.214 ;        ;
+; AD_IN[2]   ; AD_IN[6]    ;        ; 14.206 ; 14.206 ;        ;
+; AD_IN[2]   ; AD_IN[7]    ;        ; 14.202 ; 14.202 ;        ;
+; AD_IN[2]   ; AD_IN[8]    ;        ; 14.191 ; 14.191 ;        ;
+; AD_IN[2]   ; AD_IN[9]    ;        ; 14.202 ; 14.202 ;        ;
+; AD_IN[2]   ; AD_IN[10]   ;        ; 14.190 ; 14.190 ;        ;
+; AD_IN[2]   ; AD_IN[11]   ;        ; 14.194 ; 14.194 ;        ;
+; AD_IN[2]   ; AD_IN[12]   ;        ; 13.855 ; 13.855 ;        ;
+; AD_IN[2]   ; AD_IN[13]   ;        ; 13.849 ; 13.849 ;        ;
+; AD_IN[2]   ; AD_IN[14]   ;        ; 14.190 ; 14.190 ;        ;
+; AD_IN[2]   ; AD_IN[15]   ;        ; 14.199 ; 14.199 ;        ;
+; AD_IN[3]   ; AD_IN[0]    ;        ; 14.430 ; 14.430 ;        ;
+; AD_IN[3]   ; AD_IN[1]    ;        ; 14.028 ; 14.028 ;        ;
+; AD_IN[3]   ; AD_IN[2]    ;        ; 14.184 ; 14.184 ;        ;
+; AD_IN[3]   ; AD_IN[3]    ;        ; 14.183 ; 14.183 ;        ;
+; AD_IN[3]   ; AD_IN[4]    ;        ; 14.215 ; 14.215 ;        ;
+; AD_IN[3]   ; AD_IN[5]    ;        ; 13.846 ; 13.846 ;        ;
+; AD_IN[3]   ; AD_IN[6]    ;        ; 13.838 ; 13.838 ;        ;
+; AD_IN[3]   ; AD_IN[7]    ;        ; 13.834 ; 13.834 ;        ;
+; AD_IN[3]   ; AD_IN[8]    ;        ; 13.823 ; 13.823 ;        ;
+; AD_IN[3]   ; AD_IN[9]    ;        ; 13.834 ; 13.834 ;        ;
+; AD_IN[3]   ; AD_IN[10]   ;        ; 13.822 ; 13.822 ;        ;
+; AD_IN[3]   ; AD_IN[11]   ;        ; 13.826 ; 13.826 ;        ;
+; AD_IN[3]   ; AD_IN[12]   ;        ; 13.487 ; 13.487 ;        ;
+; AD_IN[3]   ; AD_IN[13]   ;        ; 13.481 ; 13.481 ;        ;
+; AD_IN[3]   ; AD_IN[14]   ;        ; 13.822 ; 13.822 ;        ;
+; AD_IN[3]   ; AD_IN[15]   ;        ; 13.831 ; 13.831 ;        ;
+; AD_IN[4]   ; AD_IN[0]    ;        ; 14.039 ; 14.039 ;        ;
+; AD_IN[4]   ; AD_IN[1]    ;        ; 13.637 ; 13.637 ;        ;
+; AD_IN[4]   ; AD_IN[2]    ;        ; 13.793 ; 13.793 ;        ;
+; AD_IN[4]   ; AD_IN[3]    ;        ; 13.792 ; 13.792 ;        ;
+; AD_IN[4]   ; AD_IN[4]    ;        ; 13.824 ; 13.824 ;        ;
+; AD_IN[4]   ; AD_IN[5]    ;        ; 13.455 ; 13.455 ;        ;
+; AD_IN[4]   ; AD_IN[6]    ;        ; 13.447 ; 13.447 ;        ;
+; AD_IN[4]   ; AD_IN[7]    ;        ; 13.443 ; 13.443 ;        ;
+; AD_IN[4]   ; AD_IN[8]    ;        ; 13.432 ; 13.432 ;        ;
+; AD_IN[4]   ; AD_IN[9]    ;        ; 13.443 ; 13.443 ;        ;
+; AD_IN[4]   ; AD_IN[10]   ;        ; 13.431 ; 13.431 ;        ;
+; AD_IN[4]   ; AD_IN[11]   ;        ; 13.435 ; 13.435 ;        ;
+; AD_IN[4]   ; AD_IN[12]   ;        ; 13.096 ; 13.096 ;        ;
+; AD_IN[4]   ; AD_IN[13]   ;        ; 13.090 ; 13.090 ;        ;
+; AD_IN[4]   ; AD_IN[14]   ;        ; 13.431 ; 13.431 ;        ;
+; AD_IN[4]   ; AD_IN[15]   ;        ; 13.440 ; 13.440 ;        ;
+; AD_IN[5]   ; AD_IN[0]    ;        ; 13.912 ; 13.912 ;        ;
+; AD_IN[5]   ; AD_IN[1]    ;        ; 13.510 ; 13.510 ;        ;
+; AD_IN[5]   ; AD_IN[2]    ;        ; 13.666 ; 13.666 ;        ;
+; AD_IN[5]   ; AD_IN[3]    ;        ; 13.665 ; 13.665 ;        ;
+; AD_IN[5]   ; AD_IN[4]    ;        ; 13.697 ; 13.697 ;        ;
+; AD_IN[5]   ; AD_IN[5]    ;        ; 13.328 ; 13.328 ;        ;
+; AD_IN[5]   ; AD_IN[6]    ;        ; 13.320 ; 13.320 ;        ;
+; AD_IN[5]   ; AD_IN[7]    ;        ; 13.316 ; 13.316 ;        ;
+; AD_IN[5]   ; AD_IN[8]    ;        ; 13.305 ; 13.305 ;        ;
+; AD_IN[5]   ; AD_IN[9]    ;        ; 13.316 ; 13.316 ;        ;
+; AD_IN[5]   ; AD_IN[10]   ;        ; 13.304 ; 13.304 ;        ;
+; AD_IN[5]   ; AD_IN[11]   ;        ; 13.308 ; 13.308 ;        ;
+; AD_IN[5]   ; AD_IN[12]   ;        ; 12.969 ; 12.969 ;        ;
+; AD_IN[5]   ; AD_IN[13]   ;        ; 12.963 ; 12.963 ;        ;
+; AD_IN[5]   ; AD_IN[14]   ;        ; 13.304 ; 13.304 ;        ;
+; AD_IN[5]   ; AD_IN[15]   ;        ; 13.313 ; 13.313 ;        ;
+; AD_IN[6]   ; AD_IN[0]    ;        ; 14.185 ; 14.185 ;        ;
+; AD_IN[6]   ; AD_IN[1]    ;        ; 13.783 ; 13.783 ;        ;
+; AD_IN[6]   ; AD_IN[2]    ;        ; 13.939 ; 13.939 ;        ;
+; AD_IN[6]   ; AD_IN[3]    ;        ; 13.938 ; 13.938 ;        ;
+; AD_IN[6]   ; AD_IN[4]    ;        ; 13.970 ; 13.970 ;        ;
+; AD_IN[6]   ; AD_IN[5]    ;        ; 13.601 ; 13.601 ;        ;
+; AD_IN[6]   ; AD_IN[6]    ;        ; 13.593 ; 13.593 ;        ;
+; AD_IN[6]   ; AD_IN[7]    ;        ; 13.589 ; 13.589 ;        ;
+; AD_IN[6]   ; AD_IN[8]    ;        ; 13.578 ; 13.578 ;        ;
+; AD_IN[6]   ; AD_IN[9]    ;        ; 13.589 ; 13.589 ;        ;
+; AD_IN[6]   ; AD_IN[10]   ;        ; 13.577 ; 13.577 ;        ;
+; AD_IN[6]   ; AD_IN[11]   ;        ; 13.581 ; 13.581 ;        ;
+; AD_IN[6]   ; AD_IN[12]   ;        ; 13.242 ; 13.242 ;        ;
+; AD_IN[6]   ; AD_IN[13]   ;        ; 13.236 ; 13.236 ;        ;
+; AD_IN[6]   ; AD_IN[14]   ;        ; 13.577 ; 13.577 ;        ;
+; AD_IN[6]   ; AD_IN[15]   ;        ; 13.586 ; 13.586 ;        ;
+; AD_IN[7]   ; AD_IN[0]    ;        ; 13.854 ; 13.854 ;        ;
+; AD_IN[7]   ; AD_IN[1]    ;        ; 13.452 ; 13.452 ;        ;
+; AD_IN[7]   ; AD_IN[2]    ;        ; 13.608 ; 13.608 ;        ;
+; AD_IN[7]   ; AD_IN[3]    ;        ; 13.607 ; 13.607 ;        ;
+; AD_IN[7]   ; AD_IN[4]    ;        ; 13.639 ; 13.639 ;        ;
+; AD_IN[7]   ; AD_IN[5]    ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[7]   ; AD_IN[6]    ;        ; 13.262 ; 13.262 ;        ;
+; AD_IN[7]   ; AD_IN[7]    ;        ; 13.258 ; 13.258 ;        ;
+; AD_IN[7]   ; AD_IN[8]    ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[7]   ; AD_IN[9]    ;        ; 13.258 ; 13.258 ;        ;
+; AD_IN[7]   ; AD_IN[10]   ;        ; 13.246 ; 13.246 ;        ;
+; AD_IN[7]   ; AD_IN[11]   ;        ; 13.250 ; 13.250 ;        ;
+; AD_IN[7]   ; AD_IN[12]   ;        ; 12.911 ; 12.911 ;        ;
+; AD_IN[7]   ; AD_IN[13]   ;        ; 12.905 ; 12.905 ;        ;
+; AD_IN[7]   ; AD_IN[14]   ;        ; 13.246 ; 13.246 ;        ;
+; AD_IN[7]   ; AD_IN[15]   ;        ; 13.255 ; 13.255 ;        ;
+; AD_IN[8]   ; AD_IN[0]    ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[8]   ; AD_IN[1]    ;        ; 13.610 ; 13.610 ;        ;
+; AD_IN[8]   ; AD_IN[2]    ;        ; 13.766 ; 13.766 ;        ;
+; AD_IN[8]   ; AD_IN[3]    ;        ; 13.765 ; 13.765 ;        ;
+; AD_IN[8]   ; AD_IN[4]    ;        ; 13.797 ; 13.797 ;        ;
+; AD_IN[8]   ; AD_IN[5]    ;        ; 13.428 ; 13.428 ;        ;
+; AD_IN[8]   ; AD_IN[6]    ;        ; 13.420 ; 13.420 ;        ;
+; AD_IN[8]   ; AD_IN[7]    ;        ; 13.416 ; 13.416 ;        ;
+; AD_IN[8]   ; AD_IN[8]    ;        ; 13.405 ; 13.405 ;        ;
+; AD_IN[8]   ; AD_IN[9]    ;        ; 13.416 ; 13.416 ;        ;
+; AD_IN[8]   ; AD_IN[10]   ;        ; 13.404 ; 13.404 ;        ;
+; AD_IN[8]   ; AD_IN[11]   ;        ; 13.408 ; 13.408 ;        ;
+; AD_IN[8]   ; AD_IN[12]   ;        ; 13.069 ; 13.069 ;        ;
+; AD_IN[8]   ; AD_IN[13]   ;        ; 13.063 ; 13.063 ;        ;
+; AD_IN[8]   ; AD_IN[14]   ;        ; 13.404 ; 13.404 ;        ;
+; AD_IN[8]   ; AD_IN[15]   ;        ; 13.413 ; 13.413 ;        ;
+; AD_IN[9]   ; AD_IN[0]    ;        ; 13.654 ; 13.654 ;        ;
+; AD_IN[9]   ; AD_IN[1]    ;        ; 13.252 ; 13.252 ;        ;
+; AD_IN[9]   ; AD_IN[2]    ;        ; 13.408 ; 13.408 ;        ;
+; AD_IN[9]   ; AD_IN[3]    ;        ; 13.407 ; 13.407 ;        ;
+; AD_IN[9]   ; AD_IN[4]    ;        ; 13.439 ; 13.439 ;        ;
+; AD_IN[9]   ; AD_IN[5]    ;        ; 13.070 ; 13.070 ;        ;
+; AD_IN[9]   ; AD_IN[6]    ;        ; 13.062 ; 13.062 ;        ;
+; AD_IN[9]   ; AD_IN[7]    ;        ; 13.058 ; 13.058 ;        ;
+; AD_IN[9]   ; AD_IN[8]    ;        ; 13.047 ; 13.047 ;        ;
+; AD_IN[9]   ; AD_IN[9]    ;        ; 13.058 ; 13.058 ;        ;
+; AD_IN[9]   ; AD_IN[10]   ;        ; 13.046 ; 13.046 ;        ;
+; AD_IN[9]   ; AD_IN[11]   ;        ; 13.050 ; 13.050 ;        ;
+; AD_IN[9]   ; AD_IN[12]   ;        ; 12.711 ; 12.711 ;        ;
+; AD_IN[9]   ; AD_IN[13]   ;        ; 12.705 ; 12.705 ;        ;
+; AD_IN[9]   ; AD_IN[14]   ;        ; 13.046 ; 13.046 ;        ;
+; AD_IN[9]   ; AD_IN[15]   ;        ; 13.055 ; 13.055 ;        ;
+; AD_IN[10]  ; AD_IN[0]    ;        ; 13.490 ; 13.490 ;        ;
+; AD_IN[10]  ; AD_IN[1]    ;        ; 13.088 ; 13.088 ;        ;
+; AD_IN[10]  ; AD_IN[2]    ;        ; 13.244 ; 13.244 ;        ;
+; AD_IN[10]  ; AD_IN[3]    ;        ; 13.243 ; 13.243 ;        ;
+; AD_IN[10]  ; AD_IN[4]    ;        ; 13.275 ; 13.275 ;        ;
+; AD_IN[10]  ; AD_IN[5]    ;        ; 12.906 ; 12.906 ;        ;
+; AD_IN[10]  ; AD_IN[6]    ;        ; 12.898 ; 12.898 ;        ;
+; AD_IN[10]  ; AD_IN[7]    ;        ; 12.894 ; 12.894 ;        ;
+; AD_IN[10]  ; AD_IN[8]    ;        ; 12.883 ; 12.883 ;        ;
+; AD_IN[10]  ; AD_IN[9]    ;        ; 12.894 ; 12.894 ;        ;
+; AD_IN[10]  ; AD_IN[10]   ;        ; 12.882 ; 12.882 ;        ;
+; AD_IN[10]  ; AD_IN[11]   ;        ; 12.886 ; 12.886 ;        ;
+; AD_IN[10]  ; AD_IN[12]   ;        ; 12.547 ; 12.547 ;        ;
+; AD_IN[10]  ; AD_IN[13]   ;        ; 12.541 ; 12.541 ;        ;
+; AD_IN[10]  ; AD_IN[14]   ;        ; 12.882 ; 12.882 ;        ;
+; AD_IN[10]  ; AD_IN[15]   ;        ; 12.891 ; 12.891 ;        ;
+; AD_IN[11]  ; AD_IN[0]    ;        ; 13.597 ; 13.597 ;        ;
+; AD_IN[11]  ; AD_IN[1]    ;        ; 13.195 ; 13.195 ;        ;
+; AD_IN[11]  ; AD_IN[2]    ;        ; 13.351 ; 13.351 ;        ;
+; AD_IN[11]  ; AD_IN[3]    ;        ; 13.350 ; 13.350 ;        ;
+; AD_IN[11]  ; AD_IN[4]    ;        ; 13.382 ; 13.382 ;        ;
+; AD_IN[11]  ; AD_IN[5]    ;        ; 13.013 ; 13.013 ;        ;
+; AD_IN[11]  ; AD_IN[6]    ;        ; 13.005 ; 13.005 ;        ;
+; AD_IN[11]  ; AD_IN[7]    ;        ; 13.001 ; 13.001 ;        ;
+; AD_IN[11]  ; AD_IN[8]    ;        ; 12.990 ; 12.990 ;        ;
+; AD_IN[11]  ; AD_IN[9]    ;        ; 13.001 ; 13.001 ;        ;
+; AD_IN[11]  ; AD_IN[10]   ;        ; 12.989 ; 12.989 ;        ;
+; AD_IN[11]  ; AD_IN[11]   ;        ; 12.993 ; 12.993 ;        ;
+; AD_IN[11]  ; AD_IN[12]   ;        ; 12.654 ; 12.654 ;        ;
+; AD_IN[11]  ; AD_IN[13]   ;        ; 12.648 ; 12.648 ;        ;
+; AD_IN[11]  ; AD_IN[14]   ;        ; 12.989 ; 12.989 ;        ;
+; AD_IN[11]  ; AD_IN[15]   ;        ; 12.998 ; 12.998 ;        ;
+; AD_IN[12]  ; AD_IN[0]    ;        ; 13.878 ; 13.878 ;        ;
+; AD_IN[12]  ; AD_IN[1]    ;        ; 13.476 ; 13.476 ;        ;
+; AD_IN[12]  ; AD_IN[2]    ;        ; 13.632 ; 13.632 ;        ;
+; AD_IN[12]  ; AD_IN[3]    ;        ; 13.631 ; 13.631 ;        ;
+; AD_IN[12]  ; AD_IN[4]    ;        ; 13.663 ; 13.663 ;        ;
+; AD_IN[12]  ; AD_IN[5]    ;        ; 13.294 ; 13.294 ;        ;
+; AD_IN[12]  ; AD_IN[6]    ;        ; 13.286 ; 13.286 ;        ;
+; AD_IN[12]  ; AD_IN[7]    ;        ; 13.282 ; 13.282 ;        ;
+; AD_IN[12]  ; AD_IN[8]    ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[12]  ; AD_IN[9]    ;        ; 13.282 ; 13.282 ;        ;
+; AD_IN[12]  ; AD_IN[10]   ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[12]  ; AD_IN[11]   ;        ; 13.274 ; 13.274 ;        ;
+; AD_IN[12]  ; AD_IN[12]   ;        ; 12.935 ; 12.935 ;        ;
+; AD_IN[12]  ; AD_IN[13]   ;        ; 12.929 ; 12.929 ;        ;
+; AD_IN[12]  ; AD_IN[14]   ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[12]  ; AD_IN[15]   ;        ; 13.279 ; 13.279 ;        ;
+; AD_IN[13]  ; AD_IN[0]    ;        ; 13.855 ; 13.855 ;        ;
+; AD_IN[13]  ; AD_IN[1]    ;        ; 13.453 ; 13.453 ;        ;
+; AD_IN[13]  ; AD_IN[2]    ;        ; 13.609 ; 13.609 ;        ;
+; AD_IN[13]  ; AD_IN[3]    ;        ; 13.608 ; 13.608 ;        ;
+; AD_IN[13]  ; AD_IN[4]    ;        ; 13.640 ; 13.640 ;        ;
+; AD_IN[13]  ; AD_IN[5]    ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[13]  ; AD_IN[6]    ;        ; 13.263 ; 13.263 ;        ;
+; AD_IN[13]  ; AD_IN[7]    ;        ; 13.259 ; 13.259 ;        ;
+; AD_IN[13]  ; AD_IN[8]    ;        ; 13.248 ; 13.248 ;        ;
+; AD_IN[13]  ; AD_IN[9]    ;        ; 13.259 ; 13.259 ;        ;
+; AD_IN[13]  ; AD_IN[10]   ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[13]  ; AD_IN[11]   ;        ; 13.251 ; 13.251 ;        ;
+; AD_IN[13]  ; AD_IN[12]   ;        ; 12.912 ; 12.912 ;        ;
+; AD_IN[13]  ; AD_IN[13]   ;        ; 12.906 ; 12.906 ;        ;
+; AD_IN[13]  ; AD_IN[14]   ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[13]  ; AD_IN[15]   ;        ; 13.256 ; 13.256 ;        ;
+; AD_IN[14]  ; AD_IN[0]    ;        ; 14.044 ; 14.044 ;        ;
+; AD_IN[14]  ; AD_IN[1]    ;        ; 13.642 ; 13.642 ;        ;
+; AD_IN[14]  ; AD_IN[2]    ;        ; 13.798 ; 13.798 ;        ;
+; AD_IN[14]  ; AD_IN[3]    ;        ; 13.797 ; 13.797 ;        ;
+; AD_IN[14]  ; AD_IN[4]    ;        ; 13.829 ; 13.829 ;        ;
+; AD_IN[14]  ; AD_IN[5]    ;        ; 13.460 ; 13.460 ;        ;
+; AD_IN[14]  ; AD_IN[6]    ;        ; 13.452 ; 13.452 ;        ;
+; AD_IN[14]  ; AD_IN[7]    ;        ; 13.448 ; 13.448 ;        ;
+; AD_IN[14]  ; AD_IN[8]    ;        ; 13.437 ; 13.437 ;        ;
+; AD_IN[14]  ; AD_IN[9]    ;        ; 13.448 ; 13.448 ;        ;
+; AD_IN[14]  ; AD_IN[10]   ;        ; 13.436 ; 13.436 ;        ;
+; AD_IN[14]  ; AD_IN[11]   ;        ; 13.440 ; 13.440 ;        ;
+; AD_IN[14]  ; AD_IN[12]   ;        ; 13.101 ; 13.101 ;        ;
+; AD_IN[14]  ; AD_IN[13]   ;        ; 13.095 ; 13.095 ;        ;
+; AD_IN[14]  ; AD_IN[14]   ;        ; 13.436 ; 13.436 ;        ;
+; AD_IN[14]  ; AD_IN[15]   ;        ; 13.445 ; 13.445 ;        ;
+; AD_IN[15]  ; AD_IN[0]    ;        ; 14.214 ; 14.214 ;        ;
+; AD_IN[15]  ; AD_IN[1]    ;        ; 13.812 ; 13.812 ;        ;
+; AD_IN[15]  ; AD_IN[2]    ;        ; 13.968 ; 13.968 ;        ;
+; AD_IN[15]  ; AD_IN[3]    ;        ; 13.967 ; 13.967 ;        ;
+; AD_IN[15]  ; AD_IN[4]    ;        ; 13.999 ; 13.999 ;        ;
+; AD_IN[15]  ; AD_IN[5]    ;        ; 13.630 ; 13.630 ;        ;
+; AD_IN[15]  ; AD_IN[6]    ;        ; 13.622 ; 13.622 ;        ;
+; AD_IN[15]  ; AD_IN[7]    ;        ; 13.618 ; 13.618 ;        ;
+; AD_IN[15]  ; AD_IN[8]    ;        ; 13.607 ; 13.607 ;        ;
+; AD_IN[15]  ; AD_IN[9]    ;        ; 13.618 ; 13.618 ;        ;
+; AD_IN[15]  ; AD_IN[10]   ;        ; 13.606 ; 13.606 ;        ;
+; AD_IN[15]  ; AD_IN[11]   ;        ; 13.610 ; 13.610 ;        ;
+; AD_IN[15]  ; AD_IN[12]   ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[15]  ; AD_IN[13]   ;        ; 13.265 ; 13.265 ;        ;
+; AD_IN[15]  ; AD_IN[14]   ;        ; 13.606 ; 13.606 ;        ;
+; AD_IN[15]  ; AD_IN[15]   ;        ; 13.615 ; 13.615 ;        ;
+; NADV       ; AD_IN[0]    ; 9.174  ;        ;        ; 9.174  ;
+; NADV       ; AD_IN[1]    ; 8.770  ;        ;        ; 8.770  ;
+; NADV       ; AD_IN[2]    ; 8.929  ;        ;        ; 8.929  ;
+; NADV       ; AD_IN[3]    ; 8.928  ;        ;        ; 8.928  ;
+; NADV       ; AD_IN[4]    ; 10.277 ;        ;        ; 10.277 ;
+; NADV       ; AD_IN[5]    ; 9.906  ;        ;        ; 9.906  ;
+; NADV       ; AD_IN[6]    ; 9.898  ;        ;        ; 9.898  ;
+; NADV       ; AD_IN[7]    ; 9.894  ;        ;        ; 9.894  ;
+; NADV       ; AD_IN[8]    ; 9.886  ;        ;        ; 9.886  ;
+; NADV       ; AD_IN[9]    ; 9.893  ;        ;        ; 9.893  ;
+; NADV       ; AD_IN[10]   ; 9.884  ;        ;        ; 9.884  ;
+; NADV       ; AD_IN[11]   ; 9.886  ;        ;        ; 9.886  ;
+; NADV       ; AD_IN[12]   ; 9.547  ;        ;        ; 9.547  ;
+; NADV       ; AD_IN[13]   ; 9.542  ;        ;        ; 9.542  ;
+; NADV       ; AD_IN[14]   ; 9.887  ;        ;        ; 9.887  ;
+; NADV       ; AD_IN[15]   ; 9.890  ;        ;        ; 9.890  ;
+; NOE        ; AD_IN[0]    ; 7.072  ; 7.072  ; 7.072  ; 7.072  ;
+; NOE        ; AD_IN[1]    ; 7.047  ; 7.047  ; 7.047  ; 7.047  ;
+; NOE        ; AD_IN[2]    ; 7.037  ; 7.037  ; 7.037  ; 7.037  ;
+; NOE        ; AD_IN[3]    ; 7.037  ; 7.037  ; 7.037  ; 7.037  ;
+; NOE        ; AD_IN[4]    ; 6.743  ; 6.743  ; 6.743  ; 6.743  ;
+; NOE        ; AD_IN[5]    ; 6.753  ; 6.753  ; 6.753  ; 6.753  ;
+; NOE        ; AD_IN[6]    ; 6.753  ; 6.753  ; 6.753  ; 6.753  ;
+; NOE        ; AD_IN[7]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[8]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[9]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[10]   ; 7.085  ; 7.085  ; 7.085  ; 7.085  ;
+; NOE        ; AD_IN[11]   ; 7.075  ; 7.075  ; 7.075  ; 7.075  ;
+; NOE        ; AD_IN[12]   ; 6.733  ; 6.733  ; 6.733  ; 6.733  ;
+; NOE        ; AD_IN[13]   ; 6.730  ; 6.730  ; 6.730  ; 6.730  ;
+; NOE        ; AD_IN[14]   ; 6.723  ; 6.723  ; 6.723  ; 6.723  ;
+; NOE        ; AD_IN[15]   ; 6.703  ; 6.703  ; 6.703  ; 6.703  ;
++------------+-------------+--------+--------+--------+--------+
+
+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; NWE   ; -1.380 ; -17.380               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'NWE'                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; NWE   ; Rise       ; NWE                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst3|DATA_BUF[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[10]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[10]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[11]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[11]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[12]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[12]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[13]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[13]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[14]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[14]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[15]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[15]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[4]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[4]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[5]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[5]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[6]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[6]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[7]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[7]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[8]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[8]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|DATA_BUF[9]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|DATA_BUF[9]|clk   ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; A16        ; NWE        ; 3.347 ; 3.347 ; Rise       ; NWE             ;
+; A17        ; NWE        ; 3.277 ; 3.277 ; Rise       ; NWE             ;
+; A18        ; NWE        ; 3.363 ; 3.363 ; Rise       ; NWE             ;
+; AD_IN[*]   ; NWE        ; 3.878 ; 3.878 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 3.878 ; 3.878 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 3.651 ; 3.651 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 3.725 ; 3.725 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 3.586 ; 3.586 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 3.454 ; 3.454 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 3.425 ; 3.425 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 3.519 ; 3.519 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 3.431 ; 3.431 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 3.498 ; 3.498 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 3.364 ; 3.364 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 3.320 ; 3.320 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 3.386 ; 3.386 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 3.438 ; 3.438 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 3.395 ; 3.395 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 3.453 ; 3.453 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 3.520 ; 3.520 ; Rise       ; NWE             ;
+; NADV       ; NWE        ; 0.964 ; 0.964 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A16        ; NWE        ; -2.957 ; -2.957 ; Rise       ; NWE             ;
+; A17        ; NWE        ; -2.887 ; -2.887 ; Rise       ; NWE             ;
+; A18        ; NWE        ; -2.973 ; -2.973 ; Rise       ; NWE             ;
+; AD_IN[*]   ; NWE        ; -1.877 ; -1.877 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; -2.041 ; -2.041 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; -1.888 ; -1.888 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; -1.877 ; -1.877 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; -1.882 ; -1.882 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; -2.115 ; -2.115 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; -2.102 ; -2.102 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; -2.096 ; -2.096 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; -2.026 ; -2.026 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; -2.017 ; -2.017 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; -2.006 ; -2.006 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; -1.910 ; -1.910 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; -1.892 ; -1.892 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; -1.906 ; -1.906 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; -1.904 ; -1.904 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; -1.988 ; -1.988 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; -1.974 ; -1.974 ; Rise       ; NWE             ;
+; NADV       ; NWE        ; -0.574 ; -0.574 ; Rise       ; NWE             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; AD_IN[*]   ; NWE        ; 3.791 ; 3.791 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 3.632 ; 3.632 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 3.501 ; 3.501 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 3.607 ; 3.607 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 3.607 ; 3.607 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 3.791 ; 3.791 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 3.682 ; 3.682 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 3.679 ; 3.679 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 3.677 ; 3.677 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 3.677 ; 3.677 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 3.676 ; 3.676 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 3.675 ; 3.675 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 3.670 ; 3.670 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 3.572 ; 3.572 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 3.572 ; 3.572 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 3.675 ; 3.675 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 3.661 ; 3.661 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; AD_IN[*]   ; NWE        ; 3.501 ; 3.501 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 3.632 ; 3.632 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 3.501 ; 3.501 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 3.607 ; 3.607 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 3.607 ; 3.607 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 3.791 ; 3.791 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 3.682 ; 3.682 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 3.679 ; 3.679 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 3.677 ; 3.677 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 3.677 ; 3.677 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 3.676 ; 3.676 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 3.675 ; 3.675 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 3.670 ; 3.670 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 3.572 ; 3.572 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 3.572 ; 3.572 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 3.675 ; 3.675 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 3.661 ; 3.661 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; A16        ; AD_IN[0]    ; 5.993 ;       ;       ; 5.993 ;
+; A16        ; AD_IN[1]    ; 5.860 ;       ;       ; 5.860 ;
+; A16        ; AD_IN[2]    ; 5.971 ;       ;       ; 5.971 ;
+; A16        ; AD_IN[3]    ; 5.971 ;       ;       ; 5.971 ;
+; A16        ; AD_IN[4]    ; 6.376 ;       ;       ; 6.376 ;
+; A16        ; AD_IN[5]    ; 6.272 ;       ;       ; 6.272 ;
+; A16        ; AD_IN[6]    ; 6.269 ;       ;       ; 6.269 ;
+; A16        ; AD_IN[7]    ; 6.267 ;       ;       ; 6.267 ;
+; A16        ; AD_IN[8]    ; 6.256 ;       ;       ; 6.256 ;
+; A16        ; AD_IN[9]    ; 6.264 ;       ;       ; 6.264 ;
+; A16        ; AD_IN[10]   ; 6.257 ;       ;       ; 6.257 ;
+; A16        ; AD_IN[11]   ; 6.251 ;       ;       ; 6.251 ;
+; A16        ; AD_IN[12]   ; 6.161 ;       ;       ; 6.161 ;
+; A16        ; AD_IN[13]   ; 6.155 ;       ;       ; 6.155 ;
+; A16        ; AD_IN[14]   ; 6.251 ;       ;       ; 6.251 ;
+; A16        ; AD_IN[15]   ; 6.250 ;       ;       ; 6.250 ;
+; A17        ; AD_IN[0]    ;       ; 5.923 ; 5.923 ;       ;
+; A17        ; AD_IN[1]    ;       ; 5.790 ; 5.790 ;       ;
+; A17        ; AD_IN[2]    ;       ; 5.901 ; 5.901 ;       ;
+; A17        ; AD_IN[3]    ;       ; 5.901 ; 5.901 ;       ;
+; A17        ; AD_IN[4]    ;       ; 6.306 ; 6.306 ;       ;
+; A17        ; AD_IN[5]    ;       ; 6.202 ; 6.202 ;       ;
+; A17        ; AD_IN[6]    ;       ; 6.199 ; 6.199 ;       ;
+; A17        ; AD_IN[7]    ;       ; 6.197 ; 6.197 ;       ;
+; A17        ; AD_IN[8]    ;       ; 6.186 ; 6.186 ;       ;
+; A17        ; AD_IN[9]    ;       ; 6.194 ; 6.194 ;       ;
+; A17        ; AD_IN[10]   ;       ; 6.187 ; 6.187 ;       ;
+; A17        ; AD_IN[11]   ;       ; 6.181 ; 6.181 ;       ;
+; A17        ; AD_IN[12]   ;       ; 6.091 ; 6.091 ;       ;
+; A17        ; AD_IN[13]   ;       ; 6.085 ; 6.085 ;       ;
+; A17        ; AD_IN[14]   ;       ; 6.181 ; 6.181 ;       ;
+; A17        ; AD_IN[15]   ;       ; 6.180 ; 6.180 ;       ;
+; A18        ; AD_IN[0]    ; 6.009 ;       ;       ; 6.009 ;
+; A18        ; AD_IN[1]    ; 5.876 ;       ;       ; 5.876 ;
+; A18        ; AD_IN[2]    ; 5.987 ;       ;       ; 5.987 ;
+; A18        ; AD_IN[3]    ; 5.987 ;       ;       ; 5.987 ;
+; A18        ; AD_IN[4]    ; 6.392 ;       ;       ; 6.392 ;
+; A18        ; AD_IN[5]    ; 6.288 ;       ;       ; 6.288 ;
+; A18        ; AD_IN[6]    ; 6.285 ;       ;       ; 6.285 ;
+; A18        ; AD_IN[7]    ; 6.283 ;       ;       ; 6.283 ;
+; A18        ; AD_IN[8]    ; 6.272 ;       ;       ; 6.272 ;
+; A18        ; AD_IN[9]    ; 6.280 ;       ;       ; 6.280 ;
+; A18        ; AD_IN[10]   ; 6.273 ;       ;       ; 6.273 ;
+; A18        ; AD_IN[11]   ; 6.267 ;       ;       ; 6.267 ;
+; A18        ; AD_IN[12]   ; 6.177 ;       ;       ; 6.177 ;
+; A18        ; AD_IN[13]   ; 6.171 ;       ;       ; 6.171 ;
+; A18        ; AD_IN[14]   ; 6.267 ;       ;       ; 6.267 ;
+; A18        ; AD_IN[15]   ; 6.266 ;       ;       ; 6.266 ;
+; AD_IN[0]   ; AD_IN[0]    ; 6.462 ;       ;       ; 6.462 ;
+; AD_IN[0]   ; AD_IN[1]    ; 6.331 ;       ;       ; 6.331 ;
+; AD_IN[0]   ; AD_IN[2]    ; 6.440 ;       ;       ; 6.440 ;
+; AD_IN[0]   ; AD_IN[3]    ; 6.440 ;       ;       ; 6.440 ;
+; AD_IN[0]   ; AD_IN[4]    ; 6.461 ;       ;       ; 6.461 ;
+; AD_IN[0]   ; AD_IN[5]    ; 6.359 ;       ;       ; 6.359 ;
+; AD_IN[0]   ; AD_IN[6]    ; 6.356 ;       ;       ; 6.356 ;
+; AD_IN[0]   ; AD_IN[7]    ; 6.354 ;       ;       ; 6.354 ;
+; AD_IN[0]   ; AD_IN[8]    ; 6.341 ;       ;       ; 6.341 ;
+; AD_IN[0]   ; AD_IN[9]    ; 6.351 ;       ;       ; 6.351 ;
+; AD_IN[0]   ; AD_IN[10]   ; 6.342 ;       ;       ; 6.342 ;
+; AD_IN[0]   ; AD_IN[11]   ; 6.337 ;       ;       ; 6.337 ;
+; AD_IN[0]   ; AD_IN[12]   ; 6.248 ;       ;       ; 6.248 ;
+; AD_IN[0]   ; AD_IN[13]   ; 6.242 ;       ;       ; 6.242 ;
+; AD_IN[0]   ; AD_IN[14]   ; 6.335 ;       ;       ; 6.335 ;
+; AD_IN[0]   ; AD_IN[15]   ; 6.337 ;       ;       ; 6.337 ;
+; AD_IN[1]   ; AD_IN[0]    ;       ; 6.235 ; 6.235 ;       ;
+; AD_IN[1]   ; AD_IN[1]    ;       ; 6.104 ; 6.104 ;       ;
+; AD_IN[1]   ; AD_IN[2]    ;       ; 6.213 ; 6.213 ;       ;
+; AD_IN[1]   ; AD_IN[3]    ;       ; 6.213 ; 6.213 ;       ;
+; AD_IN[1]   ; AD_IN[4]    ;       ; 6.234 ; 6.234 ;       ;
+; AD_IN[1]   ; AD_IN[5]    ;       ; 6.132 ; 6.132 ;       ;
+; AD_IN[1]   ; AD_IN[6]    ;       ; 6.129 ; 6.129 ;       ;
+; AD_IN[1]   ; AD_IN[7]    ;       ; 6.127 ; 6.127 ;       ;
+; AD_IN[1]   ; AD_IN[8]    ;       ; 6.114 ; 6.114 ;       ;
+; AD_IN[1]   ; AD_IN[9]    ;       ; 6.124 ; 6.124 ;       ;
+; AD_IN[1]   ; AD_IN[10]   ;       ; 6.115 ; 6.115 ;       ;
+; AD_IN[1]   ; AD_IN[11]   ;       ; 6.110 ; 6.110 ;       ;
+; AD_IN[1]   ; AD_IN[12]   ;       ; 6.021 ; 6.021 ;       ;
+; AD_IN[1]   ; AD_IN[13]   ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[1]   ; AD_IN[14]   ;       ; 6.108 ; 6.108 ;       ;
+; AD_IN[1]   ; AD_IN[15]   ;       ; 6.110 ; 6.110 ;       ;
+; AD_IN[2]   ; AD_IN[0]    ;       ; 6.309 ; 6.309 ;       ;
+; AD_IN[2]   ; AD_IN[1]    ;       ; 6.178 ; 6.178 ;       ;
+; AD_IN[2]   ; AD_IN[2]    ;       ; 6.287 ; 6.287 ;       ;
+; AD_IN[2]   ; AD_IN[3]    ;       ; 6.287 ; 6.287 ;       ;
+; AD_IN[2]   ; AD_IN[4]    ;       ; 6.308 ; 6.308 ;       ;
+; AD_IN[2]   ; AD_IN[5]    ;       ; 6.206 ; 6.206 ;       ;
+; AD_IN[2]   ; AD_IN[6]    ;       ; 6.203 ; 6.203 ;       ;
+; AD_IN[2]   ; AD_IN[7]    ;       ; 6.201 ; 6.201 ;       ;
+; AD_IN[2]   ; AD_IN[8]    ;       ; 6.188 ; 6.188 ;       ;
+; AD_IN[2]   ; AD_IN[9]    ;       ; 6.198 ; 6.198 ;       ;
+; AD_IN[2]   ; AD_IN[10]   ;       ; 6.189 ; 6.189 ;       ;
+; AD_IN[2]   ; AD_IN[11]   ;       ; 6.184 ; 6.184 ;       ;
+; AD_IN[2]   ; AD_IN[12]   ;       ; 6.095 ; 6.095 ;       ;
+; AD_IN[2]   ; AD_IN[13]   ;       ; 6.089 ; 6.089 ;       ;
+; AD_IN[2]   ; AD_IN[14]   ;       ; 6.182 ; 6.182 ;       ;
+; AD_IN[2]   ; AD_IN[15]   ;       ; 6.184 ; 6.184 ;       ;
+; AD_IN[3]   ; AD_IN[0]    ;       ; 6.170 ; 6.170 ;       ;
+; AD_IN[3]   ; AD_IN[1]    ;       ; 6.039 ; 6.039 ;       ;
+; AD_IN[3]   ; AD_IN[2]    ;       ; 6.148 ; 6.148 ;       ;
+; AD_IN[3]   ; AD_IN[3]    ;       ; 6.148 ; 6.148 ;       ;
+; AD_IN[3]   ; AD_IN[4]    ;       ; 6.169 ; 6.169 ;       ;
+; AD_IN[3]   ; AD_IN[5]    ;       ; 6.067 ; 6.067 ;       ;
+; AD_IN[3]   ; AD_IN[6]    ;       ; 6.064 ; 6.064 ;       ;
+; AD_IN[3]   ; AD_IN[7]    ;       ; 6.062 ; 6.062 ;       ;
+; AD_IN[3]   ; AD_IN[8]    ;       ; 6.049 ; 6.049 ;       ;
+; AD_IN[3]   ; AD_IN[9]    ;       ; 6.059 ; 6.059 ;       ;
+; AD_IN[3]   ; AD_IN[10]   ;       ; 6.050 ; 6.050 ;       ;
+; AD_IN[3]   ; AD_IN[11]   ;       ; 6.045 ; 6.045 ;       ;
+; AD_IN[3]   ; AD_IN[12]   ;       ; 5.956 ; 5.956 ;       ;
+; AD_IN[3]   ; AD_IN[13]   ;       ; 5.950 ; 5.950 ;       ;
+; AD_IN[3]   ; AD_IN[14]   ;       ; 6.043 ; 6.043 ;       ;
+; AD_IN[3]   ; AD_IN[15]   ;       ; 6.045 ; 6.045 ;       ;
+; AD_IN[4]   ; AD_IN[0]    ;       ; 6.038 ; 6.038 ;       ;
+; AD_IN[4]   ; AD_IN[1]    ;       ; 5.907 ; 5.907 ;       ;
+; AD_IN[4]   ; AD_IN[2]    ;       ; 6.016 ; 6.016 ;       ;
+; AD_IN[4]   ; AD_IN[3]    ;       ; 6.016 ; 6.016 ;       ;
+; AD_IN[4]   ; AD_IN[4]    ;       ; 6.037 ; 6.037 ;       ;
+; AD_IN[4]   ; AD_IN[5]    ;       ; 5.935 ; 5.935 ;       ;
+; AD_IN[4]   ; AD_IN[6]    ;       ; 5.932 ; 5.932 ;       ;
+; AD_IN[4]   ; AD_IN[7]    ;       ; 5.930 ; 5.930 ;       ;
+; AD_IN[4]   ; AD_IN[8]    ;       ; 5.917 ; 5.917 ;       ;
+; AD_IN[4]   ; AD_IN[9]    ;       ; 5.927 ; 5.927 ;       ;
+; AD_IN[4]   ; AD_IN[10]   ;       ; 5.918 ; 5.918 ;       ;
+; AD_IN[4]   ; AD_IN[11]   ;       ; 5.913 ; 5.913 ;       ;
+; AD_IN[4]   ; AD_IN[12]   ;       ; 5.824 ; 5.824 ;       ;
+; AD_IN[4]   ; AD_IN[13]   ;       ; 5.818 ; 5.818 ;       ;
+; AD_IN[4]   ; AD_IN[14]   ;       ; 5.911 ; 5.911 ;       ;
+; AD_IN[4]   ; AD_IN[15]   ;       ; 5.913 ; 5.913 ;       ;
+; AD_IN[5]   ; AD_IN[0]    ;       ; 6.009 ; 6.009 ;       ;
+; AD_IN[5]   ; AD_IN[1]    ;       ; 5.878 ; 5.878 ;       ;
+; AD_IN[5]   ; AD_IN[2]    ;       ; 5.987 ; 5.987 ;       ;
+; AD_IN[5]   ; AD_IN[3]    ;       ; 5.987 ; 5.987 ;       ;
+; AD_IN[5]   ; AD_IN[4]    ;       ; 6.008 ; 6.008 ;       ;
+; AD_IN[5]   ; AD_IN[5]    ;       ; 5.906 ; 5.906 ;       ;
+; AD_IN[5]   ; AD_IN[6]    ;       ; 5.903 ; 5.903 ;       ;
+; AD_IN[5]   ; AD_IN[7]    ;       ; 5.901 ; 5.901 ;       ;
+; AD_IN[5]   ; AD_IN[8]    ;       ; 5.888 ; 5.888 ;       ;
+; AD_IN[5]   ; AD_IN[9]    ;       ; 5.898 ; 5.898 ;       ;
+; AD_IN[5]   ; AD_IN[10]   ;       ; 5.889 ; 5.889 ;       ;
+; AD_IN[5]   ; AD_IN[11]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[5]   ; AD_IN[12]   ;       ; 5.795 ; 5.795 ;       ;
+; AD_IN[5]   ; AD_IN[13]   ;       ; 5.789 ; 5.789 ;       ;
+; AD_IN[5]   ; AD_IN[14]   ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[5]   ; AD_IN[15]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[6]   ; AD_IN[0]    ;       ; 6.103 ; 6.103 ;       ;
+; AD_IN[6]   ; AD_IN[1]    ;       ; 5.972 ; 5.972 ;       ;
+; AD_IN[6]   ; AD_IN[2]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[6]   ; AD_IN[3]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[6]   ; AD_IN[4]    ;       ; 6.102 ; 6.102 ;       ;
+; AD_IN[6]   ; AD_IN[5]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[6]   ; AD_IN[6]    ;       ; 5.997 ; 5.997 ;       ;
+; AD_IN[6]   ; AD_IN[7]    ;       ; 5.995 ; 5.995 ;       ;
+; AD_IN[6]   ; AD_IN[8]    ;       ; 5.982 ; 5.982 ;       ;
+; AD_IN[6]   ; AD_IN[9]    ;       ; 5.992 ; 5.992 ;       ;
+; AD_IN[6]   ; AD_IN[10]   ;       ; 5.983 ; 5.983 ;       ;
+; AD_IN[6]   ; AD_IN[11]   ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[6]   ; AD_IN[12]   ;       ; 5.889 ; 5.889 ;       ;
+; AD_IN[6]   ; AD_IN[13]   ;       ; 5.883 ; 5.883 ;       ;
+; AD_IN[6]   ; AD_IN[14]   ;       ; 5.976 ; 5.976 ;       ;
+; AD_IN[6]   ; AD_IN[15]   ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[7]   ; AD_IN[0]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[7]   ; AD_IN[1]    ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[7]   ; AD_IN[2]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[7]   ; AD_IN[3]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[7]   ; AD_IN[4]    ;       ; 6.014 ; 6.014 ;       ;
+; AD_IN[7]   ; AD_IN[5]    ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[7]   ; AD_IN[6]    ;       ; 5.909 ; 5.909 ;       ;
+; AD_IN[7]   ; AD_IN[7]    ;       ; 5.907 ; 5.907 ;       ;
+; AD_IN[7]   ; AD_IN[8]    ;       ; 5.894 ; 5.894 ;       ;
+; AD_IN[7]   ; AD_IN[9]    ;       ; 5.904 ; 5.904 ;       ;
+; AD_IN[7]   ; AD_IN[10]   ;       ; 5.895 ; 5.895 ;       ;
+; AD_IN[7]   ; AD_IN[11]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[7]   ; AD_IN[12]   ;       ; 5.801 ; 5.801 ;       ;
+; AD_IN[7]   ; AD_IN[13]   ;       ; 5.795 ; 5.795 ;       ;
+; AD_IN[7]   ; AD_IN[14]   ;       ; 5.888 ; 5.888 ;       ;
+; AD_IN[7]   ; AD_IN[15]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[8]   ; AD_IN[0]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[8]   ; AD_IN[1]    ;       ; 5.951 ; 5.951 ;       ;
+; AD_IN[8]   ; AD_IN[2]    ;       ; 6.060 ; 6.060 ;       ;
+; AD_IN[8]   ; AD_IN[3]    ;       ; 6.060 ; 6.060 ;       ;
+; AD_IN[8]   ; AD_IN[4]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[8]   ; AD_IN[5]    ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[8]   ; AD_IN[6]    ;       ; 5.976 ; 5.976 ;       ;
+; AD_IN[8]   ; AD_IN[7]    ;       ; 5.974 ; 5.974 ;       ;
+; AD_IN[8]   ; AD_IN[8]    ;       ; 5.961 ; 5.961 ;       ;
+; AD_IN[8]   ; AD_IN[9]    ;       ; 5.971 ; 5.971 ;       ;
+; AD_IN[8]   ; AD_IN[10]   ;       ; 5.962 ; 5.962 ;       ;
+; AD_IN[8]   ; AD_IN[11]   ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[8]   ; AD_IN[12]   ;       ; 5.868 ; 5.868 ;       ;
+; AD_IN[8]   ; AD_IN[13]   ;       ; 5.862 ; 5.862 ;       ;
+; AD_IN[8]   ; AD_IN[14]   ;       ; 5.955 ; 5.955 ;       ;
+; AD_IN[8]   ; AD_IN[15]   ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[9]   ; AD_IN[0]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[9]   ; AD_IN[1]    ;       ; 5.817 ; 5.817 ;       ;
+; AD_IN[9]   ; AD_IN[2]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[9]   ; AD_IN[3]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[9]   ; AD_IN[4]    ;       ; 5.947 ; 5.947 ;       ;
+; AD_IN[9]   ; AD_IN[5]    ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[9]   ; AD_IN[6]    ;       ; 5.842 ; 5.842 ;       ;
+; AD_IN[9]   ; AD_IN[7]    ;       ; 5.840 ; 5.840 ;       ;
+; AD_IN[9]   ; AD_IN[8]    ;       ; 5.827 ; 5.827 ;       ;
+; AD_IN[9]   ; AD_IN[9]    ;       ; 5.837 ; 5.837 ;       ;
+; AD_IN[9]   ; AD_IN[10]   ;       ; 5.828 ; 5.828 ;       ;
+; AD_IN[9]   ; AD_IN[11]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[9]   ; AD_IN[12]   ;       ; 5.734 ; 5.734 ;       ;
+; AD_IN[9]   ; AD_IN[13]   ;       ; 5.728 ; 5.728 ;       ;
+; AD_IN[9]   ; AD_IN[14]   ;       ; 5.821 ; 5.821 ;       ;
+; AD_IN[9]   ; AD_IN[15]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[10]  ; AD_IN[0]    ;       ; 5.904 ; 5.904 ;       ;
+; AD_IN[10]  ; AD_IN[1]    ;       ; 5.773 ; 5.773 ;       ;
+; AD_IN[10]  ; AD_IN[2]    ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[10]  ; AD_IN[3]    ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[10]  ; AD_IN[4]    ;       ; 5.903 ; 5.903 ;       ;
+; AD_IN[10]  ; AD_IN[5]    ;       ; 5.801 ; 5.801 ;       ;
+; AD_IN[10]  ; AD_IN[6]    ;       ; 5.798 ; 5.798 ;       ;
+; AD_IN[10]  ; AD_IN[7]    ;       ; 5.796 ; 5.796 ;       ;
+; AD_IN[10]  ; AD_IN[8]    ;       ; 5.783 ; 5.783 ;       ;
+; AD_IN[10]  ; AD_IN[9]    ;       ; 5.793 ; 5.793 ;       ;
+; AD_IN[10]  ; AD_IN[10]   ;       ; 5.784 ; 5.784 ;       ;
+; AD_IN[10]  ; AD_IN[11]   ;       ; 5.779 ; 5.779 ;       ;
+; AD_IN[10]  ; AD_IN[12]   ;       ; 5.690 ; 5.690 ;       ;
+; AD_IN[10]  ; AD_IN[13]   ;       ; 5.684 ; 5.684 ;       ;
+; AD_IN[10]  ; AD_IN[14]   ;       ; 5.777 ; 5.777 ;       ;
+; AD_IN[10]  ; AD_IN[15]   ;       ; 5.779 ; 5.779 ;       ;
+; AD_IN[11]  ; AD_IN[0]    ;       ; 5.970 ; 5.970 ;       ;
+; AD_IN[11]  ; AD_IN[1]    ;       ; 5.839 ; 5.839 ;       ;
+; AD_IN[11]  ; AD_IN[2]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[11]  ; AD_IN[3]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[11]  ; AD_IN[4]    ;       ; 5.969 ; 5.969 ;       ;
+; AD_IN[11]  ; AD_IN[5]    ;       ; 5.867 ; 5.867 ;       ;
+; AD_IN[11]  ; AD_IN[6]    ;       ; 5.864 ; 5.864 ;       ;
+; AD_IN[11]  ; AD_IN[7]    ;       ; 5.862 ; 5.862 ;       ;
+; AD_IN[11]  ; AD_IN[8]    ;       ; 5.849 ; 5.849 ;       ;
+; AD_IN[11]  ; AD_IN[9]    ;       ; 5.859 ; 5.859 ;       ;
+; AD_IN[11]  ; AD_IN[10]   ;       ; 5.850 ; 5.850 ;       ;
+; AD_IN[11]  ; AD_IN[11]   ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[11]  ; AD_IN[12]   ;       ; 5.756 ; 5.756 ;       ;
+; AD_IN[11]  ; AD_IN[13]   ;       ; 5.750 ; 5.750 ;       ;
+; AD_IN[11]  ; AD_IN[14]   ;       ; 5.843 ; 5.843 ;       ;
+; AD_IN[11]  ; AD_IN[15]   ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[12]  ; AD_IN[0]    ;       ; 6.022 ; 6.022 ;       ;
+; AD_IN[12]  ; AD_IN[1]    ;       ; 5.891 ; 5.891 ;       ;
+; AD_IN[12]  ; AD_IN[2]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[12]  ; AD_IN[3]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[12]  ; AD_IN[4]    ;       ; 6.021 ; 6.021 ;       ;
+; AD_IN[12]  ; AD_IN[5]    ;       ; 5.919 ; 5.919 ;       ;
+; AD_IN[12]  ; AD_IN[6]    ;       ; 5.916 ; 5.916 ;       ;
+; AD_IN[12]  ; AD_IN[7]    ;       ; 5.914 ; 5.914 ;       ;
+; AD_IN[12]  ; AD_IN[8]    ;       ; 5.901 ; 5.901 ;       ;
+; AD_IN[12]  ; AD_IN[9]    ;       ; 5.911 ; 5.911 ;       ;
+; AD_IN[12]  ; AD_IN[10]   ;       ; 5.902 ; 5.902 ;       ;
+; AD_IN[12]  ; AD_IN[11]   ;       ; 5.897 ; 5.897 ;       ;
+; AD_IN[12]  ; AD_IN[12]   ;       ; 5.808 ; 5.808 ;       ;
+; AD_IN[12]  ; AD_IN[13]   ;       ; 5.802 ; 5.802 ;       ;
+; AD_IN[12]  ; AD_IN[14]   ;       ; 5.895 ; 5.895 ;       ;
+; AD_IN[12]  ; AD_IN[15]   ;       ; 5.897 ; 5.897 ;       ;
+; AD_IN[13]  ; AD_IN[0]    ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[13]  ; AD_IN[1]    ;       ; 5.848 ; 5.848 ;       ;
+; AD_IN[13]  ; AD_IN[2]    ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[13]  ; AD_IN[3]    ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[13]  ; AD_IN[4]    ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[13]  ; AD_IN[5]    ;       ; 5.876 ; 5.876 ;       ;
+; AD_IN[13]  ; AD_IN[6]    ;       ; 5.873 ; 5.873 ;       ;
+; AD_IN[13]  ; AD_IN[7]    ;       ; 5.871 ; 5.871 ;       ;
+; AD_IN[13]  ; AD_IN[8]    ;       ; 5.858 ; 5.858 ;       ;
+; AD_IN[13]  ; AD_IN[9]    ;       ; 5.868 ; 5.868 ;       ;
+; AD_IN[13]  ; AD_IN[10]   ;       ; 5.859 ; 5.859 ;       ;
+; AD_IN[13]  ; AD_IN[11]   ;       ; 5.854 ; 5.854 ;       ;
+; AD_IN[13]  ; AD_IN[12]   ;       ; 5.765 ; 5.765 ;       ;
+; AD_IN[13]  ; AD_IN[13]   ;       ; 5.759 ; 5.759 ;       ;
+; AD_IN[13]  ; AD_IN[14]   ;       ; 5.852 ; 5.852 ;       ;
+; AD_IN[13]  ; AD_IN[15]   ;       ; 5.854 ; 5.854 ;       ;
+; AD_IN[14]  ; AD_IN[0]    ;       ; 6.037 ; 6.037 ;       ;
+; AD_IN[14]  ; AD_IN[1]    ;       ; 5.906 ; 5.906 ;       ;
+; AD_IN[14]  ; AD_IN[2]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[14]  ; AD_IN[3]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[14]  ; AD_IN[4]    ;       ; 6.036 ; 6.036 ;       ;
+; AD_IN[14]  ; AD_IN[5]    ;       ; 5.934 ; 5.934 ;       ;
+; AD_IN[14]  ; AD_IN[6]    ;       ; 5.931 ; 5.931 ;       ;
+; AD_IN[14]  ; AD_IN[7]    ;       ; 5.929 ; 5.929 ;       ;
+; AD_IN[14]  ; AD_IN[8]    ;       ; 5.916 ; 5.916 ;       ;
+; AD_IN[14]  ; AD_IN[9]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[14]  ; AD_IN[10]   ;       ; 5.917 ; 5.917 ;       ;
+; AD_IN[14]  ; AD_IN[11]   ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[14]  ; AD_IN[12]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[14]  ; AD_IN[13]   ;       ; 5.817 ; 5.817 ;       ;
+; AD_IN[14]  ; AD_IN[14]   ;       ; 5.910 ; 5.910 ;       ;
+; AD_IN[14]  ; AD_IN[15]   ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[15]  ; AD_IN[0]    ;       ; 6.104 ; 6.104 ;       ;
+; AD_IN[15]  ; AD_IN[1]    ;       ; 5.973 ; 5.973 ;       ;
+; AD_IN[15]  ; AD_IN[2]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[15]  ; AD_IN[3]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[15]  ; AD_IN[4]    ;       ; 6.103 ; 6.103 ;       ;
+; AD_IN[15]  ; AD_IN[5]    ;       ; 6.001 ; 6.001 ;       ;
+; AD_IN[15]  ; AD_IN[6]    ;       ; 5.998 ; 5.998 ;       ;
+; AD_IN[15]  ; AD_IN[7]    ;       ; 5.996 ; 5.996 ;       ;
+; AD_IN[15]  ; AD_IN[8]    ;       ; 5.983 ; 5.983 ;       ;
+; AD_IN[15]  ; AD_IN[9]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[15]  ; AD_IN[10]   ;       ; 5.984 ; 5.984 ;       ;
+; AD_IN[15]  ; AD_IN[11]   ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[15]  ; AD_IN[12]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[15]  ; AD_IN[13]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[15]  ; AD_IN[14]   ;       ; 5.977 ; 5.977 ;       ;
+; AD_IN[15]  ; AD_IN[15]   ;       ; 5.979 ; 5.979 ;       ;
+; NADV       ; AD_IN[0]    ; 3.610 ;       ;       ; 3.610 ;
+; NADV       ; AD_IN[1]    ; 3.477 ;       ;       ; 3.477 ;
+; NADV       ; AD_IN[2]    ; 3.588 ;       ;       ; 3.588 ;
+; NADV       ; AD_IN[3]    ; 3.588 ;       ;       ; 3.588 ;
+; NADV       ; AD_IN[4]    ; 3.993 ;       ;       ; 3.993 ;
+; NADV       ; AD_IN[5]    ; 3.889 ;       ;       ; 3.889 ;
+; NADV       ; AD_IN[6]    ; 3.886 ;       ;       ; 3.886 ;
+; NADV       ; AD_IN[7]    ; 3.884 ;       ;       ; 3.884 ;
+; NADV       ; AD_IN[8]    ; 3.873 ;       ;       ; 3.873 ;
+; NADV       ; AD_IN[9]    ; 3.881 ;       ;       ; 3.881 ;
+; NADV       ; AD_IN[10]   ; 3.874 ;       ;       ; 3.874 ;
+; NADV       ; AD_IN[11]   ; 3.868 ;       ;       ; 3.868 ;
+; NADV       ; AD_IN[12]   ; 3.778 ;       ;       ; 3.778 ;
+; NADV       ; AD_IN[13]   ; 3.772 ;       ;       ; 3.772 ;
+; NADV       ; AD_IN[14]   ; 3.868 ;       ;       ; 3.868 ;
+; NADV       ; AD_IN[15]   ; 3.867 ;       ;       ; 3.867 ;
+; NOE        ; AD_IN[0]    ; 3.000 ; 3.000 ; 3.000 ; 3.000 ;
+; NOE        ; AD_IN[1]    ; 2.979 ; 2.979 ; 2.979 ; 2.979 ;
+; NOE        ; AD_IN[2]    ; 2.969 ; 2.969 ; 2.969 ; 2.969 ;
+; NOE        ; AD_IN[3]    ; 2.969 ; 2.969 ; 2.969 ; 2.969 ;
+; NOE        ; AD_IN[4]    ; 2.949 ; 2.949 ; 2.949 ; 2.949 ;
+; NOE        ; AD_IN[5]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[6]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[7]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[8]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[9]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[10]   ; 3.050 ; 3.050 ; 3.050 ; 3.050 ;
+; NOE        ; AD_IN[11]   ; 3.040 ; 3.040 ; 3.040 ; 3.040 ;
+; NOE        ; AD_IN[12]   ; 2.942 ; 2.942 ; 2.942 ; 2.942 ;
+; NOE        ; AD_IN[13]   ; 2.939 ; 2.939 ; 2.939 ; 2.939 ;
+; NOE        ; AD_IN[14]   ; 2.932 ; 2.932 ; 2.932 ; 2.932 ;
+; NOE        ; AD_IN[15]   ; 2.912 ; 2.912 ; 2.912 ; 2.912 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; A16        ; AD_IN[0]    ; 5.993 ;       ;       ; 5.993 ;
+; A16        ; AD_IN[1]    ; 5.860 ;       ;       ; 5.860 ;
+; A16        ; AD_IN[2]    ; 5.971 ;       ;       ; 5.971 ;
+; A16        ; AD_IN[3]    ; 5.971 ;       ;       ; 5.971 ;
+; A16        ; AD_IN[4]    ; 6.376 ;       ;       ; 6.376 ;
+; A16        ; AD_IN[5]    ; 6.272 ;       ;       ; 6.272 ;
+; A16        ; AD_IN[6]    ; 6.269 ;       ;       ; 6.269 ;
+; A16        ; AD_IN[7]    ; 6.267 ;       ;       ; 6.267 ;
+; A16        ; AD_IN[8]    ; 6.256 ;       ;       ; 6.256 ;
+; A16        ; AD_IN[9]    ; 6.264 ;       ;       ; 6.264 ;
+; A16        ; AD_IN[10]   ; 6.257 ;       ;       ; 6.257 ;
+; A16        ; AD_IN[11]   ; 6.251 ;       ;       ; 6.251 ;
+; A16        ; AD_IN[12]   ; 6.161 ;       ;       ; 6.161 ;
+; A16        ; AD_IN[13]   ; 6.155 ;       ;       ; 6.155 ;
+; A16        ; AD_IN[14]   ; 6.251 ;       ;       ; 6.251 ;
+; A16        ; AD_IN[15]   ; 6.250 ;       ;       ; 6.250 ;
+; A17        ; AD_IN[0]    ;       ; 5.923 ; 5.923 ;       ;
+; A17        ; AD_IN[1]    ;       ; 5.790 ; 5.790 ;       ;
+; A17        ; AD_IN[2]    ;       ; 5.901 ; 5.901 ;       ;
+; A17        ; AD_IN[3]    ;       ; 5.901 ; 5.901 ;       ;
+; A17        ; AD_IN[4]    ;       ; 6.306 ; 6.306 ;       ;
+; A17        ; AD_IN[5]    ;       ; 6.202 ; 6.202 ;       ;
+; A17        ; AD_IN[6]    ;       ; 6.199 ; 6.199 ;       ;
+; A17        ; AD_IN[7]    ;       ; 6.197 ; 6.197 ;       ;
+; A17        ; AD_IN[8]    ;       ; 6.186 ; 6.186 ;       ;
+; A17        ; AD_IN[9]    ;       ; 6.194 ; 6.194 ;       ;
+; A17        ; AD_IN[10]   ;       ; 6.187 ; 6.187 ;       ;
+; A17        ; AD_IN[11]   ;       ; 6.181 ; 6.181 ;       ;
+; A17        ; AD_IN[12]   ;       ; 6.091 ; 6.091 ;       ;
+; A17        ; AD_IN[13]   ;       ; 6.085 ; 6.085 ;       ;
+; A17        ; AD_IN[14]   ;       ; 6.181 ; 6.181 ;       ;
+; A17        ; AD_IN[15]   ;       ; 6.180 ; 6.180 ;       ;
+; A18        ; AD_IN[0]    ; 6.009 ;       ;       ; 6.009 ;
+; A18        ; AD_IN[1]    ; 5.876 ;       ;       ; 5.876 ;
+; A18        ; AD_IN[2]    ; 5.987 ;       ;       ; 5.987 ;
+; A18        ; AD_IN[3]    ; 5.987 ;       ;       ; 5.987 ;
+; A18        ; AD_IN[4]    ; 6.392 ;       ;       ; 6.392 ;
+; A18        ; AD_IN[5]    ; 6.288 ;       ;       ; 6.288 ;
+; A18        ; AD_IN[6]    ; 6.285 ;       ;       ; 6.285 ;
+; A18        ; AD_IN[7]    ; 6.283 ;       ;       ; 6.283 ;
+; A18        ; AD_IN[8]    ; 6.272 ;       ;       ; 6.272 ;
+; A18        ; AD_IN[9]    ; 6.280 ;       ;       ; 6.280 ;
+; A18        ; AD_IN[10]   ; 6.273 ;       ;       ; 6.273 ;
+; A18        ; AD_IN[11]   ; 6.267 ;       ;       ; 6.267 ;
+; A18        ; AD_IN[12]   ; 6.177 ;       ;       ; 6.177 ;
+; A18        ; AD_IN[13]   ; 6.171 ;       ;       ; 6.171 ;
+; A18        ; AD_IN[14]   ; 6.267 ;       ;       ; 6.267 ;
+; A18        ; AD_IN[15]   ; 6.266 ;       ;       ; 6.266 ;
+; AD_IN[0]   ; AD_IN[0]    ; 6.462 ;       ;       ; 6.462 ;
+; AD_IN[0]   ; AD_IN[1]    ; 6.331 ;       ;       ; 6.331 ;
+; AD_IN[0]   ; AD_IN[2]    ; 6.440 ;       ;       ; 6.440 ;
+; AD_IN[0]   ; AD_IN[3]    ; 6.440 ;       ;       ; 6.440 ;
+; AD_IN[0]   ; AD_IN[4]    ; 6.461 ;       ;       ; 6.461 ;
+; AD_IN[0]   ; AD_IN[5]    ; 6.359 ;       ;       ; 6.359 ;
+; AD_IN[0]   ; AD_IN[6]    ; 6.356 ;       ;       ; 6.356 ;
+; AD_IN[0]   ; AD_IN[7]    ; 6.354 ;       ;       ; 6.354 ;
+; AD_IN[0]   ; AD_IN[8]    ; 6.341 ;       ;       ; 6.341 ;
+; AD_IN[0]   ; AD_IN[9]    ; 6.351 ;       ;       ; 6.351 ;
+; AD_IN[0]   ; AD_IN[10]   ; 6.342 ;       ;       ; 6.342 ;
+; AD_IN[0]   ; AD_IN[11]   ; 6.337 ;       ;       ; 6.337 ;
+; AD_IN[0]   ; AD_IN[12]   ; 6.248 ;       ;       ; 6.248 ;
+; AD_IN[0]   ; AD_IN[13]   ; 6.242 ;       ;       ; 6.242 ;
+; AD_IN[0]   ; AD_IN[14]   ; 6.335 ;       ;       ; 6.335 ;
+; AD_IN[0]   ; AD_IN[15]   ; 6.337 ;       ;       ; 6.337 ;
+; AD_IN[1]   ; AD_IN[0]    ;       ; 6.235 ; 6.235 ;       ;
+; AD_IN[1]   ; AD_IN[1]    ;       ; 6.104 ; 6.104 ;       ;
+; AD_IN[1]   ; AD_IN[2]    ;       ; 6.213 ; 6.213 ;       ;
+; AD_IN[1]   ; AD_IN[3]    ;       ; 6.213 ; 6.213 ;       ;
+; AD_IN[1]   ; AD_IN[4]    ;       ; 6.234 ; 6.234 ;       ;
+; AD_IN[1]   ; AD_IN[5]    ;       ; 6.132 ; 6.132 ;       ;
+; AD_IN[1]   ; AD_IN[6]    ;       ; 6.129 ; 6.129 ;       ;
+; AD_IN[1]   ; AD_IN[7]    ;       ; 6.127 ; 6.127 ;       ;
+; AD_IN[1]   ; AD_IN[8]    ;       ; 6.114 ; 6.114 ;       ;
+; AD_IN[1]   ; AD_IN[9]    ;       ; 6.124 ; 6.124 ;       ;
+; AD_IN[1]   ; AD_IN[10]   ;       ; 6.115 ; 6.115 ;       ;
+; AD_IN[1]   ; AD_IN[11]   ;       ; 6.110 ; 6.110 ;       ;
+; AD_IN[1]   ; AD_IN[12]   ;       ; 6.021 ; 6.021 ;       ;
+; AD_IN[1]   ; AD_IN[13]   ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[1]   ; AD_IN[14]   ;       ; 6.108 ; 6.108 ;       ;
+; AD_IN[1]   ; AD_IN[15]   ;       ; 6.110 ; 6.110 ;       ;
+; AD_IN[2]   ; AD_IN[0]    ;       ; 6.309 ; 6.309 ;       ;
+; AD_IN[2]   ; AD_IN[1]    ;       ; 6.178 ; 6.178 ;       ;
+; AD_IN[2]   ; AD_IN[2]    ;       ; 6.287 ; 6.287 ;       ;
+; AD_IN[2]   ; AD_IN[3]    ;       ; 6.287 ; 6.287 ;       ;
+; AD_IN[2]   ; AD_IN[4]    ;       ; 6.308 ; 6.308 ;       ;
+; AD_IN[2]   ; AD_IN[5]    ;       ; 6.206 ; 6.206 ;       ;
+; AD_IN[2]   ; AD_IN[6]    ;       ; 6.203 ; 6.203 ;       ;
+; AD_IN[2]   ; AD_IN[7]    ;       ; 6.201 ; 6.201 ;       ;
+; AD_IN[2]   ; AD_IN[8]    ;       ; 6.188 ; 6.188 ;       ;
+; AD_IN[2]   ; AD_IN[9]    ;       ; 6.198 ; 6.198 ;       ;
+; AD_IN[2]   ; AD_IN[10]   ;       ; 6.189 ; 6.189 ;       ;
+; AD_IN[2]   ; AD_IN[11]   ;       ; 6.184 ; 6.184 ;       ;
+; AD_IN[2]   ; AD_IN[12]   ;       ; 6.095 ; 6.095 ;       ;
+; AD_IN[2]   ; AD_IN[13]   ;       ; 6.089 ; 6.089 ;       ;
+; AD_IN[2]   ; AD_IN[14]   ;       ; 6.182 ; 6.182 ;       ;
+; AD_IN[2]   ; AD_IN[15]   ;       ; 6.184 ; 6.184 ;       ;
+; AD_IN[3]   ; AD_IN[0]    ;       ; 6.170 ; 6.170 ;       ;
+; AD_IN[3]   ; AD_IN[1]    ;       ; 6.039 ; 6.039 ;       ;
+; AD_IN[3]   ; AD_IN[2]    ;       ; 6.148 ; 6.148 ;       ;
+; AD_IN[3]   ; AD_IN[3]    ;       ; 6.148 ; 6.148 ;       ;
+; AD_IN[3]   ; AD_IN[4]    ;       ; 6.169 ; 6.169 ;       ;
+; AD_IN[3]   ; AD_IN[5]    ;       ; 6.067 ; 6.067 ;       ;
+; AD_IN[3]   ; AD_IN[6]    ;       ; 6.064 ; 6.064 ;       ;
+; AD_IN[3]   ; AD_IN[7]    ;       ; 6.062 ; 6.062 ;       ;
+; AD_IN[3]   ; AD_IN[8]    ;       ; 6.049 ; 6.049 ;       ;
+; AD_IN[3]   ; AD_IN[9]    ;       ; 6.059 ; 6.059 ;       ;
+; AD_IN[3]   ; AD_IN[10]   ;       ; 6.050 ; 6.050 ;       ;
+; AD_IN[3]   ; AD_IN[11]   ;       ; 6.045 ; 6.045 ;       ;
+; AD_IN[3]   ; AD_IN[12]   ;       ; 5.956 ; 5.956 ;       ;
+; AD_IN[3]   ; AD_IN[13]   ;       ; 5.950 ; 5.950 ;       ;
+; AD_IN[3]   ; AD_IN[14]   ;       ; 6.043 ; 6.043 ;       ;
+; AD_IN[3]   ; AD_IN[15]   ;       ; 6.045 ; 6.045 ;       ;
+; AD_IN[4]   ; AD_IN[0]    ;       ; 6.038 ; 6.038 ;       ;
+; AD_IN[4]   ; AD_IN[1]    ;       ; 5.907 ; 5.907 ;       ;
+; AD_IN[4]   ; AD_IN[2]    ;       ; 6.016 ; 6.016 ;       ;
+; AD_IN[4]   ; AD_IN[3]    ;       ; 6.016 ; 6.016 ;       ;
+; AD_IN[4]   ; AD_IN[4]    ;       ; 6.037 ; 6.037 ;       ;
+; AD_IN[4]   ; AD_IN[5]    ;       ; 5.935 ; 5.935 ;       ;
+; AD_IN[4]   ; AD_IN[6]    ;       ; 5.932 ; 5.932 ;       ;
+; AD_IN[4]   ; AD_IN[7]    ;       ; 5.930 ; 5.930 ;       ;
+; AD_IN[4]   ; AD_IN[8]    ;       ; 5.917 ; 5.917 ;       ;
+; AD_IN[4]   ; AD_IN[9]    ;       ; 5.927 ; 5.927 ;       ;
+; AD_IN[4]   ; AD_IN[10]   ;       ; 5.918 ; 5.918 ;       ;
+; AD_IN[4]   ; AD_IN[11]   ;       ; 5.913 ; 5.913 ;       ;
+; AD_IN[4]   ; AD_IN[12]   ;       ; 5.824 ; 5.824 ;       ;
+; AD_IN[4]   ; AD_IN[13]   ;       ; 5.818 ; 5.818 ;       ;
+; AD_IN[4]   ; AD_IN[14]   ;       ; 5.911 ; 5.911 ;       ;
+; AD_IN[4]   ; AD_IN[15]   ;       ; 5.913 ; 5.913 ;       ;
+; AD_IN[5]   ; AD_IN[0]    ;       ; 6.009 ; 6.009 ;       ;
+; AD_IN[5]   ; AD_IN[1]    ;       ; 5.878 ; 5.878 ;       ;
+; AD_IN[5]   ; AD_IN[2]    ;       ; 5.987 ; 5.987 ;       ;
+; AD_IN[5]   ; AD_IN[3]    ;       ; 5.987 ; 5.987 ;       ;
+; AD_IN[5]   ; AD_IN[4]    ;       ; 6.008 ; 6.008 ;       ;
+; AD_IN[5]   ; AD_IN[5]    ;       ; 5.906 ; 5.906 ;       ;
+; AD_IN[5]   ; AD_IN[6]    ;       ; 5.903 ; 5.903 ;       ;
+; AD_IN[5]   ; AD_IN[7]    ;       ; 5.901 ; 5.901 ;       ;
+; AD_IN[5]   ; AD_IN[8]    ;       ; 5.888 ; 5.888 ;       ;
+; AD_IN[5]   ; AD_IN[9]    ;       ; 5.898 ; 5.898 ;       ;
+; AD_IN[5]   ; AD_IN[10]   ;       ; 5.889 ; 5.889 ;       ;
+; AD_IN[5]   ; AD_IN[11]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[5]   ; AD_IN[12]   ;       ; 5.795 ; 5.795 ;       ;
+; AD_IN[5]   ; AD_IN[13]   ;       ; 5.789 ; 5.789 ;       ;
+; AD_IN[5]   ; AD_IN[14]   ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[5]   ; AD_IN[15]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[6]   ; AD_IN[0]    ;       ; 6.103 ; 6.103 ;       ;
+; AD_IN[6]   ; AD_IN[1]    ;       ; 5.972 ; 5.972 ;       ;
+; AD_IN[6]   ; AD_IN[2]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[6]   ; AD_IN[3]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[6]   ; AD_IN[4]    ;       ; 6.102 ; 6.102 ;       ;
+; AD_IN[6]   ; AD_IN[5]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[6]   ; AD_IN[6]    ;       ; 5.997 ; 5.997 ;       ;
+; AD_IN[6]   ; AD_IN[7]    ;       ; 5.995 ; 5.995 ;       ;
+; AD_IN[6]   ; AD_IN[8]    ;       ; 5.982 ; 5.982 ;       ;
+; AD_IN[6]   ; AD_IN[9]    ;       ; 5.992 ; 5.992 ;       ;
+; AD_IN[6]   ; AD_IN[10]   ;       ; 5.983 ; 5.983 ;       ;
+; AD_IN[6]   ; AD_IN[11]   ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[6]   ; AD_IN[12]   ;       ; 5.889 ; 5.889 ;       ;
+; AD_IN[6]   ; AD_IN[13]   ;       ; 5.883 ; 5.883 ;       ;
+; AD_IN[6]   ; AD_IN[14]   ;       ; 5.976 ; 5.976 ;       ;
+; AD_IN[6]   ; AD_IN[15]   ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[7]   ; AD_IN[0]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[7]   ; AD_IN[1]    ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[7]   ; AD_IN[2]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[7]   ; AD_IN[3]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[7]   ; AD_IN[4]    ;       ; 6.014 ; 6.014 ;       ;
+; AD_IN[7]   ; AD_IN[5]    ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[7]   ; AD_IN[6]    ;       ; 5.909 ; 5.909 ;       ;
+; AD_IN[7]   ; AD_IN[7]    ;       ; 5.907 ; 5.907 ;       ;
+; AD_IN[7]   ; AD_IN[8]    ;       ; 5.894 ; 5.894 ;       ;
+; AD_IN[7]   ; AD_IN[9]    ;       ; 5.904 ; 5.904 ;       ;
+; AD_IN[7]   ; AD_IN[10]   ;       ; 5.895 ; 5.895 ;       ;
+; AD_IN[7]   ; AD_IN[11]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[7]   ; AD_IN[12]   ;       ; 5.801 ; 5.801 ;       ;
+; AD_IN[7]   ; AD_IN[13]   ;       ; 5.795 ; 5.795 ;       ;
+; AD_IN[7]   ; AD_IN[14]   ;       ; 5.888 ; 5.888 ;       ;
+; AD_IN[7]   ; AD_IN[15]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[8]   ; AD_IN[0]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[8]   ; AD_IN[1]    ;       ; 5.951 ; 5.951 ;       ;
+; AD_IN[8]   ; AD_IN[2]    ;       ; 6.060 ; 6.060 ;       ;
+; AD_IN[8]   ; AD_IN[3]    ;       ; 6.060 ; 6.060 ;       ;
+; AD_IN[8]   ; AD_IN[4]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[8]   ; AD_IN[5]    ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[8]   ; AD_IN[6]    ;       ; 5.976 ; 5.976 ;       ;
+; AD_IN[8]   ; AD_IN[7]    ;       ; 5.974 ; 5.974 ;       ;
+; AD_IN[8]   ; AD_IN[8]    ;       ; 5.961 ; 5.961 ;       ;
+; AD_IN[8]   ; AD_IN[9]    ;       ; 5.971 ; 5.971 ;       ;
+; AD_IN[8]   ; AD_IN[10]   ;       ; 5.962 ; 5.962 ;       ;
+; AD_IN[8]   ; AD_IN[11]   ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[8]   ; AD_IN[12]   ;       ; 5.868 ; 5.868 ;       ;
+; AD_IN[8]   ; AD_IN[13]   ;       ; 5.862 ; 5.862 ;       ;
+; AD_IN[8]   ; AD_IN[14]   ;       ; 5.955 ; 5.955 ;       ;
+; AD_IN[8]   ; AD_IN[15]   ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[9]   ; AD_IN[0]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[9]   ; AD_IN[1]    ;       ; 5.817 ; 5.817 ;       ;
+; AD_IN[9]   ; AD_IN[2]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[9]   ; AD_IN[3]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[9]   ; AD_IN[4]    ;       ; 5.947 ; 5.947 ;       ;
+; AD_IN[9]   ; AD_IN[5]    ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[9]   ; AD_IN[6]    ;       ; 5.842 ; 5.842 ;       ;
+; AD_IN[9]   ; AD_IN[7]    ;       ; 5.840 ; 5.840 ;       ;
+; AD_IN[9]   ; AD_IN[8]    ;       ; 5.827 ; 5.827 ;       ;
+; AD_IN[9]   ; AD_IN[9]    ;       ; 5.837 ; 5.837 ;       ;
+; AD_IN[9]   ; AD_IN[10]   ;       ; 5.828 ; 5.828 ;       ;
+; AD_IN[9]   ; AD_IN[11]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[9]   ; AD_IN[12]   ;       ; 5.734 ; 5.734 ;       ;
+; AD_IN[9]   ; AD_IN[13]   ;       ; 5.728 ; 5.728 ;       ;
+; AD_IN[9]   ; AD_IN[14]   ;       ; 5.821 ; 5.821 ;       ;
+; AD_IN[9]   ; AD_IN[15]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[10]  ; AD_IN[0]    ;       ; 5.904 ; 5.904 ;       ;
+; AD_IN[10]  ; AD_IN[1]    ;       ; 5.773 ; 5.773 ;       ;
+; AD_IN[10]  ; AD_IN[2]    ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[10]  ; AD_IN[3]    ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[10]  ; AD_IN[4]    ;       ; 5.903 ; 5.903 ;       ;
+; AD_IN[10]  ; AD_IN[5]    ;       ; 5.801 ; 5.801 ;       ;
+; AD_IN[10]  ; AD_IN[6]    ;       ; 5.798 ; 5.798 ;       ;
+; AD_IN[10]  ; AD_IN[7]    ;       ; 5.796 ; 5.796 ;       ;
+; AD_IN[10]  ; AD_IN[8]    ;       ; 5.783 ; 5.783 ;       ;
+; AD_IN[10]  ; AD_IN[9]    ;       ; 5.793 ; 5.793 ;       ;
+; AD_IN[10]  ; AD_IN[10]   ;       ; 5.784 ; 5.784 ;       ;
+; AD_IN[10]  ; AD_IN[11]   ;       ; 5.779 ; 5.779 ;       ;
+; AD_IN[10]  ; AD_IN[12]   ;       ; 5.690 ; 5.690 ;       ;
+; AD_IN[10]  ; AD_IN[13]   ;       ; 5.684 ; 5.684 ;       ;
+; AD_IN[10]  ; AD_IN[14]   ;       ; 5.777 ; 5.777 ;       ;
+; AD_IN[10]  ; AD_IN[15]   ;       ; 5.779 ; 5.779 ;       ;
+; AD_IN[11]  ; AD_IN[0]    ;       ; 5.970 ; 5.970 ;       ;
+; AD_IN[11]  ; AD_IN[1]    ;       ; 5.839 ; 5.839 ;       ;
+; AD_IN[11]  ; AD_IN[2]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[11]  ; AD_IN[3]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[11]  ; AD_IN[4]    ;       ; 5.969 ; 5.969 ;       ;
+; AD_IN[11]  ; AD_IN[5]    ;       ; 5.867 ; 5.867 ;       ;
+; AD_IN[11]  ; AD_IN[6]    ;       ; 5.864 ; 5.864 ;       ;
+; AD_IN[11]  ; AD_IN[7]    ;       ; 5.862 ; 5.862 ;       ;
+; AD_IN[11]  ; AD_IN[8]    ;       ; 5.849 ; 5.849 ;       ;
+; AD_IN[11]  ; AD_IN[9]    ;       ; 5.859 ; 5.859 ;       ;
+; AD_IN[11]  ; AD_IN[10]   ;       ; 5.850 ; 5.850 ;       ;
+; AD_IN[11]  ; AD_IN[11]   ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[11]  ; AD_IN[12]   ;       ; 5.756 ; 5.756 ;       ;
+; AD_IN[11]  ; AD_IN[13]   ;       ; 5.750 ; 5.750 ;       ;
+; AD_IN[11]  ; AD_IN[14]   ;       ; 5.843 ; 5.843 ;       ;
+; AD_IN[11]  ; AD_IN[15]   ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[12]  ; AD_IN[0]    ;       ; 6.022 ; 6.022 ;       ;
+; AD_IN[12]  ; AD_IN[1]    ;       ; 5.891 ; 5.891 ;       ;
+; AD_IN[12]  ; AD_IN[2]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[12]  ; AD_IN[3]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[12]  ; AD_IN[4]    ;       ; 6.021 ; 6.021 ;       ;
+; AD_IN[12]  ; AD_IN[5]    ;       ; 5.919 ; 5.919 ;       ;
+; AD_IN[12]  ; AD_IN[6]    ;       ; 5.916 ; 5.916 ;       ;
+; AD_IN[12]  ; AD_IN[7]    ;       ; 5.914 ; 5.914 ;       ;
+; AD_IN[12]  ; AD_IN[8]    ;       ; 5.901 ; 5.901 ;       ;
+; AD_IN[12]  ; AD_IN[9]    ;       ; 5.911 ; 5.911 ;       ;
+; AD_IN[12]  ; AD_IN[10]   ;       ; 5.902 ; 5.902 ;       ;
+; AD_IN[12]  ; AD_IN[11]   ;       ; 5.897 ; 5.897 ;       ;
+; AD_IN[12]  ; AD_IN[12]   ;       ; 5.808 ; 5.808 ;       ;
+; AD_IN[12]  ; AD_IN[13]   ;       ; 5.802 ; 5.802 ;       ;
+; AD_IN[12]  ; AD_IN[14]   ;       ; 5.895 ; 5.895 ;       ;
+; AD_IN[12]  ; AD_IN[15]   ;       ; 5.897 ; 5.897 ;       ;
+; AD_IN[13]  ; AD_IN[0]    ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[13]  ; AD_IN[1]    ;       ; 5.848 ; 5.848 ;       ;
+; AD_IN[13]  ; AD_IN[2]    ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[13]  ; AD_IN[3]    ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[13]  ; AD_IN[4]    ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[13]  ; AD_IN[5]    ;       ; 5.876 ; 5.876 ;       ;
+; AD_IN[13]  ; AD_IN[6]    ;       ; 5.873 ; 5.873 ;       ;
+; AD_IN[13]  ; AD_IN[7]    ;       ; 5.871 ; 5.871 ;       ;
+; AD_IN[13]  ; AD_IN[8]    ;       ; 5.858 ; 5.858 ;       ;
+; AD_IN[13]  ; AD_IN[9]    ;       ; 5.868 ; 5.868 ;       ;
+; AD_IN[13]  ; AD_IN[10]   ;       ; 5.859 ; 5.859 ;       ;
+; AD_IN[13]  ; AD_IN[11]   ;       ; 5.854 ; 5.854 ;       ;
+; AD_IN[13]  ; AD_IN[12]   ;       ; 5.765 ; 5.765 ;       ;
+; AD_IN[13]  ; AD_IN[13]   ;       ; 5.759 ; 5.759 ;       ;
+; AD_IN[13]  ; AD_IN[14]   ;       ; 5.852 ; 5.852 ;       ;
+; AD_IN[13]  ; AD_IN[15]   ;       ; 5.854 ; 5.854 ;       ;
+; AD_IN[14]  ; AD_IN[0]    ;       ; 6.037 ; 6.037 ;       ;
+; AD_IN[14]  ; AD_IN[1]    ;       ; 5.906 ; 5.906 ;       ;
+; AD_IN[14]  ; AD_IN[2]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[14]  ; AD_IN[3]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[14]  ; AD_IN[4]    ;       ; 6.036 ; 6.036 ;       ;
+; AD_IN[14]  ; AD_IN[5]    ;       ; 5.934 ; 5.934 ;       ;
+; AD_IN[14]  ; AD_IN[6]    ;       ; 5.931 ; 5.931 ;       ;
+; AD_IN[14]  ; AD_IN[7]    ;       ; 5.929 ; 5.929 ;       ;
+; AD_IN[14]  ; AD_IN[8]    ;       ; 5.916 ; 5.916 ;       ;
+; AD_IN[14]  ; AD_IN[9]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[14]  ; AD_IN[10]   ;       ; 5.917 ; 5.917 ;       ;
+; AD_IN[14]  ; AD_IN[11]   ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[14]  ; AD_IN[12]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[14]  ; AD_IN[13]   ;       ; 5.817 ; 5.817 ;       ;
+; AD_IN[14]  ; AD_IN[14]   ;       ; 5.910 ; 5.910 ;       ;
+; AD_IN[14]  ; AD_IN[15]   ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[15]  ; AD_IN[0]    ;       ; 6.104 ; 6.104 ;       ;
+; AD_IN[15]  ; AD_IN[1]    ;       ; 5.973 ; 5.973 ;       ;
+; AD_IN[15]  ; AD_IN[2]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[15]  ; AD_IN[3]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[15]  ; AD_IN[4]    ;       ; 6.103 ; 6.103 ;       ;
+; AD_IN[15]  ; AD_IN[5]    ;       ; 6.001 ; 6.001 ;       ;
+; AD_IN[15]  ; AD_IN[6]    ;       ; 5.998 ; 5.998 ;       ;
+; AD_IN[15]  ; AD_IN[7]    ;       ; 5.996 ; 5.996 ;       ;
+; AD_IN[15]  ; AD_IN[8]    ;       ; 5.983 ; 5.983 ;       ;
+; AD_IN[15]  ; AD_IN[9]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[15]  ; AD_IN[10]   ;       ; 5.984 ; 5.984 ;       ;
+; AD_IN[15]  ; AD_IN[11]   ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[15]  ; AD_IN[12]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[15]  ; AD_IN[13]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[15]  ; AD_IN[14]   ;       ; 5.977 ; 5.977 ;       ;
+; AD_IN[15]  ; AD_IN[15]   ;       ; 5.979 ; 5.979 ;       ;
+; NADV       ; AD_IN[0]    ; 3.610 ;       ;       ; 3.610 ;
+; NADV       ; AD_IN[1]    ; 3.477 ;       ;       ; 3.477 ;
+; NADV       ; AD_IN[2]    ; 3.588 ;       ;       ; 3.588 ;
+; NADV       ; AD_IN[3]    ; 3.588 ;       ;       ; 3.588 ;
+; NADV       ; AD_IN[4]    ; 3.993 ;       ;       ; 3.993 ;
+; NADV       ; AD_IN[5]    ; 3.889 ;       ;       ; 3.889 ;
+; NADV       ; AD_IN[6]    ; 3.886 ;       ;       ; 3.886 ;
+; NADV       ; AD_IN[7]    ; 3.884 ;       ;       ; 3.884 ;
+; NADV       ; AD_IN[8]    ; 3.873 ;       ;       ; 3.873 ;
+; NADV       ; AD_IN[9]    ; 3.881 ;       ;       ; 3.881 ;
+; NADV       ; AD_IN[10]   ; 3.874 ;       ;       ; 3.874 ;
+; NADV       ; AD_IN[11]   ; 3.868 ;       ;       ; 3.868 ;
+; NADV       ; AD_IN[12]   ; 3.778 ;       ;       ; 3.778 ;
+; NADV       ; AD_IN[13]   ; 3.772 ;       ;       ; 3.772 ;
+; NADV       ; AD_IN[14]   ; 3.868 ;       ;       ; 3.868 ;
+; NADV       ; AD_IN[15]   ; 3.867 ;       ;       ; 3.867 ;
+; NOE        ; AD_IN[0]    ; 3.000 ; 3.000 ; 3.000 ; 3.000 ;
+; NOE        ; AD_IN[1]    ; 2.979 ; 2.979 ; 2.979 ; 2.979 ;
+; NOE        ; AD_IN[2]    ; 2.969 ; 2.969 ; 2.969 ; 2.969 ;
+; NOE        ; AD_IN[3]    ; 2.969 ; 2.969 ; 2.969 ; 2.969 ;
+; NOE        ; AD_IN[4]    ; 2.949 ; 2.949 ; 2.949 ; 2.949 ;
+; NOE        ; AD_IN[5]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[6]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[7]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[8]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[9]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[10]   ; 3.050 ; 3.050 ; 3.050 ; 3.050 ;
+; NOE        ; AD_IN[11]   ; 3.040 ; 3.040 ; 3.040 ; 3.040 ;
+; NOE        ; AD_IN[12]   ; 2.942 ; 2.942 ; 2.942 ; 2.942 ;
+; NOE        ; AD_IN[13]   ; 2.939 ; 2.939 ; 2.939 ; 2.939 ;
+; NOE        ; AD_IN[14]   ; 2.932 ; 2.932 ; 2.932 ; 2.932 ;
+; NOE        ; AD_IN[15]   ; 2.912 ; 2.912 ; 2.912 ; 2.912 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; -1.941              ;
+;  NWE             ; N/A   ; N/A  ; N/A      ; N/A     ; -1.941              ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; -25.685             ;
+;  NWE             ; N/A   ; N/A  ; N/A      ; N/A     ; -25.685             ;
++------------------+-------+------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A16        ; NWE        ; 8.400  ; 8.400  ; Rise       ; NWE             ;
+; A17        ; NWE        ; 8.179  ; 8.179  ; Rise       ; NWE             ;
+; A18        ; NWE        ; 8.387  ; 8.387  ; Rise       ; NWE             ;
+; AD_IN[*]   ; NWE        ; 10.197 ; 10.197 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 10.197 ; 10.197 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 9.567  ; 9.567  ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 9.745  ; 9.745  ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 9.377  ; 9.377  ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 8.986  ; 8.986  ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 8.859  ; 8.859  ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 9.132  ; 9.132  ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 8.801  ; 8.801  ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 8.959  ; 8.959  ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 8.601  ; 8.601  ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 8.437  ; 8.437  ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 8.544  ; 8.544  ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 8.825  ; 8.825  ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 8.802  ; 8.802  ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 8.991  ; 8.991  ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 9.161  ; 9.161  ; Rise       ; NWE             ;
+; NADV       ; NWE        ; 3.848  ; 3.848  ; Rise       ; NWE             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A16        ; NWE        ; -2.957 ; -2.957 ; Rise       ; NWE             ;
+; A17        ; NWE        ; -2.887 ; -2.887 ; Rise       ; NWE             ;
+; A18        ; NWE        ; -2.973 ; -2.973 ; Rise       ; NWE             ;
+; AD_IN[*]   ; NWE        ; -1.877 ; -1.877 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; -2.041 ; -2.041 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; -1.888 ; -1.888 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; -1.877 ; -1.877 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; -1.882 ; -1.882 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; -2.115 ; -2.115 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; -2.102 ; -2.102 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; -2.096 ; -2.096 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; -2.026 ; -2.026 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; -2.017 ; -2.017 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; -2.006 ; -2.006 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; -1.910 ; -1.910 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; -1.892 ; -1.892 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; -1.906 ; -1.906 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; -1.904 ; -1.904 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; -1.988 ; -1.988 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; -1.974 ; -1.974 ; Rise       ; NWE             ;
+; NADV       ; NWE        ; -0.574 ; -0.574 ; Rise       ; NWE             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; AD_IN[*]   ; NWE        ; 8.275 ; 8.275 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 7.888 ; 7.888 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 7.486 ; 7.486 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 7.639 ; 7.639 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 7.638 ; 7.638 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 8.275 ; 8.275 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 7.899 ; 7.899 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 7.891 ; 7.891 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 7.886 ; 7.886 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 7.890 ; 7.890 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 7.889 ; 7.889 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 7.885 ; 7.885 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 7.889 ; 7.889 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 7.541 ; 7.541 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 7.541 ; 7.541 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 7.895 ; 7.895 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 7.885 ; 7.885 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; AD_IN[*]   ; NWE        ; 3.501 ; 3.501 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 3.632 ; 3.632 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 3.501 ; 3.501 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 3.607 ; 3.607 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 3.607 ; 3.607 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 3.791 ; 3.791 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 3.682 ; 3.682 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 3.679 ; 3.679 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 3.677 ; 3.677 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 3.677 ; 3.677 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 3.676 ; 3.676 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 3.675 ; 3.675 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 3.670 ; 3.670 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 3.572 ; 3.572 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 3.572 ; 3.572 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 3.675 ; 3.675 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 3.661 ; 3.661 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A16        ; AD_IN[0]    ; 13.726 ;        ;        ; 13.726 ;
+; A16        ; AD_IN[1]    ; 13.322 ;        ;        ; 13.322 ;
+; A16        ; AD_IN[2]    ; 13.481 ;        ;        ; 13.481 ;
+; A16        ; AD_IN[3]    ; 13.480 ;        ;        ; 13.480 ;
+; A16        ; AD_IN[4]    ; 14.829 ;        ;        ; 14.829 ;
+; A16        ; AD_IN[5]    ; 14.458 ;        ;        ; 14.458 ;
+; A16        ; AD_IN[6]    ; 14.450 ;        ;        ; 14.450 ;
+; A16        ; AD_IN[7]    ; 14.446 ;        ;        ; 14.446 ;
+; A16        ; AD_IN[8]    ; 14.438 ;        ;        ; 14.438 ;
+; A16        ; AD_IN[9]    ; 14.445 ;        ;        ; 14.445 ;
+; A16        ; AD_IN[10]   ; 14.436 ;        ;        ; 14.436 ;
+; A16        ; AD_IN[11]   ; 14.438 ;        ;        ; 14.438 ;
+; A16        ; AD_IN[12]   ; 14.099 ;        ;        ; 14.099 ;
+; A16        ; AD_IN[13]   ; 14.094 ;        ;        ; 14.094 ;
+; A16        ; AD_IN[14]   ; 14.439 ;        ;        ; 14.439 ;
+; A16        ; AD_IN[15]   ; 14.442 ;        ;        ; 14.442 ;
+; A17        ; AD_IN[0]    ;        ; 13.505 ; 13.505 ;        ;
+; A17        ; AD_IN[1]    ;        ; 13.101 ; 13.101 ;        ;
+; A17        ; AD_IN[2]    ;        ; 13.260 ; 13.260 ;        ;
+; A17        ; AD_IN[3]    ;        ; 13.259 ; 13.259 ;        ;
+; A17        ; AD_IN[4]    ;        ; 14.608 ; 14.608 ;        ;
+; A17        ; AD_IN[5]    ;        ; 14.237 ; 14.237 ;        ;
+; A17        ; AD_IN[6]    ;        ; 14.229 ; 14.229 ;        ;
+; A17        ; AD_IN[7]    ;        ; 14.225 ; 14.225 ;        ;
+; A17        ; AD_IN[8]    ;        ; 14.217 ; 14.217 ;        ;
+; A17        ; AD_IN[9]    ;        ; 14.224 ; 14.224 ;        ;
+; A17        ; AD_IN[10]   ;        ; 14.215 ; 14.215 ;        ;
+; A17        ; AD_IN[11]   ;        ; 14.217 ; 14.217 ;        ;
+; A17        ; AD_IN[12]   ;        ; 13.878 ; 13.878 ;        ;
+; A17        ; AD_IN[13]   ;        ; 13.873 ; 13.873 ;        ;
+; A17        ; AD_IN[14]   ;        ; 14.218 ; 14.218 ;        ;
+; A17        ; AD_IN[15]   ;        ; 14.221 ; 14.221 ;        ;
+; A18        ; AD_IN[0]    ; 13.713 ;        ;        ; 13.713 ;
+; A18        ; AD_IN[1]    ; 13.309 ;        ;        ; 13.309 ;
+; A18        ; AD_IN[2]    ; 13.468 ;        ;        ; 13.468 ;
+; A18        ; AD_IN[3]    ; 13.467 ;        ;        ; 13.467 ;
+; A18        ; AD_IN[4]    ; 14.816 ;        ;        ; 14.816 ;
+; A18        ; AD_IN[5]    ; 14.445 ;        ;        ; 14.445 ;
+; A18        ; AD_IN[6]    ; 14.437 ;        ;        ; 14.437 ;
+; A18        ; AD_IN[7]    ; 14.433 ;        ;        ; 14.433 ;
+; A18        ; AD_IN[8]    ; 14.425 ;        ;        ; 14.425 ;
+; A18        ; AD_IN[9]    ; 14.432 ;        ;        ; 14.432 ;
+; A18        ; AD_IN[10]   ; 14.423 ;        ;        ; 14.423 ;
+; A18        ; AD_IN[11]   ; 14.425 ;        ;        ; 14.425 ;
+; A18        ; AD_IN[12]   ; 14.086 ;        ;        ; 14.086 ;
+; A18        ; AD_IN[13]   ; 14.081 ;        ;        ; 14.081 ;
+; A18        ; AD_IN[14]   ; 14.426 ;        ;        ; 14.426 ;
+; A18        ; AD_IN[15]   ; 14.429 ;        ;        ; 14.429 ;
+; AD_IN[0]   ; AD_IN[0]    ; 15.250 ;        ;        ; 15.250 ;
+; AD_IN[0]   ; AD_IN[1]    ; 14.848 ;        ;        ; 14.848 ;
+; AD_IN[0]   ; AD_IN[2]    ; 15.004 ;        ;        ; 15.004 ;
+; AD_IN[0]   ; AD_IN[3]    ; 15.003 ;        ;        ; 15.003 ;
+; AD_IN[0]   ; AD_IN[4]    ; 15.035 ;        ;        ; 15.035 ;
+; AD_IN[0]   ; AD_IN[5]    ; 14.666 ;        ;        ; 14.666 ;
+; AD_IN[0]   ; AD_IN[6]    ; 14.658 ;        ;        ; 14.658 ;
+; AD_IN[0]   ; AD_IN[7]    ; 14.654 ;        ;        ; 14.654 ;
+; AD_IN[0]   ; AD_IN[8]    ; 14.643 ;        ;        ; 14.643 ;
+; AD_IN[0]   ; AD_IN[9]    ; 14.654 ;        ;        ; 14.654 ;
+; AD_IN[0]   ; AD_IN[10]   ; 14.642 ;        ;        ; 14.642 ;
+; AD_IN[0]   ; AD_IN[11]   ; 14.646 ;        ;        ; 14.646 ;
+; AD_IN[0]   ; AD_IN[12]   ; 14.307 ;        ;        ; 14.307 ;
+; AD_IN[0]   ; AD_IN[13]   ; 14.301 ;        ;        ; 14.301 ;
+; AD_IN[0]   ; AD_IN[14]   ; 14.642 ;        ;        ; 14.642 ;
+; AD_IN[0]   ; AD_IN[15]   ; 14.651 ;        ;        ; 14.651 ;
+; AD_IN[1]   ; AD_IN[0]    ;        ; 14.620 ; 14.620 ;        ;
+; AD_IN[1]   ; AD_IN[1]    ;        ; 14.218 ; 14.218 ;        ;
+; AD_IN[1]   ; AD_IN[2]    ;        ; 14.374 ; 14.374 ;        ;
+; AD_IN[1]   ; AD_IN[3]    ;        ; 14.373 ; 14.373 ;        ;
+; AD_IN[1]   ; AD_IN[4]    ;        ; 14.405 ; 14.405 ;        ;
+; AD_IN[1]   ; AD_IN[5]    ;        ; 14.036 ; 14.036 ;        ;
+; AD_IN[1]   ; AD_IN[6]    ;        ; 14.028 ; 14.028 ;        ;
+; AD_IN[1]   ; AD_IN[7]    ;        ; 14.024 ; 14.024 ;        ;
+; AD_IN[1]   ; AD_IN[8]    ;        ; 14.013 ; 14.013 ;        ;
+; AD_IN[1]   ; AD_IN[9]    ;        ; 14.024 ; 14.024 ;        ;
+; AD_IN[1]   ; AD_IN[10]   ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[1]   ; AD_IN[11]   ;        ; 14.016 ; 14.016 ;        ;
+; AD_IN[1]   ; AD_IN[12]   ;        ; 13.677 ; 13.677 ;        ;
+; AD_IN[1]   ; AD_IN[13]   ;        ; 13.671 ; 13.671 ;        ;
+; AD_IN[1]   ; AD_IN[14]   ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[1]   ; AD_IN[15]   ;        ; 14.021 ; 14.021 ;        ;
+; AD_IN[2]   ; AD_IN[0]    ;        ; 14.798 ; 14.798 ;        ;
+; AD_IN[2]   ; AD_IN[1]    ;        ; 14.396 ; 14.396 ;        ;
+; AD_IN[2]   ; AD_IN[2]    ;        ; 14.552 ; 14.552 ;        ;
+; AD_IN[2]   ; AD_IN[3]    ;        ; 14.551 ; 14.551 ;        ;
+; AD_IN[2]   ; AD_IN[4]    ;        ; 14.583 ; 14.583 ;        ;
+; AD_IN[2]   ; AD_IN[5]    ;        ; 14.214 ; 14.214 ;        ;
+; AD_IN[2]   ; AD_IN[6]    ;        ; 14.206 ; 14.206 ;        ;
+; AD_IN[2]   ; AD_IN[7]    ;        ; 14.202 ; 14.202 ;        ;
+; AD_IN[2]   ; AD_IN[8]    ;        ; 14.191 ; 14.191 ;        ;
+; AD_IN[2]   ; AD_IN[9]    ;        ; 14.202 ; 14.202 ;        ;
+; AD_IN[2]   ; AD_IN[10]   ;        ; 14.190 ; 14.190 ;        ;
+; AD_IN[2]   ; AD_IN[11]   ;        ; 14.194 ; 14.194 ;        ;
+; AD_IN[2]   ; AD_IN[12]   ;        ; 13.855 ; 13.855 ;        ;
+; AD_IN[2]   ; AD_IN[13]   ;        ; 13.849 ; 13.849 ;        ;
+; AD_IN[2]   ; AD_IN[14]   ;        ; 14.190 ; 14.190 ;        ;
+; AD_IN[2]   ; AD_IN[15]   ;        ; 14.199 ; 14.199 ;        ;
+; AD_IN[3]   ; AD_IN[0]    ;        ; 14.430 ; 14.430 ;        ;
+; AD_IN[3]   ; AD_IN[1]    ;        ; 14.028 ; 14.028 ;        ;
+; AD_IN[3]   ; AD_IN[2]    ;        ; 14.184 ; 14.184 ;        ;
+; AD_IN[3]   ; AD_IN[3]    ;        ; 14.183 ; 14.183 ;        ;
+; AD_IN[3]   ; AD_IN[4]    ;        ; 14.215 ; 14.215 ;        ;
+; AD_IN[3]   ; AD_IN[5]    ;        ; 13.846 ; 13.846 ;        ;
+; AD_IN[3]   ; AD_IN[6]    ;        ; 13.838 ; 13.838 ;        ;
+; AD_IN[3]   ; AD_IN[7]    ;        ; 13.834 ; 13.834 ;        ;
+; AD_IN[3]   ; AD_IN[8]    ;        ; 13.823 ; 13.823 ;        ;
+; AD_IN[3]   ; AD_IN[9]    ;        ; 13.834 ; 13.834 ;        ;
+; AD_IN[3]   ; AD_IN[10]   ;        ; 13.822 ; 13.822 ;        ;
+; AD_IN[3]   ; AD_IN[11]   ;        ; 13.826 ; 13.826 ;        ;
+; AD_IN[3]   ; AD_IN[12]   ;        ; 13.487 ; 13.487 ;        ;
+; AD_IN[3]   ; AD_IN[13]   ;        ; 13.481 ; 13.481 ;        ;
+; AD_IN[3]   ; AD_IN[14]   ;        ; 13.822 ; 13.822 ;        ;
+; AD_IN[3]   ; AD_IN[15]   ;        ; 13.831 ; 13.831 ;        ;
+; AD_IN[4]   ; AD_IN[0]    ;        ; 14.039 ; 14.039 ;        ;
+; AD_IN[4]   ; AD_IN[1]    ;        ; 13.637 ; 13.637 ;        ;
+; AD_IN[4]   ; AD_IN[2]    ;        ; 13.793 ; 13.793 ;        ;
+; AD_IN[4]   ; AD_IN[3]    ;        ; 13.792 ; 13.792 ;        ;
+; AD_IN[4]   ; AD_IN[4]    ;        ; 13.824 ; 13.824 ;        ;
+; AD_IN[4]   ; AD_IN[5]    ;        ; 13.455 ; 13.455 ;        ;
+; AD_IN[4]   ; AD_IN[6]    ;        ; 13.447 ; 13.447 ;        ;
+; AD_IN[4]   ; AD_IN[7]    ;        ; 13.443 ; 13.443 ;        ;
+; AD_IN[4]   ; AD_IN[8]    ;        ; 13.432 ; 13.432 ;        ;
+; AD_IN[4]   ; AD_IN[9]    ;        ; 13.443 ; 13.443 ;        ;
+; AD_IN[4]   ; AD_IN[10]   ;        ; 13.431 ; 13.431 ;        ;
+; AD_IN[4]   ; AD_IN[11]   ;        ; 13.435 ; 13.435 ;        ;
+; AD_IN[4]   ; AD_IN[12]   ;        ; 13.096 ; 13.096 ;        ;
+; AD_IN[4]   ; AD_IN[13]   ;        ; 13.090 ; 13.090 ;        ;
+; AD_IN[4]   ; AD_IN[14]   ;        ; 13.431 ; 13.431 ;        ;
+; AD_IN[4]   ; AD_IN[15]   ;        ; 13.440 ; 13.440 ;        ;
+; AD_IN[5]   ; AD_IN[0]    ;        ; 13.912 ; 13.912 ;        ;
+; AD_IN[5]   ; AD_IN[1]    ;        ; 13.510 ; 13.510 ;        ;
+; AD_IN[5]   ; AD_IN[2]    ;        ; 13.666 ; 13.666 ;        ;
+; AD_IN[5]   ; AD_IN[3]    ;        ; 13.665 ; 13.665 ;        ;
+; AD_IN[5]   ; AD_IN[4]    ;        ; 13.697 ; 13.697 ;        ;
+; AD_IN[5]   ; AD_IN[5]    ;        ; 13.328 ; 13.328 ;        ;
+; AD_IN[5]   ; AD_IN[6]    ;        ; 13.320 ; 13.320 ;        ;
+; AD_IN[5]   ; AD_IN[7]    ;        ; 13.316 ; 13.316 ;        ;
+; AD_IN[5]   ; AD_IN[8]    ;        ; 13.305 ; 13.305 ;        ;
+; AD_IN[5]   ; AD_IN[9]    ;        ; 13.316 ; 13.316 ;        ;
+; AD_IN[5]   ; AD_IN[10]   ;        ; 13.304 ; 13.304 ;        ;
+; AD_IN[5]   ; AD_IN[11]   ;        ; 13.308 ; 13.308 ;        ;
+; AD_IN[5]   ; AD_IN[12]   ;        ; 12.969 ; 12.969 ;        ;
+; AD_IN[5]   ; AD_IN[13]   ;        ; 12.963 ; 12.963 ;        ;
+; AD_IN[5]   ; AD_IN[14]   ;        ; 13.304 ; 13.304 ;        ;
+; AD_IN[5]   ; AD_IN[15]   ;        ; 13.313 ; 13.313 ;        ;
+; AD_IN[6]   ; AD_IN[0]    ;        ; 14.185 ; 14.185 ;        ;
+; AD_IN[6]   ; AD_IN[1]    ;        ; 13.783 ; 13.783 ;        ;
+; AD_IN[6]   ; AD_IN[2]    ;        ; 13.939 ; 13.939 ;        ;
+; AD_IN[6]   ; AD_IN[3]    ;        ; 13.938 ; 13.938 ;        ;
+; AD_IN[6]   ; AD_IN[4]    ;        ; 13.970 ; 13.970 ;        ;
+; AD_IN[6]   ; AD_IN[5]    ;        ; 13.601 ; 13.601 ;        ;
+; AD_IN[6]   ; AD_IN[6]    ;        ; 13.593 ; 13.593 ;        ;
+; AD_IN[6]   ; AD_IN[7]    ;        ; 13.589 ; 13.589 ;        ;
+; AD_IN[6]   ; AD_IN[8]    ;        ; 13.578 ; 13.578 ;        ;
+; AD_IN[6]   ; AD_IN[9]    ;        ; 13.589 ; 13.589 ;        ;
+; AD_IN[6]   ; AD_IN[10]   ;        ; 13.577 ; 13.577 ;        ;
+; AD_IN[6]   ; AD_IN[11]   ;        ; 13.581 ; 13.581 ;        ;
+; AD_IN[6]   ; AD_IN[12]   ;        ; 13.242 ; 13.242 ;        ;
+; AD_IN[6]   ; AD_IN[13]   ;        ; 13.236 ; 13.236 ;        ;
+; AD_IN[6]   ; AD_IN[14]   ;        ; 13.577 ; 13.577 ;        ;
+; AD_IN[6]   ; AD_IN[15]   ;        ; 13.586 ; 13.586 ;        ;
+; AD_IN[7]   ; AD_IN[0]    ;        ; 13.854 ; 13.854 ;        ;
+; AD_IN[7]   ; AD_IN[1]    ;        ; 13.452 ; 13.452 ;        ;
+; AD_IN[7]   ; AD_IN[2]    ;        ; 13.608 ; 13.608 ;        ;
+; AD_IN[7]   ; AD_IN[3]    ;        ; 13.607 ; 13.607 ;        ;
+; AD_IN[7]   ; AD_IN[4]    ;        ; 13.639 ; 13.639 ;        ;
+; AD_IN[7]   ; AD_IN[5]    ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[7]   ; AD_IN[6]    ;        ; 13.262 ; 13.262 ;        ;
+; AD_IN[7]   ; AD_IN[7]    ;        ; 13.258 ; 13.258 ;        ;
+; AD_IN[7]   ; AD_IN[8]    ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[7]   ; AD_IN[9]    ;        ; 13.258 ; 13.258 ;        ;
+; AD_IN[7]   ; AD_IN[10]   ;        ; 13.246 ; 13.246 ;        ;
+; AD_IN[7]   ; AD_IN[11]   ;        ; 13.250 ; 13.250 ;        ;
+; AD_IN[7]   ; AD_IN[12]   ;        ; 12.911 ; 12.911 ;        ;
+; AD_IN[7]   ; AD_IN[13]   ;        ; 12.905 ; 12.905 ;        ;
+; AD_IN[7]   ; AD_IN[14]   ;        ; 13.246 ; 13.246 ;        ;
+; AD_IN[7]   ; AD_IN[15]   ;        ; 13.255 ; 13.255 ;        ;
+; AD_IN[8]   ; AD_IN[0]    ;        ; 14.012 ; 14.012 ;        ;
+; AD_IN[8]   ; AD_IN[1]    ;        ; 13.610 ; 13.610 ;        ;
+; AD_IN[8]   ; AD_IN[2]    ;        ; 13.766 ; 13.766 ;        ;
+; AD_IN[8]   ; AD_IN[3]    ;        ; 13.765 ; 13.765 ;        ;
+; AD_IN[8]   ; AD_IN[4]    ;        ; 13.797 ; 13.797 ;        ;
+; AD_IN[8]   ; AD_IN[5]    ;        ; 13.428 ; 13.428 ;        ;
+; AD_IN[8]   ; AD_IN[6]    ;        ; 13.420 ; 13.420 ;        ;
+; AD_IN[8]   ; AD_IN[7]    ;        ; 13.416 ; 13.416 ;        ;
+; AD_IN[8]   ; AD_IN[8]    ;        ; 13.405 ; 13.405 ;        ;
+; AD_IN[8]   ; AD_IN[9]    ;        ; 13.416 ; 13.416 ;        ;
+; AD_IN[8]   ; AD_IN[10]   ;        ; 13.404 ; 13.404 ;        ;
+; AD_IN[8]   ; AD_IN[11]   ;        ; 13.408 ; 13.408 ;        ;
+; AD_IN[8]   ; AD_IN[12]   ;        ; 13.069 ; 13.069 ;        ;
+; AD_IN[8]   ; AD_IN[13]   ;        ; 13.063 ; 13.063 ;        ;
+; AD_IN[8]   ; AD_IN[14]   ;        ; 13.404 ; 13.404 ;        ;
+; AD_IN[8]   ; AD_IN[15]   ;        ; 13.413 ; 13.413 ;        ;
+; AD_IN[9]   ; AD_IN[0]    ;        ; 13.654 ; 13.654 ;        ;
+; AD_IN[9]   ; AD_IN[1]    ;        ; 13.252 ; 13.252 ;        ;
+; AD_IN[9]   ; AD_IN[2]    ;        ; 13.408 ; 13.408 ;        ;
+; AD_IN[9]   ; AD_IN[3]    ;        ; 13.407 ; 13.407 ;        ;
+; AD_IN[9]   ; AD_IN[4]    ;        ; 13.439 ; 13.439 ;        ;
+; AD_IN[9]   ; AD_IN[5]    ;        ; 13.070 ; 13.070 ;        ;
+; AD_IN[9]   ; AD_IN[6]    ;        ; 13.062 ; 13.062 ;        ;
+; AD_IN[9]   ; AD_IN[7]    ;        ; 13.058 ; 13.058 ;        ;
+; AD_IN[9]   ; AD_IN[8]    ;        ; 13.047 ; 13.047 ;        ;
+; AD_IN[9]   ; AD_IN[9]    ;        ; 13.058 ; 13.058 ;        ;
+; AD_IN[9]   ; AD_IN[10]   ;        ; 13.046 ; 13.046 ;        ;
+; AD_IN[9]   ; AD_IN[11]   ;        ; 13.050 ; 13.050 ;        ;
+; AD_IN[9]   ; AD_IN[12]   ;        ; 12.711 ; 12.711 ;        ;
+; AD_IN[9]   ; AD_IN[13]   ;        ; 12.705 ; 12.705 ;        ;
+; AD_IN[9]   ; AD_IN[14]   ;        ; 13.046 ; 13.046 ;        ;
+; AD_IN[9]   ; AD_IN[15]   ;        ; 13.055 ; 13.055 ;        ;
+; AD_IN[10]  ; AD_IN[0]    ;        ; 13.490 ; 13.490 ;        ;
+; AD_IN[10]  ; AD_IN[1]    ;        ; 13.088 ; 13.088 ;        ;
+; AD_IN[10]  ; AD_IN[2]    ;        ; 13.244 ; 13.244 ;        ;
+; AD_IN[10]  ; AD_IN[3]    ;        ; 13.243 ; 13.243 ;        ;
+; AD_IN[10]  ; AD_IN[4]    ;        ; 13.275 ; 13.275 ;        ;
+; AD_IN[10]  ; AD_IN[5]    ;        ; 12.906 ; 12.906 ;        ;
+; AD_IN[10]  ; AD_IN[6]    ;        ; 12.898 ; 12.898 ;        ;
+; AD_IN[10]  ; AD_IN[7]    ;        ; 12.894 ; 12.894 ;        ;
+; AD_IN[10]  ; AD_IN[8]    ;        ; 12.883 ; 12.883 ;        ;
+; AD_IN[10]  ; AD_IN[9]    ;        ; 12.894 ; 12.894 ;        ;
+; AD_IN[10]  ; AD_IN[10]   ;        ; 12.882 ; 12.882 ;        ;
+; AD_IN[10]  ; AD_IN[11]   ;        ; 12.886 ; 12.886 ;        ;
+; AD_IN[10]  ; AD_IN[12]   ;        ; 12.547 ; 12.547 ;        ;
+; AD_IN[10]  ; AD_IN[13]   ;        ; 12.541 ; 12.541 ;        ;
+; AD_IN[10]  ; AD_IN[14]   ;        ; 12.882 ; 12.882 ;        ;
+; AD_IN[10]  ; AD_IN[15]   ;        ; 12.891 ; 12.891 ;        ;
+; AD_IN[11]  ; AD_IN[0]    ;        ; 13.597 ; 13.597 ;        ;
+; AD_IN[11]  ; AD_IN[1]    ;        ; 13.195 ; 13.195 ;        ;
+; AD_IN[11]  ; AD_IN[2]    ;        ; 13.351 ; 13.351 ;        ;
+; AD_IN[11]  ; AD_IN[3]    ;        ; 13.350 ; 13.350 ;        ;
+; AD_IN[11]  ; AD_IN[4]    ;        ; 13.382 ; 13.382 ;        ;
+; AD_IN[11]  ; AD_IN[5]    ;        ; 13.013 ; 13.013 ;        ;
+; AD_IN[11]  ; AD_IN[6]    ;        ; 13.005 ; 13.005 ;        ;
+; AD_IN[11]  ; AD_IN[7]    ;        ; 13.001 ; 13.001 ;        ;
+; AD_IN[11]  ; AD_IN[8]    ;        ; 12.990 ; 12.990 ;        ;
+; AD_IN[11]  ; AD_IN[9]    ;        ; 13.001 ; 13.001 ;        ;
+; AD_IN[11]  ; AD_IN[10]   ;        ; 12.989 ; 12.989 ;        ;
+; AD_IN[11]  ; AD_IN[11]   ;        ; 12.993 ; 12.993 ;        ;
+; AD_IN[11]  ; AD_IN[12]   ;        ; 12.654 ; 12.654 ;        ;
+; AD_IN[11]  ; AD_IN[13]   ;        ; 12.648 ; 12.648 ;        ;
+; AD_IN[11]  ; AD_IN[14]   ;        ; 12.989 ; 12.989 ;        ;
+; AD_IN[11]  ; AD_IN[15]   ;        ; 12.998 ; 12.998 ;        ;
+; AD_IN[12]  ; AD_IN[0]    ;        ; 13.878 ; 13.878 ;        ;
+; AD_IN[12]  ; AD_IN[1]    ;        ; 13.476 ; 13.476 ;        ;
+; AD_IN[12]  ; AD_IN[2]    ;        ; 13.632 ; 13.632 ;        ;
+; AD_IN[12]  ; AD_IN[3]    ;        ; 13.631 ; 13.631 ;        ;
+; AD_IN[12]  ; AD_IN[4]    ;        ; 13.663 ; 13.663 ;        ;
+; AD_IN[12]  ; AD_IN[5]    ;        ; 13.294 ; 13.294 ;        ;
+; AD_IN[12]  ; AD_IN[6]    ;        ; 13.286 ; 13.286 ;        ;
+; AD_IN[12]  ; AD_IN[7]    ;        ; 13.282 ; 13.282 ;        ;
+; AD_IN[12]  ; AD_IN[8]    ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[12]  ; AD_IN[9]    ;        ; 13.282 ; 13.282 ;        ;
+; AD_IN[12]  ; AD_IN[10]   ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[12]  ; AD_IN[11]   ;        ; 13.274 ; 13.274 ;        ;
+; AD_IN[12]  ; AD_IN[12]   ;        ; 12.935 ; 12.935 ;        ;
+; AD_IN[12]  ; AD_IN[13]   ;        ; 12.929 ; 12.929 ;        ;
+; AD_IN[12]  ; AD_IN[14]   ;        ; 13.270 ; 13.270 ;        ;
+; AD_IN[12]  ; AD_IN[15]   ;        ; 13.279 ; 13.279 ;        ;
+; AD_IN[13]  ; AD_IN[0]    ;        ; 13.855 ; 13.855 ;        ;
+; AD_IN[13]  ; AD_IN[1]    ;        ; 13.453 ; 13.453 ;        ;
+; AD_IN[13]  ; AD_IN[2]    ;        ; 13.609 ; 13.609 ;        ;
+; AD_IN[13]  ; AD_IN[3]    ;        ; 13.608 ; 13.608 ;        ;
+; AD_IN[13]  ; AD_IN[4]    ;        ; 13.640 ; 13.640 ;        ;
+; AD_IN[13]  ; AD_IN[5]    ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[13]  ; AD_IN[6]    ;        ; 13.263 ; 13.263 ;        ;
+; AD_IN[13]  ; AD_IN[7]    ;        ; 13.259 ; 13.259 ;        ;
+; AD_IN[13]  ; AD_IN[8]    ;        ; 13.248 ; 13.248 ;        ;
+; AD_IN[13]  ; AD_IN[9]    ;        ; 13.259 ; 13.259 ;        ;
+; AD_IN[13]  ; AD_IN[10]   ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[13]  ; AD_IN[11]   ;        ; 13.251 ; 13.251 ;        ;
+; AD_IN[13]  ; AD_IN[12]   ;        ; 12.912 ; 12.912 ;        ;
+; AD_IN[13]  ; AD_IN[13]   ;        ; 12.906 ; 12.906 ;        ;
+; AD_IN[13]  ; AD_IN[14]   ;        ; 13.247 ; 13.247 ;        ;
+; AD_IN[13]  ; AD_IN[15]   ;        ; 13.256 ; 13.256 ;        ;
+; AD_IN[14]  ; AD_IN[0]    ;        ; 14.044 ; 14.044 ;        ;
+; AD_IN[14]  ; AD_IN[1]    ;        ; 13.642 ; 13.642 ;        ;
+; AD_IN[14]  ; AD_IN[2]    ;        ; 13.798 ; 13.798 ;        ;
+; AD_IN[14]  ; AD_IN[3]    ;        ; 13.797 ; 13.797 ;        ;
+; AD_IN[14]  ; AD_IN[4]    ;        ; 13.829 ; 13.829 ;        ;
+; AD_IN[14]  ; AD_IN[5]    ;        ; 13.460 ; 13.460 ;        ;
+; AD_IN[14]  ; AD_IN[6]    ;        ; 13.452 ; 13.452 ;        ;
+; AD_IN[14]  ; AD_IN[7]    ;        ; 13.448 ; 13.448 ;        ;
+; AD_IN[14]  ; AD_IN[8]    ;        ; 13.437 ; 13.437 ;        ;
+; AD_IN[14]  ; AD_IN[9]    ;        ; 13.448 ; 13.448 ;        ;
+; AD_IN[14]  ; AD_IN[10]   ;        ; 13.436 ; 13.436 ;        ;
+; AD_IN[14]  ; AD_IN[11]   ;        ; 13.440 ; 13.440 ;        ;
+; AD_IN[14]  ; AD_IN[12]   ;        ; 13.101 ; 13.101 ;        ;
+; AD_IN[14]  ; AD_IN[13]   ;        ; 13.095 ; 13.095 ;        ;
+; AD_IN[14]  ; AD_IN[14]   ;        ; 13.436 ; 13.436 ;        ;
+; AD_IN[14]  ; AD_IN[15]   ;        ; 13.445 ; 13.445 ;        ;
+; AD_IN[15]  ; AD_IN[0]    ;        ; 14.214 ; 14.214 ;        ;
+; AD_IN[15]  ; AD_IN[1]    ;        ; 13.812 ; 13.812 ;        ;
+; AD_IN[15]  ; AD_IN[2]    ;        ; 13.968 ; 13.968 ;        ;
+; AD_IN[15]  ; AD_IN[3]    ;        ; 13.967 ; 13.967 ;        ;
+; AD_IN[15]  ; AD_IN[4]    ;        ; 13.999 ; 13.999 ;        ;
+; AD_IN[15]  ; AD_IN[5]    ;        ; 13.630 ; 13.630 ;        ;
+; AD_IN[15]  ; AD_IN[6]    ;        ; 13.622 ; 13.622 ;        ;
+; AD_IN[15]  ; AD_IN[7]    ;        ; 13.618 ; 13.618 ;        ;
+; AD_IN[15]  ; AD_IN[8]    ;        ; 13.607 ; 13.607 ;        ;
+; AD_IN[15]  ; AD_IN[9]    ;        ; 13.618 ; 13.618 ;        ;
+; AD_IN[15]  ; AD_IN[10]   ;        ; 13.606 ; 13.606 ;        ;
+; AD_IN[15]  ; AD_IN[11]   ;        ; 13.610 ; 13.610 ;        ;
+; AD_IN[15]  ; AD_IN[12]   ;        ; 13.271 ; 13.271 ;        ;
+; AD_IN[15]  ; AD_IN[13]   ;        ; 13.265 ; 13.265 ;        ;
+; AD_IN[15]  ; AD_IN[14]   ;        ; 13.606 ; 13.606 ;        ;
+; AD_IN[15]  ; AD_IN[15]   ;        ; 13.615 ; 13.615 ;        ;
+; NADV       ; AD_IN[0]    ; 9.174  ;        ;        ; 9.174  ;
+; NADV       ; AD_IN[1]    ; 8.770  ;        ;        ; 8.770  ;
+; NADV       ; AD_IN[2]    ; 8.929  ;        ;        ; 8.929  ;
+; NADV       ; AD_IN[3]    ; 8.928  ;        ;        ; 8.928  ;
+; NADV       ; AD_IN[4]    ; 10.277 ;        ;        ; 10.277 ;
+; NADV       ; AD_IN[5]    ; 9.906  ;        ;        ; 9.906  ;
+; NADV       ; AD_IN[6]    ; 9.898  ;        ;        ; 9.898  ;
+; NADV       ; AD_IN[7]    ; 9.894  ;        ;        ; 9.894  ;
+; NADV       ; AD_IN[8]    ; 9.886  ;        ;        ; 9.886  ;
+; NADV       ; AD_IN[9]    ; 9.893  ;        ;        ; 9.893  ;
+; NADV       ; AD_IN[10]   ; 9.884  ;        ;        ; 9.884  ;
+; NADV       ; AD_IN[11]   ; 9.886  ;        ;        ; 9.886  ;
+; NADV       ; AD_IN[12]   ; 9.547  ;        ;        ; 9.547  ;
+; NADV       ; AD_IN[13]   ; 9.542  ;        ;        ; 9.542  ;
+; NADV       ; AD_IN[14]   ; 9.887  ;        ;        ; 9.887  ;
+; NADV       ; AD_IN[15]   ; 9.890  ;        ;        ; 9.890  ;
+; NOE        ; AD_IN[0]    ; 7.072  ; 7.072  ; 7.072  ; 7.072  ;
+; NOE        ; AD_IN[1]    ; 7.047  ; 7.047  ; 7.047  ; 7.047  ;
+; NOE        ; AD_IN[2]    ; 7.037  ; 7.037  ; 7.037  ; 7.037  ;
+; NOE        ; AD_IN[3]    ; 7.037  ; 7.037  ; 7.037  ; 7.037  ;
+; NOE        ; AD_IN[4]    ; 6.743  ; 6.743  ; 6.743  ; 6.743  ;
+; NOE        ; AD_IN[5]    ; 6.753  ; 6.753  ; 6.753  ; 6.753  ;
+; NOE        ; AD_IN[6]    ; 6.753  ; 6.753  ; 6.753  ; 6.753  ;
+; NOE        ; AD_IN[7]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[8]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[9]    ; 6.752  ; 6.752  ; 6.752  ; 6.752  ;
+; NOE        ; AD_IN[10]   ; 7.085  ; 7.085  ; 7.085  ; 7.085  ;
+; NOE        ; AD_IN[11]   ; 7.075  ; 7.075  ; 7.075  ; 7.075  ;
+; NOE        ; AD_IN[12]   ; 6.733  ; 6.733  ; 6.733  ; 6.733  ;
+; NOE        ; AD_IN[13]   ; 6.730  ; 6.730  ; 6.730  ; 6.730  ;
+; NOE        ; AD_IN[14]   ; 6.723  ; 6.723  ; 6.723  ; 6.723  ;
+; NOE        ; AD_IN[15]   ; 6.703  ; 6.703  ; 6.703  ; 6.703  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; A16        ; AD_IN[0]    ; 5.993 ;       ;       ; 5.993 ;
+; A16        ; AD_IN[1]    ; 5.860 ;       ;       ; 5.860 ;
+; A16        ; AD_IN[2]    ; 5.971 ;       ;       ; 5.971 ;
+; A16        ; AD_IN[3]    ; 5.971 ;       ;       ; 5.971 ;
+; A16        ; AD_IN[4]    ; 6.376 ;       ;       ; 6.376 ;
+; A16        ; AD_IN[5]    ; 6.272 ;       ;       ; 6.272 ;
+; A16        ; AD_IN[6]    ; 6.269 ;       ;       ; 6.269 ;
+; A16        ; AD_IN[7]    ; 6.267 ;       ;       ; 6.267 ;
+; A16        ; AD_IN[8]    ; 6.256 ;       ;       ; 6.256 ;
+; A16        ; AD_IN[9]    ; 6.264 ;       ;       ; 6.264 ;
+; A16        ; AD_IN[10]   ; 6.257 ;       ;       ; 6.257 ;
+; A16        ; AD_IN[11]   ; 6.251 ;       ;       ; 6.251 ;
+; A16        ; AD_IN[12]   ; 6.161 ;       ;       ; 6.161 ;
+; A16        ; AD_IN[13]   ; 6.155 ;       ;       ; 6.155 ;
+; A16        ; AD_IN[14]   ; 6.251 ;       ;       ; 6.251 ;
+; A16        ; AD_IN[15]   ; 6.250 ;       ;       ; 6.250 ;
+; A17        ; AD_IN[0]    ;       ; 5.923 ; 5.923 ;       ;
+; A17        ; AD_IN[1]    ;       ; 5.790 ; 5.790 ;       ;
+; A17        ; AD_IN[2]    ;       ; 5.901 ; 5.901 ;       ;
+; A17        ; AD_IN[3]    ;       ; 5.901 ; 5.901 ;       ;
+; A17        ; AD_IN[4]    ;       ; 6.306 ; 6.306 ;       ;
+; A17        ; AD_IN[5]    ;       ; 6.202 ; 6.202 ;       ;
+; A17        ; AD_IN[6]    ;       ; 6.199 ; 6.199 ;       ;
+; A17        ; AD_IN[7]    ;       ; 6.197 ; 6.197 ;       ;
+; A17        ; AD_IN[8]    ;       ; 6.186 ; 6.186 ;       ;
+; A17        ; AD_IN[9]    ;       ; 6.194 ; 6.194 ;       ;
+; A17        ; AD_IN[10]   ;       ; 6.187 ; 6.187 ;       ;
+; A17        ; AD_IN[11]   ;       ; 6.181 ; 6.181 ;       ;
+; A17        ; AD_IN[12]   ;       ; 6.091 ; 6.091 ;       ;
+; A17        ; AD_IN[13]   ;       ; 6.085 ; 6.085 ;       ;
+; A17        ; AD_IN[14]   ;       ; 6.181 ; 6.181 ;       ;
+; A17        ; AD_IN[15]   ;       ; 6.180 ; 6.180 ;       ;
+; A18        ; AD_IN[0]    ; 6.009 ;       ;       ; 6.009 ;
+; A18        ; AD_IN[1]    ; 5.876 ;       ;       ; 5.876 ;
+; A18        ; AD_IN[2]    ; 5.987 ;       ;       ; 5.987 ;
+; A18        ; AD_IN[3]    ; 5.987 ;       ;       ; 5.987 ;
+; A18        ; AD_IN[4]    ; 6.392 ;       ;       ; 6.392 ;
+; A18        ; AD_IN[5]    ; 6.288 ;       ;       ; 6.288 ;
+; A18        ; AD_IN[6]    ; 6.285 ;       ;       ; 6.285 ;
+; A18        ; AD_IN[7]    ; 6.283 ;       ;       ; 6.283 ;
+; A18        ; AD_IN[8]    ; 6.272 ;       ;       ; 6.272 ;
+; A18        ; AD_IN[9]    ; 6.280 ;       ;       ; 6.280 ;
+; A18        ; AD_IN[10]   ; 6.273 ;       ;       ; 6.273 ;
+; A18        ; AD_IN[11]   ; 6.267 ;       ;       ; 6.267 ;
+; A18        ; AD_IN[12]   ; 6.177 ;       ;       ; 6.177 ;
+; A18        ; AD_IN[13]   ; 6.171 ;       ;       ; 6.171 ;
+; A18        ; AD_IN[14]   ; 6.267 ;       ;       ; 6.267 ;
+; A18        ; AD_IN[15]   ; 6.266 ;       ;       ; 6.266 ;
+; AD_IN[0]   ; AD_IN[0]    ; 6.462 ;       ;       ; 6.462 ;
+; AD_IN[0]   ; AD_IN[1]    ; 6.331 ;       ;       ; 6.331 ;
+; AD_IN[0]   ; AD_IN[2]    ; 6.440 ;       ;       ; 6.440 ;
+; AD_IN[0]   ; AD_IN[3]    ; 6.440 ;       ;       ; 6.440 ;
+; AD_IN[0]   ; AD_IN[4]    ; 6.461 ;       ;       ; 6.461 ;
+; AD_IN[0]   ; AD_IN[5]    ; 6.359 ;       ;       ; 6.359 ;
+; AD_IN[0]   ; AD_IN[6]    ; 6.356 ;       ;       ; 6.356 ;
+; AD_IN[0]   ; AD_IN[7]    ; 6.354 ;       ;       ; 6.354 ;
+; AD_IN[0]   ; AD_IN[8]    ; 6.341 ;       ;       ; 6.341 ;
+; AD_IN[0]   ; AD_IN[9]    ; 6.351 ;       ;       ; 6.351 ;
+; AD_IN[0]   ; AD_IN[10]   ; 6.342 ;       ;       ; 6.342 ;
+; AD_IN[0]   ; AD_IN[11]   ; 6.337 ;       ;       ; 6.337 ;
+; AD_IN[0]   ; AD_IN[12]   ; 6.248 ;       ;       ; 6.248 ;
+; AD_IN[0]   ; AD_IN[13]   ; 6.242 ;       ;       ; 6.242 ;
+; AD_IN[0]   ; AD_IN[14]   ; 6.335 ;       ;       ; 6.335 ;
+; AD_IN[0]   ; AD_IN[15]   ; 6.337 ;       ;       ; 6.337 ;
+; AD_IN[1]   ; AD_IN[0]    ;       ; 6.235 ; 6.235 ;       ;
+; AD_IN[1]   ; AD_IN[1]    ;       ; 6.104 ; 6.104 ;       ;
+; AD_IN[1]   ; AD_IN[2]    ;       ; 6.213 ; 6.213 ;       ;
+; AD_IN[1]   ; AD_IN[3]    ;       ; 6.213 ; 6.213 ;       ;
+; AD_IN[1]   ; AD_IN[4]    ;       ; 6.234 ; 6.234 ;       ;
+; AD_IN[1]   ; AD_IN[5]    ;       ; 6.132 ; 6.132 ;       ;
+; AD_IN[1]   ; AD_IN[6]    ;       ; 6.129 ; 6.129 ;       ;
+; AD_IN[1]   ; AD_IN[7]    ;       ; 6.127 ; 6.127 ;       ;
+; AD_IN[1]   ; AD_IN[8]    ;       ; 6.114 ; 6.114 ;       ;
+; AD_IN[1]   ; AD_IN[9]    ;       ; 6.124 ; 6.124 ;       ;
+; AD_IN[1]   ; AD_IN[10]   ;       ; 6.115 ; 6.115 ;       ;
+; AD_IN[1]   ; AD_IN[11]   ;       ; 6.110 ; 6.110 ;       ;
+; AD_IN[1]   ; AD_IN[12]   ;       ; 6.021 ; 6.021 ;       ;
+; AD_IN[1]   ; AD_IN[13]   ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[1]   ; AD_IN[14]   ;       ; 6.108 ; 6.108 ;       ;
+; AD_IN[1]   ; AD_IN[15]   ;       ; 6.110 ; 6.110 ;       ;
+; AD_IN[2]   ; AD_IN[0]    ;       ; 6.309 ; 6.309 ;       ;
+; AD_IN[2]   ; AD_IN[1]    ;       ; 6.178 ; 6.178 ;       ;
+; AD_IN[2]   ; AD_IN[2]    ;       ; 6.287 ; 6.287 ;       ;
+; AD_IN[2]   ; AD_IN[3]    ;       ; 6.287 ; 6.287 ;       ;
+; AD_IN[2]   ; AD_IN[4]    ;       ; 6.308 ; 6.308 ;       ;
+; AD_IN[2]   ; AD_IN[5]    ;       ; 6.206 ; 6.206 ;       ;
+; AD_IN[2]   ; AD_IN[6]    ;       ; 6.203 ; 6.203 ;       ;
+; AD_IN[2]   ; AD_IN[7]    ;       ; 6.201 ; 6.201 ;       ;
+; AD_IN[2]   ; AD_IN[8]    ;       ; 6.188 ; 6.188 ;       ;
+; AD_IN[2]   ; AD_IN[9]    ;       ; 6.198 ; 6.198 ;       ;
+; AD_IN[2]   ; AD_IN[10]   ;       ; 6.189 ; 6.189 ;       ;
+; AD_IN[2]   ; AD_IN[11]   ;       ; 6.184 ; 6.184 ;       ;
+; AD_IN[2]   ; AD_IN[12]   ;       ; 6.095 ; 6.095 ;       ;
+; AD_IN[2]   ; AD_IN[13]   ;       ; 6.089 ; 6.089 ;       ;
+; AD_IN[2]   ; AD_IN[14]   ;       ; 6.182 ; 6.182 ;       ;
+; AD_IN[2]   ; AD_IN[15]   ;       ; 6.184 ; 6.184 ;       ;
+; AD_IN[3]   ; AD_IN[0]    ;       ; 6.170 ; 6.170 ;       ;
+; AD_IN[3]   ; AD_IN[1]    ;       ; 6.039 ; 6.039 ;       ;
+; AD_IN[3]   ; AD_IN[2]    ;       ; 6.148 ; 6.148 ;       ;
+; AD_IN[3]   ; AD_IN[3]    ;       ; 6.148 ; 6.148 ;       ;
+; AD_IN[3]   ; AD_IN[4]    ;       ; 6.169 ; 6.169 ;       ;
+; AD_IN[3]   ; AD_IN[5]    ;       ; 6.067 ; 6.067 ;       ;
+; AD_IN[3]   ; AD_IN[6]    ;       ; 6.064 ; 6.064 ;       ;
+; AD_IN[3]   ; AD_IN[7]    ;       ; 6.062 ; 6.062 ;       ;
+; AD_IN[3]   ; AD_IN[8]    ;       ; 6.049 ; 6.049 ;       ;
+; AD_IN[3]   ; AD_IN[9]    ;       ; 6.059 ; 6.059 ;       ;
+; AD_IN[3]   ; AD_IN[10]   ;       ; 6.050 ; 6.050 ;       ;
+; AD_IN[3]   ; AD_IN[11]   ;       ; 6.045 ; 6.045 ;       ;
+; AD_IN[3]   ; AD_IN[12]   ;       ; 5.956 ; 5.956 ;       ;
+; AD_IN[3]   ; AD_IN[13]   ;       ; 5.950 ; 5.950 ;       ;
+; AD_IN[3]   ; AD_IN[14]   ;       ; 6.043 ; 6.043 ;       ;
+; AD_IN[3]   ; AD_IN[15]   ;       ; 6.045 ; 6.045 ;       ;
+; AD_IN[4]   ; AD_IN[0]    ;       ; 6.038 ; 6.038 ;       ;
+; AD_IN[4]   ; AD_IN[1]    ;       ; 5.907 ; 5.907 ;       ;
+; AD_IN[4]   ; AD_IN[2]    ;       ; 6.016 ; 6.016 ;       ;
+; AD_IN[4]   ; AD_IN[3]    ;       ; 6.016 ; 6.016 ;       ;
+; AD_IN[4]   ; AD_IN[4]    ;       ; 6.037 ; 6.037 ;       ;
+; AD_IN[4]   ; AD_IN[5]    ;       ; 5.935 ; 5.935 ;       ;
+; AD_IN[4]   ; AD_IN[6]    ;       ; 5.932 ; 5.932 ;       ;
+; AD_IN[4]   ; AD_IN[7]    ;       ; 5.930 ; 5.930 ;       ;
+; AD_IN[4]   ; AD_IN[8]    ;       ; 5.917 ; 5.917 ;       ;
+; AD_IN[4]   ; AD_IN[9]    ;       ; 5.927 ; 5.927 ;       ;
+; AD_IN[4]   ; AD_IN[10]   ;       ; 5.918 ; 5.918 ;       ;
+; AD_IN[4]   ; AD_IN[11]   ;       ; 5.913 ; 5.913 ;       ;
+; AD_IN[4]   ; AD_IN[12]   ;       ; 5.824 ; 5.824 ;       ;
+; AD_IN[4]   ; AD_IN[13]   ;       ; 5.818 ; 5.818 ;       ;
+; AD_IN[4]   ; AD_IN[14]   ;       ; 5.911 ; 5.911 ;       ;
+; AD_IN[4]   ; AD_IN[15]   ;       ; 5.913 ; 5.913 ;       ;
+; AD_IN[5]   ; AD_IN[0]    ;       ; 6.009 ; 6.009 ;       ;
+; AD_IN[5]   ; AD_IN[1]    ;       ; 5.878 ; 5.878 ;       ;
+; AD_IN[5]   ; AD_IN[2]    ;       ; 5.987 ; 5.987 ;       ;
+; AD_IN[5]   ; AD_IN[3]    ;       ; 5.987 ; 5.987 ;       ;
+; AD_IN[5]   ; AD_IN[4]    ;       ; 6.008 ; 6.008 ;       ;
+; AD_IN[5]   ; AD_IN[5]    ;       ; 5.906 ; 5.906 ;       ;
+; AD_IN[5]   ; AD_IN[6]    ;       ; 5.903 ; 5.903 ;       ;
+; AD_IN[5]   ; AD_IN[7]    ;       ; 5.901 ; 5.901 ;       ;
+; AD_IN[5]   ; AD_IN[8]    ;       ; 5.888 ; 5.888 ;       ;
+; AD_IN[5]   ; AD_IN[9]    ;       ; 5.898 ; 5.898 ;       ;
+; AD_IN[5]   ; AD_IN[10]   ;       ; 5.889 ; 5.889 ;       ;
+; AD_IN[5]   ; AD_IN[11]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[5]   ; AD_IN[12]   ;       ; 5.795 ; 5.795 ;       ;
+; AD_IN[5]   ; AD_IN[13]   ;       ; 5.789 ; 5.789 ;       ;
+; AD_IN[5]   ; AD_IN[14]   ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[5]   ; AD_IN[15]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[6]   ; AD_IN[0]    ;       ; 6.103 ; 6.103 ;       ;
+; AD_IN[6]   ; AD_IN[1]    ;       ; 5.972 ; 5.972 ;       ;
+; AD_IN[6]   ; AD_IN[2]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[6]   ; AD_IN[3]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[6]   ; AD_IN[4]    ;       ; 6.102 ; 6.102 ;       ;
+; AD_IN[6]   ; AD_IN[5]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[6]   ; AD_IN[6]    ;       ; 5.997 ; 5.997 ;       ;
+; AD_IN[6]   ; AD_IN[7]    ;       ; 5.995 ; 5.995 ;       ;
+; AD_IN[6]   ; AD_IN[8]    ;       ; 5.982 ; 5.982 ;       ;
+; AD_IN[6]   ; AD_IN[9]    ;       ; 5.992 ; 5.992 ;       ;
+; AD_IN[6]   ; AD_IN[10]   ;       ; 5.983 ; 5.983 ;       ;
+; AD_IN[6]   ; AD_IN[11]   ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[6]   ; AD_IN[12]   ;       ; 5.889 ; 5.889 ;       ;
+; AD_IN[6]   ; AD_IN[13]   ;       ; 5.883 ; 5.883 ;       ;
+; AD_IN[6]   ; AD_IN[14]   ;       ; 5.976 ; 5.976 ;       ;
+; AD_IN[6]   ; AD_IN[15]   ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[7]   ; AD_IN[0]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[7]   ; AD_IN[1]    ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[7]   ; AD_IN[2]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[7]   ; AD_IN[3]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[7]   ; AD_IN[4]    ;       ; 6.014 ; 6.014 ;       ;
+; AD_IN[7]   ; AD_IN[5]    ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[7]   ; AD_IN[6]    ;       ; 5.909 ; 5.909 ;       ;
+; AD_IN[7]   ; AD_IN[7]    ;       ; 5.907 ; 5.907 ;       ;
+; AD_IN[7]   ; AD_IN[8]    ;       ; 5.894 ; 5.894 ;       ;
+; AD_IN[7]   ; AD_IN[9]    ;       ; 5.904 ; 5.904 ;       ;
+; AD_IN[7]   ; AD_IN[10]   ;       ; 5.895 ; 5.895 ;       ;
+; AD_IN[7]   ; AD_IN[11]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[7]   ; AD_IN[12]   ;       ; 5.801 ; 5.801 ;       ;
+; AD_IN[7]   ; AD_IN[13]   ;       ; 5.795 ; 5.795 ;       ;
+; AD_IN[7]   ; AD_IN[14]   ;       ; 5.888 ; 5.888 ;       ;
+; AD_IN[7]   ; AD_IN[15]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[8]   ; AD_IN[0]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[8]   ; AD_IN[1]    ;       ; 5.951 ; 5.951 ;       ;
+; AD_IN[8]   ; AD_IN[2]    ;       ; 6.060 ; 6.060 ;       ;
+; AD_IN[8]   ; AD_IN[3]    ;       ; 6.060 ; 6.060 ;       ;
+; AD_IN[8]   ; AD_IN[4]    ;       ; 6.081 ; 6.081 ;       ;
+; AD_IN[8]   ; AD_IN[5]    ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[8]   ; AD_IN[6]    ;       ; 5.976 ; 5.976 ;       ;
+; AD_IN[8]   ; AD_IN[7]    ;       ; 5.974 ; 5.974 ;       ;
+; AD_IN[8]   ; AD_IN[8]    ;       ; 5.961 ; 5.961 ;       ;
+; AD_IN[8]   ; AD_IN[9]    ;       ; 5.971 ; 5.971 ;       ;
+; AD_IN[8]   ; AD_IN[10]   ;       ; 5.962 ; 5.962 ;       ;
+; AD_IN[8]   ; AD_IN[11]   ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[8]   ; AD_IN[12]   ;       ; 5.868 ; 5.868 ;       ;
+; AD_IN[8]   ; AD_IN[13]   ;       ; 5.862 ; 5.862 ;       ;
+; AD_IN[8]   ; AD_IN[14]   ;       ; 5.955 ; 5.955 ;       ;
+; AD_IN[8]   ; AD_IN[15]   ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[9]   ; AD_IN[0]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[9]   ; AD_IN[1]    ;       ; 5.817 ; 5.817 ;       ;
+; AD_IN[9]   ; AD_IN[2]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[9]   ; AD_IN[3]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[9]   ; AD_IN[4]    ;       ; 5.947 ; 5.947 ;       ;
+; AD_IN[9]   ; AD_IN[5]    ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[9]   ; AD_IN[6]    ;       ; 5.842 ; 5.842 ;       ;
+; AD_IN[9]   ; AD_IN[7]    ;       ; 5.840 ; 5.840 ;       ;
+; AD_IN[9]   ; AD_IN[8]    ;       ; 5.827 ; 5.827 ;       ;
+; AD_IN[9]   ; AD_IN[9]    ;       ; 5.837 ; 5.837 ;       ;
+; AD_IN[9]   ; AD_IN[10]   ;       ; 5.828 ; 5.828 ;       ;
+; AD_IN[9]   ; AD_IN[11]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[9]   ; AD_IN[12]   ;       ; 5.734 ; 5.734 ;       ;
+; AD_IN[9]   ; AD_IN[13]   ;       ; 5.728 ; 5.728 ;       ;
+; AD_IN[9]   ; AD_IN[14]   ;       ; 5.821 ; 5.821 ;       ;
+; AD_IN[9]   ; AD_IN[15]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[10]  ; AD_IN[0]    ;       ; 5.904 ; 5.904 ;       ;
+; AD_IN[10]  ; AD_IN[1]    ;       ; 5.773 ; 5.773 ;       ;
+; AD_IN[10]  ; AD_IN[2]    ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[10]  ; AD_IN[3]    ;       ; 5.882 ; 5.882 ;       ;
+; AD_IN[10]  ; AD_IN[4]    ;       ; 5.903 ; 5.903 ;       ;
+; AD_IN[10]  ; AD_IN[5]    ;       ; 5.801 ; 5.801 ;       ;
+; AD_IN[10]  ; AD_IN[6]    ;       ; 5.798 ; 5.798 ;       ;
+; AD_IN[10]  ; AD_IN[7]    ;       ; 5.796 ; 5.796 ;       ;
+; AD_IN[10]  ; AD_IN[8]    ;       ; 5.783 ; 5.783 ;       ;
+; AD_IN[10]  ; AD_IN[9]    ;       ; 5.793 ; 5.793 ;       ;
+; AD_IN[10]  ; AD_IN[10]   ;       ; 5.784 ; 5.784 ;       ;
+; AD_IN[10]  ; AD_IN[11]   ;       ; 5.779 ; 5.779 ;       ;
+; AD_IN[10]  ; AD_IN[12]   ;       ; 5.690 ; 5.690 ;       ;
+; AD_IN[10]  ; AD_IN[13]   ;       ; 5.684 ; 5.684 ;       ;
+; AD_IN[10]  ; AD_IN[14]   ;       ; 5.777 ; 5.777 ;       ;
+; AD_IN[10]  ; AD_IN[15]   ;       ; 5.779 ; 5.779 ;       ;
+; AD_IN[11]  ; AD_IN[0]    ;       ; 5.970 ; 5.970 ;       ;
+; AD_IN[11]  ; AD_IN[1]    ;       ; 5.839 ; 5.839 ;       ;
+; AD_IN[11]  ; AD_IN[2]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[11]  ; AD_IN[3]    ;       ; 5.948 ; 5.948 ;       ;
+; AD_IN[11]  ; AD_IN[4]    ;       ; 5.969 ; 5.969 ;       ;
+; AD_IN[11]  ; AD_IN[5]    ;       ; 5.867 ; 5.867 ;       ;
+; AD_IN[11]  ; AD_IN[6]    ;       ; 5.864 ; 5.864 ;       ;
+; AD_IN[11]  ; AD_IN[7]    ;       ; 5.862 ; 5.862 ;       ;
+; AD_IN[11]  ; AD_IN[8]    ;       ; 5.849 ; 5.849 ;       ;
+; AD_IN[11]  ; AD_IN[9]    ;       ; 5.859 ; 5.859 ;       ;
+; AD_IN[11]  ; AD_IN[10]   ;       ; 5.850 ; 5.850 ;       ;
+; AD_IN[11]  ; AD_IN[11]   ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[11]  ; AD_IN[12]   ;       ; 5.756 ; 5.756 ;       ;
+; AD_IN[11]  ; AD_IN[13]   ;       ; 5.750 ; 5.750 ;       ;
+; AD_IN[11]  ; AD_IN[14]   ;       ; 5.843 ; 5.843 ;       ;
+; AD_IN[11]  ; AD_IN[15]   ;       ; 5.845 ; 5.845 ;       ;
+; AD_IN[12]  ; AD_IN[0]    ;       ; 6.022 ; 6.022 ;       ;
+; AD_IN[12]  ; AD_IN[1]    ;       ; 5.891 ; 5.891 ;       ;
+; AD_IN[12]  ; AD_IN[2]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[12]  ; AD_IN[3]    ;       ; 6.000 ; 6.000 ;       ;
+; AD_IN[12]  ; AD_IN[4]    ;       ; 6.021 ; 6.021 ;       ;
+; AD_IN[12]  ; AD_IN[5]    ;       ; 5.919 ; 5.919 ;       ;
+; AD_IN[12]  ; AD_IN[6]    ;       ; 5.916 ; 5.916 ;       ;
+; AD_IN[12]  ; AD_IN[7]    ;       ; 5.914 ; 5.914 ;       ;
+; AD_IN[12]  ; AD_IN[8]    ;       ; 5.901 ; 5.901 ;       ;
+; AD_IN[12]  ; AD_IN[9]    ;       ; 5.911 ; 5.911 ;       ;
+; AD_IN[12]  ; AD_IN[10]   ;       ; 5.902 ; 5.902 ;       ;
+; AD_IN[12]  ; AD_IN[11]   ;       ; 5.897 ; 5.897 ;       ;
+; AD_IN[12]  ; AD_IN[12]   ;       ; 5.808 ; 5.808 ;       ;
+; AD_IN[12]  ; AD_IN[13]   ;       ; 5.802 ; 5.802 ;       ;
+; AD_IN[12]  ; AD_IN[14]   ;       ; 5.895 ; 5.895 ;       ;
+; AD_IN[12]  ; AD_IN[15]   ;       ; 5.897 ; 5.897 ;       ;
+; AD_IN[13]  ; AD_IN[0]    ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[13]  ; AD_IN[1]    ;       ; 5.848 ; 5.848 ;       ;
+; AD_IN[13]  ; AD_IN[2]    ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[13]  ; AD_IN[3]    ;       ; 5.957 ; 5.957 ;       ;
+; AD_IN[13]  ; AD_IN[4]    ;       ; 5.978 ; 5.978 ;       ;
+; AD_IN[13]  ; AD_IN[5]    ;       ; 5.876 ; 5.876 ;       ;
+; AD_IN[13]  ; AD_IN[6]    ;       ; 5.873 ; 5.873 ;       ;
+; AD_IN[13]  ; AD_IN[7]    ;       ; 5.871 ; 5.871 ;       ;
+; AD_IN[13]  ; AD_IN[8]    ;       ; 5.858 ; 5.858 ;       ;
+; AD_IN[13]  ; AD_IN[9]    ;       ; 5.868 ; 5.868 ;       ;
+; AD_IN[13]  ; AD_IN[10]   ;       ; 5.859 ; 5.859 ;       ;
+; AD_IN[13]  ; AD_IN[11]   ;       ; 5.854 ; 5.854 ;       ;
+; AD_IN[13]  ; AD_IN[12]   ;       ; 5.765 ; 5.765 ;       ;
+; AD_IN[13]  ; AD_IN[13]   ;       ; 5.759 ; 5.759 ;       ;
+; AD_IN[13]  ; AD_IN[14]   ;       ; 5.852 ; 5.852 ;       ;
+; AD_IN[13]  ; AD_IN[15]   ;       ; 5.854 ; 5.854 ;       ;
+; AD_IN[14]  ; AD_IN[0]    ;       ; 6.037 ; 6.037 ;       ;
+; AD_IN[14]  ; AD_IN[1]    ;       ; 5.906 ; 5.906 ;       ;
+; AD_IN[14]  ; AD_IN[2]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[14]  ; AD_IN[3]    ;       ; 6.015 ; 6.015 ;       ;
+; AD_IN[14]  ; AD_IN[4]    ;       ; 6.036 ; 6.036 ;       ;
+; AD_IN[14]  ; AD_IN[5]    ;       ; 5.934 ; 5.934 ;       ;
+; AD_IN[14]  ; AD_IN[6]    ;       ; 5.931 ; 5.931 ;       ;
+; AD_IN[14]  ; AD_IN[7]    ;       ; 5.929 ; 5.929 ;       ;
+; AD_IN[14]  ; AD_IN[8]    ;       ; 5.916 ; 5.916 ;       ;
+; AD_IN[14]  ; AD_IN[9]    ;       ; 5.926 ; 5.926 ;       ;
+; AD_IN[14]  ; AD_IN[10]   ;       ; 5.917 ; 5.917 ;       ;
+; AD_IN[14]  ; AD_IN[11]   ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[14]  ; AD_IN[12]   ;       ; 5.823 ; 5.823 ;       ;
+; AD_IN[14]  ; AD_IN[13]   ;       ; 5.817 ; 5.817 ;       ;
+; AD_IN[14]  ; AD_IN[14]   ;       ; 5.910 ; 5.910 ;       ;
+; AD_IN[14]  ; AD_IN[15]   ;       ; 5.912 ; 5.912 ;       ;
+; AD_IN[15]  ; AD_IN[0]    ;       ; 6.104 ; 6.104 ;       ;
+; AD_IN[15]  ; AD_IN[1]    ;       ; 5.973 ; 5.973 ;       ;
+; AD_IN[15]  ; AD_IN[2]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[15]  ; AD_IN[3]    ;       ; 6.082 ; 6.082 ;       ;
+; AD_IN[15]  ; AD_IN[4]    ;       ; 6.103 ; 6.103 ;       ;
+; AD_IN[15]  ; AD_IN[5]    ;       ; 6.001 ; 6.001 ;       ;
+; AD_IN[15]  ; AD_IN[6]    ;       ; 5.998 ; 5.998 ;       ;
+; AD_IN[15]  ; AD_IN[7]    ;       ; 5.996 ; 5.996 ;       ;
+; AD_IN[15]  ; AD_IN[8]    ;       ; 5.983 ; 5.983 ;       ;
+; AD_IN[15]  ; AD_IN[9]    ;       ; 5.993 ; 5.993 ;       ;
+; AD_IN[15]  ; AD_IN[10]   ;       ; 5.984 ; 5.984 ;       ;
+; AD_IN[15]  ; AD_IN[11]   ;       ; 5.979 ; 5.979 ;       ;
+; AD_IN[15]  ; AD_IN[12]   ;       ; 5.890 ; 5.890 ;       ;
+; AD_IN[15]  ; AD_IN[13]   ;       ; 5.884 ; 5.884 ;       ;
+; AD_IN[15]  ; AD_IN[14]   ;       ; 5.977 ; 5.977 ;       ;
+; AD_IN[15]  ; AD_IN[15]   ;       ; 5.979 ; 5.979 ;       ;
+; NADV       ; AD_IN[0]    ; 3.610 ;       ;       ; 3.610 ;
+; NADV       ; AD_IN[1]    ; 3.477 ;       ;       ; 3.477 ;
+; NADV       ; AD_IN[2]    ; 3.588 ;       ;       ; 3.588 ;
+; NADV       ; AD_IN[3]    ; 3.588 ;       ;       ; 3.588 ;
+; NADV       ; AD_IN[4]    ; 3.993 ;       ;       ; 3.993 ;
+; NADV       ; AD_IN[5]    ; 3.889 ;       ;       ; 3.889 ;
+; NADV       ; AD_IN[6]    ; 3.886 ;       ;       ; 3.886 ;
+; NADV       ; AD_IN[7]    ; 3.884 ;       ;       ; 3.884 ;
+; NADV       ; AD_IN[8]    ; 3.873 ;       ;       ; 3.873 ;
+; NADV       ; AD_IN[9]    ; 3.881 ;       ;       ; 3.881 ;
+; NADV       ; AD_IN[10]   ; 3.874 ;       ;       ; 3.874 ;
+; NADV       ; AD_IN[11]   ; 3.868 ;       ;       ; 3.868 ;
+; NADV       ; AD_IN[12]   ; 3.778 ;       ;       ; 3.778 ;
+; NADV       ; AD_IN[13]   ; 3.772 ;       ;       ; 3.772 ;
+; NADV       ; AD_IN[14]   ; 3.868 ;       ;       ; 3.868 ;
+; NADV       ; AD_IN[15]   ; 3.867 ;       ;       ; 3.867 ;
+; NOE        ; AD_IN[0]    ; 3.000 ; 3.000 ; 3.000 ; 3.000 ;
+; NOE        ; AD_IN[1]    ; 2.979 ; 2.979 ; 2.979 ; 2.979 ;
+; NOE        ; AD_IN[2]    ; 2.969 ; 2.969 ; 2.969 ; 2.969 ;
+; NOE        ; AD_IN[3]    ; 2.969 ; 2.969 ; 2.969 ; 2.969 ;
+; NOE        ; AD_IN[4]    ; 2.949 ; 2.949 ; 2.949 ; 2.949 ;
+; NOE        ; AD_IN[5]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[6]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[7]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[8]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[9]    ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; NOE        ; AD_IN[10]   ; 3.050 ; 3.050 ; 3.050 ; 3.050 ;
+; NOE        ; AD_IN[11]   ; 3.040 ; 3.040 ; 3.040 ; 3.040 ;
+; NOE        ; AD_IN[12]   ; 2.942 ; 2.942 ; 2.942 ; 2.942 ;
+; NOE        ; AD_IN[13]   ; 2.939 ; 2.939 ; 2.939 ; 2.939 ;
+; NOE        ; AD_IN[14]   ; 2.932 ; 2.932 ; 2.932 ; 2.932 ;
+; NOE        ; AD_IN[15]   ; 2.912 ; 2.912 ; 2.912 ; 2.912 ;
++------------+-------------+-------+-------+-------+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 21    ; 21   ;
+; Unconstrained Input Port Paths  ; 656   ; 656  ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 352   ; 352  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Mar 18 10:43:38 2015
+Info: Command: quartus_sta FPGA_EP2C -c FPGA_EP2C
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'FPGA_EP2C.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name NWE NWE
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.941       -25.685 NWE 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -17.380 NWE 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 419 megabytes
+    Info: Processing ended: Wed Mar 18 10:43:40 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

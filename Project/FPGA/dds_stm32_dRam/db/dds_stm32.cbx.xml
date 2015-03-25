@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="dds_stm32">
+		<CBX_INST_ENTRY INSTANCE_NAME="|dds_stm32|RAM2PORT:inst11|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_o9k1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|dds_stm32|RAM2PORT:inst9|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_o9k1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
