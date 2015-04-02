@@ -99,17 +99,18 @@ int main(void)
   /* Infinite loop */
   u16 i;
   u8 j;
-  while (1)
-  {
-    for(i=0;i<256;i++){
+  for(i=0;i<256;i++){
       *(EXTERN_RAM_TYPE)_FPGA_RAM_POS(i) = 1+i;
     }
+  while (1)
+  {
+    /*
     for(i=0;i<256;i++){
       LCD_ShowNumBig(0,100,i,RED);
       int temp = *(EXTERN_RAM_TYPE)(_FPGA_RAM_POS(i));
       LCD_ShowNumBig(0,0,temp,RED);
       delay_ms(100);
-    }
+    }*/
   }
 }
 

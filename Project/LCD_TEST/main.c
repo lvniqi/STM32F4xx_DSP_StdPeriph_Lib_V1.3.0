@@ -96,7 +96,7 @@ int main(void)
   /* Insert 50 ms delay */
   Delay(5);
   /* Infinite loop */
-  u16 i;
+  u8 i;
   u8 j;
   Lcd_Show_Line(10,10,GREEN);
   while (1)
