@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C5T144) Path("E:/WORKSPACE/FPGA/dds_stm32/") File("dds_stm32.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C5T144) Path("D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/dds_stm32/") File("dds_stm32.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

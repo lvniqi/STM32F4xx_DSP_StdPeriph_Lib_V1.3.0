@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed Mar 25 18:49:47 2015
+Analysis & Synthesis Status : Successful - Wed Apr 01 18:09:46 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : dds_stm32
 Top-level Entity Name : dds_stm32
 Family : Cyclone II
-Total logic elements : 34
-    Total combinational functions : 34
-    Dedicated logic registers : 24
-Total registers : 24
-Total pins : 34
+Total logic elements : 41
+    Total combinational functions : 29
+    Dedicated logic registers : 36
+Total registers : 36
+Total pins : 42
 Total virtual pins : 0
-Total memory bits : 2,048
+Total memory bits : 4,096
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

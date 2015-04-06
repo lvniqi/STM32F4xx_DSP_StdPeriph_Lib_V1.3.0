@@ -2,33 +2,33 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'NWE'
-Slack : -2.256
-TNS   : -18.048
+Type  : Slow Model Setup 'inst17|altpll_component|pll|clk[1]'
+Slack : -5.542
+TNS   : -101.387
+
+Type  : Slow Model Setup 'NADV'
+Slack : 1.904
+TNS   : 0.000
 
 Type  : Slow Model Setup 'inst17|altpll_component|pll|clk[0]'
-Slack : 20.924
+Slack : 20.939
 TNS   : 0.000
 
-Type  : Slow Model Setup 'inst17|altpll_component|pll|clk[1]'
-Slack : 21.033
-TNS   : 0.000
+Type  : Slow Model Hold 'NADV'
+Slack : -1.554
+TNS   : -11.709
 
 Type  : Slow Model Hold 'inst17|altpll_component|pll|clk[0]'
 Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow Model Hold 'inst17|altpll_component|pll|clk[1]'
-Slack : 1.803
+Slack : 1.018
 TNS   : 0.000
 
-Type  : Slow Model Hold 'NWE'
-Slack : 2.943
-TNS   : 0.000
-
-Type  : Slow Model Minimum Pulse Width 'NWE'
-Slack : -2.567
-TNS   : -130.291
+Type  : Slow Model Minimum Pulse Width 'NADV'
+Slack : -1.941
+TNS   : -19.749
 
 Type  : Slow Model Minimum Pulse Width 'inst17|altpll_component|pll|clk[1]'
 Slack : 9.433
@@ -42,33 +42,33 @@ Type  : Slow Model Minimum Pulse Width 'clk0'
 Slack : 20.000
 TNS   : 0.000
 
-Type  : Fast Model Setup 'NWE'
-Slack : -1.457
-TNS   : -11.656
-
 Type  : Fast Model Setup 'inst17|altpll_component|pll|clk[1]'
-Slack : 23.021
+Slack : -1.783
+TNS   : -33.300
+
+Type  : Fast Model Setup 'NADV'
+Slack : 1.958
 TNS   : 0.000
 
 Type  : Fast Model Setup 'inst17|altpll_component|pll|clk[0]'
-Slack : 23.453
+Slack : 23.469
 TNS   : 0.000
+
+Type  : Fast Model Hold 'NADV'
+Slack : -1.199
+TNS   : -9.291
 
 Type  : Fast Model Hold 'inst17|altpll_component|pll|clk[0]'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'inst17|altpll_component|pll|clk[1]'
-Slack : 0.536
+Slack : 0.299
 TNS   : 0.000
 
-Type  : Fast Model Hold 'NWE'
-Slack : 2.318
-TNS   : 0.000
-
-Type  : Fast Model Minimum Pulse Width 'NWE'
-Slack : -1.880
-TNS   : -95.380
+Type  : Fast Model Minimum Pulse Width 'NADV'
+Slack : -1.380
+TNS   : -13.380
 
 Type  : Fast Model Minimum Pulse Width 'inst17|altpll_component|pll|clk[1]'
 Slack : 10.373

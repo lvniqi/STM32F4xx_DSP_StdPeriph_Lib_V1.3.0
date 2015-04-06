@@ -156,7 +156,7 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT.bsf TRUE FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT.bsf TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT_inst.v FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAM2PORT_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf

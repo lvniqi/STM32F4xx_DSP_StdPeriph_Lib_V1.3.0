@@ -4,12 +4,9 @@
 module SAVE_ADDR(input NADV,input [15:0] AD_IN,
 					  input A16,input A17,input A18,
 					  output reg[18:0] ADDR);
-	wire NADV2 = NADV;
-	always@(posedge NADV or negedge NADV2)begin
+	always@(posedge NADV)begin
 		if(NADV == 1)
 			ADDR <= {A18,A17,A16,AD_IN};
-		if(NADV2 == 0)
-			ADDR <= 19'b0;
 		end
 endmodule
 /*
@@ -20,10 +17,28 @@ module SELECT_ADDR(input [18:0] ADDR,
 						 output reg BUF2,
 						 output reg BUF3);
 		always @(*)begin
-		if(ADDR[18:15] == {4'b1010})
-			BUF1 <= 1;
-		else
-			BUF1 <= 0;
+		case(ADDR[18:15])
+			{4'b1010}:begin
+				BUF1 <= 1;
+				BUF2 <= 0;
+				BUF3 <= 0;
+				end
+			{4'b1110}:begin
+				BUF2 <= 1;
+				BUF1 <= 0;
+				BUF3 <= 0;
+				end
+			{4'b1111}:begin
+				BUF1 <= 0;
+				BUF2 <= 0;
+				BUF3 <= 1;
+				end
+			default:begin
+				BUF2 <=0;
+				BUF1 <=0;
+				BUF3 <=0;
+				end
+			endcase
 		end
 endmodule
 /*
