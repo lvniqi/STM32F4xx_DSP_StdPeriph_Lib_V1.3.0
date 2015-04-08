@@ -44,7 +44,7 @@ int main(void)
   u16 i;
   u8 j;
   for(i=0;i<256;i++){
-      *(EXTERN_RAM)_FPGA_RAM_POS(i) = (128+((int)128*sin(i*2*3.14/256)));
+      *(EXTERN_RAM)_FPGA_RAM_POS(i) = 128+128*sin(2*3.14*i/256);
   }
   FPGA_Set_Freq(1000000);
   LCD_ShowNumBig_L(180,36,0,FREQ,YELLOW);

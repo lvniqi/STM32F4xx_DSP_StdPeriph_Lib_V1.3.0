@@ -1,115 +1,51 @@
-
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_fsmc.h"
 #include "LCD.h"
 #include "exti.h"
-#include "DDS.h"
-#include "math.h"
-/** @addtogroup Template_Project
-  * @{
-  */ 
-
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
-/* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
-static __IO uint32_t uwTimingDelay;
-//RCC_ClocksTypeDef RCC_Clocks;
-
-/* Private function prototypes -----------------------------------------------*/
-static void Delay(__IO uint32_t nTime);
-
+#include "USART.h"
+#include "AD.h"
+#include "DA.h"
+#include "Timer.h"
+#include "Pingpang.h"
+#include "stm32f4xx_dac.h"
+#include "spi.h"
+/* Private functions ---------------------------------------------------------*/
 /**
-  * @brief  Main program
-  * @param  None
-  * @retval None
-  */
+ * @brief  Main program
+ * @param  None
+ * @retval None
+ */
 Lcd_Curve Lcd_Curve1;
-int count = 0;
-int count2 = 0;
-int main(void)
-{
+u8 a[32] = {1,2,3,4,5};
+int main(void){
   /* SysTick end of count event each 10ms */
   RCC_GetClocksFreq(&RCC_Clocks);
-  SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
+  Usart1_Dma_Open(115200);
   LCD_Init();
-  LCD_Curve_Init(&Lcd_Curve1,10,10,RED);
   EXTI_init();
-  /* Add your application code here */
-  /* Insert 50 ms delay */
-  Delay(5);
-  /* Infinite loop */
-  u16 i;
-  u8 j;
-  for(i=0;i<256;i++){
-      *(EXTERN_RAM)_FPGA_RAM_POS(i) = (128+((int)128*sin(i*2*3.14/256)));
-  }
-  FPGA_Set_Freq(1000000);
-  LCD_ShowNumBig_L(180,36,0,FREQ,YELLOW);
-  while (1)
-  {
-    Freq_Service(1);
-    delay_ms(500);
-    /*for(i=0;i<256;i++){
-      LCD_ShowNumBig(0,100,i,RED);
-      int temp = *(EXTERN_RAM)(_FPGA_RAM_POS(i));
-      LCD_ShowNumBig(0,0,temp,RED);
-      delay_ms(100);
-    }*/
-  }
-}
-
-/**
-  * @brief  Inserts a delay time.
-  * @param  nTime: specifies the delay time length, in milliseconds.
-  * @retval None
-  */
-void Delay(__IO uint32_t nTime)
-{ 
-  uwTimingDelay = nTime;
-
-  while(uwTimingDelay != 0);
-}
-
-/**
-  * @brief  Decrements the TimingDelay variable.
-  * @param  None
-  * @retval None
-  */
-void TimingDelay_Decrement(void)
-{
-  if (uwTimingDelay != 0x00)
-  { 
-    uwTimingDelay--;
+  
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
+  SPI_InitTypeDef SPI_InitStructure;
+  Spi2_GPIO_Config();
+  SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+  //两线全双工
+  SPI_InitStructure.SPI_Mode = SPI_Mode_Master; //主
+  SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b; //8位
+  SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low; //CPOL=0 时钟悬空低
+  SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge; //CPHA=0 数据捕获第1个
+  SPI_InitStructure.SPI_NSS = SPI_NSS_Soft; //软件NSS
+  //警告！ 使用库函数时，APB2时钟为72M 而SPI需要低于18M 所以至少需要4分频
+  SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32;
+  //4分频 18Mhz
+  SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB; //高位在前
+  SPI_InitStructure.SPI_CRCPolynomial = 7;
+  //CRC7 片子复位后，该位的值默认为0x07，因此将其设为7。
+  SPI_Init(SPI2, &SPI_InitStructure);
+  PT_DEBUG(3,"SPI2 USE MASTER!\r\n");
+  SPI_Cmd(SPI2, ENABLE);
+  while(1){
+    PBout(12) = 0;
+    SPI2_WriteByte(255);
   }
 }
-
-#ifdef  USE_FULL_ASSERT
-
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
-void assert_failed(uint8_t* file, uint32_t line)
-{ 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
-  /* Infinite loop */
-  while (1)
-  {
-  }
-}
-#endif
-
-/**
-  * @}
-  */
-
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

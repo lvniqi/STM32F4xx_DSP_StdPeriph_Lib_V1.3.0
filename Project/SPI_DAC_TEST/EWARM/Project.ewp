@@ -151,7 +151,7 @@
         </option>
         <option>
           <name>OGUseCmsisDspLib</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>GRuntimeLibThreads</name>
@@ -175,6 +175,8 @@
           <state>USE_STDPERIPH_DRIVER</state>
           <state>STM32F40XX</state>
           <state>USE_STM324x7I_EVAL</state>
+          <state>USART1_USED_</state>
+          <state>USART1_WELLCOME_</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -259,7 +261,7 @@
         </option>
         <option>
           <name>CCLangConformance</name>
-          <state>2</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCSignedPlainChar</name>
@@ -3792,6 +3794,12 @@
   <group>
     <name>CMSIS</name>
     <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\CMSIS\Include\core_cm4.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\CMSIS\Include\core_cm4_simd.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\system_stm32f4xx.c</name>
     </file>
   </group>
@@ -3838,6 +3846,42 @@
   </group>
   <group>
     <name>LNQ</name>
+    <group>
+      <name>ADC</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\AD.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\AD.h</name>
+      </file>
+    </group>
+    <group>
+      <name>common</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\common.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\common.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\PINGPANG.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\PINGPANG.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\Sequeue.h</name>
+      </file>
+    </group>
+    <group>
+      <name>DAC</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\DA.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\DA.h</name>
+      </file>
+    </group>
     <group>
       <name>EXIT</name>
       <file>
@@ -3889,14 +3933,44 @@
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\LCD.h</name>
       </file>
     </group>
+    <group>
+      <name>NRF2401</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\NRF2401.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\NRF2401.h</name>
+      </file>
+    </group>
+    <group>
+      <name>SPI</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\SPI.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SPI.h</name>
+      </file>
+    </group>
+    <group>
+      <name>Timer</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\Timer.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\Timer.h</name>
+      </file>
+    </group>
+    <group>
+      <name>USART</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\USART.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\USART.h</name>
+      </file>
+    </group>
     <file>
-      <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\common.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\common.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\Sequeue.h</name>
+      <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\GPIO.h</name>
     </file>
   </group>
   <group>
@@ -4010,12 +4084,6 @@
   </group>
   <group>
     <name>User</name>
-    <file>
-      <name>$PROJ_DIR$\..\DDS.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\DDS.h</name>
-    </file>
     <file>
       <name>$PROJ_DIR$\..\main.c</name>
     </file>
