@@ -17,30 +17,28 @@ module SELECT_ADDR(input [18:0] ADDR,
 						 output reg BUF1,BUF2,BUF3,
 						 output reg read_en);
 	always @(*)begin
-		case (ADDR[18:15])
-			{4'b1010}:begin 
+		if(ADDR[18:15] == {4'b1010})begin
 				BUF1 <= 1;
-				BUF2 <= 0;
-				BUF3 <= 0;
-				read_en <= 1;
-				end
-			{4'b1110}:begin
-				BUF1 <= 0;
-				BUF2 <= 1;
-				BUF3 <= 0;
-				end
-			{4'b1111}:begin
-				BUF1 <= 0;
-				BUF2 <= 0;
-				BUF3 <= 1;
-				end
-			default:begin
-				BUF1 <= 0;
 				BUF2 <= 0;
 				BUF3 <= 0;
 				read_en <= 0;
 				end
-		endcase
+		else if(ADDR == {4'b1011,3'b0,2'b01,10'b0})begin
+				BUF1 <= 0;
+				BUF2 <= 1;
+				BUF3 <= 0;
+				end
+		else if(ADDR == {4'b1011,3'b0,2'b10,10'b0})begin
+				BUF1 <= 0;
+				BUF2 <= 0;
+				BUF3 <= 1;
+				end
+		else begin
+			BUF1 <= 0;
+			BUF2 <= 0;
+			BUF3 <= 0;
+			read_en <= 0;
+			end
 		end
 endmodule
 /*
@@ -66,20 +64,12 @@ endmodule
 * module BUFF
 * */
 module BUFF(input en,input write,input [15:0] DATA_IN,
-				//output reg[15:0] DATA_OUT,output reg flag);
 				output reg[15:0] DATA_OUT,output reg FINISH);
 	wire en2 = en;
-	reg[15:0] DATA_BUF;
 	always@(posedge write)begin
 		if(en == 1)
-			DATA_BUF <= DATA_IN;
+			DATA_OUT <= DATA_IN;
 			FINISH <= !FINISH;
 			//flag <= !flag;
-		end
-	always@(posedge en or negedge en2)begin
-		if(en == 1)
-			DATA_OUT <= DATA_BUF;
-		if(en2 == 0)
-			DATA_OUT <= 16'bz;
 		end
 endmodule 

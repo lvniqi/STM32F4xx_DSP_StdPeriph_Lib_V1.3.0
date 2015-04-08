@@ -4011,6 +4011,12 @@
   <group>
     <name>User</name>
     <file>
+      <name>$PROJ_DIR$\..\DDS.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DDS.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\main.c</name>
     </file>
     <file>

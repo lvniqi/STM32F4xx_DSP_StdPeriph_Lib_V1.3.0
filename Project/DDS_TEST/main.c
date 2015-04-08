@@ -6,6 +6,7 @@
 #include "LCD.h"
 #include "exti.h"
 #include "DDS.h"
+#include "math.h"
 /** @addtogroup Template_Project
   * @{
   */ 
@@ -20,63 +21,6 @@ static __IO uint32_t uwTimingDelay;
 /* Private function prototypes -----------------------------------------------*/
 static void Delay(__IO uint32_t nTime);
 
-/* Private functions ---------------------------------------------------------*/
-void Lcd_Show_Line(u16 x,u16 y,u16 color)
-{
-  /*
-  L2R
-  u8 a0 = 1;
-  u8 temp, t1, t;
-  LCD_SetCursor(x, y);		//设置光标位置
-  LCD_WriteRAM_Prepare();	//开始写入GRAM
-  for (t1 = 0; t1 < 8; t1++)
-  {
-    LCD_WRITE_COLOR(color);
-  }*/
-  /*
-  R2L
-   LCD_WRITE_CMD(0x0036);												//显示行列设置
-  LCD_WRITE_DATA(0x00a1);
-  u8 a0 = 1;
-  u8 temp, t1, t;
-  LCD_SetCursor(x, y);		//设置光标位置
-  LCD_WriteRAM_Prepare();	//开始写入GRAM
-  for (t1 = 0; t1 < 8; t1++)
-  {
-    LCD_WRITE_COLOR(color);
-  }
-  LCD_WRITE_CMD(0x0036);												//显示行列设置
-  LCD_WRITE_DATA(0x0029);
-  */
-  /*B2T
-  LCD_WRITE_CMD(0x0036);												//显示行列设置
-  LCD_WRITE_DATA(0x0001);
-  u8 a0 = 1;
-  u8 temp, t1, t;
-  LCD_SetCursor(x, y);		//设置光标位置
-  LCD_WriteRAM_Prepare();	//开始写入GRAM
-  for (t1 = 0; t1 < 8; t1++)
-  {
-    LCD_WRITE_COLOR(color);
-  }
-  LCD_WRITE_CMD(0x0036);												//显示行列设置
-  LCD_WRITE_DATA(0x0029);
-  */
-  /*T2B
-  LCD_WRITE_CMD(0x0036);												//显示行列设置
-  LCD_WRITE_DATA(0x0041);
-  u8 a0 = 1;
-  u8 temp, t1, t;
-  LCD_SetCursor(x, y);		//设置光标位置
-  LCD_WriteRAM_Prepare();	//开始写入GRAM
-  for (t1 = 0; t1 < 8; t1++)
-  {
-    LCD_WRITE_COLOR(color);
-  }
-  LCD_WRITE_CMD(0x0036);												//显示行列设置
-  LCD_WRITE_DATA(0x0029);
-  */
-}
 /**
   * @brief  Main program
   * @param  None
@@ -100,14 +44,17 @@ int main(void)
   u16 i;
   u8 j;
   for(i=0;i<256;i++){
-      *(EXTERN_RAM_TYPE)_FPGA_RAM_POS(i) = 1+i;
-    }
+      *(EXTERN_RAM)_FPGA_RAM_POS(i) = (128+((int)128*sin(i*2*3.14/256)));
+  }
+  FPGA_Set_Freq(1000000);
+  LCD_ShowNumBig_L(180,36,0,FREQ,YELLOW);
   while (1)
   {
-    /*
-    for(i=0;i<256;i++){
+    Freq_Service(1);
+    delay_ms(500);
+    /*for(i=0;i<256;i++){
       LCD_ShowNumBig(0,100,i,RED);
-      int temp = *(EXTERN_RAM_TYPE)(_FPGA_RAM_POS(i));
+      int temp = *(EXTERN_RAM)(_FPGA_RAM_POS(i));
       LCD_ShowNumBig(0,0,temp,RED);
       delay_ms(100);
     }*/

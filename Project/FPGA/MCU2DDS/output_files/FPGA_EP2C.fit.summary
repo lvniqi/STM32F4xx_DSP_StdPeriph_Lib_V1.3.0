@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Apr 01 23:31:21 2015
+Fitter Status : Successful - Wed Apr 08 11:14:31 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : FPGA_EP2C
 Top-level Entity Name : FPGA_EP2C
 Family : Cyclone II
 Device : EP2C5T144C8
 Timing Models : Final
-Total logic elements : 76 / 4,608 ( 2 % )
-    Total combinational functions : 35 / 4,608 ( < 1 % )
-    Dedicated logic registers : 76 / 4,608 ( 2 % )
-Total registers : 76
+Total logic elements : 84 / 4,608 ( 2 % )
+    Total combinational functions : 40 / 4,608 ( < 1 % )
+    Dedicated logic registers : 83 / 4,608 ( 2 % )
+Total registers : 83
 Total pins : 34 / 89 ( 38 % )
 Total virtual pins : 0
 Total memory bits : 2,048 / 119,808 ( 2 % )
 Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
-Total PLLs : 0 / 2 ( 0 % )
+Total PLLs : 1 / 2 ( 50 % )

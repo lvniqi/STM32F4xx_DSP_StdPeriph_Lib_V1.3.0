@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C5T144) Path("D:/study/fpga/quartusIIproject/FPGA2MCU/output_files/") File("FPGA_EP2C.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C5T144) Path("E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU22RAM/output_files/") File("FPGA_EP2C.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

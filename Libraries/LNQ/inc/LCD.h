@@ -17,11 +17,11 @@
   //#define LCD_DATA              (*((volatile unsigned short *) 0x60000002)) /* RS = 1 */
   //#define LCD_REST              (*((volatile unsigned short *) 0x60000004)) //0x0002
   //#define LCD_CMD              (*((volatile unsigned short *) 0x60000000)) /* RS = 0 */
-  #define LCD_DATA              (*((volatile unsigned short *) 0x60000002)) /*
+  #define LCD_DATA              (*((EXTERN_RAM) 0x60000002)) /*
     RS = 1 */
-  #define LCD_REST              (*((volatile unsigned short *) 0x60000008)) 
+  #define LCD_REST              (*((EXTERN_RAM) 0x60000008)) 
     //0x0002
-  #define DMA_ADDR              0x60000002
+  #define DMA_ADDR              ((EXTERN_RAM)0x60000002)
   //#define LCD_WRITE_CMD(Command)  (LCD_CMD= (Command|0x8000) )
   #define LCD_WRITE_CMD(Command)  (LCD_DATA= Command&(~(0x8000)))
   #define LCD_READ_DATA()  (LCD_DATA)
@@ -40,7 +40,7 @@
   #define BLUE         	         0x001F  
   #define RED           	 0x3C00
   #define GREEN         	 0x03E0
-
+  #define YELLOW                 0x3FE0     
   /*Òº¾§DMA»º³å³¤¶È*/
   #define LCD_DMA_BUFFER_LEN 14000
   #define LCD_WriteRAM_Prepare() LCD_WRITE_CMD(0x002C);
