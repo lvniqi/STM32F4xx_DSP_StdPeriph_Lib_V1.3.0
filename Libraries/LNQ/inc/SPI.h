@@ -13,4 +13,5 @@
   extern void SPI2_WriteByte(u8 TxData);
   extern u8 SPI2_ReadWriteByte(u8 TxData);
   extern void Spi2_GPIO_Config(void);
+  extern void SPI2_WriteByte_16(u16 TxData);
 #endif /* SPI_H_ */

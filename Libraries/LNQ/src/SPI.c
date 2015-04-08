@@ -96,3 +96,17 @@ u8 SPI2_ReadWriteByte(u8 TxData){
   SPI2_WriteByte(TxData);
   return SPI2_ReadByte();
 }
+
+void SPI2_WriteByte_16(u16 TxData){ 
+  while ((SPI2->SR &1 << 1) == 0)
+    ;
+  SPI2->DR = TxData; //发送一个byte
+  //发完
+  while ((SPI2->SR &1 << 1) == 0)
+    ;
+  SPI2->DR = 0xffff; //发送一个byte
+  //等待发送区空
+  while ((SPI2->SR &1 << 1) == 0)
+    ;
+   
+}
