@@ -1,17 +1,5 @@
 #include "exti.h"
 volatile key_type MAIN_KEY;
-void test_init(void){
-  GPIO_InitTypeDef GPIO_InitStructure;
-  //Enable GPIOA clock 
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
-  /* Configure PB1 pin as input floating */
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
-  GPIO_Init(GPIOE, &GPIO_InitStructure);
-}
 void EXTI_init(void){
   EXTI_InitTypeDef EXTI_InitStructure;
   NVIC_InitTypeDef NVIC_InitStructure;
@@ -43,10 +31,8 @@ void EXTI_init(void){
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x0F;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
-  test_init();
   MAIN_KEY.keycode = 0;
   MAIN_KEY.keysign = 0;
-  GPIO_WriteBit(GPIOE,GPIO_Pin_1,1);
 }
 
 
@@ -57,5 +43,4 @@ void EXTI1_IRQHandler(void){
   MAIN_KEY.keycode &= 0x0f;
   MAIN_KEY.count++;
   MAIN_KEY.keysign = 1;
-  GPIO_ToggleBits(GPIOE,GPIO_Pin_1);
 }
