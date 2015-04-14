@@ -3,31 +3,31 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'inst2|altpll_component|pll|clk[0]'
-Slack : -8.618
-TNS   : -1178.682
+Slack : -9.358
+TNS   : -1292.278
 
 Type  : Slow Model Setup 'NOE'
-Slack : -7.342
-TNS   : -804.678
+Slack : -6.446
+TNS   : -734.807
 
 Type  : Slow Model Setup 'NWE'
-Slack : -4.497
-TNS   : -170.836
+Slack : -4.584
+TNS   : -155.786
 
 Type  : Slow Model Setup 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.799
-TNS   : -5.450
+Slack : -1.093
+TNS   : -6.649
 
 Type  : Slow Model Hold 'NWE'
-Slack : -1.268
-TNS   : -23.678
+Slack : -2.827
+TNS   : -52.382
 
 Type  : Slow Model Hold 'NOE'
-Slack : 0.112
-TNS   : 0.000
+Slack : -0.324
+TNS   : -2.581
 
 Type  : Slow Model Hold 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.261
+Slack : 0.088
 TNS   : 0.000
 
 Type  : Slow Model Hold 'inst2|altpll_component|pll|clk[0]'
@@ -35,32 +35,32 @@ Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'NOE'
-Slack : -1.839
-TNS   : -29.346
+Slack : -1.483
+TNS   : -25.769
 
 Type  : Slow Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 1.006
+Slack : 0.651
 TNS   : 0.000
 
 Type  : Slow Model Removal 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -1.946
-TNS   : -15.287
+Slack : -2.234
+TNS   : -16.569
 
 Type  : Slow Model Removal 'NOE'
-Slack : 1.850
+Slack : 1.833
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'NOE'
 Slack : -2.567
-TNS   : -623.433
+TNS   : -623.269
 
 Type  : Slow Model Minimum Pulse Width 'NWE'
 Slack : -2.567
-TNS   : -177.779
+TNS   : -177.615
 
 Type  : Slow Model Minimum Pulse Width 'NADV'
-Slack : -1.941
-TNS   : -30.137
+Slack : -1.777
+TNS   : -29.973
 
 Type  : Slow Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
 Slack : 0.500
@@ -75,64 +75,64 @@ Slack : 20.000
 TNS   : 0.000
 
 Type  : Fast Model Setup 'inst2|altpll_component|pll|clk[0]'
-Slack : -2.669
-TNS   : -384.321
+Slack : -2.763
+TNS   : -400.505
 
 Type  : Fast Model Setup 'NWE'
 Slack : -1.457
-TNS   : -29.805
+TNS   : -35.178
 
 Type  : Fast Model Setup 'NOE'
-Slack : -1.376
-TNS   : -131.636
+Slack : -1.328
+TNS   : -137.244
 
 Type  : Fast Model Setup 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.258
-TNS   : -1.659
+Slack : -0.037
+TNS   : -0.063
 
 Type  : Fast Model Hold 'NWE'
-Slack : -1.033
-TNS   : -23.713
+Slack : -1.311
+TNS   : -26.716
 
 Type  : Fast Model Hold 'NOE'
-Slack : -0.504
-TNS   : -34.442
+Slack : -0.578
+TNS   : -50.927
 
 Type  : Fast Model Hold 'inst2|altpll_component|pll|clk[0]'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.786
+Slack : 0.449
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'NOE'
-Slack : -0.429
-TNS   : -6.408
+Slack : -0.308
+TNS   : -5.203
 
 Type  : Fast Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.761
+Slack : 0.661
 TNS   : 0.000
 
 Type  : Fast Model Removal 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.676
-TNS   : -5.296
+Slack : -0.806
+TNS   : -5.866
 
 Type  : Fast Model Removal 'NOE'
-Slack : 1.088
+Slack : 1.089
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'NOE'
 Slack : -1.880
-TNS   : -451.420
+TNS   : -451.262
 
 Type  : Fast Model Minimum Pulse Width 'NWE'
 Slack : -1.880
-TNS   : -127.380
+TNS   : -127.222
 
 Type  : Fast Model Minimum Pulse Width 'NADV'
-Slack : -1.380
-TNS   : -20.380
+Slack : -1.222
+TNS   : -20.222
 
 Type  : Fast Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
 Slack : 0.500

@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.116 ns
+From           : DA[1]
+To             : DLATCH8:inst5|q[1]
+From Clock     : --
+To Clock       : NADV
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 25.619 ns
+From           : REG4:inst16|q_temp[2]
+To             : DA[2]
+From Clock     : IN1
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.748 ns
+From           : A16
+To             : DA[2]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.137 ns
+From           : X1
+To             : REG4:inst16|q_temp[2]
+From Clock     : --
+To Clock       : IN1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'IN1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 222.22 MHz ( period = 4.500 ns )
+From           : CNT16A:inst7|q[1]
+To             : CNT16A:inst7|q[3]
+From Clock     : IN1
+To Clock       : IN1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'IN1'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : CNT4A:inst13|q[0]
+To             : REG4:inst16|q_temp[0]
+From Clock     : IN1
+To Clock       : IN1
+Failed Paths   : 2
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 2
+
+--------------------------------------------------------------------------------------
+

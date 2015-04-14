@@ -7,4 +7,5 @@
   extern const unsigned char asc4_1608[][16];
   extern const unsigned char asc5_1608[1][1024];
   extern const u8 asc_3216[][64];
+  extern const u8 asc_3232[][128];
 #endif

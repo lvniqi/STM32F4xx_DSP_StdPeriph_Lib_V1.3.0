@@ -153,7 +153,7 @@ void EXTI3_IRQHandler(void){
     UR_DATA.time_len += TIM_GetCounter(TIM2);
     TIM_SetCounter(TIM2,0);
     UR_DATA.pos_len = UR_DATA.time_len*34/100;
-    LCD_ShowNumBig_L(300,0,0,UR_DATA.pos_len,YELLOW);
+    LCD_ShowNumBig_L(300,0,0,UR_DATA.pos_len,RED);
   }
 }
 /******************************************************************************/

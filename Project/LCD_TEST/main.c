@@ -117,7 +117,7 @@ int main(void)
     }
     //delay_ms(10);
 //  }
-    i++;
+    /*i++;
   (*((volatile unsigned short *) 0x600a0002)) = i;
   int temp = (*((volatile unsigned short *) 0x600a0002));
   char a[10];
@@ -130,7 +130,7 @@ int main(void)
     count2++;
     LCD_ShowNumBig(0,200,count2,RED);
   }
-  delay_ms(100);
+  delay_ms(100);*/
   }
 }
 

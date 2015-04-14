@@ -60,7 +60,7 @@
  ---------------------------------------------------------------------------------
 
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-CHIP  "FPGA_EP2C"  ASSIGNED TO AN: EP2C5T144C8
+CHIP  "FPGA_EP2C"  ASSIGNED TO AN: EP2C8T144C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
@@ -87,15 +87,15 @@ nCONFIG                      : 20        :        :                   :         
 GND+                         : 21        :        :                   :         : 1         :                
 GND+                         : 22        :        :                   :         : 1         :                
 VCCIO1                       : 23        : power  :                   : 3.3V    : 1         :                
-INT0                         : 24        : output : 3.3-V LVTTL       :         : 1         : Y              
-INT4                         : 25        : output : 3.3-V LVTTL       :         : 1         : Y              
-RESERVED_INPUT               : 26        :        :                   :         : 1         :                
-RESERVED_INPUT               : 27        :        :                   :         : 1         :                
-AD_IN[0]                     : 28        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+NADV                         : 24        : input  : 3.3-V LVTTL       :         : 1         : Y              
+NWE                          : 25        : input  : 3.3-V LVTTL       :         : 1         : Y              
+VCCINT                       : 26        : power  :                   : 1.2V    :           :                
+GND                          : 27        : gnd    :                   :         :           :                
+NOE                          : 28        : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : 29        : power  :                   : 3.3V    : 1         :                
-AD_IN[1]                     : 30        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-AD_IN[2]                     : 31        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-AD_IN[3]                     : 32        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+A18                          : 30        : input  : 3.3-V LVTTL       :         : 1         : Y              
+A17                          : 31        : input  : 3.3-V LVTTL       :         : 1         : Y              
+A16                          : 32        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : 33        : gnd    :                   :         :           :                
 GND_PLL1                     : 34        : gnd    :                   :         :           :                
 VCCD_PLL1                    : 35        : power  :                   : 1.2V    :           :                
@@ -103,27 +103,27 @@ GND_PLL1                     : 36        : gnd    :                   :         
 VCCA_PLL1                    : 37        : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : 38        : gnd    :                   :         :           :                
 GND                          : 39        : gnd    :                   :         :           :                
-AD_IN[4]                     : 40        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[5]                     : 41        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[6]                     : 42        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[7]                     : 43        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[8]                     : 44        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[9]                     : 45        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[0]                     : 40        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[1]                     : 41        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[2]                     : 42        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[3]                     : 43        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[4]                     : 44        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[5]                     : 45        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
-AD_IN[10]                    : 47        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[11]                    : 48        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[6]                     : 47        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[7]                     : 48        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : 49        : gnd    :                   :         :           :                
 VCCINT                       : 50        : power  :                   : 1.2V    :           :                
-AD_IN[12]                    : 51        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[13]                    : 52        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-AD_IN[14]                    : 53        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[8]                     : 51        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[9]                     : 52        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[10]                    : 53        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : 54        : power  :                   : 3.3V    : 4         :                
-AD_IN[15]                    : 55        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[11]                    : 55        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : 56        : gnd    :                   :         :           :                
-A16                          : 57        : input  : 3.3-V LVTTL       :         : 4         : Y              
-A17                          : 58        : input  : 3.3-V LVTTL       :         : 4         : Y              
-A18                          : 59        : input  : 3.3-V LVTTL       :         : 4         : Y              
-RESERVED_INPUT               : 60        :        :                   :         : 4         :                
+AD_IN[12]                    : 57        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[13]                    : 58        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+AD_IN[14]                    : 59        : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+pin_name1                    : 60        : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : 61        : gnd    :                   :         :           :                
 VCCINT                       : 62        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT               : 63        :        :                   :         : 4         :                
@@ -136,15 +136,15 @@ RESERVED_INPUT               : 69        :        :                   :         
 RESERVED_INPUT               : 70        :        :                   :         : 4         :                
 RESERVED_INPUT               : 71        :        :                   :         : 4         :                
 RESERVED_INPUT               : 72        :        :                   :         : 4         :                
-RESERVED_INPUT               : 73        :        :                   :         : 3         :                
+INT4                         : 73        : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT               : 74        :        :                   :         : 3         :                
 RESERVED_INPUT               : 75        :        :                   :         : 3         :                
-~LVDS41p/nCEO~               : 76        : output : 3.3-V LVTTL       :         : 3         : N              
+~LVDS54p/nCEO~               : 76        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : 77        : power  :                   : 3.3V    : 3         :                
 GND                          : 78        : gnd    :                   :         :           :                
-RESERVED_INPUT               : 79        :        :                   :         : 3         :                
-RESERVED_INPUT               : 80        :        :                   :         : 3         :                
-RESERVED_INPUT               : 81        :        :                   :         : 3         :                
+pin_name2                    : 79        : output : 3.3-V LVTTL       :         : 3         : N              
+GND                          : 80        : gnd    :                   :         :           :                
+VCCINT                       : 81        : power  :                   : 1.2V    :           :                
 nSTATUS                      : 82        :        :                   :         : 3         :                
 CONF_DONE                    : 83        :        :                   :         : 3         :                
 MSEL1                        : 84        :        :                   :         : 3         :                
@@ -152,18 +152,18 @@ MSEL0                        : 85        :        :                   :         
 RESERVED_INPUT               : 86        :        :                   :         : 3         :                
 RESERVED_INPUT               : 87        :        :                   :         : 3         :                
 GND+                         : 88        :        :                   :         : 3         :                
-NOE                          : 89        : input  : 3.3-V LVTTL       :         : 3         : Y              
-NWE                          : 90        : input  : 3.3-V LVTTL       :         : 3         : Y              
-NADV                         : 91        : input  : 3.3-V LVTTL       :         : 3         : Y              
+GND+                         : 89        :        :                   :         : 3         :                
+GND+                         : 90        :        :                   :         : 3         :                
+GND+                         : 91        :        :                   :         : 3         :                
 RESERVED_INPUT               : 92        :        :                   :         : 3         :                
 RESERVED_INPUT               : 93        :        :                   :         : 3         :                
-pin_name2                    : 94        : output : 3.3-V LVTTL       :         : 3         : Y              
+RESERVED_INPUT               : 94        :        :                   :         : 3         :                
 VCCIO3                       : 95        : power  :                   : 3.3V    : 3         :                
 RESERVED_INPUT               : 96        :        :                   :         : 3         :                
-pin_name1                    : 97        : output : 3.3-V LVTTL       :         : 3         : Y              
+RESERVED_INPUT               : 97        :        :                   :         : 3         :                
 GND                          : 98        : gnd    :                   :         :           :                
 RESERVED_INPUT               : 99        :        :                   :         : 3         :                
-RESERVED_INPUT               : 100       :        :                   :         : 3         :                
+INT0                         : 100       : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT               : 101       :        :                   :         : 3         :                
 VCCIO3                       : 102       : power  :                   : 3.3V    : 3         :                
 RESERVED_INPUT               : 103       :        :                   :         : 3         :                
@@ -181,7 +181,7 @@ RESERVED_INPUT               : 114       :        :                   :         
 RESERVED_INPUT               : 115       :        :                   :         : 2         :                
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
-RESERVED_INPUT               : 118       :        :                   :         : 2         :                
+AD_IN[15]                    : 118       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT               : 119       :        :                   :         : 2         :                
 RESERVED_INPUT               : 120       :        :                   :         : 2         :                
 RESERVED_INPUT               : 121       :        :                   :         : 2         :                

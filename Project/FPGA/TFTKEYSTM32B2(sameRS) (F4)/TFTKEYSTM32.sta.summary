@@ -1,0 +1,49 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'IN1'
+Slack : -3.353
+TNS   : -29.241
+
+Type  : Setup 'FREDIV:inst11|q[9]'
+Slack : -3.196
+TNS   : -16.004
+
+Type  : Setup 'CNT16A:inst7|q[0]'
+Slack : 0.980
+TNS   : 0.000
+
+Type  : Hold 'IN1'
+Slack : -4.573
+TNS   : -4.573
+
+Type  : Hold 'FREDIV:inst11|q[9]'
+Slack : -1.747
+TNS   : -5.825
+
+Type  : Hold 'CNT16A:inst7|q[0]'
+Slack : -0.558
+TNS   : -1.092
+
+Type  : Minimum Pulse Width 'IN1'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'NADV'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'NWE'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'CNT16A:inst7|q[0]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'FREDIV:inst11|q[9]'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

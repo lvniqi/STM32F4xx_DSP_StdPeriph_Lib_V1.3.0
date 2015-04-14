@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_EP2C
-Wed Apr 08 17:50:56 2015
+Tue Apr 14 14:39:39 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 08 17:50:56 2015            ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 14 14:39:39 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
@@ -89,7 +89,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Device                                                                     ; EP2C8T144C8        ;                    ;
 ; Top-level entity name                                                      ; FPGA_EP2C          ; FPGA_EP2C          ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -186,55 +186,55 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                   ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------+---------+
-; FPGA2MCU.v                       ; yes             ; User Verilog HDL File              ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FPGA2MCU.v                ;         ;
-; FPGA_EP2C.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FPGA_EP2C.bdf             ;         ;
-; RAM_2PORT.v                      ; yes             ; User Wizard-Generated File         ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/RAM_2PORT.v               ;         ;
-; phase_addr.vhd                   ; yes             ; User VHDL File                     ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/phase_addr.vhd            ;         ;
-; PLL.v                            ; yes             ; User Wizard-Generated File         ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/PLL.v                     ;         ;
-; FIFO_ADIN.v                      ; yes             ; User Wizard-Generated File         ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FIFO_ADIN.v               ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altpll.tdf                     ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/aglobal130.inc                 ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/stratix_pll.inc                ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/stratixii_pll.inc              ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/cycloneii_pll.inc              ;         ;
-; dcfifo.tdf                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/dcfifo.tdf                     ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_counter.inc                ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_add_sub.inc                ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altdpram.inc                   ;         ;
-; a_graycounter.inc                ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_graycounter.inc              ;         ;
-; a_fefifo.inc                     ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_fefifo.inc                   ;         ;
-; a_gray2bin.inc                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_gray2bin.inc                 ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/dffpipe.inc                    ;         ;
-; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/alt_sync_fifo.inc              ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_compare.inc                ;         ;
-; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altsyncram_fifo.inc            ;         ;
-; db/dcfifo_qdf1.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dcfifo_qdf1.tdf        ;         ;
-; db/a_graycounter_r96.tdf         ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/a_graycounter_r96.tdf  ;         ;
-; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/a_graycounter_g2c.tdf  ;         ;
-; db/a_graycounter_f2c.tdf         ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/a_graycounter_f2c.tdf  ;         ;
-; db/altsyncram_1nu.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_1nu.tdf     ;         ;
-; db/altsyncram_cbc1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_cbc1.tdf    ;         ;
-; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dffpipe_c2e.tdf        ;         ;
-; db/alt_synch_pipe_jv7.tdf        ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/alt_synch_pipe_jv7.tdf ;         ;
-; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dffpipe_d09.tdf        ;         ;
-; db/alt_synch_pipe_kv7.tdf        ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/alt_synch_pipe_kv7.tdf ;         ;
-; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dffpipe_e09.tdf        ;         ;
-; db/cmpr_836.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/cmpr_836.tdf           ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altsyncram.tdf                 ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/stratix_ram_block.inc          ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_mux.inc                    ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_decode.inc                 ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_rdenreg.inc                  ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altrom.inc                     ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altram.inc                     ;         ;
-; db/altsyncram_l6n1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_l6n1.tdf    ;         ;
-; db/altsyncram_9us1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_9us1.tdf    ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                               ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; FPGA2MCU.v                       ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FPGA2MCU.v                ;         ;
+; FPGA_EP2C.bdf                    ; yes             ; User Block Diagram/Schematic File  ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FPGA_EP2C.bdf             ;         ;
+; RAM_2PORT.v                      ; yes             ; User Wizard-Generated File         ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/RAM_2PORT.v               ;         ;
+; phase_addr.vhd                   ; yes             ; User VHDL File                     ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/phase_addr.vhd            ;         ;
+; PLL.v                            ; yes             ; User Wizard-Generated File         ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/PLL.v                     ;         ;
+; FIFO_ADIN.v                      ; yes             ; User Wizard-Generated File         ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FIFO_ADIN.v               ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                                               ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                           ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                                          ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                                        ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                                        ;         ;
+; dcfifo.tdf                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/dcfifo.tdf                                               ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc                                          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                             ;         ;
+; a_graycounter.inc                ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_graycounter.inc                                        ;         ;
+; a_fefifo.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_fefifo.inc                                             ;         ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_gray2bin.inc                                           ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/dffpipe.inc                                              ;         ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/alt_sync_fifo.inc                                        ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc                                          ;         ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram_fifo.inc                                      ;         ;
+; db/dcfifo_qdf1.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dcfifo_qdf1.tdf        ;         ;
+; db/a_graycounter_r96.tdf         ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/a_graycounter_r96.tdf  ;         ;
+; db/a_graycounter_g2c.tdf         ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/a_graycounter_g2c.tdf  ;         ;
+; db/a_graycounter_f2c.tdf         ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/a_graycounter_f2c.tdf  ;         ;
+; db/altsyncram_1nu.tdf            ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_1nu.tdf     ;         ;
+; db/altsyncram_cbc1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_cbc1.tdf    ;         ;
+; db/dffpipe_c2e.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dffpipe_c2e.tdf        ;         ;
+; db/alt_synch_pipe_jv7.tdf        ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/alt_synch_pipe_jv7.tdf ;         ;
+; db/dffpipe_d09.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dffpipe_d09.tdf        ;         ;
+; db/alt_synch_pipe_kv7.tdf        ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/alt_synch_pipe_kv7.tdf ;         ;
+; db/dffpipe_e09.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/dffpipe_e09.tdf        ;         ;
+; db/cmpr_836.tdf                  ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/cmpr_836.tdf           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                           ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                    ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                           ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                            ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                               ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                               ;         ;
+; db/altsyncram_l6n1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_l6n1.tdf    ;         ;
+; db/altsyncram_9us1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/db/altsyncram_9us1.tdf    ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -317,15 +317,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                         ;
-+--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                                  ;
-+--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|PLL:inst2       ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/PLL.v       ;
-; Altera ; RAM: 2-PORT  ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|RAM_2PORT:inst4 ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/RAM_2PORT.v ;
-; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|FIFO_ADIN:inst8 ; D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FIFO_ADIN.v ;
-+--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                     ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                                              ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|PLL:inst2       ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/PLL.v       ;
+; Altera ; RAM: 2-PORT  ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|RAM_2PORT:inst4 ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/RAM_2PORT.v ;
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|FIFO_ADIN:inst8 ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/FIFO_ADIN.v ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1039,7 +1039,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1049,7 +1049,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Apr 08 17:50:53 2015
+    Info: Processing started: Tue Apr 14 14:39:30 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 4 design units, including 4 entities, in source file fpga2mcu.v
@@ -1243,7 +1243,7 @@ Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal 
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "INT0" is stuck at GND
     Warning (13410): Pin "INT4" is stuck at GND
-Info (144001): Generated suppressed messages file D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/output_files/FPGA_EP2C.map.smsg
+Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/output_files/FPGA_EP2C.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 320 device resources after synthesis - the final resource count might be different
@@ -1254,15 +1254,15 @@ Info (21057): Implemented 320 device resources after synthesis - the final resou
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 525 megabytes
-    Info: Processing ended: Wed Apr 08 17:50:56 2015
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 519 megabytes
+    Info: Processing ended: Tue Apr 14 14:39:40 2015
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/output_files/FPGA_EP2C.map.smsg.
+The suppressed messages can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC/output_files/FPGA_EP2C.map.smsg.
 
 

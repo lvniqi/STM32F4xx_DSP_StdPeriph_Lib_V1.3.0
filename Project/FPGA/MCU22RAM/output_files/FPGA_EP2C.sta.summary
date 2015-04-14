@@ -4,35 +4,35 @@ TimeQuest Timing Analyzer Summary
 
 Type  : Slow Model Setup 'NADV'
 Slack : -2.967
-TNS   : -44.120
+TNS   : -44.584
 
 Type  : Slow Model Setup 'NWE'
 Slack : -2.256
-TNS   : -24.520
+TNS   : -19.182
 
 Type  : Slow Model Setup 'SAVE_ADDR:inst|ADDR[15]'
-Slack : 0.561
+Slack : 0.688
 TNS   : 0.000
 
-Type  : Slow Model Hold 'SAVE_ADDR:inst|ADDR[15]'
-Slack : -1.176
-TNS   : -8.337
-
 Type  : Slow Model Hold 'NWE'
-Slack : -0.620
-TNS   : -0.620
+Slack : -1.645
+TNS   : -1.763
+
+Type  : Slow Model Hold 'SAVE_ADDR:inst|ADDR[15]'
+Slack : -1.312
+TNS   : -9.461
 
 Type  : Slow Model Hold 'NADV'
-Slack : -0.182
-TNS   : -1.456
+Slack : -0.173
+TNS   : -1.384
 
 Type  : Slow Model Minimum Pulse Width 'NWE'
 Slack : -2.567
-TNS   : -130.291
+TNS   : -130.127
 
 Type  : Slow Model Minimum Pulse Width 'NADV'
 Slack : -2.567
-TNS   : -101.893
+TNS   : -101.729
 
 Type  : Slow Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[15]'
 Slack : 0.500
@@ -44,31 +44,31 @@ TNS   : -11.656
 
 Type  : Fast Model Setup 'NADV'
 Slack : -0.979
-TNS   : -8.136
+TNS   : -8.480
 
 Type  : Fast Model Setup 'SAVE_ADDR:inst|ADDR[15]'
-Slack : 0.544
+Slack : 0.648
 TNS   : 0.000
 
 Type  : Fast Model Hold 'NWE'
-Slack : -0.827
-TNS   : -0.827
+Slack : -0.946
+TNS   : -0.946
 
 Type  : Fast Model Hold 'NADV'
-Slack : -0.603
-TNS   : -4.824
+Slack : -0.572
+TNS   : -4.576
 
 Type  : Fast Model Hold 'SAVE_ADDR:inst|ADDR[15]'
-Slack : -0.011
-TNS   : -0.025
+Slack : -0.120
+TNS   : -0.613
 
 Type  : Fast Model Minimum Pulse Width 'NWE'
 Slack : -1.880
-TNS   : -95.380
+TNS   : -95.222
 
 Type  : Fast Model Minimum Pulse Width 'NADV'
 Slack : -1.880
-TNS   : -73.540
+TNS   : -73.382
 
 Type  : Fast Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[15]'
 Slack : 0.500

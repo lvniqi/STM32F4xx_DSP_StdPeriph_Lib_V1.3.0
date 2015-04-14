@@ -1,0 +1,259 @@
+|TFTKEYF360
+DAV <= CNT16A:inst7.dav
+KEYCLK => FREDIV:inst11.clkin
+X0 => ENCODE:inst2.I0
+X1 => ENCODE:inst2.I1
+X2 => ENCODE:inst2.I2
+X3 => ENCODE:inst2.I3
+RS <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+ALE => DLATCH8:inst5.clk
+MCUD[0] <= TS4:inst17.do[0]
+MCUD[1] <= TS4:inst17.do[1]
+MCUD[2] <= TS4:inst17.do[2]
+MCUD[3] <= TS4:inst17.do[3]
+CS1 <= 74139:inst.Y11N
+A14 => 74139:inst.A1
+A15 => 74139:inst.B1
+CS2 <= 74139:inst.Y12N
+TFTWR <= WR.DB_MAX_OUTPUT_PORT_TYPE
+WR => TFTWR.DATAIN
+WR => inst3.IN0
+WR => inst21.IN1
+WR => inst23.IN1
+TFTRD <= RD.DB_MAX_OUTPUT_PORT_TYPE
+RD => TFTRD.DATAIN
+RD => inst28.IN0
+TFTRST <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+TFTCS <= 74139:inst.Y20N
+OUT1 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => inst6.IN0
+OUT2 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+DATA[0] <= LCDDATA[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA[1] <= LCDDATA[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA[2] <= LCDDATA[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA[3] <= LCDDATA[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA[4] <= LCDDATA[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA[5] <= LCDDATA[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA[6] <= LCDDATA[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA[7] <= LCDDATA[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA[8] <= LCDDATA[8].DB_MAX_OUTPUT_PORT_TYPE
+DATA[9] <= LCDDATA[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA[10] <= LCDDATA[10].DB_MAX_OUTPUT_PORT_TYPE
+DATA[11] <= LCDDATA[11].DB_MAX_OUTPUT_PORT_TYPE
+DATA[12] <= LCDDATA[12].DB_MAX_OUTPUT_PORT_TYPE
+DATA[13] <= LCDDATA[13].DB_MAX_OUTPUT_PORT_TYPE
+DATA[14] <= LCDDATA[14].DB_MAX_OUTPUT_PORT_TYPE
+DATA[15] <= LCDDATA[15].DB_MAX_OUTPUT_PORT_TYPE
+Y[0] <= DECODE:inst14.y[0]
+Y[1] <= DECODE:inst14.y[1]
+Y[2] <= DECODE:inst14.y[2]
+Y[3] <= DECODE:inst14.y[3]
+
+
+|TFTKEYF360|CNT16A:inst7
+clk => q[3].CLK
+clk => q[2].CLK
+clk => q[1].CLK
+clk => q[0].CLK
+clr => q~7.OUTPUTSELECT
+clr => q~6.OUTPUTSELECT
+clr => q~5.OUTPUTSELECT
+clr => q~4.OUTPUTSELECT
+dav <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|FREDIV:inst11
+clkin => q[13].CLK
+clkin => q[12].CLK
+clkin => q[11].CLK
+clkin => q[10].CLK
+clkin => q[9].CLK
+clkin => q[8].CLK
+clkin => q[7].CLK
+clkin => q[6].CLK
+clkin => q[5].CLK
+clkin => q[4].CLK
+clkin => q[3].CLK
+clkin => q[2].CLK
+clkin => q[1].CLK
+clkin => q[0].CLK
+clkout <= q[13].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|ENCODE:inst2
+I0 => y0~1.IN0
+I0 => y0~0.IN1
+I0 => y1~0.IN1
+I1 => y1~0.IN0
+I1 => y0~0.IN0
+I2 => ka~0.IN0
+I2 => y0~1.IN1
+I2 => y1~1.IN0
+I3 => ka~1.IN0
+I3 => y1~2.IN0
+I3 => y0~2.IN1
+y0 <= y0~3.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= y1~3.DB_MAX_OUTPUT_PORT_TYPE
+ka <= ka~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|DLATCH8:inst5
+clk => q[7]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+d[4] => q[4]~reg0.DATAIN
+d[5] => q[5]~reg0.DATAIN
+d[6] => q[6]~reg0.DATAIN
+d[7] => q[7]~reg0.DATAIN
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|74139:inst
+Y10N <= 33.DB_MAX_OUTPUT_PORT_TYPE
+G1N => 7.IN0
+B1 => 11.IN0
+A1 => 8.IN0
+Y11N <= 34.DB_MAX_OUTPUT_PORT_TYPE
+Y12N <= 35.DB_MAX_OUTPUT_PORT_TYPE
+Y13N <= 36.DB_MAX_OUTPUT_PORT_TYPE
+Y20N <= 37.DB_MAX_OUTPUT_PORT_TYPE
+G2N => 12.IN0
+B2 => 16.IN0
+A2 => 13.IN0
+Y21N <= 38.DB_MAX_OUTPUT_PORT_TYPE
+Y22N <= 39.DB_MAX_OUTPUT_PORT_TYPE
+Y23N <= 40.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|TS8:inst4
+en => do[7]~7.OE
+en => do[6]~6.OE
+en => do[5]~5.OE
+en => do[4]~4.OE
+en => do[3]~3.OE
+en => do[2]~2.OE
+en => do[1]~1.OE
+en => do[0]~0.OE
+di[0] => do[0]~0.DATAIN
+di[1] => do[1]~1.DATAIN
+di[2] => do[2]~2.DATAIN
+di[3] => do[3]~3.DATAIN
+di[4] => do[4]~4.DATAIN
+di[5] => do[5]~5.DATAIN
+di[6] => do[6]~6.DATAIN
+di[7] => do[7]~7.DATAIN
+do[0] <= do[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+do[1] <= do[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+do[2] <= do[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+do[3] <= do[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+do[4] <= do[4]~4.DB_MAX_OUTPUT_PORT_TYPE
+do[5] <= do[5]~5.DB_MAX_OUTPUT_PORT_TYPE
+do[6] <= do[6]~6.DB_MAX_OUTPUT_PORT_TYPE
+do[7] <= do[7]~7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|74273:inst18
+Q1 <= 19.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 19.ACLR
+CLRN => 18.ACLR
+CLRN => 17.ACLR
+CLRN => 16.ACLR
+CLRN => 15.ACLR
+CLRN => 14.ACLR
+CLRN => 13.ACLR
+CLRN => 12.ACLR
+CLK => 19.CLK
+CLK => 18.CLK
+CLK => 17.CLK
+CLK => 16.CLK
+CLK => 15.CLK
+CLK => 14.CLK
+CLK => 13.CLK
+CLK => 12.CLK
+D1 => 19.DATAIN
+Q2 <= 18.DB_MAX_OUTPUT_PORT_TYPE
+D2 => 18.DATAIN
+Q3 <= 17.DB_MAX_OUTPUT_PORT_TYPE
+D3 => 17.DATAIN
+Q4 <= 16.DB_MAX_OUTPUT_PORT_TYPE
+D4 => 16.DATAIN
+Q5 <= 15.DB_MAX_OUTPUT_PORT_TYPE
+D5 => 15.DATAIN
+Q6 <= 14.DB_MAX_OUTPUT_PORT_TYPE
+D6 => 14.DATAIN
+Q7 <= 13.DB_MAX_OUTPUT_PORT_TYPE
+D7 => 13.DATAIN
+Q8 <= 12.DB_MAX_OUTPUT_PORT_TYPE
+D8 => 12.DATAIN
+
+
+|TFTKEYF360|TS4:inst17
+en => do[3]~3.OE
+en => do[2]~2.OE
+en => do[1]~1.OE
+en => do[0]~0.OE
+di[0] => do[0]~0.DATAIN
+di[1] => do[1]~1.DATAIN
+di[2] => do[2]~2.DATAIN
+di[3] => do[3]~3.DATAIN
+do[0] <= do[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+do[1] <= do[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+do[2] <= do[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+do[3] <= do[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|REG4:inst16
+clk => q_temp[3].CLK
+clk => q_temp[2].CLK
+clk => q_temp[1].CLK
+clk => q_temp[0].CLK
+d[0] => q_temp[0].DATAIN
+d[1] => q_temp[1].DATAIN
+d[2] => q_temp[2].DATAIN
+d[3] => q_temp[3].DATAIN
+q[0] <= q_temp[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_temp[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_temp[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_temp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|CNT4A:inst13
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+en => q[0]~reg0.ENA
+en => q[1]~reg0.ENA
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYF360|DECODE:inst14
+a[0] => Equal3.IN3
+a[0] => Equal2.IN3
+a[0] => Equal1.IN3
+a[0] => Equal0.IN3
+a[1] => Equal3.IN2
+a[1] => Equal2.IN2
+a[1] => Equal1.IN2
+a[1] => Equal0.IN2
+y[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+

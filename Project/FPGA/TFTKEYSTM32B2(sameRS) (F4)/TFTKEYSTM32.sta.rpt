@@ -1,0 +1,1202 @@
+TimeQuest Timing Analyzer report for TFTKEYSTM32
+Tue Apr 14 13:17:19 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'IN1'
+ 12. Setup: 'FREDIV:inst11|q[9]'
+ 13. Setup: 'CNT16A:inst7|q[0]'
+ 14. Hold: 'IN1'
+ 15. Hold: 'FREDIV:inst11|q[9]'
+ 16. Hold: 'CNT16A:inst7|q[0]'
+ 17. Minimum Pulse Width: 'IN1'
+ 18. Minimum Pulse Width: 'NADV'
+ 19. Minimum Pulse Width: 'NWE'
+ 20. Minimum Pulse Width: 'CNT16A:inst7|q[0]'
+ 21. Minimum Pulse Width: 'FREDIV:inst11|q[9]'
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Propagation Delay
+ 27. Minimum Propagation Delay
+ 28. Output Enable Times
+ 29. Minimum Output Enable Times
+ 30. Output Disable Times
+ 31. Minimum Output Disable Times
+ 32. Setup Transfers
+ 33. Hold Transfers
+ 34. Report TCCS
+ 35. Report RSKM
+ 36. Unconstrained Paths
+ 37. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; TFTKEYSTM32                                                        ;
+; Device Family      ; MAX II                                                             ;
+; Device Name        ; EPM240T100C5                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Slow Model                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                 ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+; Clock Name         ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+; CNT16A:inst7|q[0]  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CNT16A:inst7|q[0] }  ;
+; FREDIV:inst11|q[9] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { FREDIV:inst11|q[9] } ;
+; IN1                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { IN1 }                ;
+; NADV               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { NADV }               ;
+; NWE                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { NWE }                ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+
+
++----------------------------------------------------------+
+; Fmax Summary                                             ;
++------------+-----------------+--------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name         ; Note ;
++------------+-----------------+--------------------+------+
+; 229.73 MHz ; 229.73 MHz      ; IN1                ;      ;
+; 238.32 MHz ; 238.32 MHz      ; FREDIV:inst11|q[9] ;      ;
++------------+-----------------+--------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------+
+; Setup Summary                               ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; IN1                ; -3.353 ; -29.241       ;
+; FREDIV:inst11|q[9] ; -3.196 ; -16.004       ;
+; CNT16A:inst7|q[0]  ; 0.980  ; 0.000         ;
++--------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Hold Summary                                ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; IN1                ; -4.573 ; -4.573        ;
+; FREDIV:inst11|q[9] ; -1.747 ; -5.825        ;
+; CNT16A:inst7|q[0]  ; -0.558 ; -1.092        ;
++--------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------------+
+; Minimum Pulse Width Summary                 ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; IN1                ; -2.289 ; -2.289        ;
+; NADV               ; -2.289 ; -2.289        ;
+; NWE                ; -2.289 ; -2.289        ;
+; CNT16A:inst7|q[0]  ; 0.234  ; 0.000         ;
+; FREDIV:inst11|q[9] ; 0.234  ; 0.000         ;
++--------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'IN1'                                                                                                                 ;
++--------+--------------------+--------------------+--------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock       ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------------+-------------+--------------+------------+------------+
+; -3.353 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 4.020      ;
+; -3.353 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 4.020      ;
+; -3.353 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 4.020      ;
+; -3.353 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 4.020      ;
+; -3.353 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 4.020      ;
+; -3.240 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.907      ;
+; -3.240 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.907      ;
+; -3.240 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.907      ;
+; -3.240 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.907      ;
+; -3.240 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.907      ;
+; -3.198 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.865      ;
+; -3.117 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.784      ;
+; -3.117 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.784      ;
+; -3.117 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.784      ;
+; -3.117 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.784      ;
+; -3.117 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.784      ;
+; -3.109 ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.776      ;
+; -3.046 ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.713      ;
+; -2.987 ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.654      ;
+; -2.986 ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.653      ;
+; -2.886 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.553      ;
+; -2.864 ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.531      ;
+; -2.863 ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.530      ;
+; -2.773 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.440      ;
+; -2.763 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.430      ;
+; -2.741 ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.408      ;
+; -2.740 ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.407      ;
+; -2.731 ; FREDIV:inst11|q[8] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.398      ;
+; -2.731 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.398      ;
+; -2.650 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.317      ;
+; -2.650 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.317      ;
+; -2.641 ; FREDIV:inst11|q[7] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.640 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[2] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.307      ;
+; -2.527 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.194      ;
+; -2.527 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[2] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.194      ;
+; -2.518 ; FREDIV:inst11|q[7] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.185      ;
+; -2.517 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[1] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 3.184      ;
+; -1.785 ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.452      ;
+; -1.785 ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.452      ;
+; -1.784 ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.451      ;
+; -1.775 ; FREDIV:inst11|q[8] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.442      ;
+; -1.775 ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.442      ;
+; -1.680 ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[2] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.347      ;
+; -1.680 ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[1] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.347      ;
+; -1.671 ; FREDIV:inst11|q[7] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.338      ;
+; -1.670 ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[0] ; IN1                ; IN1         ; 1.000        ; 0.000      ; 2.337      ;
+; 4.519  ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; IN1         ; 0.500        ; 5.856      ; 1.880      ;
+; 5.019  ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; IN1         ; 1.000        ; 5.856      ; 1.880      ;
++--------+--------------------+--------------------+--------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'FREDIV:inst11|q[9]'                                                                                                       ;
++--------+-------------------+-------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------------+--------------------+--------------+------------+------------+
+; -3.196 ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.863      ;
+; -3.194 ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[2] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.861      ;
+; -3.190 ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[3] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.857      ;
+; -3.187 ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.854      ;
+; -3.056 ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.723      ;
+; -3.054 ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[2] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.721      ;
+; -3.050 ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[3] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.717      ;
+; -3.047 ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.714      ;
+; -2.491 ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.158      ;
+; -2.489 ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[2] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.156      ;
+; -2.485 ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[3] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.152      ;
+; -2.482 ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 3.149      ;
+; -1.621 ; CNT4A:inst13|q[0] ; CNT4A:inst13|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 2.288      ;
+; -1.616 ; CNT4A:inst13|q[0] ; CNT4A:inst13|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 2.283      ;
+; -1.537 ; CNT4A:inst13|q[1] ; CNT4A:inst13|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 1.000        ; 0.000      ; 2.204      ;
+; 0.670  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.500        ; 3.664      ; 3.537      ;
+; 0.672  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.500        ; 3.664      ; 3.535      ;
+; 0.676  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.500        ; 3.664      ; 3.531      ;
+; 0.679  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.500        ; 3.664      ; 3.528      ;
+; 1.170  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 1.000        ; 3.664      ; 3.537      ;
+; 1.172  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 1.000        ; 3.664      ; 3.535      ;
+; 1.176  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 1.000        ; 3.664      ; 3.531      ;
+; 1.179  ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 1.000        ; 3.664      ; 3.528      ;
++--------+-------------------+-------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CNT16A:inst7|q[0]'                                                                                                          ;
++-------+-------------------+-----------------------+--------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node               ; Launch Clock       ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-----------------------+--------------------+-------------------+--------------+------------+------------+
+; 0.980 ; CNT4A:inst13|q[1] ; REG4:inst16|q_temp[1] ; FREDIV:inst11|q[9] ; CNT16A:inst7|q[0] ; 0.500        ; 2.511      ; 1.698      ;
+; 1.004 ; CNT4A:inst13|q[0] ; REG4:inst16|q_temp[0] ; FREDIV:inst11|q[9] ; CNT16A:inst7|q[0] ; 0.500        ; 2.511      ; 1.674      ;
++-------+-------------------+-----------------------+--------------------+-------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'IN1'                                                                                                                  ;
++--------+--------------------+--------------------+--------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock       ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------------+-------------+--------------+------------+------------+
+; -4.573 ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; IN1         ; 0.000        ; 5.856      ; 1.880      ;
+; -4.073 ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; IN1         ; -0.500       ; 5.856      ; 1.880      ;
+; 2.116  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[0] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; FREDIV:inst11|q[7] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.126  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[2] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[1] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.221  ; FREDIV:inst11|q[8] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230  ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231  ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.948  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[1] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949  ; FREDIV:inst11|q[7] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.958  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[2] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.179      ;
+; 3.059  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[2] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060  ; FREDIV:inst11|q[7] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.290      ;
+; 3.161  ; FREDIV:inst11|q[8] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170  ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[3] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171  ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.180  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.401      ;
+; 3.281  ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[4] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282  ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.503      ;
+; 3.392  ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.613      ;
+; 3.393  ; FREDIV:inst11|q[6] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.614      ;
+; 3.492  ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; FREDIV:inst11|q[4] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.503  ; FREDIV:inst11|q[5] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.724      ;
+; 3.538  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.759      ;
+; 3.538  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.759      ;
+; 3.538  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.759      ;
+; 3.538  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.759      ;
+; 3.538  ; FREDIV:inst11|q[2] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.759      ;
+; 3.630  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; FREDIV:inst11|q[3] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.851      ;
+; 3.649  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.870      ;
+; 3.649  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.870      ;
+; 3.649  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.870      ;
+; 3.649  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.870      ;
+; 3.649  ; FREDIV:inst11|q[1] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.870      ;
+; 3.750  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[9] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[8] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[7] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[6] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; FREDIV:inst11|q[0] ; FREDIV:inst11|q[5] ; IN1                ; IN1         ; 0.000        ; 0.000      ; 3.971      ;
++--------+--------------------+--------------------+--------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'FREDIV:inst11|q[9]'                                                                                                        ;
++--------+-------------------+-------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------------+--------------------+--------------+------------+------------+
+; -1.747 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.000        ; 3.664      ; 2.514      ;
+; -1.511 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.000        ; 3.664      ; 2.750      ;
+; -1.453 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.000        ; 3.664      ; 2.808      ;
+; -1.247 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; -0.500       ; 3.664      ; 2.514      ;
+; -1.114 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 0.000        ; 3.664      ; 3.147      ;
+; -1.011 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; -0.500       ; 3.664      ; 2.750      ;
+; -0.953 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; -0.500       ; 3.664      ; 2.808      ;
+; -0.614 ; CNT16A:inst7|q[0] ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; -0.500       ; 3.664      ; 3.147      ;
+; 1.983  ; CNT4A:inst13|q[1] ; CNT4A:inst13|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.204      ;
+; 2.062  ; CNT4A:inst13|q[0] ; CNT4A:inst13|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.283      ;
+; 2.067  ; CNT4A:inst13|q[0] ; CNT4A:inst13|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.288      ;
+; 2.163  ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[3] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.384      ;
+; 2.177  ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.398      ;
+; 2.215  ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[2] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.436      ;
+; 2.224  ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[3] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.445      ;
+; 2.477  ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[2] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.698      ;
+; 2.563  ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[3] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 2.784      ;
+; 2.928  ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 3.149      ;
+; 2.935  ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[2] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 3.156      ;
+; 2.937  ; CNT16A:inst7|q[3] ; CNT16A:inst7|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 3.158      ;
+; 3.493  ; CNT16A:inst7|q[1] ; CNT16A:inst7|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 3.714      ;
+; 3.633  ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[0] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 3.854      ;
+; 3.642  ; CNT16A:inst7|q[2] ; CNT16A:inst7|q[1] ; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 0.000        ; 0.000      ; 3.863      ;
++--------+-------------------+-------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CNT16A:inst7|q[0]'                                                                                                            ;
++--------+-------------------+-----------------------+--------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node               ; Launch Clock       ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-----------------------+--------------------+-------------------+--------------+------------+------------+
+; -0.558 ; CNT4A:inst13|q[0] ; REG4:inst16|q_temp[0] ; FREDIV:inst11|q[9] ; CNT16A:inst7|q[0] ; -0.500       ; 2.511      ; 1.674      ;
+; -0.534 ; CNT4A:inst13|q[1] ; REG4:inst16|q_temp[1] ; FREDIV:inst11|q[9] ; CNT16A:inst7|q[0] ; -0.500       ; 2.511      ; 1.698      ;
++--------+-------------------+-----------------------+--------------------+-------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'IN1'                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+--------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; IN1   ; Rise       ; IN1                ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[0] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[0] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[1] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[1] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[2] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[2] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[3] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[3] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[4] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[4] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[5] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[5] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[6] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[6] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[7] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[7] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[8] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[8] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; IN1   ; Fall       ; FREDIV:inst11|q[9] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; IN1   ; Fall       ; FREDIV:inst11|q[9] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; IN1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; IN1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[4]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[4]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[5]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[5]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[6]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[6]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[7]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[7]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[8]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[8]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IN1   ; Rise       ; inst11|q[9]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IN1   ; Rise       ; inst11|q[9]|clk    ;
++--------+--------------+----------------+------------------+-------+------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'NADV'                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; NADV  ; Rise       ; NADV               ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; TEST:inst23|key_cs ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; TEST:inst23|key_cs ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; TEST:inst23|rst_cs ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; TEST:inst23|rst_cs ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; TEST:inst23|tft_cs ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; TEST:inst23|tft_cs ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; NADV|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; NADV|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst23|key_cs|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst23|key_cs|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst23|rst_cs|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst23|rst_cs|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst23|tft_cs|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst23|tft_cs|clk  ;
++--------+--------------+----------------+------------------+-------+------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'NWE'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; NWE   ; Rise       ; NWE           ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; inst1         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; inst1         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst3|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst3|datad   ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CNT16A:inst7|q[0]'                                                                          ;
++-------+--------------+----------------+------------------+-------------------+------------+-----------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock             ; Clock Edge ; Target                ;
++-------+--------------+----------------+------------------+-------------------+------------+-----------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[0] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[0] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[1] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[1] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[2] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[2] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[3] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; REG4:inst16|q_temp[3] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[0]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[0]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[1]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[1]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[2]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[2]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[3]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; inst16|q_temp[3]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; inst7|q[0]|regout     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; inst7|q[0]|regout     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; rtl~0|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; rtl~0|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; CNT16A:inst7|q[0] ; Rise       ; rtl~0|datac           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; CNT16A:inst7|q[0] ; Rise       ; rtl~0|datac           ;
++-------+--------------+----------------+------------------+-------------------+------------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'FREDIV:inst11|q[9]'                                                                       ;
++-------+--------------+----------------+------------------+--------------------+------------+--------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock              ; Clock Edge ; Target             ;
++-------+--------------+----------------+------------------+--------------------+------------+--------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; CNT16A:inst7|q[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; FREDIV:inst11|q[9] ; Fall       ; CNT4A:inst13|q[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Fall       ; CNT4A:inst13|q[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; FREDIV:inst11|q[9] ; Fall       ; CNT4A:inst13|q[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Fall       ; CNT4A:inst13|q[1]  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst11|q[9]|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst11|q[9]|regout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst13|q[0]|clk    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst13|q[0]|clk    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst13|q[1]|clk    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst13|q[1]|clk    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[0]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[0]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[1]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[1]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[2]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[2]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[3]|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FREDIV:inst11|q[9] ; Rise       ; inst7|q[3]|clk     ;
++-------+--------------+----------------+------------------+--------------------+------------+--------------------+
+
+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise   ; Fall   ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; X0        ; CNT16A:inst7|q[0]  ; 1.224  ; 1.224  ; Rise       ; CNT16A:inst7|q[0]  ;
+; X1        ; CNT16A:inst7|q[0]  ; 1.209  ; 1.209  ; Rise       ; CNT16A:inst7|q[0]  ;
+; X2        ; CNT16A:inst7|q[0]  ; 1.105  ; 1.105  ; Rise       ; CNT16A:inst7|q[0]  ;
+; X3        ; CNT16A:inst7|q[0]  ; 0.903  ; 0.903  ; Rise       ; CNT16A:inst7|q[0]  ;
+; X0        ; FREDIV:inst11|q[9] ; 6.968  ; 6.968  ; Rise       ; FREDIV:inst11|q[9] ;
+; X1        ; FREDIV:inst11|q[9] ; 7.086  ; 7.086  ; Rise       ; FREDIV:inst11|q[9] ;
+; X2        ; FREDIV:inst11|q[9] ; 6.923  ; 6.923  ; Rise       ; FREDIV:inst11|q[9] ;
+; X3        ; FREDIV:inst11|q[9] ; 6.755  ; 6.755  ; Rise       ; FREDIV:inst11|q[9] ;
+; X0        ; FREDIV:inst11|q[9] ; 6.316  ; 6.316  ; Fall       ; FREDIV:inst11|q[9] ;
+; X1        ; FREDIV:inst11|q[9] ; 6.434  ; 6.434  ; Fall       ; FREDIV:inst11|q[9] ;
+; X2        ; FREDIV:inst11|q[9] ; 6.271  ; 6.271  ; Fall       ; FREDIV:inst11|q[9] ;
+; X3        ; FREDIV:inst11|q[9] ; 6.103  ; 6.103  ; Fall       ; FREDIV:inst11|q[9] ;
+; A16       ; NADV               ; 0.119  ; 0.119  ; Rise       ; NADV               ;
+; DA[*]     ; NADV               ; 0.432  ; 0.432  ; Rise       ; NADV               ;
+;  DA[1]    ; NADV               ; 0.432  ; 0.432  ; Rise       ; NADV               ;
+;  DA[2]    ; NADV               ; -0.336 ; -0.336 ; Rise       ; NADV               ;
+; DA[*]     ; NWE                ; 0.838  ; 0.838  ; Rise       ; NWE                ;
+;  DA[0]    ; NWE                ; 0.838  ; 0.838  ; Rise       ; NWE                ;
++-----------+--------------------+--------+--------+------------+--------------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise   ; Fall   ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; X0        ; CNT16A:inst7|q[0]  ; -0.660 ; -0.660 ; Rise       ; CNT16A:inst7|q[0]  ;
+; X1        ; CNT16A:inst7|q[0]  ; -0.641 ; -0.641 ; Rise       ; CNT16A:inst7|q[0]  ;
+; X2        ; CNT16A:inst7|q[0]  ; -0.545 ; -0.545 ; Rise       ; CNT16A:inst7|q[0]  ;
+; X3        ; CNT16A:inst7|q[0]  ; -0.336 ; -0.336 ; Rise       ; CNT16A:inst7|q[0]  ;
+; X0        ; FREDIV:inst11|q[9] ; -4.596 ; -4.596 ; Rise       ; FREDIV:inst11|q[9] ;
+; X1        ; FREDIV:inst11|q[9] ; -4.714 ; -4.714 ; Rise       ; FREDIV:inst11|q[9] ;
+; X2        ; FREDIV:inst11|q[9] ; -4.551 ; -4.551 ; Rise       ; FREDIV:inst11|q[9] ;
+; X3        ; FREDIV:inst11|q[9] ; -4.383 ; -4.383 ; Rise       ; FREDIV:inst11|q[9] ;
+; X0        ; FREDIV:inst11|q[9] ; -5.447 ; -5.447 ; Fall       ; FREDIV:inst11|q[9] ;
+; X1        ; FREDIV:inst11|q[9] ; -5.565 ; -5.565 ; Fall       ; FREDIV:inst11|q[9] ;
+; X2        ; FREDIV:inst11|q[9] ; -5.402 ; -5.402 ; Fall       ; FREDIV:inst11|q[9] ;
+; X3        ; FREDIV:inst11|q[9] ; -5.234 ; -5.234 ; Fall       ; FREDIV:inst11|q[9] ;
+; A16       ; NADV               ; 0.691  ; 0.691  ; Rise       ; NADV               ;
+; DA[*]     ; NADV               ; 0.937  ; 0.937  ; Rise       ; NADV               ;
+;  DA[1]    ; NADV               ; 0.850  ; 0.850  ; Rise       ; NADV               ;
+;  DA[2]    ; NADV               ; 0.937  ; 0.937  ; Rise       ; NADV               ;
+; DA[*]     ; NWE                ; -0.284 ; -0.284 ; Rise       ; NWE                ;
+;  DA[0]    ; NWE                ; -0.284 ; -0.284 ; Rise       ; NWE                ;
++-----------+--------------------+--------+--------+------------+--------------------+
+
+
++------------------------------------------------------------------------------------+
+; Clock to Output Times                                                              ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise   ; Fall   ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; DA[*]     ; CNT16A:inst7|q[0]  ; 12.930 ; 12.930 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[0]    ; CNT16A:inst7|q[0]  ; 11.241 ; 11.241 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[1]    ; CNT16A:inst7|q[0]  ; 11.243 ; 11.243 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[2]    ; CNT16A:inst7|q[0]  ; 12.930 ; 12.930 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[3]    ; CNT16A:inst7|q[0]  ; 12.829 ; 12.829 ; Rise       ; CNT16A:inst7|q[0]  ;
+; DAV       ; CNT16A:inst7|q[0]  ; 6.911  ;        ; Rise       ; CNT16A:inst7|q[0]  ;
+; DAV       ; CNT16A:inst7|q[0]  ;        ; 6.911  ; Fall       ; CNT16A:inst7|q[0]  ;
+; DAV       ; FREDIV:inst11|q[9] ; 11.277 ; 11.277 ; Rise       ; FREDIV:inst11|q[9] ;
+; Y[*]      ; FREDIV:inst11|q[9] ; 10.351 ; 10.351 ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[0]     ; FREDIV:inst11|q[9] ; 9.786  ; 9.786  ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[1]     ; FREDIV:inst11|q[9] ; 9.771  ; 9.771  ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[2]     ; FREDIV:inst11|q[9] ; 10.351 ; 10.351 ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[3]     ; FREDIV:inst11|q[9] ; 9.977  ; 9.977  ; Fall       ; FREDIV:inst11|q[9] ;
+; OUT1      ; IN1                ; 5.506  ; 5.506  ; Rise       ; IN1                ;
+; OUT2      ; IN1                ; 5.487  ; 5.487  ; Rise       ; IN1                ;
+; OUT1      ; IN1                ; 5.506  ; 5.506  ; Fall       ; IN1                ;
+; OUT2      ; IN1                ; 5.487  ; 5.487  ; Fall       ; IN1                ;
+; DA[*]     ; NADV               ; 16.989 ; 16.989 ; Rise       ; NADV               ;
+;  DA[0]    ; NADV               ; 16.067 ; 16.067 ; Rise       ; NADV               ;
+;  DA[1]    ; NADV               ; 16.076 ; 16.076 ; Rise       ; NADV               ;
+;  DA[2]    ; NADV               ; 16.065 ; 16.065 ; Rise       ; NADV               ;
+;  DA[3]    ; NADV               ; 16.073 ; 16.073 ; Rise       ; NADV               ;
+;  DA[6]    ; NADV               ; 16.453 ; 16.453 ; Rise       ; NADV               ;
+;  DA[7]    ; NADV               ; 15.782 ; 15.782 ; Rise       ; NADV               ;
+;  DA[8]    ; NADV               ; 15.867 ; 15.867 ; Rise       ; NADV               ;
+;  DA[9]    ; NADV               ; 15.712 ; 15.712 ; Rise       ; NADV               ;
+;  DA[10]   ; NADV               ; 16.314 ; 16.314 ; Rise       ; NADV               ;
+;  DA[11]   ; NADV               ; 15.914 ; 15.914 ; Rise       ; NADV               ;
+;  DA[12]   ; NADV               ; 16.489 ; 16.489 ; Rise       ; NADV               ;
+;  DA[13]   ; NADV               ; 15.781 ; 15.781 ; Rise       ; NADV               ;
+;  DA[14]   ; NADV               ; 15.248 ; 15.248 ; Rise       ; NADV               ;
+;  DA[15]   ; NADV               ; 16.989 ; 16.989 ; Rise       ; NADV               ;
+; DB[*]     ; NADV               ; 17.180 ; 17.180 ; Rise       ; NADV               ;
+;  DB[6]    ; NADV               ; 16.064 ; 16.064 ; Rise       ; NADV               ;
+;  DB[7]    ; NADV               ; 16.169 ; 16.169 ; Rise       ; NADV               ;
+;  DB[8]    ; NADV               ; 16.144 ; 16.144 ; Rise       ; NADV               ;
+;  DB[9]    ; NADV               ; 16.370 ; 16.370 ; Rise       ; NADV               ;
+;  DB[10]   ; NADV               ; 17.180 ; 17.180 ; Rise       ; NADV               ;
+;  DB[11]   ; NADV               ; 16.545 ; 16.545 ; Rise       ; NADV               ;
+;  DB[12]   ; NADV               ; 16.749 ; 16.749 ; Rise       ; NADV               ;
+;  DB[13]   ; NADV               ; 16.763 ; 16.763 ; Rise       ; NADV               ;
+;  DB[14]   ; NADV               ; 15.547 ; 15.547 ; Rise       ; NADV               ;
+;  DB[15]   ; NADV               ; 16.694 ; 16.694 ; Rise       ; NADV               ;
+; TFTCS     ; NADV               ; 12.329 ; 12.329 ; Rise       ; NADV               ;
+; TFTRST    ; NWE                ; 10.628 ; 10.628 ; Rise       ; NWE                ;
+; TFTWR     ; NWE                ; 6.795  ; 6.795  ; Rise       ; NWE                ;
+; TFTWR     ; NWE                ; 6.795  ; 6.795  ; Fall       ; NWE                ;
++-----------+--------------------+--------+--------+------------+--------------------+
+
+
++------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                      ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise   ; Fall   ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+--------+--------+------------+--------------------+
+; DA[*]     ; CNT16A:inst7|q[0]  ; 11.241 ; 11.241 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[0]    ; CNT16A:inst7|q[0]  ; 11.241 ; 11.241 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[1]    ; CNT16A:inst7|q[0]  ; 11.243 ; 11.243 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[2]    ; CNT16A:inst7|q[0]  ; 12.930 ; 12.930 ; Rise       ; CNT16A:inst7|q[0]  ;
+;  DA[3]    ; CNT16A:inst7|q[0]  ; 12.829 ; 12.829 ; Rise       ; CNT16A:inst7|q[0]  ;
+; DAV       ; CNT16A:inst7|q[0]  ; 6.911  ;        ; Rise       ; CNT16A:inst7|q[0]  ;
+; DAV       ; CNT16A:inst7|q[0]  ;        ; 6.911  ; Fall       ; CNT16A:inst7|q[0]  ;
+; DAV       ; FREDIV:inst11|q[9] ; 10.572 ; 10.572 ; Rise       ; FREDIV:inst11|q[9] ;
+; Y[*]      ; FREDIV:inst11|q[9] ; 9.580  ; 9.580  ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[0]     ; FREDIV:inst11|q[9] ; 9.580  ; 9.580  ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[1]     ; FREDIV:inst11|q[9] ; 9.585  ; 9.585  ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[2]     ; FREDIV:inst11|q[9] ; 10.146 ; 10.146 ; Fall       ; FREDIV:inst11|q[9] ;
+;  Y[3]     ; FREDIV:inst11|q[9] ; 9.787  ; 9.787  ; Fall       ; FREDIV:inst11|q[9] ;
+; OUT1      ; IN1                ; 5.506  ; 5.506  ; Rise       ; IN1                ;
+; OUT2      ; IN1                ; 5.487  ; 5.487  ; Rise       ; IN1                ;
+; OUT1      ; IN1                ; 5.506  ; 5.506  ; Fall       ; IN1                ;
+; OUT2      ; IN1                ; 5.487  ; 5.487  ; Fall       ; IN1                ;
+; DA[*]     ; NADV               ; 13.489 ; 13.489 ; Rise       ; NADV               ;
+;  DA[0]    ; NADV               ; 15.453 ; 15.453 ; Rise       ; NADV               ;
+;  DA[1]    ; NADV               ; 15.462 ; 15.462 ; Rise       ; NADV               ;
+;  DA[2]    ; NADV               ; 15.438 ; 15.438 ; Rise       ; NADV               ;
+;  DA[3]    ; NADV               ; 15.459 ; 15.459 ; Rise       ; NADV               ;
+;  DA[6]    ; NADV               ; 15.757 ; 15.757 ; Rise       ; NADV               ;
+;  DA[7]    ; NADV               ; 14.545 ; 14.545 ; Rise       ; NADV               ;
+;  DA[8]    ; NADV               ; 14.623 ; 14.623 ; Rise       ; NADV               ;
+;  DA[9]    ; NADV               ; 15.280 ; 15.280 ; Rise       ; NADV               ;
+;  DA[10]   ; NADV               ; 15.071 ; 15.071 ; Rise       ; NADV               ;
+;  DA[11]   ; NADV               ; 14.679 ; 14.679 ; Rise       ; NADV               ;
+;  DA[12]   ; NADV               ; 15.251 ; 15.251 ; Rise       ; NADV               ;
+;  DA[13]   ; NADV               ; 14.540 ; 14.540 ; Rise       ; NADV               ;
+;  DA[14]   ; NADV               ; 15.248 ; 15.248 ; Rise       ; NADV               ;
+;  DA[15]   ; NADV               ; 13.489 ; 13.489 ; Rise       ; NADV               ;
+; DB[*]     ; NADV               ; 13.194 ; 13.194 ; Rise       ; NADV               ;
+;  DB[6]    ; NADV               ; 15.368 ; 15.368 ; Rise       ; NADV               ;
+;  DB[7]    ; NADV               ; 14.932 ; 14.932 ; Rise       ; NADV               ;
+;  DB[8]    ; NADV               ; 14.900 ; 14.900 ; Rise       ; NADV               ;
+;  DB[9]    ; NADV               ; 15.938 ; 15.938 ; Rise       ; NADV               ;
+;  DB[10]   ; NADV               ; 15.937 ; 15.937 ; Rise       ; NADV               ;
+;  DB[11]   ; NADV               ; 15.310 ; 15.310 ; Rise       ; NADV               ;
+;  DB[12]   ; NADV               ; 15.511 ; 15.511 ; Rise       ; NADV               ;
+;  DB[13]   ; NADV               ; 15.522 ; 15.522 ; Rise       ; NADV               ;
+;  DB[14]   ; NADV               ; 15.547 ; 15.547 ; Rise       ; NADV               ;
+;  DB[15]   ; NADV               ; 13.194 ; 13.194 ; Rise       ; NADV               ;
+; TFTCS     ; NADV               ; 12.329 ; 12.329 ; Rise       ; NADV               ;
+; TFTRST    ; NWE                ; 10.628 ; 10.628 ; Rise       ; NWE                ;
+; TFTWR     ; NWE                ; 6.795  ; 6.795  ; Rise       ; NWE                ;
+; TFTWR     ; NWE                ; 6.795  ; 6.795  ; Fall       ; NWE                ;
++-----------+--------------------+--------+--------+------------+--------------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; DA[0]      ; DB[0]       ; 8.984  ;    ;    ; 8.984  ;
+; DA[1]      ; DB[1]       ; 8.943  ;    ;    ; 8.943  ;
+; DA[2]      ; DB[2]       ; 8.886  ;    ;    ; 8.886  ;
+; DA[3]      ; DB[3]       ; 8.895  ;    ;    ; 8.895  ;
+; DA[4]      ; DB[4]       ; 8.843  ;    ;    ; 8.843  ;
+; DA[5]      ; DB[5]       ; 8.799  ;    ;    ; 8.799  ;
+; DA[6]      ; DA[6]       ; 11.364 ;    ;    ; 11.364 ;
+; DA[6]      ; DA[7]       ; 10.681 ;    ;    ; 10.681 ;
+; DA[6]      ; DB[6]       ; 10.975 ;    ;    ; 10.975 ;
+; DA[6]      ; DB[7]       ; 11.068 ;    ;    ; 11.068 ;
+; DA[7]      ; DA[7]       ; 10.003 ;    ;    ; 10.003 ;
+; DA[7]      ; DA[8]       ; 10.106 ;    ;    ; 10.106 ;
+; DA[7]      ; DB[7]       ; 10.390 ;    ;    ; 10.390 ;
+; DA[7]      ; DB[8]       ; 10.383 ;    ;    ; 10.383 ;
+; DA[8]      ; DA[8]       ; 10.109 ;    ;    ; 10.109 ;
+; DA[8]      ; DA[9]       ; 10.526 ;    ;    ; 10.526 ;
+; DA[8]      ; DB[8]       ; 10.386 ;    ;    ; 10.386 ;
+; DA[8]      ; DB[9]       ; 11.184 ;    ;    ; 11.184 ;
+; DA[9]      ; DA[9]       ; 10.177 ;    ;    ; 10.177 ;
+; DA[9]      ; DA[10]      ; 10.538 ;    ;    ; 10.538 ;
+; DA[9]      ; DB[9]       ; 10.835 ;    ;    ; 10.835 ;
+; DA[9]      ; DB[10]      ; 11.404 ;    ;    ; 11.404 ;
+; DA[10]     ; DA[10]      ; 10.809 ;    ;    ; 10.809 ;
+; DA[10]     ; DA[11]      ; 10.391 ;    ;    ; 10.391 ;
+; DA[10]     ; DA[12]      ; 10.972 ;    ;    ; 10.972 ;
+; DA[10]     ; DB[10]      ; 11.675 ;    ;    ; 11.675 ;
+; DA[10]     ; DB[11]      ; 11.022 ;    ;    ; 11.022 ;
+; DA[10]     ; DB[12]      ; 11.232 ;    ;    ; 11.232 ;
+; DA[11]     ; DA[11]      ; 10.161 ;    ;    ; 10.161 ;
+; DA[11]     ; DA[13]      ; 10.223 ;    ;    ; 10.223 ;
+; DA[11]     ; DB[11]      ; 10.792 ;    ;    ; 10.792 ;
+; DA[11]     ; DB[13]      ; 11.205 ;    ;    ; 11.205 ;
+; DA[12]     ; DA[12]      ; 10.659 ;    ;    ; 10.659 ;
+; DA[12]     ; DA[14]      ; 10.989 ;    ;    ; 10.989 ;
+; DA[12]     ; DB[12]      ; 10.919 ;    ;    ; 10.919 ;
+; DA[12]     ; DB[14]      ; 11.288 ;    ;    ; 11.288 ;
+; DA[13]     ; DA[13]      ; 9.775  ;    ;    ; 9.775  ;
+; DA[13]     ; DA[15]      ; 11.158 ;    ;    ; 11.158 ;
+; DA[13]     ; DB[13]      ; 10.757 ;    ;    ; 10.757 ;
+; DA[13]     ; DB[15]      ; 10.863 ;    ;    ; 10.863 ;
+; DA[14]     ; DA[6]       ; 12.434 ;    ;    ; 12.434 ;
+; DA[14]     ; DA[7]       ; 11.763 ;    ;    ; 11.763 ;
+; DA[14]     ; DA[8]       ; 11.848 ;    ;    ; 11.848 ;
+; DA[14]     ; DA[9]       ; 11.693 ;    ;    ; 11.693 ;
+; DA[14]     ; DA[10]      ; 12.295 ;    ;    ; 12.295 ;
+; DA[14]     ; DA[11]      ; 11.895 ;    ;    ; 11.895 ;
+; DA[14]     ; DA[12]      ; 12.470 ;    ;    ; 12.470 ;
+; DA[14]     ; DA[13]      ; 11.762 ;    ;    ; 11.762 ;
+; DA[14]     ; DA[14]      ; 10.713 ;    ;    ; 10.713 ;
+; DA[14]     ; DA[15]      ; 12.970 ;    ;    ; 12.970 ;
+; DA[14]     ; DB[6]       ; 12.045 ;    ;    ; 12.045 ;
+; DA[14]     ; DB[7]       ; 12.150 ;    ;    ; 12.150 ;
+; DA[14]     ; DB[8]       ; 12.125 ;    ;    ; 12.125 ;
+; DA[14]     ; DB[9]       ; 12.351 ;    ;    ; 12.351 ;
+; DA[14]     ; DB[10]      ; 13.161 ;    ;    ; 13.161 ;
+; DA[14]     ; DB[11]      ; 12.526 ;    ;    ; 12.526 ;
+; DA[14]     ; DB[12]      ; 12.730 ;    ;    ; 12.730 ;
+; DA[14]     ; DB[13]      ; 12.744 ;    ;    ; 12.744 ;
+; DA[14]     ; DB[14]      ; 11.012 ;    ;    ; 11.012 ;
+; DA[14]     ; DB[15]      ; 12.675 ;    ;    ; 12.675 ;
+; DA[15]     ; DA[6]       ; 12.445 ;    ;    ; 12.445 ;
+; DA[15]     ; DA[7]       ; 11.774 ;    ;    ; 11.774 ;
+; DA[15]     ; DA[8]       ; 11.859 ;    ;    ; 11.859 ;
+; DA[15]     ; DA[9]       ; 11.704 ;    ;    ; 11.704 ;
+; DA[15]     ; DA[10]      ; 12.306 ;    ;    ; 12.306 ;
+; DA[15]     ; DA[11]      ; 11.906 ;    ;    ; 11.906 ;
+; DA[15]     ; DA[12]      ; 12.481 ;    ;    ; 12.481 ;
+; DA[15]     ; DA[13]      ; 11.773 ;    ;    ; 11.773 ;
+; DA[15]     ; DA[14]      ; 10.736 ;    ;    ; 10.736 ;
+; DA[15]     ; DA[15]      ; 12.981 ;    ;    ; 12.981 ;
+; DA[15]     ; DB[6]       ; 12.056 ;    ;    ; 12.056 ;
+; DA[15]     ; DB[7]       ; 12.161 ;    ;    ; 12.161 ;
+; DA[15]     ; DB[8]       ; 12.136 ;    ;    ; 12.136 ;
+; DA[15]     ; DB[9]       ; 12.362 ;    ;    ; 12.362 ;
+; DA[15]     ; DB[10]      ; 13.172 ;    ;    ; 13.172 ;
+; DA[15]     ; DB[11]      ; 12.537 ;    ;    ; 12.537 ;
+; DA[15]     ; DB[12]      ; 12.741 ;    ;    ; 12.741 ;
+; DA[15]     ; DB[13]      ; 12.755 ;    ;    ; 12.755 ;
+; DA[15]     ; DB[14]      ; 11.035 ;    ;    ; 11.035 ;
+; DA[15]     ; DB[15]      ; 12.686 ;    ;    ; 12.686 ;
+; DA[15]     ; RS          ; 8.973  ;    ;    ; 8.973  ;
+; DB[0]      ; DA[0]       ; 10.257 ;    ;    ; 10.257 ;
+; DB[1]      ; DA[1]       ; 10.193 ;    ;    ; 10.193 ;
+; DB[2]      ; DA[2]       ; 10.551 ;    ;    ; 10.551 ;
+; DB[3]      ; DA[3]       ; 10.622 ;    ;    ; 10.622 ;
+; DB[4]      ; DA[4]       ; 8.814  ;    ;    ; 8.814  ;
+; DB[5]      ; DA[5]       ; 8.906  ;    ;    ; 8.906  ;
+; DB[5]      ; DA[6]       ; 11.931 ;    ;    ; 11.931 ;
+; DB[5]      ; DB[6]       ; 11.542 ;    ;    ; 11.542 ;
+; NOE        ; DA[0]       ; 14.310 ;    ;    ; 14.310 ;
+; NOE        ; DA[1]       ; 14.319 ;    ;    ; 14.319 ;
+; NOE        ; DA[2]       ; 14.308 ;    ;    ; 14.308 ;
+; NOE        ; DA[3]       ; 14.316 ;    ;    ; 14.316 ;
+; NOE        ; DA[4]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[5]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[6]       ; 14.003 ;    ;    ; 14.003 ;
+; NOE        ; DA[7]       ; 12.809 ;    ;    ; 12.809 ;
+; NOE        ; DA[8]       ; 12.894 ;    ;    ; 12.894 ;
+; NOE        ; DA[9]       ; 13.526 ;    ;    ; 13.526 ;
+; NOE        ; DA[10]      ; 13.341 ;    ;    ; 13.341 ;
+; NOE        ; DA[11]      ; 12.941 ;    ;    ; 12.941 ;
+; NOE        ; DA[12]      ; 13.516 ;    ;    ; 13.516 ;
+; NOE        ; DA[13]      ; 12.808 ;    ;    ; 12.808 ;
+; NOE        ; DA[14]      ; 13.494 ;    ;    ; 13.494 ;
+; NOE        ; DA[15]      ; 14.016 ;    ;    ; 14.016 ;
+; NOE        ; DB[0]       ; 10.306 ;    ;    ; 10.306 ;
+; NOE        ; DB[1]       ; 10.306 ;    ;    ; 10.306 ;
+; NOE        ; DB[2]       ; 10.230 ;    ;    ; 10.230 ;
+; NOE        ; DB[3]       ; 10.230 ;    ;    ; 10.230 ;
+; NOE        ; DB[4]       ; 10.230 ;    ;    ; 10.230 ;
+; NOE        ; DB[5]       ; 11.294 ;    ;    ; 11.294 ;
+; NOE        ; DB[6]       ; 13.614 ;    ;    ; 13.614 ;
+; NOE        ; DB[7]       ; 13.196 ;    ;    ; 13.196 ;
+; NOE        ; DB[8]       ; 13.171 ;    ;    ; 13.171 ;
+; NOE        ; DB[9]       ; 14.184 ;    ;    ; 14.184 ;
+; NOE        ; DB[10]      ; 14.207 ;    ;    ; 14.207 ;
+; NOE        ; DB[11]      ; 13.572 ;    ;    ; 13.572 ;
+; NOE        ; DB[12]      ; 13.776 ;    ;    ; 13.776 ;
+; NOE        ; DB[13]      ; 13.790 ;    ;    ; 13.790 ;
+; NOE        ; DB[14]      ; 13.793 ;    ;    ; 13.793 ;
+; NOE        ; DB[15]      ; 13.721 ;    ;    ; 13.721 ;
+; NOE        ; RS          ; 10.306 ;    ;    ; 10.306 ;
+; NOE        ; TFTRD       ; 8.986  ;    ;    ; 8.986  ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; DA[0]      ; DB[0]       ; 8.984  ;    ;    ; 8.984  ;
+; DA[1]      ; DB[1]       ; 8.943  ;    ;    ; 8.943  ;
+; DA[2]      ; DB[2]       ; 8.886  ;    ;    ; 8.886  ;
+; DA[3]      ; DB[3]       ; 8.895  ;    ;    ; 8.895  ;
+; DA[4]      ; DB[4]       ; 8.843  ;    ;    ; 8.843  ;
+; DA[5]      ; DB[5]       ; 8.799  ;    ;    ; 8.799  ;
+; DA[6]      ; DA[6]       ; 11.364 ;    ;    ; 11.364 ;
+; DA[6]      ; DA[7]       ; 10.681 ;    ;    ; 10.681 ;
+; DA[6]      ; DB[6]       ; 10.975 ;    ;    ; 10.975 ;
+; DA[6]      ; DB[7]       ; 11.068 ;    ;    ; 11.068 ;
+; DA[7]      ; DA[7]       ; 10.003 ;    ;    ; 10.003 ;
+; DA[7]      ; DA[8]       ; 10.106 ;    ;    ; 10.106 ;
+; DA[7]      ; DB[7]       ; 10.390 ;    ;    ; 10.390 ;
+; DA[7]      ; DB[8]       ; 10.383 ;    ;    ; 10.383 ;
+; DA[8]      ; DA[8]       ; 10.109 ;    ;    ; 10.109 ;
+; DA[8]      ; DA[9]       ; 10.526 ;    ;    ; 10.526 ;
+; DA[8]      ; DB[8]       ; 10.386 ;    ;    ; 10.386 ;
+; DA[8]      ; DB[9]       ; 11.184 ;    ;    ; 11.184 ;
+; DA[9]      ; DA[9]       ; 10.177 ;    ;    ; 10.177 ;
+; DA[9]      ; DA[10]      ; 10.538 ;    ;    ; 10.538 ;
+; DA[9]      ; DB[9]       ; 10.835 ;    ;    ; 10.835 ;
+; DA[9]      ; DB[10]      ; 11.404 ;    ;    ; 11.404 ;
+; DA[10]     ; DA[10]      ; 10.809 ;    ;    ; 10.809 ;
+; DA[10]     ; DA[11]      ; 10.391 ;    ;    ; 10.391 ;
+; DA[10]     ; DA[12]      ; 10.972 ;    ;    ; 10.972 ;
+; DA[10]     ; DB[10]      ; 11.675 ;    ;    ; 11.675 ;
+; DA[10]     ; DB[11]      ; 11.022 ;    ;    ; 11.022 ;
+; DA[10]     ; DB[12]      ; 11.232 ;    ;    ; 11.232 ;
+; DA[11]     ; DA[11]      ; 10.161 ;    ;    ; 10.161 ;
+; DA[11]     ; DA[13]      ; 10.223 ;    ;    ; 10.223 ;
+; DA[11]     ; DB[11]      ; 10.792 ;    ;    ; 10.792 ;
+; DA[11]     ; DB[13]      ; 11.205 ;    ;    ; 11.205 ;
+; DA[12]     ; DA[12]      ; 10.659 ;    ;    ; 10.659 ;
+; DA[12]     ; DA[14]      ; 10.989 ;    ;    ; 10.989 ;
+; DA[12]     ; DB[12]      ; 10.919 ;    ;    ; 10.919 ;
+; DA[12]     ; DB[14]      ; 11.288 ;    ;    ; 11.288 ;
+; DA[13]     ; DA[13]      ; 9.775  ;    ;    ; 9.775  ;
+; DA[13]     ; DA[15]      ; 11.158 ;    ;    ; 11.158 ;
+; DA[13]     ; DB[13]      ; 10.757 ;    ;    ; 10.757 ;
+; DA[13]     ; DB[15]      ; 10.863 ;    ;    ; 10.863 ;
+; DA[14]     ; DA[6]       ; 12.434 ;    ;    ; 12.434 ;
+; DA[14]     ; DA[7]       ; 11.763 ;    ;    ; 11.763 ;
+; DA[14]     ; DA[8]       ; 11.848 ;    ;    ; 11.848 ;
+; DA[14]     ; DA[9]       ; 11.693 ;    ;    ; 11.693 ;
+; DA[14]     ; DA[10]      ; 12.295 ;    ;    ; 12.295 ;
+; DA[14]     ; DA[11]      ; 11.895 ;    ;    ; 11.895 ;
+; DA[14]     ; DA[12]      ; 12.470 ;    ;    ; 12.470 ;
+; DA[14]     ; DA[13]      ; 11.762 ;    ;    ; 11.762 ;
+; DA[14]     ; DA[14]      ; 10.713 ;    ;    ; 10.713 ;
+; DA[14]     ; DA[15]      ; 12.970 ;    ;    ; 12.970 ;
+; DA[14]     ; DB[6]       ; 12.045 ;    ;    ; 12.045 ;
+; DA[14]     ; DB[7]       ; 12.150 ;    ;    ; 12.150 ;
+; DA[14]     ; DB[8]       ; 12.125 ;    ;    ; 12.125 ;
+; DA[14]     ; DB[9]       ; 12.351 ;    ;    ; 12.351 ;
+; DA[14]     ; DB[10]      ; 13.161 ;    ;    ; 13.161 ;
+; DA[14]     ; DB[11]      ; 12.526 ;    ;    ; 12.526 ;
+; DA[14]     ; DB[12]      ; 12.730 ;    ;    ; 12.730 ;
+; DA[14]     ; DB[13]      ; 12.744 ;    ;    ; 12.744 ;
+; DA[14]     ; DB[14]      ; 11.012 ;    ;    ; 11.012 ;
+; DA[14]     ; DB[15]      ; 12.675 ;    ;    ; 12.675 ;
+; DA[15]     ; DA[6]       ; 12.445 ;    ;    ; 12.445 ;
+; DA[15]     ; DA[7]       ; 11.774 ;    ;    ; 11.774 ;
+; DA[15]     ; DA[8]       ; 11.859 ;    ;    ; 11.859 ;
+; DA[15]     ; DA[9]       ; 11.704 ;    ;    ; 11.704 ;
+; DA[15]     ; DA[10]      ; 12.306 ;    ;    ; 12.306 ;
+; DA[15]     ; DA[11]      ; 11.906 ;    ;    ; 11.906 ;
+; DA[15]     ; DA[12]      ; 12.481 ;    ;    ; 12.481 ;
+; DA[15]     ; DA[13]      ; 11.773 ;    ;    ; 11.773 ;
+; DA[15]     ; DA[14]      ; 10.736 ;    ;    ; 10.736 ;
+; DA[15]     ; DA[15]      ; 12.981 ;    ;    ; 12.981 ;
+; DA[15]     ; DB[6]       ; 12.056 ;    ;    ; 12.056 ;
+; DA[15]     ; DB[7]       ; 12.161 ;    ;    ; 12.161 ;
+; DA[15]     ; DB[8]       ; 12.136 ;    ;    ; 12.136 ;
+; DA[15]     ; DB[9]       ; 12.362 ;    ;    ; 12.362 ;
+; DA[15]     ; DB[10]      ; 13.172 ;    ;    ; 13.172 ;
+; DA[15]     ; DB[11]      ; 12.537 ;    ;    ; 12.537 ;
+; DA[15]     ; DB[12]      ; 12.741 ;    ;    ; 12.741 ;
+; DA[15]     ; DB[13]      ; 12.755 ;    ;    ; 12.755 ;
+; DA[15]     ; DB[14]      ; 11.035 ;    ;    ; 11.035 ;
+; DA[15]     ; DB[15]      ; 12.686 ;    ;    ; 12.686 ;
+; DA[15]     ; RS          ; 8.973  ;    ;    ; 8.973  ;
+; DB[0]      ; DA[0]       ; 10.257 ;    ;    ; 10.257 ;
+; DB[1]      ; DA[1]       ; 10.193 ;    ;    ; 10.193 ;
+; DB[2]      ; DA[2]       ; 10.551 ;    ;    ; 10.551 ;
+; DB[3]      ; DA[3]       ; 10.622 ;    ;    ; 10.622 ;
+; DB[4]      ; DA[4]       ; 8.814  ;    ;    ; 8.814  ;
+; DB[5]      ; DA[5]       ; 8.906  ;    ;    ; 8.906  ;
+; DB[5]      ; DA[6]       ; 11.931 ;    ;    ; 11.931 ;
+; DB[5]      ; DB[6]       ; 11.542 ;    ;    ; 11.542 ;
+; NOE        ; DA[0]       ; 9.350  ;    ;    ; 9.350  ;
+; NOE        ; DA[1]       ; 9.350  ;    ;    ; 9.350  ;
+; NOE        ; DA[2]       ; 9.350  ;    ;    ; 9.350  ;
+; NOE        ; DA[3]       ; 9.350  ;    ;    ; 9.350  ;
+; NOE        ; DA[4]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[5]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[6]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[7]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[8]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[9]       ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[10]      ; 9.952  ;    ;    ; 9.952  ;
+; NOE        ; DA[11]      ; 9.478  ;    ;    ; 9.478  ;
+; NOE        ; DA[12]      ; 9.478  ;    ;    ; 9.478  ;
+; NOE        ; DA[13]      ; 9.478  ;    ;    ; 9.478  ;
+; NOE        ; DA[14]      ; 9.478  ;    ;    ; 9.478  ;
+; NOE        ; DA[15]      ; 9.478  ;    ;    ; 9.478  ;
+; NOE        ; DB[0]       ; 10.306 ;    ;    ; 10.306 ;
+; NOE        ; DB[1]       ; 10.306 ;    ;    ; 10.306 ;
+; NOE        ; DB[2]       ; 10.230 ;    ;    ; 10.230 ;
+; NOE        ; DB[3]       ; 10.230 ;    ;    ; 10.230 ;
+; NOE        ; DB[4]       ; 10.230 ;    ;    ; 10.230 ;
+; NOE        ; DB[5]       ; 11.294 ;    ;    ; 11.294 ;
+; NOE        ; DB[6]       ; 13.091 ;    ;    ; 13.091 ;
+; NOE        ; DB[7]       ; 13.178 ;    ;    ; 13.178 ;
+; NOE        ; DB[8]       ; 13.146 ;    ;    ; 13.146 ;
+; NOE        ; DB[9]       ; 13.397 ;    ;    ; 13.397 ;
+; NOE        ; DB[10]      ; 14.183 ;    ;    ; 14.183 ;
+; NOE        ; DB[11]      ; 13.556 ;    ;    ; 13.556 ;
+; NOE        ; DB[12]      ; 13.757 ;    ;    ; 13.757 ;
+; NOE        ; DB[13]      ; 13.768 ;    ;    ; 13.768 ;
+; NOE        ; DB[14]      ; 13.793 ;    ;    ; 13.793 ;
+; NOE        ; DB[15]      ; 11.449 ;    ;    ; 11.449 ;
+; NOE        ; RS          ; 10.306 ;    ;    ; 10.306 ;
+; NOE        ; TFTRD       ; 8.986  ;    ;    ; 8.986  ;
++------------+-------------+--------+----+----+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; DA[*]     ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[0]    ; NADV       ; 11.423 ;      ; Rise       ; NADV            ;
+;  DA[1]    ; NADV       ; 11.423 ;      ; Rise       ; NADV            ;
+;  DA[2]    ; NADV       ; 11.423 ;      ; Rise       ; NADV            ;
+;  DA[3]    ; NADV       ; 11.423 ;      ; Rise       ; NADV            ;
+;  DA[4]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[5]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[6]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[7]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[8]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[9]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[10]   ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[11]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[12]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[13]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[14]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[15]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+; DB[*]     ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[0]    ; NADV       ; 12.060 ;      ; Rise       ; NADV            ;
+;  DB[1]    ; NADV       ; 12.060 ;      ; Rise       ; NADV            ;
+;  DB[2]    ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[3]    ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[4]    ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[5]    ; NADV       ; 13.048 ;      ; Rise       ; NADV            ;
+; RS        ; NADV       ; 12.060 ;      ; Rise       ; NADV            ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; DA[*]     ; NADV       ; 11.110 ;      ; Rise       ; NADV            ;
+;  DA[0]    ; NADV       ; 11.110 ;      ; Rise       ; NADV            ;
+;  DA[1]    ; NADV       ; 11.110 ;      ; Rise       ; NADV            ;
+;  DA[2]    ; NADV       ; 11.110 ;      ; Rise       ; NADV            ;
+;  DA[3]    ; NADV       ; 11.110 ;      ; Rise       ; NADV            ;
+;  DA[4]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[5]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[6]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[7]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[8]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[9]    ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[10]   ; NADV       ; 11.709 ;      ; Rise       ; NADV            ;
+;  DA[11]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[12]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[13]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[14]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+;  DA[15]   ; NADV       ; 11.235 ;      ; Rise       ; NADV            ;
+; DB[*]     ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[0]    ; NADV       ; 12.060 ;      ; Rise       ; NADV            ;
+;  DB[1]    ; NADV       ; 12.060 ;      ; Rise       ; NADV            ;
+;  DB[2]    ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[3]    ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[4]    ; NADV       ; 11.984 ;      ; Rise       ; NADV            ;
+;  DB[5]    ; NADV       ; 13.048 ;      ; Rise       ; NADV            ;
+; RS        ; NADV       ; 12.060 ;      ; Rise       ; NADV            ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DA[*]     ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[0]    ; NADV       ; 11.423    ;           ; Rise       ; NADV            ;
+;  DA[1]    ; NADV       ; 11.423    ;           ; Rise       ; NADV            ;
+;  DA[2]    ; NADV       ; 11.423    ;           ; Rise       ; NADV            ;
+;  DA[3]    ; NADV       ; 11.423    ;           ; Rise       ; NADV            ;
+;  DA[4]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[5]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[6]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[7]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[8]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[9]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[10]   ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[11]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[12]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[13]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[14]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[15]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+; DB[*]     ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[0]    ; NADV       ; 12.060    ;           ; Rise       ; NADV            ;
+;  DB[1]    ; NADV       ; 12.060    ;           ; Rise       ; NADV            ;
+;  DB[2]    ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[3]    ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[4]    ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[5]    ; NADV       ; 13.048    ;           ; Rise       ; NADV            ;
+; RS        ; NADV       ; 12.060    ;           ; Rise       ; NADV            ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DA[*]     ; NADV       ; 11.110    ;           ; Rise       ; NADV            ;
+;  DA[0]    ; NADV       ; 11.110    ;           ; Rise       ; NADV            ;
+;  DA[1]    ; NADV       ; 11.110    ;           ; Rise       ; NADV            ;
+;  DA[2]    ; NADV       ; 11.110    ;           ; Rise       ; NADV            ;
+;  DA[3]    ; NADV       ; 11.110    ;           ; Rise       ; NADV            ;
+;  DA[4]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[5]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[6]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[7]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[8]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[9]    ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[10]   ; NADV       ; 11.709    ;           ; Rise       ; NADV            ;
+;  DA[11]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[12]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[13]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[14]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+;  DA[15]   ; NADV       ; 11.235    ;           ; Rise       ; NADV            ;
+; DB[*]     ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[0]    ; NADV       ; 12.060    ;           ; Rise       ; NADV            ;
+;  DB[1]    ; NADV       ; 12.060    ;           ; Rise       ; NADV            ;
+;  DB[2]    ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[3]    ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[4]    ; NADV       ; 11.984    ;           ; Rise       ; NADV            ;
+;  DB[5]    ; NADV       ; 13.048    ;           ; Rise       ; NADV            ;
+; RS        ; NADV       ; 12.060    ;           ; Rise       ; NADV            ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------------+
+; Setup Transfers                                                                     ;
++--------------------+--------------------+----------+----------+----------+----------+
+; From Clock         ; To Clock           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------+--------------------+----------+----------+----------+----------+
+; FREDIV:inst11|q[9] ; CNT16A:inst7|q[0]  ; 0        ; 2        ; 0        ; 0        ;
+; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 8        ; 8        ; 0        ; 0        ;
+; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 18       ; 0        ; 0        ; 3        ;
+; FREDIV:inst11|q[9] ; IN1                ; 0        ; 0        ; 1        ; 1        ;
+; IN1                ; IN1                ; 0        ; 0        ; 0        ; 94       ;
++--------------------+--------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------+
+; Hold Transfers                                                                      ;
++--------------------+--------------------+----------+----------+----------+----------+
+; From Clock         ; To Clock           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------+--------------------+----------+----------+----------+----------+
+; FREDIV:inst11|q[9] ; CNT16A:inst7|q[0]  ; 0        ; 2        ; 0        ; 0        ;
+; CNT16A:inst7|q[0]  ; FREDIV:inst11|q[9] ; 8        ; 8        ; 0        ; 0        ;
+; FREDIV:inst11|q[9] ; FREDIV:inst11|q[9] ; 18       ; 0        ; 0        ; 3        ;
+; FREDIV:inst11|q[9] ; IN1                ; 0        ; 0        ; 1        ; 1        ;
+; IN1                ; IN1                ; 0        ; 0        ; 0        ; 94       ;
++--------------------+--------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 30    ; 30   ;
+; Unconstrained Input Port Paths  ; 168   ; 168  ;
+; Unconstrained Output Ports      ; 44    ; 44   ;
+; Unconstrained Output Port Paths ; 181   ; 181  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Apr 14 13:17:16 2015
+Info: Command: quartus_sta TFTKEYSTM32 -c TFTKEYSTM32
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'TFTKEYSTM32.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name NADV NADV
+    Info (332105): create_clock -period 1.000 -name NWE NWE
+    Info (332105): create_clock -period 1.000 -name FREDIV:inst11|q[9] FREDIV:inst11|q[9]
+    Info (332105): create_clock -period 1.000 -name IN1 IN1
+    Info (332105): create_clock -period 1.000 -name CNT16A:inst7|q[0] CNT16A:inst7|q[0]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.353
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.353       -29.241 IN1 
+    Info (332119):    -3.196       -16.004 FREDIV:inst11|q[9] 
+    Info (332119):     0.980         0.000 CNT16A:inst7|q[0] 
+Info (332146): Worst-case hold slack is -4.573
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.573        -4.573 IN1 
+    Info (332119):    -1.747        -5.825 FREDIV:inst11|q[9] 
+    Info (332119):    -0.558        -1.092 CNT16A:inst7|q[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 IN1 
+    Info (332119):    -2.289        -2.289 NADV 
+    Info (332119):    -2.289        -2.289 NWE 
+    Info (332119):     0.234         0.000 CNT16A:inst7|q[0] 
+    Info (332119):     0.234         0.000 FREDIV:inst11|q[9] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 403 megabytes
+    Info: Processing ended: Tue Apr 14 13:17:19 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

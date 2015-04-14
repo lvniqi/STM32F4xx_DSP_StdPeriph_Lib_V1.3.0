@@ -1,0 +1,351 @@
+|TFTKEYSTM32
+DAV <= CNT16A:inst7.dav
+IN1 => inst6.IN0
+X0 => ENCODE:inst2.I0
+X1 => ENCODE:inst2.I1
+X2 => ENCODE:inst2.I2
+X3 => ENCODE:inst2.I3
+RS <= CMD_DATA_SELECT:inst19.RS
+TFTCS <= TEST:inst23.tft_cs
+NADV => TEST:inst23.nadv
+DA[0] <> TS16:inst4.do[0]
+DA[0] <> TS4:inst17.do[0]
+DA[1] <> TS16:inst4.do[1]
+DA[1] <> TS4:inst17.do[1]
+DA[2] <> TS16:inst4.do[2]
+DA[2] <> TS4:inst17.do[2]
+DA[3] <> TS16:inst4.do[3]
+DA[3] <> TS4:inst17.do[3]
+DA[4] <> TS16:inst4.do[4]
+DA[5] <> TS16:inst4.do[5]
+DA[6] <> TS16:inst4.do[6]
+DA[7] <> TS16:inst4.do[7]
+DA[8] <> TS16:inst4.do[8]
+DA[9] <> TS16:inst4.do[9]
+DA[10] <> TS16:inst4.do[10]
+DA[11] <> TS16:inst4.do[11]
+DA[12] <> TS16:inst4.do[12]
+DA[13] <> TS16:inst4.do[13]
+DA[14] <> TS16:inst4.do[14]
+DA[15] <> TS16:inst4.do[15]
+A16 => TEST:inst23.a16
+NOE => inst22.IN0
+NOE => TFTRD.DATAIN
+NOE => inst15.IN0
+NOE => inst28.IN0
+TFTWR <= NWE.DB_MAX_OUTPUT_PORT_TYPE
+NWE => TFTWR.DATAIN
+NWE => inst3.IN0
+TFTRD <= NOE.DB_MAX_OUTPUT_PORT_TYPE
+TFTRST <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+OUT2 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+DB[0] <> CMD_DATA_SELECT:inst19.DATA_OUT[0]
+DB[1] <> CMD_DATA_SELECT:inst19.DATA_OUT[1]
+DB[2] <> CMD_DATA_SELECT:inst19.DATA_OUT[2]
+DB[3] <> CMD_DATA_SELECT:inst19.DATA_OUT[3]
+DB[4] <> CMD_DATA_SELECT:inst19.DATA_OUT[4]
+DB[5] <> CMD_DATA_SELECT:inst19.DATA_OUT[5]
+DB[6] <> CMD_DATA_SELECT:inst19.DATA_OUT[6]
+DB[7] <> CMD_DATA_SELECT:inst19.DATA_OUT[7]
+DB[8] <> CMD_DATA_SELECT:inst19.DATA_OUT[8]
+DB[9] <> CMD_DATA_SELECT:inst19.DATA_OUT[9]
+DB[10] <> CMD_DATA_SELECT:inst19.DATA_OUT[10]
+DB[11] <> CMD_DATA_SELECT:inst19.DATA_OUT[11]
+DB[12] <> CMD_DATA_SELECT:inst19.DATA_OUT[12]
+DB[13] <> CMD_DATA_SELECT:inst19.DATA_OUT[13]
+DB[14] <> CMD_DATA_SELECT:inst19.DATA_OUT[14]
+DB[15] <> CMD_DATA_SELECT:inst19.DATA_OUT[15]
+Y[0] <= DECODE:inst14.y[0]
+Y[1] <= DECODE:inst14.y[1]
+Y[2] <= DECODE:inst14.y[2]
+Y[3] <= DECODE:inst14.y[3]
+
+
+|TFTKEYSTM32|CNT16A:inst7
+clk => q[0].CLK
+clk => q[1].CLK
+clk => q[2].CLK
+clk => q[3].CLK
+clr => q.OUTPUTSELECT
+clr => q.OUTPUTSELECT
+clr => q.OUTPUTSELECT
+clr => q.OUTPUTSELECT
+dav <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|FREDIV:inst11
+clkin => q[0].CLK
+clkin => q[1].CLK
+clkin => q[2].CLK
+clkin => q[3].CLK
+clkin => q[4].CLK
+clkin => q[5].CLK
+clkin => q[6].CLK
+clkin => q[7].CLK
+clkin => q[8].CLK
+clkin => q[9].CLK
+clkout <= q[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|ENCODE:inst2
+I0 => y1.IN0
+I0 => y0.IN0
+I0 => y0.IN0
+I1 => y1.IN1
+I1 => y0.IN1
+I2 => y0.IN1
+I2 => ka.IN1
+I2 => y1.IN1
+I3 => ka.IN1
+I3 => y0.IN1
+I3 => y1.IN1
+y0 <= y0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= y1.DB_MAX_OUTPUT_PORT_TYPE
+ka <= ka.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|CMD_DATA_SELECT:inst19
+En => ~NO_FANOUT~
+DATA_IN[0] => DATA_IN[0].IN1
+DATA_IN[1] => DATA_IN[1].IN1
+DATA_IN[2] => DATA_IN[2].IN1
+DATA_IN[3] => DATA_IN[3].IN1
+DATA_IN[4] => DATA_IN[4].IN1
+DATA_IN[5] => DATA_IN[5].IN1
+DATA_IN[6] => DATA_OUT.DATAA
+DATA_IN[6] => DATA_OUT.DATAB
+DATA_IN[6] => DATA_OUT.DATAB
+DATA_IN[7] => DATA_OUT.DATAA
+DATA_IN[7] => DATA_OUT.DATAB
+DATA_IN[7] => DATA_OUT.DATAB
+DATA_IN[8] => DATA_OUT.DATAA
+DATA_IN[8] => DATA_OUT.DATAB
+DATA_IN[8] => DATA_OUT.DATAB
+DATA_IN[9] => DATA_OUT.DATAA
+DATA_IN[9] => DATA_OUT.DATAB
+DATA_IN[9] => DATA_OUT.DATAB
+DATA_IN[10] => DATA_OUT.DATAA
+DATA_IN[10] => DATA_OUT.DATAA
+DATA_IN[10] => DATA_OUT.DATAB
+DATA_IN[10] => DATA_OUT.DATAB
+DATA_IN[11] => DATA_OUT.DATAA
+DATA_IN[11] => DATA_OUT.DATAB
+DATA_IN[11] => DATA_OUT.DATAB
+DATA_IN[12] => DATA_OUT.DATAA
+DATA_IN[12] => DATA_OUT.DATAB
+DATA_IN[12] => DATA_OUT.DATAB
+DATA_IN[13] => DATA_OUT.DATAA
+DATA_IN[13] => DATA_OUT.DATAB
+DATA_IN[13] => DATA_OUT.DATAB
+DATA_IN[14] => DATA_OUT.DATAB
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[14] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => DATA_OUT.OUTPUTSELECT
+DATA_IN[15] => RS.IN1
+RS <= RS.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[0] <= DATA_IN[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[1] <= DATA_IN[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[2] <= DATA_IN[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[3] <= DATA_IN[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[4] <= DATA_IN[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[5] <= DATA_IN[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[6] <= DATA_OUT[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[7] <= DATA_OUT[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[8] <= DATA_OUT[8].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[9] <= DATA_OUT[9].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[10] <= DATA_OUT[10].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[11] <= DATA_OUT[11].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[12] <= DATA_OUT[12].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[13] <= DATA_OUT[13].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[14] <= DATA_OUT[14].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[15] <= DATA_OUT[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|TEST:inst23
+nadv => key_cs~reg0.CLK
+nadv => rst_cs~reg0.CLK
+nadv => tft_cs~reg0.CLK
+da2 => Decoder0.IN0
+da1 => Decoder0.IN1
+a16 => tft_cs.OUTPUTSELECT
+a16 => rst_cs.OUTPUTSELECT
+a16 => key_cs.OUTPUTSELECT
+tft_cs <= tft_cs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rst_cs <= rst_cs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key_cs <= key_cs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|TS16:inst8
+en => do[0].OE
+en => do[1].OE
+en => do[2].OE
+en => do[3].OE
+en => do[4].OE
+en => do[5].OE
+en => do[6].OE
+en => do[7].OE
+en => do[8].OE
+en => do[9].OE
+en => do[10].OE
+en => do[11].OE
+en => do[12].OE
+en => do[13].OE
+en => do[14].OE
+en => do[15].OE
+di[0] => do[0].DATAIN
+di[1] => do[1].DATAIN
+di[2] => do[2].DATAIN
+di[3] => do[3].DATAIN
+di[4] => do[4].DATAIN
+di[5] => do[5].DATAIN
+di[6] => do[6].DATAIN
+di[7] => do[7].DATAIN
+di[8] => do[8].DATAIN
+di[9] => do[9].DATAIN
+di[10] => do[10].DATAIN
+di[11] => do[11].DATAIN
+di[12] => do[12].DATAIN
+di[13] => do[13].DATAIN
+di[14] => do[14].DATAIN
+di[15] => do[15].DATAIN
+do[0] <= do[0].DB_MAX_OUTPUT_PORT_TYPE
+do[1] <= do[1].DB_MAX_OUTPUT_PORT_TYPE
+do[2] <= do[2].DB_MAX_OUTPUT_PORT_TYPE
+do[3] <= do[3].DB_MAX_OUTPUT_PORT_TYPE
+do[4] <= do[4].DB_MAX_OUTPUT_PORT_TYPE
+do[5] <= do[5].DB_MAX_OUTPUT_PORT_TYPE
+do[6] <= do[6].DB_MAX_OUTPUT_PORT_TYPE
+do[7] <= do[7].DB_MAX_OUTPUT_PORT_TYPE
+do[8] <= do[8].DB_MAX_OUTPUT_PORT_TYPE
+do[9] <= do[9].DB_MAX_OUTPUT_PORT_TYPE
+do[10] <= do[10].DB_MAX_OUTPUT_PORT_TYPE
+do[11] <= do[11].DB_MAX_OUTPUT_PORT_TYPE
+do[12] <= do[12].DB_MAX_OUTPUT_PORT_TYPE
+do[13] <= do[13].DB_MAX_OUTPUT_PORT_TYPE
+do[14] <= do[14].DB_MAX_OUTPUT_PORT_TYPE
+do[15] <= do[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|TS16:inst4
+en => do[0].OE
+en => do[1].OE
+en => do[2].OE
+en => do[3].OE
+en => do[4].OE
+en => do[5].OE
+en => do[6].OE
+en => do[7].OE
+en => do[8].OE
+en => do[9].OE
+en => do[10].OE
+en => do[11].OE
+en => do[12].OE
+en => do[13].OE
+en => do[14].OE
+en => do[15].OE
+di[0] => do[0].DATAIN
+di[1] => do[1].DATAIN
+di[2] => do[2].DATAIN
+di[3] => do[3].DATAIN
+di[4] => do[4].DATAIN
+di[5] => do[5].DATAIN
+di[6] => do[6].DATAIN
+di[7] => do[7].DATAIN
+di[8] => do[8].DATAIN
+di[9] => do[9].DATAIN
+di[10] => do[10].DATAIN
+di[11] => do[11].DATAIN
+di[12] => do[12].DATAIN
+di[13] => do[13].DATAIN
+di[14] => do[14].DATAIN
+di[15] => do[15].DATAIN
+do[0] <= do[0].DB_MAX_OUTPUT_PORT_TYPE
+do[1] <= do[1].DB_MAX_OUTPUT_PORT_TYPE
+do[2] <= do[2].DB_MAX_OUTPUT_PORT_TYPE
+do[3] <= do[3].DB_MAX_OUTPUT_PORT_TYPE
+do[4] <= do[4].DB_MAX_OUTPUT_PORT_TYPE
+do[5] <= do[5].DB_MAX_OUTPUT_PORT_TYPE
+do[6] <= do[6].DB_MAX_OUTPUT_PORT_TYPE
+do[7] <= do[7].DB_MAX_OUTPUT_PORT_TYPE
+do[8] <= do[8].DB_MAX_OUTPUT_PORT_TYPE
+do[9] <= do[9].DB_MAX_OUTPUT_PORT_TYPE
+do[10] <= do[10].DB_MAX_OUTPUT_PORT_TYPE
+do[11] <= do[11].DB_MAX_OUTPUT_PORT_TYPE
+do[12] <= do[12].DB_MAX_OUTPUT_PORT_TYPE
+do[13] <= do[13].DB_MAX_OUTPUT_PORT_TYPE
+do[14] <= do[14].DB_MAX_OUTPUT_PORT_TYPE
+do[15] <= do[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|TS4:inst17
+en => do[0].OE
+en => do[1].OE
+en => do[2].OE
+en => do[3].OE
+di[0] => do[0].DATAIN
+di[1] => do[1].DATAIN
+di[2] => do[2].DATAIN
+di[3] => do[3].DATAIN
+do[0] <= do[0].DB_MAX_OUTPUT_PORT_TYPE
+do[1] <= do[1].DB_MAX_OUTPUT_PORT_TYPE
+do[2] <= do[2].DB_MAX_OUTPUT_PORT_TYPE
+do[3] <= do[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|REG4:inst16
+clk => q_temp[0].CLK
+clk => q_temp[1].CLK
+clk => q_temp[2].CLK
+clk => q_temp[3].CLK
+d[0] => q_temp[0].DATAIN
+d[1] => q_temp[1].DATAIN
+d[2] => q_temp[2].DATAIN
+d[3] => q_temp[3].DATAIN
+q[0] <= q_temp[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_temp[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_temp[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_temp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|CNT4A:inst13
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+en => q[0]~reg0.ENA
+en => q[1]~reg0.ENA
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TFTKEYSTM32|DECODE:inst14
+a[0] => Equal0.IN3
+a[0] => Equal1.IN3
+a[0] => Equal2.IN3
+a[0] => Equal3.IN3
+a[1] => Equal0.IN2
+a[1] => Equal1.IN2
+a[1] => Equal2.IN2
+a[1] => Equal3.IN2
+y[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -17,10 +17,12 @@ int main(void){
   UR_TIM_Configuration();
   EXTI_init();
   LCD_Init();
+  LCD_Clear1(WHITE);
+  BACK_COLOR = WHITE;
   int i,j;
   for(i=0;i<3;i++){
     for(j=1;j<4;j++){
-      LCD_Show_Rect_FULL(i*80,j*80,40,40,BLUE);
+      LCD_Show_Rect_FULL(i*80+10,j*80,40,40,BLUE);
     }
   }
   while(1){
