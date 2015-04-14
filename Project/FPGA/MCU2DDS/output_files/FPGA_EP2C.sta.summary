@@ -7,15 +7,15 @@ Slack : -6.747
 TNS   : -168.120
 
 Type  : Slow Model Setup 'NWE'
-Slack : -3.767
-TNS   : -137.447
+Slack : -3.958
+TNS   : -146.840
 
 Type  : Slow Model Hold 'inst2|altpll_component|pll|clk[0]'
-Slack : 1.147
+Slack : 1.156
 TNS   : 0.000
 
 Type  : Slow Model Hold 'NWE'
-Slack : 1.367
+Slack : 1.361
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'NWE'
@@ -40,14 +40,14 @@ TNS   : -59.292
 
 Type  : Fast Model Setup 'NWE'
 Slack : -1.457
-TNS   : -28.164
+TNS   : -31.091
 
 Type  : Fast Model Hold 'inst2|altpll_component|pll|clk[0]'
-Slack : 0.353
+Slack : 0.356
 TNS   : 0.000
 
 Type  : Fast Model Hold 'NWE'
-Slack : 0.405
+Slack : 0.408
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'NWE'

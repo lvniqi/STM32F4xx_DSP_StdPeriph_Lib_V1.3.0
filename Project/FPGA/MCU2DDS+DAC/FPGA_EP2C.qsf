@@ -92,10 +92,7 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id FPGA_EP2C_vl
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME FPGA_EP2C_vlg_tst -section_id FPGA_EP2C_vlg_tst
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/FPGA_EP2C.vt -section_id FPGA_EP2C_vlg_tst
 set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
-set_location_assignment PIN_97 -to pin_name1
 set_global_assignment -name QIP_FILE RAM_2PORT.qip
-set_location_assignment PIN_112 -to ADDR_test0
-set_location_assignment PIN_94 -to pin_name2
 set_location_assignment PIN_74 -to output[7]
 set_location_assignment PIN_73 -to output[6]
 set_location_assignment PIN_72 -to output[5]
@@ -110,4 +107,20 @@ set_global_assignment -name VHDL_FILE phase_addr.vhd
 set_global_assignment -name VHDL_FILE Fre_buffer.vhd
 set_global_assignment -name QIP_FILE PLL.qip
 set_global_assignment -name CDF_FILE Chain2.cdf
+set_global_assignment -name QIP_FILE FIFO_ADIN.qip
+set_location_assignment PIN_64 -to J1_DIN
+set_location_assignment PIN_60 -to J1_SCLk
+set_location_assignment PIN_63 -to J1_SYNC
+set_location_assignment PIN_7 -to J7_DIN
+set_location_assignment PIN_143 -to J7_SCLK
+set_location_assignment PIN_3 -to J7_SYNC
+set_location_assignment PIN_99 -to ADS930_DATA[7]
+set_location_assignment PIN_100 -to ADS930_DATA[6]
+set_location_assignment PIN_101 -to ADS930_DATA[5]
+set_location_assignment PIN_103 -to ADS930_DATA[4]
+set_location_assignment PIN_104 -to ADS930_DATA[3]
+set_location_assignment PIN_112 -to ADS930_DATA[2]
+set_location_assignment PIN_113 -to ADS930_DATA[1]
+set_location_assignment PIN_114 -to ADS930_DATA[0]
+set_location_assignment PIN_96 -to ADS930CLk
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

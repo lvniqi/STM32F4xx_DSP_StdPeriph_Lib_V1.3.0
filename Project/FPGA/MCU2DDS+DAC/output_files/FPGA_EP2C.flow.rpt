@@ -1,5 +1,5 @@
 Flow report for FPGA_EP2C
-Wed Apr 08 11:14:40 2015
+Wed Apr 08 17:51:08 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Wed Apr 08 11:14:40 2015            ;
+; Flow Status                        ; Successful - Wed Apr 08 17:51:08 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C5T144C8                                      ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 84 / 4,608 ( 2 % )                               ;
-;     Total combinational functions  ; 40 / 4,608 ( < 1 % )                             ;
-;     Dedicated logic registers      ; 83 / 4,608 ( 2 % )                               ;
-; Total registers                    ; 83                                               ;
-; Total pins                         ; 34 / 89 ( 38 % )                                 ;
+; Total logic elements               ; 225 / 4,608 ( 5 % )                              ;
+;     Total combinational functions  ; 123 / 4,608 ( 3 % )                              ;
+;     Dedicated logic registers      ; 199 / 4,608 ( 4 % )                              ;
+; Total registers                    ; 199                                              ;
+; Total pins                         ; 49 / 89 ( 55 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 2,048 / 119,808 ( 2 % )                          ;
+; Total memory bits                  ; 34,816 / 119,808 ( 29 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                   ;
 ; Total PLLs                         ; 1 / 2 ( 50 % )                                   ;
 +------------------------------------+--------------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/08/2015 11:14:23 ;
+; Start date & time ; 04/08/2015 17:50:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FPGA_EP2C           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+-------------+-------------------+
 ; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id        ;
 +--------------------------------------+---------------------------------------+---------------+-------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 1097747406390.142846286205040         ; --            ; --          ; --                ;
+; COMPILER_SIGNATURE_ID                ; 152668599368.142848665328216          ; --            ; --          ; --                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; FPGA_EP2C_vlg_tst ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; FPGA_EP2C_vlg_tst                     ; --            ; --          ; eda_simulation    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation    ;
@@ -88,6 +88,8 @@ applicable agreement for further details.
 ; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --          ; eda_simulation    ;
 ; IP_TOOL_NAME                         ; RAM: 2-PORT                           ; --            ; --          ; --                ;
 ; IP_TOOL_NAME                         ; ALTPLL                                ; --            ; --          ; --                ;
+; IP_TOOL_NAME                         ; FIFO                                  ; --            ; --          ; --                ;
+; IP_TOOL_VERSION                      ; 13.0                                  ; --            ; --          ; --                ;
 ; IP_TOOL_VERSION                      ; 13.0                                  ; --            ; --          ; --                ;
 ; IP_TOOL_VERSION                      ; 13.0                                  ; --            ; --          ; --                ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --                ;
@@ -97,6 +99,8 @@ applicable agreement for further details.
 ; MISC_FILE                            ; PLL.bsf                               ; --            ; --          ; --                ;
 ; MISC_FILE                            ; PLL_bb.v                              ; --            ; --          ; --                ;
 ; MISC_FILE                            ; PLL.ppf                               ; --            ; --          ; --                ;
+; MISC_FILE                            ; FIFO_ADIN.bsf                         ; --            ; --          ; --                ;
+; MISC_FILE                            ; FIFO_ADIN_bb.v                        ; --            ; --          ; --                ;
 ; PARTITION_COLOR                      ; 16764057                              ; --            ; --          ; Top               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top               ;
 ; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; --          ; Top               ;
@@ -111,12 +115,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 518 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 785 MB              ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 429 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 435 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 393 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 522 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:06     ; 1.2                     ; 844 MB              ; 00:00:06                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 431 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 439 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 395 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:12                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -125,11 +129,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Gary             ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Gary             ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Gary             ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Gary             ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Gary             ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

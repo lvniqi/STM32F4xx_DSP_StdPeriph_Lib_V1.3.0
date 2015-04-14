@@ -66,11 +66,11 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 1         : input  : 3.3-V LVTTL       :         : 1         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 2         : input  : 3.3-V LVTTL       :         : 1         : N              
-RESERVED_INPUT               : 3         :        :                   :         : 1         :                
+J7_SYNC                      : 3         : input  : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT               : 4         :        :                   :         : 1         :                
 VCCIO1                       : 5         : power  :                   : 3.3V    : 1         :                
 GND                          : 6         : gnd    :                   :         :           :                
-RESERVED_INPUT               : 7         :        :                   :         : 1         :                
+J7_DIN                       : 7         : input  : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT               : 8         :        :                   :         : 1         :                
 RESERVED_INPUT               : 9         :        :                   :         : 1         :                
 TDO                          : 10        : output :                   :         : 1         :                
@@ -123,11 +123,11 @@ GND                          : 56        : gnd    :                   :         
 A16                          : 57        : input  : 3.3-V LVTTL       :         : 4         : Y              
 A17                          : 58        : input  : 3.3-V LVTTL       :         : 4         : Y              
 A18                          : 59        : input  : 3.3-V LVTTL       :         : 4         : Y              
-RESERVED_INPUT               : 60        :        :                   :         : 4         :                
+J1_SCLk                      : 60        : output : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : 61        : gnd    :                   :         :           :                
 VCCINT                       : 62        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 63        :        :                   :         : 4         :                
-RESERVED_INPUT               : 64        :        :                   :         : 4         :                
+J1_SYNC                      : 63        : output : 3.3-V LVTTL       :         : 4         : Y              
+J1_DIN                       : 64        : output : 3.3-V LVTTL       :         : 4         : Y              
 output[0]                    : 65        : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : 66        : power  :                   : 3.3V    : 4         :                
 output[1]                    : 67        : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -159,15 +159,15 @@ RESERVED_INPUT               : 92        :        :                   :         
 RESERVED_INPUT               : 93        :        :                   :         : 3         :                
 RESERVED_INPUT               : 94        :        :                   :         : 3         :                
 VCCIO3                       : 95        : power  :                   : 3.3V    : 3         :                
-RESERVED_INPUT               : 96        :        :                   :         : 3         :                
+ADS930CLk                    : 96        : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT               : 97        :        :                   :         : 3         :                
 GND                          : 98        : gnd    :                   :         :           :                
-RESERVED_INPUT               : 99        :        :                   :         : 3         :                
-RESERVED_INPUT               : 100       :        :                   :         : 3         :                
-RESERVED_INPUT               : 101       :        :                   :         : 3         :                
+ADS930_DATA[7]               : 99        : input  : 3.3-V LVTTL       :         : 3         : Y              
+ADS930_DATA[6]               : 100       : input  : 3.3-V LVTTL       :         : 3         : Y              
+ADS930_DATA[5]               : 101       : input  : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 102       : power  :                   : 3.3V    : 3         :                
-RESERVED_INPUT               : 103       :        :                   :         : 3         :                
-RESERVED_INPUT               : 104       :        :                   :         : 3         :                
+ADS930_DATA[4]               : 103       : input  : 3.3-V LVTTL       :         : 3         : Y              
+ADS930_DATA[3]               : 104       : input  : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : 105       : gnd    :                   :         :           :                
 GND_PLL2                     : 106       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 107       : power  :                   : 1.2V    :           :                
@@ -175,9 +175,9 @@ GND_PLL2                     : 108       : gnd    :                   :         
 VCCA_PLL2                    : 109       : power  :                   : 1.2V    :           :                
 GNDA_PLL2                    : 110       : gnd    :                   :         :           :                
 GND                          : 111       : gnd    :                   :         :           :                
-RESERVED_INPUT               : 112       :        :                   :         : 2         :                
-RESERVED_INPUT               : 113       :        :                   :         : 2         :                
-RESERVED_INPUT               : 114       :        :                   :         : 2         :                
+ADS930_DATA[2]               : 112       : input  : 3.3-V LVTTL       :         : 2         : Y              
+ADS930_DATA[1]               : 113       : input  : 3.3-V LVTTL       :         : 2         : Y              
+ADS930_DATA[0]               : 114       : input  : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT               : 115       :        :                   :         : 2         :                
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
@@ -206,5 +206,5 @@ RESERVED_INPUT               : 139       :        :                   :         
 GND                          : 140       : gnd    :                   :         :           :                
 RESERVED_INPUT               : 141       :        :                   :         : 2         :                
 RESERVED_INPUT               : 142       :        :                   :         : 2         :                
-RESERVED_INPUT               : 143       :        :                   :         : 2         :                
+J7_SCLK                      : 143       : input  : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT               : 144       :        :                   :         : 2         :                

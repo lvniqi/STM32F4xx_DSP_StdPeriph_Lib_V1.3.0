@@ -1,5 +1,5 @@
 Fitter report for FPGA_EP2C
-Wed Apr 08 11:14:31 2015
+Wed Apr 08 16:05:30 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Apr 08 11:14:31 2015            ;
+; Fitter Status                      ; Successful - Wed Apr 08 16:05:30 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
@@ -78,7 +78,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 40 / 4,608 ( < 1 % )                             ;
 ;     Dedicated logic registers      ; 83 / 4,608 ( 2 % )                               ;
 ; Total registers                    ; 83                                               ;
-; Total pins                         ; 34 / 89 ( 38 % )                                 ;
+; Total pins                         ; 40 / 89 ( 45 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 2,048 / 119,808 ( 2 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                   ;
@@ -172,8 +172,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 173 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 173 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 179 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 179 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -196,7 +196,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 168     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 174     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 5       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -204,7 +204,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS/output_files/FPGA_EP2C.pin.
+The pin-out file can be found in D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS/output_files/FPGA_EP2C.pin.
 
 
 +-----------------------------------------------------------------------+
@@ -231,9 +231,9 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ;     -- Dedicated logic registers            ; 83 / 4,608 ( 2 % )      ;
 ;     -- I/O registers                        ; 0 / 243 ( 0 % )         ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 6 / 288 ( 2 % )         ;
+; Total LABs:  partially or completely used   ; 7 / 288 ( 2 % )         ;
 ; Virtual pins                                ; 0                       ;
-; I/O pins                                    ; 34 / 89 ( 38 % )        ;
+; I/O pins                                    ; 40 / 89 ( 45 % )        ;
 ;     -- Clock pins                           ; 3 / 4 ( 75 % )          ;
 ;                                             ;                         ;
 ; Global signals                              ; 3                       ;
@@ -246,12 +246,12 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ; JTAGs                                       ; 0 / 1 ( 0 % )           ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%            ;
+; Average interconnect usage (total/H/V)      ; 0% / 1% / 0%            ;
 ; Peak interconnect usage (total/H/V)         ; 1% / 1% / 0%            ;
 ; Maximum fan-out                             ; 34                      ;
 ; Highest non-global fan-out                  ; 16                      ;
-; Total fan-out                               ; 392                     ;
-; Average fan-out                             ; 2.04                    ;
+; Total fan-out                               ; 397                     ;
+; Average fan-out                             ; 1.99                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -282,10 +282,10 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ; Total registers                             ; 83                ; 0                              ;
 ;     -- Dedicated logic registers            ; 83 / 4608 ( 2 % ) ; 0 / 4608 ( 0 % )               ;
 ;                                             ;                   ;                                ;
-; Total LABs:  partially or completely used   ; 6 / 288 ( 2 % )   ; 0 / 288 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 7 / 288 ( 2 % )   ; 0 / 288 ( 0 % )                ;
 ;                                             ;                   ;                                ;
 ; Virtual pins                                ; 0                 ; 0                              ;
-; I/O pins                                    ; 34                ; 0                              ;
+; I/O pins                                    ; 40                ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 26 ( 0 % )    ; 0 / 26 ( 0 % )                 ;
 ; Total memory bits                           ; 2048              ; 0                              ;
 ; Total RAM block bits                        ; 4608              ; 0                              ;
@@ -300,7 +300,7 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ;     -- Registered Output Connections        ; 0                 ; 0                              ;
 ;                                             ;                   ;                                ;
 ; Internal Connections                        ;                   ;                                ;
-;     -- Total Connections                    ; 391               ; 36                             ;
+;     -- Total Connections                    ; 396               ; 36                             ;
 ;     -- Registered Connections               ; 147               ; 0                              ;
 ;                                             ;                   ;                                ;
 ; External Connections                        ;                   ;                                ;
@@ -308,8 +308,8 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ;     -- hard_block:auto_generated_inst       ; 35                ; 0                              ;
 ;                                             ;                   ;                                ;
 ; Partition Interface                         ;                   ;                                ;
-;     -- Input Ports                          ; 7                 ; 1                              ;
-;     -- Output Ports                         ; 11                ; 1                              ;
+;     -- Input Ports                          ; 10                ; 1                              ;
+;     -- Output Ports                         ; 14                ; 1                              ;
 ;     -- Bidir Ports                          ; 16                ; 0                              ;
 ;                                             ;                   ;                                ;
 ; Registered Ports                            ;                   ;                                ;
@@ -328,19 +328,22 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 +---------------------------------------------+-------------------+--------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                                                                 ;
-+------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
-+------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; A16  ; 57    ; 4        ; 12           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; A17  ; 58    ; 4        ; 12           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; A18  ; 59    ; 4        ; 14           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; NADV ; 91    ; 3        ; 28           ; 7            ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; NOE  ; 89    ; 3        ; 28           ; 7            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; NWE  ; 90    ; 3        ; 28           ; 7            ; 1           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; clk  ; 17    ; 1        ; 0            ; 6            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-+------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                                    ;
++---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
++---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; A16     ; 57    ; 4        ; 12           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; A17     ; 58    ; 4        ; 12           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; A18     ; 59    ; 4        ; 14           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; J1_DIN  ; 64    ; 4        ; 21           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; J1_SCLK ; 60    ; 4        ; 14           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; J1_SYNC ; 63    ; 4        ; 19           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; NADV    ; 91    ; 3        ; 28           ; 7            ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; NOE     ; 89    ; 3        ; 28           ; 7            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; NWE     ; 90    ; 3        ; 28           ; 7            ; 1           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; clk     ; 17    ; 1        ; 0            ; 6            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
++---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -350,6 +353,9 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; INT0      ; 24    ; 1        ; 0            ; 5            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; INT4      ; 25    ; 1        ; 0            ; 5            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; J7_DIN    ; 7     ; 1        ; 0            ; 11           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; J7_SCLK   ; 143   ; 2        ; 1            ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; J7_SYNC   ; 3     ; 1        ; 0            ; 13           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; adclk     ; 75    ; 3        ; 28           ; 2            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; output[0] ; 65    ; 4        ; 21           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; output[1] ; 67    ; 4        ; 24           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -386,16 +392,16 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 +-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
-+------------------------------------------------------------+
-; I/O Bank Usage                                             ;
-+----------+------------------+---------------+--------------+
-; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
-+----------+------------------+---------------+--------------+
-; 1        ; 9 / 19 ( 47 % )  ; 3.3V          ; --           ;
-; 2        ; 0 / 23 ( 0 % )   ; 3.3V          ; --           ;
-; 3        ; 7 / 23 ( 30 % )  ; 3.3V          ; --           ;
-; 4        ; 21 / 24 ( 88 % ) ; 3.3V          ; --           ;
-+----------+------------------+---------------+--------------+
++-------------------------------------------------------------+
+; I/O Bank Usage                                              ;
++----------+-------------------+---------------+--------------+
+; I/O Bank ; Usage             ; VCCIO Voltage ; VREF Voltage ;
++----------+-------------------+---------------+--------------+
+; 1        ; 11 / 19 ( 58 % )  ; 3.3V          ; --           ;
+; 2        ; 1 / 23 ( 4 % )    ; 3.3V          ; --           ;
+; 3        ; 7 / 23 ( 30 % )   ; 3.3V          ; --           ;
+; 4        ; 24 / 24 ( 100 % ) ; 3.3V          ; --           ;
++----------+-------------------+---------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -405,11 +411,11 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 ; 1        ; 0          ; 1        ; ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
 ; 2        ; 1          ; 1        ; ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
-; 3        ; 2          ; 1        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 3        ; 2          ; 1        ; J7_SYNC                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 4        ; 3          ; 1        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 5        ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 6        ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 7        ; 10         ; 1        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 7        ; 10         ; 1        ; J7_DIN                                   ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 8        ; 11         ; 1        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 9        ; 12         ; 1        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 10       ; 13         ; 1        ; #TDO                                     ; output ;              ;         ; --         ;                 ; --       ; --           ;
@@ -462,11 +468,11 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ; 57       ; 59         ; 4        ; A16                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 58       ; 60         ; 4        ; A17                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 59       ; 63         ; 4        ; A18                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
-; 60       ; 64         ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 60       ; 64         ; 4        ; J1_SCLK                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 61       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 62       ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; 63       ; 72         ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; 64       ; 75         ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 63       ; 72         ; 4        ; J1_SYNC                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 64       ; 75         ; 4        ; J1_DIN                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 65       ; 76         ; 4        ; output[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 66       ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 67       ; 79         ; 4        ; output[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -545,7 +551,7 @@ The pin-out file can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Li
 ; 140      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 141      ; 166        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 142      ; 167        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 143      ; 168        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 143      ; 168        ; 2        ; J7_SCLK                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; 144      ; 169        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
@@ -635,7 +641,7 @@ Note: User assignments will override these defaults. The user specified values a
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                   ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
-; |FPGA_EP2C                                ; 84 (0)      ; 83 (0)                    ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 34   ; 0            ; 1 (0)        ; 44 (0)            ; 39 (0)           ; |FPGA_EP2C                                                                                                            ; work         ;
+; |FPGA_EP2C                                ; 84 (0)      ; 83 (0)                    ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 40   ; 0            ; 1 (0)        ; 44 (0)            ; 39 (0)           ; |FPGA_EP2C                                                                                                            ; work         ;
 ;    |BUFF:inst5|                           ; 16 (16)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 16 (16)           ; 0 (0)            ; |FPGA_EP2C|BUFF:inst5                                                                                                 ; work         ;
 ;    |BUFF:inst6|                           ; 16 (16)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 16 (16)           ; 0 (0)            ; |FPGA_EP2C|BUFF:inst6                                                                                                 ; work         ;
 ;    |PLL:inst2|                            ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |FPGA_EP2C|PLL:inst2                                                                                                  ; work         ;
@@ -675,6 +681,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; INT0      ; Output   ; --            ; --            ; --                    ; --  ;
 ; INT4      ; Output   ; --            ; --            ; --                    ; --  ;
 ; adclk     ; Output   ; --            ; --            ; --                    ; --  ;
+; J7_DIN    ; Output   ; --            ; --            ; --                    ; --  ;
+; J7_SCLK   ; Output   ; --            ; --            ; --                    ; --  ;
+; J7_SYNC   ; Output   ; --            ; --            ; --                    ; --  ;
 ; output[7] ; Output   ; --            ; --            ; --                    ; --  ;
 ; output[6] ; Output   ; --            ; --            ; --                    ; --  ;
 ; output[5] ; Output   ; --            ; --            ; --                    ; --  ;
@@ -684,6 +693,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; output[1] ; Output   ; --            ; --            ; --                    ; --  ;
 ; output[0] ; Output   ; --            ; --            ; --                    ; --  ;
 ; NOE       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; J1_DIN    ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; J1_SCLK   ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; J1_SYNC   ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; clk       ; Input    ; --            ; --            ; --                    ; --  ;
 ; NWE       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; A16       ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
@@ -700,84 +712,90 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 ; AD_IN[15]                                                                                                                      ;                   ;         ;
 ;      - SAVE_ADDR:inst|ADDR[15]                                                                                                 ; 0                 ; 6       ;
-;      - BUFF:inst5|DATA_OUT[15]                                                                                                 ; 0                 ; 6       ;
 ;      - BUFF:inst6|DATA_OUT[15]~feeder                                                                                          ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[15]~feeder                                                                                          ; 0                 ; 6       ;
 ; AD_IN[14]                                                                                                                      ;                   ;         ;
-;      - BUFF:inst5|DATA_OUT[14]                                                                                                 ; 0                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[14]                                                                                                 ; 0                 ; 6       ;
-;      - SAVE_ADDR:inst|ADDR[14]~feeder                                                                                          ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[14]                                                                                                 ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[14]~feeder                                                                                          ; 0                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[14]~feeder                                                                                          ; 0                 ; 6       ;
 ; AD_IN[13]                                                                                                                      ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[13]                                                                                                 ; 1                 ; 6       ;
-;      - BUFF:inst5|DATA_OUT[13]~feeder                                                                                          ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[13]~feeder                                                                                          ; 1                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[13]                                                                                                 ; 0                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[13]                                                                                                 ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[13]                                                                                                 ; 0                 ; 6       ;
 ; AD_IN[12]                                                                                                                      ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[12]~feeder                                                                                          ; 0                 ; 6       ;
 ;      - BUFF:inst5|DATA_OUT[12]~feeder                                                                                          ; 0                 ; 6       ;
 ;      - BUFF:inst6|DATA_OUT[12]~feeder                                                                                          ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[12]~feeder                                                                                          ; 0                 ; 6       ;
 ; AD_IN[11]                                                                                                                      ;                   ;         ;
-;      - BUFF:inst6|DATA_OUT[11]                                                                                                 ; 0                 ; 6       ;
 ;      - SAVE_ADDR:inst|ADDR[11]                                                                                                 ; 0                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[11]~feeder                                                                                          ; 0                 ; 6       ;
 ;      - BUFF:inst5|DATA_OUT[11]~feeder                                                                                          ; 0                 ; 6       ;
 ; AD_IN[10]                                                                                                                      ;                   ;         ;
 ;      - SAVE_ADDR:inst|ADDR[10]                                                                                                 ; 0                 ; 6       ;
-;      - BUFF:inst5|DATA_OUT[10]~feeder                                                                                          ; 0                 ; 6       ;
 ;      - BUFF:inst6|DATA_OUT[10]~feeder                                                                                          ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[10]~feeder                                                                                          ; 0                 ; 6       ;
 ; AD_IN[9]                                                                                                                       ;                   ;         ;
-;      - BUFF:inst5|DATA_OUT[9]                                                                                                  ; 0                 ; 6       ;
-;      - SAVE_ADDR:inst|ADDR[9]~feeder                                                                                           ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[9]~feeder                                                                                           ; 0                 ; 6       ;
 ;      - BUFF:inst6|DATA_OUT[9]~feeder                                                                                           ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[9]~feeder                                                                                           ; 0                 ; 6       ;
 ; AD_IN[8]                                                                                                                       ;                   ;         ;
-;      - BUFF:inst5|DATA_OUT[8]                                                                                                  ; 1                 ; 6       ;
-;      - SAVE_ADDR:inst|ADDR[8]                                                                                                  ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[8]~feeder                                                                                           ; 1                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[8]                                                                                                  ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[8]                                                                                                  ; 0                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[8]~feeder                                                                                           ; 0                 ; 6       ;
 ; AD_IN[7]                                                                                                                       ;                   ;         ;
 ;      - BUFF:inst6|DATA_OUT[7]                                                                                                  ; 0                 ; 6       ;
 ;      - BUFF:inst5|DATA_OUT[7]~feeder                                                                                           ; 0                 ; 6       ;
 ;      - SAVE_ADDR:inst|ADDR[7]~feeder                                                                                           ; 0                 ; 6       ;
 ;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 0                 ; 6       ;
 ; AD_IN[6]                                                                                                                       ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[6]                                                                                                  ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[6]                                                                                                  ; 1                 ; 6       ;
 ;      - BUFF:inst5|DATA_OUT[6]                                                                                                  ; 1                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[6]~feeder                                                                                           ; 1                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[6]~feeder                                                                                           ; 1                 ; 6       ;
 ;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 1                 ; 6       ;
 ; AD_IN[5]                                                                                                                       ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[5]                                                                                                  ; 1                 ; 6       ;
-;      - BUFF:inst5|DATA_OUT[5]                                                                                                  ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[5]~feeder                                                                                           ; 1                 ; 6       ;
-;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 1                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[5]                                                                                                  ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[5]                                                                                                  ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[5]~feeder                                                                                           ; 0                 ; 6       ;
+;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 0                 ; 6       ;
 ; AD_IN[4]                                                                                                                       ;                   ;         ;
+;      - SAVE_ADDR:inst|ADDR[4]                                                                                                  ; 0                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[4]                                                                                                  ; 0                 ; 6       ;
 ;      - BUFF:inst5|DATA_OUT[4]~feeder                                                                                           ; 0                 ; 6       ;
-;      - SAVE_ADDR:inst|ADDR[4]~feeder                                                                                           ; 0                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[4]~feeder                                                                                           ; 0                 ; 6       ;
 ;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 0                 ; 6       ;
 ; AD_IN[3]                                                                                                                       ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[3]                                                                                                  ; 0                 ; 6       ;
-;      - BUFF:inst5|DATA_OUT[3]~feeder                                                                                           ; 0                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[3]~feeder                                                                                           ; 0                 ; 6       ;
-;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[3]                                                                                                  ; 1                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[3]                                                                                                  ; 1                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[3]~feeder                                                                                           ; 1                 ; 6       ;
+;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 1                 ; 6       ;
 ; AD_IN[2]                                                                                                                       ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[2]~feeder                                                                                           ; 1                 ; 6       ;
-;      - BUFF:inst5|DATA_OUT[2]~feeder                                                                                           ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[2]~feeder                                                                                           ; 1                 ; 6       ;
-;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 1                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[2]                                                                                                  ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[2]~feeder                                                                                           ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[2]~feeder                                                                                           ; 0                 ; 6       ;
+;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 0                 ; 6       ;
 ; AD_IN[1]                                                                                                                       ;                   ;         ;
-;      - BUFF:inst5|DATA_OUT[1]                                                                                                  ; 1                 ; 6       ;
-;      - SAVE_ADDR:inst|ADDR[1]~feeder                                                                                           ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[1]~feeder                                                                                           ; 1                 ; 6       ;
-;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 1                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[1]                                                                                                  ; 0                 ; 6       ;
+;      - BUFF:inst5|DATA_OUT[1]~feeder                                                                                           ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[1]~feeder                                                                                           ; 0                 ; 6       ;
+;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 0                 ; 6       ;
 ; AD_IN[0]                                                                                                                       ;                   ;         ;
 ;      - RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ram_block2a0 ; 1                 ; 6       ;
 ;      - SAVE_ADDR:inst|ADDR[0]                                                                                                  ; 1                 ; 6       ;
-;      - BUFF:inst6|DATA_OUT[0]                                                                                                  ; 1                 ; 6       ;
 ;      - BUFF:inst5|DATA_OUT[0]                                                                                                  ; 1                 ; 6       ;
+;      - BUFF:inst6|DATA_OUT[0]~feeder                                                                                           ; 1                 ; 6       ;
 ; NOE                                                                                                                            ;                   ;         ;
+; J1_DIN                                                                                                                         ;                   ;         ;
+;      - J7_DIN                                                                                                                  ; 0                 ; 6       ;
+; J1_SCLK                                                                                                                        ;                   ;         ;
+;      - J7_SCLK                                                                                                                 ; 0                 ; 6       ;
+; J1_SYNC                                                                                                                        ;                   ;         ;
+;      - J7_SYNC                                                                                                                 ; 0                 ; 6       ;
 ; clk                                                                                                                            ;                   ;         ;
 ; NWE                                                                                                                            ;                   ;         ;
 ; A16                                                                                                                            ;                   ;         ;
 ;      - SAVE_ADDR:inst|ADDR[16]~feeder                                                                                          ; 0                 ; 6       ;
 ; NADV                                                                                                                           ;                   ;         ;
 ; A18                                                                                                                            ;                   ;         ;
-;      - SAVE_ADDR:inst|ADDR[18]                                                                                                 ; 0                 ; 6       ;
+;      - SAVE_ADDR:inst|ADDR[18]~feeder                                                                                          ; 0                 ; 6       ;
 ; A17                                                                                                                            ;                   ;         ;
 ;      - SAVE_ADDR:inst|ADDR[17]                                                                                                 ; 1                 ; 6       ;
 +--------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
@@ -791,9 +809,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; NADV                                    ; PIN_91           ; 19      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; NWE                                     ; PIN_90           ; 33      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
 ; PLL:inst2|altpll:altpll_component|_clk0 ; PLL_1            ; 34      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; SELECT_ADDR:inst9|Equal0~0              ; LCCOMB_X8_Y2_N6  ; 1       ; Write enable ; no     ; --                   ; --               ; --                        ;
-; SELECT_ADDR:inst9|Equal1~5              ; LCCOMB_X8_Y2_N2  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; SELECT_ADDR:inst9|Equal2~0              ; LCCOMB_X8_Y2_N16 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; SELECT_ADDR:inst9|Equal0~0              ; LCCOMB_X8_Y1_N4  ; 1       ; Write enable ; no     ; --                   ; --               ; --                        ;
+; SELECT_ADDR:inst9|Equal1~5              ; LCCOMB_X8_Y1_N2  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; SELECT_ADDR:inst9|Equal2~0              ; LCCOMB_X8_Y1_N16 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; clk                                     ; PIN_17           ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------+------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
@@ -859,6 +877,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; A18                                                                                                               ; 1       ;
 ; A16                                                                                                               ; 1       ;
 ; clk                                                                                                               ; 1       ;
+; J1_SYNC                                                                                                           ; 1       ;
+; J1_SCLK                                                                                                           ; 1       ;
+; J1_DIN                                                                                                            ; 1       ;
 ; SELECT_ADDR:inst9|Equal1~3                                                                                        ; 1       ;
 ; SAVE_ADDR:inst|ADDR[14]                                                                                           ; 1       ;
 ; SAVE_ADDR:inst|ADDR[13]                                                                                           ; 1       ;
@@ -1004,7 +1025,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------+----------------------+-----------------+-----------------+
 ; Name                                                                                                                  ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location   ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ;
 +-----------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------+----------------------+-----------------+-----------------+
-; RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 256          ; 8            ; 256          ; 8            ; yes                    ; yes                     ; yes                    ; no                      ; 2048 ; 256                         ; 8                           ; 256                         ; 8                           ; 2048                ; 1    ; None ; M4K_X11_Y2 ; Don't care           ; Don't care      ; Don't care      ;
+; RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 256          ; 8            ; 256          ; 8            ; yes                    ; yes                     ; yes                    ; no                      ; 2048 ; 256                         ; 8                           ; 256                         ; 8                           ; 2048                ; 1    ; None ; M4K_X11_Y1 ; Don't care           ; Don't care      ; Don't care      ;
 +-----------------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------+----------------------+-----------------+-----------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -1014,130 +1035,65 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 125 / 15,666 ( < 1 % ) ;
-; C16 interconnects           ; 1 / 812 ( < 1 % )      ;
-; C4 interconnects            ; 53 / 11,424 ( < 1 % )  ;
-; Direct links                ; 22 / 15,666 ( < 1 % )  ;
+; Block interconnects         ; 136 / 15,666 ( < 1 % ) ;
+; C16 interconnects           ; 5 / 812 ( < 1 % )      ;
+; C4 interconnects            ; 40 / 11,424 ( < 1 % )  ;
+; Direct links                ; 38 / 15,666 ( < 1 % )  ;
 ; Global clocks               ; 3 / 8 ( 38 % )         ;
-; Local interconnects         ; 45 / 4,608 ( < 1 % )   ;
-; R24 interconnects           ; 5 / 652 ( < 1 % )      ;
-; R4 interconnects            ; 115 / 13,328 ( < 1 % ) ;
+; Local interconnects         ; 38 / 4,608 ( < 1 % )   ;
+; R24 interconnects           ; 10 / 652 ( 2 % )       ;
+; R4 interconnects            ; 109 / 13,328 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 14.00) ; Number of LABs  (Total = 6) ;
+; Number of Logic Elements  (Average = 12.00) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
-; 1                                           ; 0                           ;
+; 1                                           ; 1                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
+; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
+; 8                                           ; 1                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
-; 11                                          ; 0                           ;
+; 11                                          ; 1                           ;
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
 ; 15                                          ; 0                           ;
-; 16                                          ; 5                           ;
+; 16                                          ; 4                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.50) ; Number of LABs  (Total = 6) ;
+; LAB-wide Signals  (Average = 1.57) ; Number of LABs  (Total = 7) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 3                           ;
+; 1 Clock                            ; 6                           ;
 ; 1 Clock enable                     ; 3                           ;
-; 2 Clocks                           ; 3                           ;
+; 2 Clock enables                    ; 1                           ;
+; 2 Clocks                           ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 25.00) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced  (Average = 21.71) ; Number of LABs  (Total = 7) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
+; 2                                            ; 1                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
 ; 6                                            ; 0                           ;
-; 7                                            ; 1                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 0                           ;
-; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
-; 17                                           ; 0                           ;
-; 18                                           ; 0                           ;
-; 19                                           ; 0                           ;
-; 20                                           ; 0                           ;
-; 21                                           ; 0                           ;
-; 22                                           ; 0                           ;
-; 23                                           ; 1                           ;
-; 24                                           ; 0                           ;
-; 25                                           ; 0                           ;
-; 26                                           ; 1                           ;
-; 27                                           ; 0                           ;
-; 28                                           ; 0                           ;
-; 29                                           ; 0                           ;
-; 30                                           ; 1                           ;
-; 31                                           ; 0                           ;
-; 32                                           ; 2                           ;
-+----------------------------------------------+-----------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 8.83) ; Number of LABs  (Total = 6) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 1                           ;
-; 1                                               ; 0                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 1                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
-; 7                                               ; 0                           ;
-; 8                                               ; 1                           ;
-; 9                                               ; 1                           ;
-; 10                                              ; 0                           ;
-; 11                                              ; 0                           ;
-; 12                                              ; 0                           ;
-; 13                                              ; 0                           ;
-; 14                                              ; 0                           ;
-; 15                                              ; 0                           ;
-; 16                                              ; 2                           ;
-+-------------------------------------------------+-----------------------------+
-
-
-+----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 15.67) ; Number of LABs  (Total = 6) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 1                           ;
 ; 7                                            ; 0                           ;
 ; 8                                            ; 0                           ;
 ; 9                                            ; 0                           ;
@@ -1146,10 +1102,76 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
+; 15                                           ; 1                           ;
+; 16                                           ; 0                           ;
+; 17                                           ; 0                           ;
+; 18                                           ; 1                           ;
+; 19                                           ; 0                           ;
+; 20                                           ; 0                           ;
+; 21                                           ; 0                           ;
+; 22                                           ; 0                           ;
+; 23                                           ; 0                           ;
+; 24                                           ; 0                           ;
+; 25                                           ; 1                           ;
+; 26                                           ; 0                           ;
+; 27                                           ; 0                           ;
+; 28                                           ; 1                           ;
+; 29                                           ; 0                           ;
+; 30                                           ; 0                           ;
+; 31                                           ; 0                           ;
+; 32                                           ; 2                           ;
++----------------------------------------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                       ;
++-------------------------------------------------+-----------------------------+
+; Number of Signals Sourced Out  (Average = 7.43) ; Number of LABs  (Total = 7) ;
++-------------------------------------------------+-----------------------------+
+; 0                                               ; 1                           ;
+; 1                                               ; 1                           ;
+; 2                                               ; 0                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 0                           ;
+; 5                                               ; 0                           ;
+; 6                                               ; 0                           ;
+; 7                                               ; 0                           ;
+; 8                                               ; 3                           ;
+; 9                                               ; 0                           ;
+; 10                                              ; 0                           ;
+; 11                                              ; 1                           ;
+; 12                                              ; 0                           ;
+; 13                                              ; 0                           ;
+; 14                                              ; 0                           ;
+; 15                                              ; 0                           ;
+; 16                                              ; 1                           ;
++-------------------------------------------------+-----------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                        ;
++----------------------------------------------+-----------------------------+
+; Number of Distinct Inputs  (Average = 13.14) ; Number of LABs  (Total = 7) ;
++----------------------------------------------+-----------------------------+
+; 0                                            ; 0                           ;
+; 1                                            ; 0                           ;
+; 2                                            ; 0                           ;
+; 3                                            ; 1                           ;
+; 4                                            ; 0                           ;
+; 5                                            ; 0                           ;
+; 6                                            ; 0                           ;
+; 7                                            ; 0                           ;
+; 8                                            ; 0                           ;
+; 9                                            ; 1                           ;
+; 10                                           ; 0                           ;
+; 11                                           ; 0                           ;
+; 12                                           ; 0                           ;
+; 13                                           ; 1                           ;
+; 14                                           ; 0                           ;
+; 15                                           ; 1                           ;
 ; 16                                           ; 0                           ;
 ; 17                                           ; 2                           ;
-; 18                                           ; 3                           ;
+; 18                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -1224,16 +1246,16 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X0_Y0 to location X13_Y14
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.39 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.28 seconds.
 Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 27 output pins without output pin load capacitance assignment
+Warning (306006): Found 30 output pins without output pin load capacitance assignment
     Info (306007): Pin "AD_IN[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "AD_IN[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "AD_IN[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1253,6 +1275,9 @@ Warning (306006): Found 27 output pins without output pin load capacitance assig
     Info (306007): Pin "INT0" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "INT4" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "adclk" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "J7_DIN" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "J7_SCLK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "J7_SYNC" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "output[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "output[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "output[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1284,17 +1309,17 @@ Warning (169064): Following 16 pins have no output enable or a GND or VCC output
     Info (169065): Pin AD_IN[2] has a permanently disabled output enable
     Info (169065): Pin AD_IN[1] has a permanently disabled output enable
     Info (169065): Pin AD_IN[0] has a permanently disabled output enable
-Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS/output_files/FPGA_EP2C.fit.smsg
+Info (144001): Generated suppressed messages file D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS/output_files/FPGA_EP2C.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 785 megabytes
-    Info: Processing ended: Wed Apr 08 11:14:32 2015
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 843 megabytes
+    Info: Processing ended: Wed Apr 08 16:05:31 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS/output_files/FPGA_EP2C.fit.smsg.
+The suppressed messages can be found in D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS/output_files/FPGA_EP2C.fit.smsg.
 
 

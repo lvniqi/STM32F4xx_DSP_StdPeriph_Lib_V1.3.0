@@ -14,30 +14,40 @@ endmodule
 * module SELECT_ADDR
 * */
 module SELECT_ADDR(input [18:0] ADDR,
-						 output reg BUF1,BUF2,BUF3,
+						 output reg RAM_DDS,FREWL,FREWH,FIFO_ADIN,
 						 output reg read_en);
 	always @(*)begin
 		if(ADDR[18:15] == {4'b1010})begin
-				BUF1 <= 1;
-				BUF2 <= 0;
-				BUF3 <= 0;
+				RAM_DDS <= 1;
+				FREWL <= 0;
+				FREWH <= 0;
 				read_en <= 0;
+				FIFO_ADIN<=0;
 				end
 		else if(ADDR == {4'b1011,3'b0,2'b01,10'b0})begin
-				BUF1 <= 0;
-				BUF2 <= 1;
-				BUF3 <= 0;
+				RAM_DDS <= 0;
+				FREWL <= 1;
+				FREWH <= 0;
+				FIFO_ADIN<=0;
 				end
 		else if(ADDR == {4'b1011,3'b0,2'b10,10'b0})begin
-				BUF1 <= 0;
-				BUF2 <= 0;
-				BUF3 <= 1;
+				RAM_DDS <= 0;
+				FREWL <= 0;
+				FREWH <= 1;
+				FIFO_ADIN<=0;
+				end
+		else if(ADDR == {4'b1011,3'b0,2'b00,9'b0,1'b1})begin
+				RAM_DDS <=0;
+				FREWL <=0;
+				FREWH <=0;
+				FIFO_ADIN<=1;
 				end
 		else begin
-			BUF1 <= 0;
-			BUF2 <= 0;
-			BUF3 <= 0;
+			RAM_DDS <= 0;
+			FREWL <= 0;
+			FREWH <= 0;
 			read_en <= 0;
+			FIFO_ADIN <=0;
 			end
 		end
 endmodule

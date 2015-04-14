@@ -1,4 +1,4 @@
-Fitter Status : Successful - Wed Apr 08 11:14:31 2015
+Fitter Status : Successful - Wed Apr 08 16:05:30 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : FPGA_EP2C
 Top-level Entity Name : FPGA_EP2C
@@ -9,7 +9,7 @@ Total logic elements : 84 / 4,608 ( 2 % )
     Total combinational functions : 40 / 4,608 ( < 1 % )
     Dedicated logic registers : 83 / 4,608 ( 2 % )
 Total registers : 83
-Total pins : 34 / 89 ( 38 % )
+Total pins : 40 / 89 ( 45 % )
 Total virtual pins : 0
 Total memory bits : 2,048 / 119,808 ( 2 % )
 Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
