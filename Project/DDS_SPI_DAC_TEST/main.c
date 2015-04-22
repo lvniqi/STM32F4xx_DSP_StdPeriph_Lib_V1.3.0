@@ -34,7 +34,7 @@ int main(void){
   static int i=0,j=50;
   static u32 k=1000;
   LCD_ShowStringBig(100,280,"DDS",YELLOW);
-  LCD_ShowChinese(100+16*3,280,32,1,YELLOW);
+  LCD_ShowChineseStringBig(148,280,0,5,YELLOW);
   LCD_ShowStringBig(100,180,"K10:F-  K11:F+",YELLOW);
   LCD_ShowStringBig(100,150,"K12:A-  K13:A+",YELLOW);
   LCD_ShowStringBig(100,120,"K14:V-  K15:V+",YELLOW);
@@ -54,7 +54,8 @@ int main(void){
   LCD_ShowStringBig(220,60,"Hz",YELLOW);
   //LCD_ShowNumBig_L(220,130,0,FREQ,YELLOW);
   //SPI≤‚ ‘
-  
+  Set_Adc082(2,128);
+  Set_Adc082(3,128);
   while(1){
     
     if(MAIN_KEY.keysign){
@@ -111,6 +112,9 @@ int main(void){
         FPGA_Set_Freq(k);
         LCD_ShowNumBig_L(220,130,60,k,YELLOW);
       }
+    }
+    else{
+      LCD_ShowNumBig_L(400,220,60,*(EXTERN_RAM)0x600B0002,YELLOW);
     }
   }
 }

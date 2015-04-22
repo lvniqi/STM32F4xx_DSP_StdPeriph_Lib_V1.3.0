@@ -297,7 +297,94 @@ void LCD_ShowChinese(u16 x, u16 y, u8 size, u8 num, u16 color){
     }
   }
 }
-
+/********************************************************************
+* 名称 : LCD_ShowChineseBig
+* 功能 : 显示3216字符
+* 输入 :  x y  大小 字符位于asc_3216数组中的位置 颜色
+* 输出 : 无 
+***********************************************************************/
+void LCD_ShowChineseBig(u16 x,u16 y,u8 num,u16 color)
+{
+	int temp, t1,t2,t3;
+	u16 color_2 = POINT_COLOR;
+        for(t3 = 0;t3<128;t3+=64)
+        {
+          LCD_SetCursor(x+t3/4, y+16);		//设置光标位置
+          LCD_WriteRAM_Prepare();	//开始写入GRAM
+          for (t2 = 15+t3; t2 >= t3; t2--)
+          {
+                  temp = asc_3232[num][t2];		//调用1608字体
+                  for (t1 = 0; t1 < 8; t1++)
+                  {
+                          if (temp & 0x80)
+                                  POINT_COLOR = color;
+                          else
+                                  POINT_COLOR = BACK_COLOR;
+                          LCD_WRITE_COLOR(POINT_COLOR);
+                          temp <<= 1;
+                  }
+          }
+          LCD_SetCursor(x+t3/4, y);		//设置光标位置
+          LCD_WriteRAM_Prepare();	//开始写入GRAM
+          for (t2 = 31+t3; t2 >= 16+t3; t2--)
+          {
+                  temp = asc_3232[num][t2];		//调用1608字体
+                  for (t1 = 0; t1 < 8; t1++)
+                  {
+                          if (temp & 0x80)
+                                  POINT_COLOR = color;
+                          else
+                                  POINT_COLOR = BACK_COLOR;
+                          LCD_WRITE_COLOR(POINT_COLOR);
+                          temp <<= 1;
+                  }
+          }
+          LCD_SetCursor(x+8+t3/4, y+16);//设置光标位置
+          LCD_WriteRAM_Prepare();	//开始写入GRAM
+          for (t2 = 47+t3; t2 >= 32+t3; t2--)
+          {
+                  temp = asc_3232[num][t2];		//调用1608字体
+                  for (t1 = 0; t1 < 8; t1++)
+                  {
+                          if (temp & 0x80)
+                                  POINT_COLOR = color;
+                          else
+                                  POINT_COLOR = BACK_COLOR;
+                          LCD_WRITE_COLOR(POINT_COLOR);
+                          temp <<= 1;
+                  }
+          }
+          LCD_SetCursor(x+8+t3/4, y);			//设置光标位置
+          LCD_WriteRAM_Prepare();	//开始写入GRAM
+          for (t2 = 63+t3; t2 >= 48+t3; t2--)
+          {
+                  temp = asc_3232[num][t2];		//调用1608字体
+                  for (t1 = 0; t1 < 8; t1++)
+                  {
+                          if (temp & 0x80)
+                                  POINT_COLOR = color;
+                          else
+                                  POINT_COLOR = BACK_COLOR;
+                          LCD_WRITE_COLOR(POINT_COLOR);
+                          temp <<= 1;
+                  }
+          }
+        }
+	POINT_COLOR = color_2;
+}
+/********************************************************************
+* 名称 : LCD_ShowChineseStringBig
+* 功能 : 显示3216字符
+* 输入 :  x y  大小 字符位于asc_3216数组中的位置 颜色
+* 输出 : 无 
+***********************************************************************/
+void LCD_ShowChineseStringBig(u16 x,u16 y,u8 num,u8 len,u16 color)
+{
+  for(int i=0;i<len;i++)
+  {
+    LCD_ShowChineseBig(x+32*i,y,num+i,color);
+  }
+}
 /********************************************************************
  * 名称 : LCD_GetChar
  * 功能 : 输入数字
