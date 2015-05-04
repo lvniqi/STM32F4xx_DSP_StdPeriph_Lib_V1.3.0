@@ -27,8 +27,10 @@ int main(void){
   }
   while(1){
     PEout(4) = 1;
+    PEout(0) = 1;
     delay_ms(1);
     PEout(4) = 0;
+    PEout(0) = 0;
     delay_ms(100);
   }
 }

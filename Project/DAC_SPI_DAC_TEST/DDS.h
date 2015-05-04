@@ -32,4 +32,4 @@
 }
 extern void Freq_Service(int L);
 extern u32 FREQ;
-extern u16 VPP;
+//extern u16 VPP;

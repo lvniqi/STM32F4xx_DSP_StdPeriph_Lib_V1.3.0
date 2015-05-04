@@ -1,0 +1,117 @@
+# Reading S:/tools/dianzi sheji/quartus14/modelsim_ase/tcl/vsim/pref.tcl 
+# do FPGA_EP2C_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying S:\tools\dianzi sheji\quartus14\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied S:\tools\dianzi sheji\quartus14\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8 {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FPGA2MCU.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SAVE_ADDR
+# -- Compiling module SELECT_ADDR
+# -- Compiling module BUFF_SEND_DATA
+# -- Compiling module BUFF
+# 
+# Top level modules:
+# 	SAVE_ADDR
+# 	SELECT_ADDR
+# 	BUFF_SEND_DATA
+# 	BUFF
+# vlog -vlog01compat -work work +incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8 {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_ADIN
+# 
+# Top level modules:
+# 	FIFO_ADIN
+# vlog -vlog01compat -work work +incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8 {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/state_wrrqe.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ADC_FIFO
+# -- Compiling module SPI_OUT
+# 
+# Top level modules:
+# 	ADC_FIFO
+# 	SPI_OUT
+# vcom -93 -work work {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/phase_addr.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity phase_acc
+# -- Compiling architecture one of phase_acc
+# vcom -93 -work work {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity cylon_1_ran
+# -- Compiling architecture SYN of cylon_1_ran
+# vcom -93 -work work {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/pll_2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pll_2
+# -- Compiling architecture SYN of pll_2
+# 
+# vlog -vlog01compat -work work +incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim {D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/FPGA_EP2C.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FPGA_EP2C_vlg_tst
+# 
+# Top level modules:
+# 	FPGA_EP2C_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone_ver -L rtl_work -L work -voptargs="+acc"  FPGA_EP2C_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps FPGA_EP2C_vlg_tst 
+# Loading work.FPGA_EP2C_vlg_tst
+# ** Error: (vsim-3033) D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/FPGA_EP2C.vt(58): Instantiation of 'FPGA_EP2C' failed. The design unit was not found.
+# 
+#         Region: /FPGA_EP2C_vlg_tst
+#         Searched libraries:
+#             S:/tools/dianzi sheji/quartus14/modelsim_ase/altera/verilog/altera
+#             S:/tools/dianzi sheji/quartus14/modelsim_ase/altera/verilog/220model
+#             S:/tools/dianzi sheji/quartus14/modelsim_ase/altera/verilog/sgate
+#             S:/tools/dianzi sheji/quartus14/modelsim_ase/altera/verilog/altera_mf
+#             S:/tools/dianzi sheji/quartus14/modelsim_ase/altera/verilog/altera_lnsim
+#             S:/tools/dianzi sheji/quartus14/modelsim_ase/altera/verilog/cyclone
+#             D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/rtl_work
+#             D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/rtl_work
+#             D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./FPGA_EP2C_run_msim_rtl_verilog.do PAUSED at line 17
+vsim work.SPI_OUT
+# vsim work.SPI_OUT 
+# Loading work.SPI_OUT
+force -freeze sim:/SPI_OUT/data_in 1100010011100101 0
+run
+run
+run
+add wave -position insertpoint  \
+sim:/SPI_OUT/clk \
+sim:/SPI_OUT/data_in \
+sim:/SPI_OUT/rst_n \
+sim:/SPI_OUT/en \
+sim:/SPI_OUT/sclk \
+sim:/SPI_OUT/dout
+force -freeze sim:/SPI_OUT/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/SPI_OUT/rst_n 1 0
+force -freeze sim:/SPI_OUT/en 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

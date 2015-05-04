@@ -1,0 +1,10 @@
+Analysis & Synthesis Status : Successful - Mon May 04 11:27:09 2015
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : FPGA_EP2C
+Top-level Entity Name : FPGA_EP2C
+Family : Cyclone
+Total logic elements : 347
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 34,816
+Total PLLs : 1

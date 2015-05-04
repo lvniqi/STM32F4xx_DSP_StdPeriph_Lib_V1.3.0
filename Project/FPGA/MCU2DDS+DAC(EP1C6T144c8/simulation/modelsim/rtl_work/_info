@@ -1,0 +1,282 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\study\STM32F4xx_DSP_StdPeriph_Lib_V1.3.0\Project\FPGA\MCU2DDS+DAC(EP1C6T144c8\simulation\modelsim
+vADC_FIFO
+I6WaW:cHa=eRRJG5keINkS3
+VFaOo6onV4]>0mR>>1;`Mo3
+Z1 dD:\study\STM32F4xx_DSP_StdPeriph_Lib_V1.3.0\Project\FPGA\MCU2DDS+DAC(EP1C6T144c8\simulation\modelsim
+Z2 w1430709969
+Z3 8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/state_wrrqe.v
+Z4 FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/state_wrrqe.v
+L0 1
+Z5 OV;L;10.1d;51
+r1
+31
+Z6 !s108 1430710048.289000
+Z7 !s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/state_wrrqe.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/state_wrrqe.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8 -O0
+n@a@d@c_@f@i@f@o
+!i10b 1
+!s100 na@KDKSQkGG<M=nSV`FR<3
+!s85 0
+!s101 -O0
+vBUFF
+ImDc`F:DBPBf:S48e:82@B0
+V<PcL6`>DbbIFeoiYgYa@P1
+R1
+Z11 w1429692445
+Z12 8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FPGA2MCU.v
+Z13 FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FPGA2MCU.v
+L0 76
+R5
+r1
+31
+Z14 !s108 1430710048.123000
+Z15 !s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FPGA2MCU.v|
+Z16 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FPGA2MCU.v|
+R9
+R10
+n@b@u@f@f
+!i10b 1
+!s100 Qf4B3@YG>ImELcj[FLdBn0
+!s85 0
+!s101 -O0
+vBUFF_SEND_DATA
+IGIgDTK?41J0BBcWe8F2<a1
+VE<6B1NdJgW6`AM]75^B>;3
+R1
+R11
+R12
+R13
+L0 58
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@b@u@f@f_@s@e@n@d_@d@a@t@a
+!i10b 1
+!s100 k20YRRWfc<?^A@1o?X>K93
+!s85 0
+!s101 -O0
+Ecylon_1_ran
+R11
+Z17 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z18 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
+Z19 8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd
+Z20 FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd
+l0
+L42
+V=I:j=g7Wh=[aB_TF>eKSJ1
+Z21 OV;C;10.1d;51
+31
+Z22 !s108 1430710048.441000
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd|
+Z24 !s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd|
+Z25 o-93 -work work -O0
+Z26 tExplicit 1
+!s100 BZ@[`mUN96ZOj03Y?O7;=1
+!i10b 1
+Asyn
+R17
+R18
+DEx4 work 11 cylon_1_ran 0 22 =I:j=g7Wh=[aB_TF>eKSJ1
+l94
+L56
+V?ji0?DKX>YE]9d;TBzd2:1
+R21
+31
+R22
+R23
+R24
+R25
+R26
+!s100 Knnl3[UCmnZCSELUcdMll3
+!i10b 1
+vFIFO_ADIN
+ILz1_g8YM3PNRGNTTlVMoB2
+VTXz@fKoMe9Q27BQYmA^l?3
+R1
+R11
+8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v
+FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v
+L0 39
+R5
+r1
+31
+R9
+R10
+n@f@i@f@o_@a@d@i@n
+!i10b 1
+!s100 VML0J@da[g<BgQokN0:K21
+!s85 0
+!s108 1430710048.221000
+!s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v|
+!s101 -O0
+vFPGA_EP2C_vlg_tst
+!i10b 1
+!s100 ;_Ck]o<UgH:iD:HOX7jA]3
+IBaL?3FEZJ8Kf`IzIkJhU00
+V<@C;BVI@5]O7:ndeH55cO0
+R1
+R11
+8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/FPGA_EP2C.vt
+FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/FPGA_EP2C.vt
+L0 28
+R5
+r1
+!s85 0
+31
+!s108 1430710048.605000
+!s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/FPGA_EP2C.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim/FPGA_EP2C.vt|
+!s101 -O0
+R9
+!s92 -vlog01compat -work work +incdir+D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/simulation/modelsim -O0
+n@f@p@g@a_@e@p2@c_vlg_tst
+Ephase_acc
+R11
+Z27 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z28 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+R17
+R18
+R1
+Z29 8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/phase_addr.vhd
+Z30 FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/phase_addr.vhd
+l0
+L6
+VLEZLb3=LJ_<LL`=DNcZZX3
+R21
+31
+Z31 !s108 1430710048.363000
+Z32 !s90 -reportprogress|300|-93|-work|work|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/phase_addr.vhd|
+Z33 !s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/phase_addr.vhd|
+R25
+R26
+!s100 2BoKk:f2G9^hEYn7k195Y0
+!i10b 1
+Aone
+R27
+R28
+R17
+R18
+DEx4 work 9 phase_acc 0 22 LEZLb3=LJ_<LL`=DNcZZX3
+l16
+L14
+VzIMIk^3^A8=_gmT<a:P2o0
+R21
+31
+R31
+R32
+R33
+R25
+R26
+!s100 [=[0MOW8663Ef[:@KeXKU3
+!i10b 1
+Epll_2
+Z34 w1430293608
+R17
+R18
+R1
+Z35 8D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/pll_2.vhd
+Z36 FD:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/pll_2.vhd
+l0
+L42
+VDzEl0z3^N49QmDI:05V>^0
+R21
+31
+Z37 !s108 1430710048.517000
+Z38 !s90 -reportprogress|300|-93|-work|work|D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/pll_2.vhd|
+Z39 !s107 D:/study/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP1C6T144c8/pll_2.vhd|
+R25
+R26
+!s100 A4mGTa[2[kcnZTRmBmFP>3
+!i10b 1
+Asyn
+R17
+R18
+DEx4 work 5 pll_2 0 22 DzEl0z3^N49QmDI:05V>^0
+l134
+L54
+VG3N`7VONBLZXeFaXb<bFd0
+R21
+31
+R37
+R38
+R39
+R25
+R26
+!s100 :ZJb]]ecNLDkBme:>gcoA3
+!i10b 1
+vSAVE_ADDR
+Io:ABbS71[cmn14dcec7Ag3
+VFiC^:3Flcbm80mYaAX@R51
+R1
+R11
+R12
+R13
+L0 5
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@s@a@v@e_@a@d@d@r
+!i10b 1
+!s100 :gEAU:1Z4OMGB_c0EAMXd3
+!s85 0
+!s101 -O0
+vSELECT_ADDR
+I@;Li<G8^JNOc[=K<4?O@_0
+V@k_l>RgCm@Uf<0Za?=Q7n1
+R1
+R11
+R12
+R13
+L0 16
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@s@e@l@e@c@t_@a@d@d@r
+!i10b 1
+!s100 oMS7JQX8=FjRDZK_N9nS[2
+!s85 0
+!s101 -O0
+vSPI_OUT
+IL6N_VT<A_o`L4_R9]hEFa2
+VOS8XO>JFNoOU<iLfTgIgb1
+R1
+R2
+R3
+R4
+L0 74
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@s@p@i_@o@u@t
+!i10b 1
+!s100 LiSUZm3zFNhZ<Mg_>YS]h2
+!s85 0
+!s101 -O0

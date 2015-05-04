@@ -12,7 +12,7 @@ void InitAdc082Spi(){
   SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge; //CPHA=0 数据捕获第1个
   SPI_InitStructure.SPI_NSS = SPI_NSS_Soft; //软件NSS
   //警告！ 使用库函数时，APB2时钟为72M 而SPI需要低于18M 所以至少需要4分频
-  SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32;
+  SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_128;
   //4分频 18Mhz
   SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB; //高位在前
   SPI_InitStructure.SPI_CRCPolynomial = 7;
@@ -21,6 +21,7 @@ void InitAdc082Spi(){
 }
 
 void Set_Adc082(int x,u16 data){
+  
   if(x>1){
     PAout(7) = 0;  
     if(x%2)   

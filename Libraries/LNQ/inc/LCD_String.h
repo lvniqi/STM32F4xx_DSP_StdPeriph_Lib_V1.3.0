@@ -80,7 +80,7 @@
    * 输入 :  x开始 x结束位置  y  大小 数字 颜色
    * 输出 : 无 
    ***********************************************************************/
-  extern void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, u32 num, u16 color);
+  extern void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, int num, u16 color);
   /********************************************************************
    * 名称 : LCD_ShowCharBig_DMA
    * 功能 : 显示3216字符

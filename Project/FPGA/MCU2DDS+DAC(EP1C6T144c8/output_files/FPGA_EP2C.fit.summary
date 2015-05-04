@@ -1,0 +1,12 @@
+Fitter Status : Successful - Mon May 04 10:41:00 2015
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : FPGA_EP2C
+Top-level Entity Name : FPGA_EP2C
+Family : Cyclone
+Device : EP1C6T144C8
+Timing Models : Final
+Total logic elements : 330 / 5,980 ( 6 % )
+Total pins : 56 / 98 ( 57 % )
+Total virtual pins : 0
+Total memory bits : 34,816 / 92,160 ( 38 % )
+Total PLLs : 1 / 2 ( 50 % )

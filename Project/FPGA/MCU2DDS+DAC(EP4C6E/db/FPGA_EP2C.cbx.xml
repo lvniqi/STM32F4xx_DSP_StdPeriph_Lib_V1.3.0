@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FPGA_EP2C">
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_cif1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA_EP2C|cylon_1_ran:inst1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_6vg1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

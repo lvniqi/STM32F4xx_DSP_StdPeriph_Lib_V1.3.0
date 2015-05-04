@@ -1,0 +1,89 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -8.697
+TNS   : -65.073
+
+Type  : Setup 'clk'
+Slack : -8.690
+TNS   : -259.082
+
+Type  : Setup 'inst10|altpll_component|pll|clk[1]'
+Slack : -7.665
+TNS   : -88.195
+
+Type  : Setup 'NOE'
+Slack : -5.596
+TNS   : -680.636
+
+Type  : Setup 'NWE'
+Slack : -4.076
+TNS   : -144.348
+
+Type  : Setup 'inst10|altpll_component|pll|clk[0]'
+Slack : -3.878
+TNS   : -7.383
+
+Type  : Hold 'NWE'
+Slack : -7.326
+TNS   : -192.600
+
+Type  : Hold 'NOE'
+Slack : -6.337
+TNS   : -509.039
+
+Type  : Hold 'inst10|altpll_component|pll|clk[0]'
+Slack : -1.481
+TNS   : -2.568
+
+Type  : Hold 'inst10|altpll_component|pll|clk[1]'
+Slack : 0.861
+TNS   : 0.000
+
+Type  : Hold 'clk'
+Slack : 1.321
+TNS   : 0.000
+
+Type  : Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 7.718
+TNS   : 0.000
+
+Type  : Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.611
+TNS   : -1.062
+
+Type  : Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -1.170
+TNS   : -7.912
+
+Type  : Minimum Pulse Width 'NOE'
+Slack : -1.583
+TNS   : -526.147
+
+Type  : Minimum Pulse Width 'NWE'
+Slack : -1.583
+TNS   : -151.835
+
+Type  : Minimum Pulse Width 'NADV'
+Slack : -1.583
+TNS   : -51.667
+
+Type  : Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'inst10|altpll_component|pll|clk[1]'
+Slack : 3.182
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'inst10|altpll_component|pll|clk[0]'
+Slack : 8.182
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : 18.182
+TNS   : 0.000
+
+------------------------------------------------------------

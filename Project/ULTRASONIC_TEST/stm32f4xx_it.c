@@ -156,6 +156,23 @@ void EXTI3_IRQHandler(void){
     LCD_ShowNumBig_L(300,0,0,UR_DATA.pos_len,RED);
   }
 }
+void EXTI2_IRQHandler(void){
+  static bool RiseorFall = true;
+  EXTI_ClearITPendingBit(EXTI_Line2);
+  if(RiseorFall){
+    UR_DATA.time_len = 0;
+    TIM_Cmd(TIM2,ENABLE);
+    RiseorFall = false;
+  }
+  else{
+    TIM_Cmd(TIM2,DISABLE);
+    RiseorFall = true;
+    UR_DATA.time_len += TIM_GetCounter(TIM2);
+    TIM_SetCounter(TIM2,0);
+    UR_DATA.pos_len = UR_DATA.time_len*34/100;
+    LCD_ShowNumBig_L(300,0,0,UR_DATA.pos_len,RED);
+  }
+}
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
 /*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */

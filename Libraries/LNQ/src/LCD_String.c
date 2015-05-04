@@ -206,8 +206,13 @@ void LCD_ShowNumBig(u16 x, u16 y, u32 num, u16 color){
  * 输入 :  x开始 x结束位置  y  大小 数字 颜色
  * 输出 : 无 
  ***********************************************************************/
-void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, u32 num, u16 color){
+void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, int num, u16 color){
   int temp[20], len = 0, len_max, i, p = 0;
+  u8 num_n = 0;
+  if(num<0){
+    num = -num;
+    num_n = 1;
+  }
   while (num){
     temp[len] = num % 10+'0';
     num /= 10;
@@ -218,6 +223,10 @@ void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, u32 num, u16 color){
       p++;
     }
   }
+  if(num_n){
+    temp[len] = '-';
+    len++;
+  }
   len_max = len;
   len--;
   if (len_max == 0){
@@ -225,7 +234,7 @@ void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, u32 num, u16 color){
     temp[len] = '0';
     len_max = 1;
   }
-  else if (temp[len] == ','){
+  else if (temp[len] == ','||temp[len] == ' '){
     len--;
     len_max--;
   }

@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'NOE'
+Slack : -4.831
+TNS   : -212.589
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.383
+TNS   : -264.774
+
+Type  : Slow 1200mV 85C Model Setup 'NWE'
+Slack : -3.691
+TNS   : -114.704
+
+Type  : Slow 1200mV 85C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -2.171
+TNS   : -14.617
+
+Type  : Slow 1200mV 85C Model Hold 'NOE'
+Slack : -0.547
+TNS   : -7.151
+
+Type  : Slow 1200mV 85C Model Hold 'NWE'
+Slack : 0.138
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.733
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.642
+TNS   : -4.303
+
+Type  : Slow 1200mV 85C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.537
+TNS   : -3.387
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -226.356
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NOE'
+Slack : -3.201
+TNS   : -126.171
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NWE'
+Slack : -3.201
+TNS   : -60.187
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NADV'
+Slack : -3.000
+TNS   : -31.253
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'NOE'
+Slack : -4.579
+TNS   : -201.089
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -4.087
+TNS   : -235.154
+
+Type  : Slow 1200mV 0C Model Setup 'NWE'
+Slack : -3.488
+TNS   : -108.627
+
+Type  : Slow 1200mV 0C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -2.149
+TNS   : -14.461
+
+Type  : Slow 1200mV 0C Model Hold 'NOE'
+Slack : -0.459
+TNS   : -4.992
+
+Type  : Slow 1200mV 0C Model Hold 'NWE'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.822
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.761
+TNS   : -5.153
+
+Type  : Slow 1200mV 0C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.455
+TNS   : -2.761
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -226.356
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NOE'
+Slack : -3.201
+TNS   : -126.171
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NWE'
+Slack : -3.201
+TNS   : -60.187
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NADV'
+Slack : -3.000
+TNS   : -31.253
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.160
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'NOE'
+Slack : -1.427
+TNS   : -57.899
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.257
+TNS   : -55.783
+
+Type  : Fast 1200mV 0C Model Setup 'NWE'
+Slack : -0.861
+TNS   : -24.179
+
+Type  : Fast 1200mV 0C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.472
+TNS   : -2.475
+
+Type  : Fast 1200mV 0C Model Hold 'NOE'
+Slack : -0.280
+TNS   : -4.862
+
+Type  : Fast 1200mV 0C Model Hold 'NWE'
+Slack : 0.004
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.012
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.069
+TNS   : -0.314
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -166.584
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NOE'
+Slack : -3.000
+TNS   : -108.056
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NWE'
+Slack : -3.000
+TNS   : -49.122
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NADV'
+Slack : -3.000
+TNS   : -30.196
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.351
+TNS   : 0.000
+
+------------------------------------------------------------
