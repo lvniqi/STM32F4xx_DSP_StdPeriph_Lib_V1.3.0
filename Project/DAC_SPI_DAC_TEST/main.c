@@ -49,7 +49,13 @@ int main(void){
   OFFSET = 0;
   Set_Adc082(3,0.41*128+112.3);
   test_gipo_init();
-  
+  /*while(1){
+    PAout(7) = 0;
+    *(EXTERN_RAM)(0x600B0004) = 255;
+    delay_ms(10);
+    PAout(7) = 1;
+    delay_ms(10);
+  }*/
   while(1){
     if(PBin(0) == 1){
       if(Lcd_Curve1.finish_flag){

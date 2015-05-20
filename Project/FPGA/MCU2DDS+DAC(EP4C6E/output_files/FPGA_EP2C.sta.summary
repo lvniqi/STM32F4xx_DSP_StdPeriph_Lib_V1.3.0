@@ -3,48 +3,48 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'NOE'
-Slack : -4.831
-TNS   : -212.589
+Slack : -4.878
+TNS   : -197.196
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.383
-TNS   : -264.774
+Slack : -4.245
+TNS   : -288.696
 
 Type  : Slow 1200mV 85C Model Setup 'NWE'
-Slack : -3.691
-TNS   : -114.704
+Slack : -3.624
+TNS   : -121.869
 
 Type  : Slow 1200mV 85C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -2.171
-TNS   : -14.617
+Slack : -1.743
+TNS   : -12.885
 
 Type  : Slow 1200mV 85C Model Hold 'NOE'
-Slack : -0.547
-TNS   : -7.151
+Slack : -1.136
+TNS   : -36.107
 
 Type  : Slow 1200mV 85C Model Hold 'NWE'
-Slack : 0.138
+Slack : 0.106
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.447
+Slack : 0.390
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.733
+Slack : 1.019
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.642
-TNS   : -4.303
+Slack : -0.824
+TNS   : -5.751
 
 Type  : Slow 1200mV 85C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.537
-TNS   : -3.387
+Slack : -0.239
+TNS   : -1.383
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.201
-TNS   : -226.356
+TNS   : -232.304
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NOE'
 Slack : -3.201
@@ -59,52 +59,52 @@ Slack : -3.000
 TNS   : -31.253
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.333
+Slack : 0.247
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'NOE'
-Slack : -4.579
-TNS   : -201.089
+Slack : -4.524
+TNS   : -183.330
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.087
-TNS   : -235.154
+Slack : -3.945
+TNS   : -257.744
 
 Type  : Slow 1200mV 0C Model Setup 'NWE'
-Slack : -3.488
-TNS   : -108.627
+Slack : -3.469
+TNS   : -116.352
 
 Type  : Slow 1200mV 0C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -2.149
-TNS   : -14.461
+Slack : -1.729
+TNS   : -12.803
 
 Type  : Slow 1200mV 0C Model Hold 'NOE'
-Slack : -0.459
-TNS   : -4.992
+Slack : -1.019
+TNS   : -31.514
 
 Type  : Slow 1200mV 0C Model Hold 'NWE'
-Slack : 0.177
+Slack : 0.242
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.400
+Slack : 0.374
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.822
+Slack : 1.066
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.761
-TNS   : -5.153
+Slack : -0.920
+TNS   : -6.591
 
 Type  : Slow 1200mV 0C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.455
-TNS   : -2.761
+Slack : -0.192
+TNS   : -1.029
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.201
-TNS   : -226.356
+TNS   : -232.304
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NOE'
 Slack : -3.201
@@ -119,67 +119,67 @@ Slack : -3.000
 TNS   : -31.253
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.160
+Slack : 0.079
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'NOE'
-Slack : -1.427
-TNS   : -57.899
+Slack : -1.537
+TNS   : -52.531
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.257
-TNS   : -55.783
+Slack : -1.234
+TNS   : -65.004
 
 Type  : Fast 1200mV 0C Model Setup 'NWE'
-Slack : -0.861
-TNS   : -24.179
+Slack : -0.872
+TNS   : -28.465
 
 Type  : Fast 1200mV 0C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.472
-TNS   : -2.475
+Slack : -0.241
+TNS   : -1.359
 
 Type  : Fast 1200mV 0C Model Hold 'NOE'
-Slack : -0.280
-TNS   : -4.862
+Slack : -0.544
+TNS   : -17.823
 
 Type  : Fast 1200mV 0C Model Hold 'NWE'
-Slack : 0.004
+Slack : 0.008
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.157
+Slack : 0.128
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.345
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.012
-TNS   : 0.000
+Slack : -0.018
+TNS   : -0.046
 
 Type  : Fast 1200mV 0C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
-Slack : -0.069
-TNS   : -0.314
+Slack : -0.004
+TNS   : -0.008
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -166.584
+TNS   : -172.064
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NOE'
 Slack : -3.000
-TNS   : -108.056
+TNS   : -108.150
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NWE'
 Slack : -3.000
-TNS   : -49.122
+TNS   : -49.189
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NADV'
 Slack : -3.000
-TNS   : -30.196
+TNS   : -30.440
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
-Slack : 0.351
+Slack : 0.342
 TNS   : 0.000
 
 ------------------------------------------------------------

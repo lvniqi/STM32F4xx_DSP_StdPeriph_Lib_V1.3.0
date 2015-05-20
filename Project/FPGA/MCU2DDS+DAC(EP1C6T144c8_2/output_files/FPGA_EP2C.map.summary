@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed May 20 19:37:55 2015
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : FPGA_EP2C
+Top-level Entity Name : FPGA_EP2C
+Family : Cyclone IV E
+Total logic elements : 269
+    Total combinational functions : 125
+    Dedicated logic registers : 213
+Total registers : 213
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 34,816
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

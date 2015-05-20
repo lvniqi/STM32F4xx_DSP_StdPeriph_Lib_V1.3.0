@@ -14,7 +14,7 @@ endmodule
 * module SELECT_ADDR
 * */
 module SELECT_ADDR(input [18:0] ADDR,
-						 output reg RAM_DDS,FREWL,FREWH,FIFO_ADIN,
+						 output reg RAM_DDS,FREWL,FREWH,FIFO_ADIN,SPI_in,
 						 output reg read_en);
 	always @(*)begin
 		if(ADDR[18:15] == {4'b1010})begin
@@ -23,31 +23,43 @@ module SELECT_ADDR(input [18:0] ADDR,
 				FREWH <= 0;
 				read_en <= 0;
 				FIFO_ADIN<=0;
+				SPI_in <=0;
 				end
 		else if(ADDR == {4'b1011,3'b0,2'b01,10'b0})begin
 				RAM_DDS <= 0;
 				FREWL <= 1;
 				FREWH <= 0;
 				FIFO_ADIN<=0;
+				SPI_in <= 0;
 				end
 		else if(ADDR == {4'b1011,3'b0,2'b10,10'b0})begin
 				RAM_DDS <= 0;
 				FREWL <= 0;
 				FREWH <= 1;
 				FIFO_ADIN<=0;
+				SPI_in <= 0;
 				end
 		else if(ADDR == {4'b1011,3'b0,2'b00,9'b0,1'b1})begin
 				RAM_DDS <=0;
 				FREWL <=0;
 				FREWH <=0;
 				FIFO_ADIN<=1;
+				SPI_in <=0;
 				end
+		else if(ADDR == {4'b1011,3'b0,2'b00,8'b0,1'b1,1'b0})begin
+				RAM_DDS <=0;
+				FREWL <=0;
+				FREWH <=0;
+				FIFO_ADIN<=0;
+				SPI_in <=1;
+				end				
 		else begin
 			RAM_DDS <= 0;
 			FREWL <= 0;
 			FREWH <= 0;
 			read_en <= 0;
 			FIFO_ADIN <=0;
+			SPI_in <=0;
 			end
 		end
 endmodule

@@ -1,0 +1,257 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -6.092
+TNS   : -17.661
+
+Type  : Slow 1200mV 85C Model Setup 'NOE'
+Slack : -5.561
+TNS   : -220.498
+
+Type  : Slow 1200mV 85C Model Setup 'NWE'
+Slack : -3.340
+TNS   : -106.505
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -3.338
+TNS   : -70.652
+
+Type  : Slow 1200mV 85C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -1.431
+TNS   : -9.684
+
+Type  : Slow 1200mV 85C Model Setup 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.079
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'NWE'
+Slack : 0.035
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.222
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'NOE'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.737
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.118
+TNS   : -0.418
+
+Type  : Slow 1200mV 85C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.942
+TNS   : -7.523
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NOE'
+Slack : -3.201
+TNS   : -126.171
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NWE'
+Slack : -3.201
+TNS   : -60.187
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NADV'
+Slack : -3.000
+TNS   : -31.253
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.720
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.721
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : 19.620
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -5.472
+TNS   : -15.843
+
+Type  : Slow 1200mV 0C Model Setup 'NOE'
+Slack : -5.300
+TNS   : -208.797
+
+Type  : Slow 1200mV 0C Model Setup 'NWE'
+Slack : -3.162
+TNS   : -100.656
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -2.872
+TNS   : -59.878
+
+Type  : Slow 1200mV 0C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -1.474
+TNS   : -9.976
+
+Type  : Slow 1200mV 0C Model Setup 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.500
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'NWE'
+Slack : 0.057
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.320
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'NOE'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.684
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.196
+TNS   : -0.740
+
+Type  : Slow 1200mV 0C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.598
+TNS   : -4.770
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NOE'
+Slack : -3.201
+TNS   : -126.171
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NWE'
+Slack : -3.201
+TNS   : -60.187
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NADV'
+Slack : -3.000
+TNS   : -31.253
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.230
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.717
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.717
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : 19.616
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.226
+TNS   : -6.431
+
+Type  : Fast 1200mV 0C Model Setup 'NOE'
+Slack : -1.743
+TNS   : -64.625
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.955
+TNS   : -14.338
+
+Type  : Fast 1200mV 0C Model Setup 'NWE'
+Slack : -0.738
+TNS   : -21.882
+
+Type  : Fast 1200mV 0C Model Setup 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.198
+TNS   : -0.889
+
+Type  : Fast 1200mV 0C Model Setup 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 7.509
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'NWE'
+Slack : -0.014
+TNS   : -0.014
+
+Type  : Fast 1200mV 0C Model Hold 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.122
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'NOE'
+Slack : 0.176
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'SAVE_ADDR:inst|ADDR[0]'
+Slack : -0.198
+TNS   : -1.573
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NOE'
+Slack : -3.000
+TNS   : -92.550
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NWE'
+Slack : -3.000
+TNS   : -48.470
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NADV'
+Slack : -3.000
+TNS   : -28.863
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SAVE_ADDR:inst|ADDR[0]'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst2|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.734
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst2|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.798
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : 19.201
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C5) Path("D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/") File("output_file.jic") MfrSpec(OpMask(1) SEC_Device(EPCS4) Child_OpMask(1 1));
+		Device PartName(EP4CE6E22) Path("E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/") File("FPGA_EP2C.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

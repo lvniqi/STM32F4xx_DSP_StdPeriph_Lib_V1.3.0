@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_EP2C
-Wed Apr 29 12:53:22 2015
+Wed May 20 20:45:05 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -15,29 +15,31 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |FPGA_EP2C|ADC_FIFO:inst4|current_state
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component
- 16. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated
- 17. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p
- 18. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_27c:wrptr_g1p
- 19. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|altsyncram_0011:fifo_ram
- 20. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_e7d:rs_dgwp
- 21. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_e7d:rs_dgwp|dffpipe_f09:dffpipe12
- 22. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_f7d:ws_dgrp
- 23. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_f7d:ws_dgrp|dffpipe_g09:dffpipe15
- 24. Source assignments for cylon_1_ran:inst1|altsyncram:altsyncram_component|altsyncram_6vg1:auto_generated
- 25. Parameter Settings for User Entity Instance: ADC_FIFO:inst4
- 26. Parameter Settings for User Entity Instance: FIFO_ADIN:inst8|dcfifo:dcfifo_component
- 27. Parameter Settings for User Entity Instance: cylon_1_ran:inst1|altsyncram:altsyncram_component
- 28. dcfifo Parameter Settings by Entity Instance
- 29. altsyncram Parameter Settings by Entity Instance
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
- 32. Analysis & Synthesis Suppressed Messages
+ 10. State Machine - |FPGA_EP2C|SPI_OUT:inst2|current_state
+ 11. State Machine - |FPGA_EP2C|ADC_FIFO:inst4|current_state
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component
+ 17. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated
+ 18. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p
+ 19. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_27c:wrptr_g1p
+ 20. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|altsyncram_0011:fifo_ram
+ 21. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_e7d:rs_dgwp
+ 22. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_e7d:rs_dgwp|dffpipe_f09:dffpipe12
+ 23. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_f7d:ws_dgrp
+ 24. Source assignments for FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_f7d:ws_dgrp|dffpipe_g09:dffpipe15
+ 25. Source assignments for cylon_1_ran:inst1|altsyncram:altsyncram_component|altsyncram_6vg1:auto_generated
+ 26. Parameter Settings for User Entity Instance: ADC_FIFO:inst4
+ 27. Parameter Settings for User Entity Instance: FIFO_ADIN:inst8|dcfifo:dcfifo_component
+ 28. Parameter Settings for User Entity Instance: SPI_OUT:inst2
+ 29. Parameter Settings for User Entity Instance: cylon_1_ran:inst1|altsyncram:altsyncram_component
+ 30. dcfifo Parameter Settings by Entity Instance
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -63,16 +65,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 29 12:53:22 2015            ;
+; Analysis & Synthesis Status        ; Successful - Wed May 20 20:45:05 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 270                                              ;
-;     Total combinational functions  ; 126                                              ;
-;     Dedicated logic registers      ; 213                                              ;
-; Total registers                    ; 213                                              ;
-; Total pins                         ; 58                                               ;
+; Total logic elements               ; 274                                              ;
+;     Total combinational functions  ; 128                                              ;
+;     Dedicated logic registers      ; 217                                              ;
+; Total registers                    ; 217                                              ;
+; Total pins                         ; 59                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 34,816                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -184,47 +186,47 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
-; FPGA2MCU.v                       ; yes             ; User Verilog HDL File              ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/FPGA2MCU.v                     ;         ;
-; FPGA_EP2C.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/FPGA_EP2C.bdf                  ;         ;
-; phase_addr.vhd                   ; yes             ; User VHDL File                     ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/phase_addr.vhd                 ;         ;
-; FIFO_ADIN.v                      ; yes             ; User Wizard-Generated File         ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v                    ;         ;
-; cylon_1_ran.vhd                  ; yes             ; User Wizard-Generated File         ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd                ;         ;
-; state_wrrqe.v                    ; yes             ; User Verilog HDL File              ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/state_wrrqe.v                  ;         ;
-; dcfifo.tdf                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/dcfifo.tdf            ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_counter.inc       ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; a_graycounter.inc                ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_graycounter.inc     ;         ;
-; a_fefifo.inc                     ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_fefifo.inc          ;         ;
-; a_gray2bin.inc                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_gray2bin.inc        ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/dffpipe.inc           ;         ;
-; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/alt_sync_fifo.inc     ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
-; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altsyncram_fifo.inc   ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
-; db/dcfifo_cif1.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/dcfifo_cif1.tdf             ;         ;
-; db/a_graycounter_6p6.tdf         ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/a_graycounter_6p6.tdf       ;         ;
-; db/a_graycounter_27c.tdf         ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/a_graycounter_27c.tdf       ;         ;
-; db/altsyncram_0011.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/altsyncram_0011.tdf         ;         ;
-; db/alt_synch_pipe_e7d.tdf        ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/alt_synch_pipe_e7d.tdf      ;         ;
-; db/dffpipe_f09.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/dffpipe_f09.tdf             ;         ;
-; db/alt_synch_pipe_f7d.tdf        ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/alt_synch_pipe_f7d.tdf      ;         ;
-; db/dffpipe_g09.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/dffpipe_g09.tdf             ;         ;
-; db/cmpr_q76.tdf                  ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/cmpr_q76.tdf                ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; s:/tools/dianzi sheji/quartus14/quartus/libraries/megafunctions/altram.inc            ;         ;
-; db/altsyncram_6vg1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/db/altsyncram_6vg1.tdf         ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; FPGA2MCU.v                       ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/FPGA2MCU.v                ;         ;
+; FPGA_EP2C.bdf                    ; yes             ; User Block Diagram/Schematic File  ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/FPGA_EP2C.bdf             ;         ;
+; phase_addr.vhd                   ; yes             ; User VHDL File                     ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/phase_addr.vhd            ;         ;
+; FIFO_ADIN.v                      ; yes             ; User Wizard-Generated File         ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/FIFO_ADIN.v               ;         ;
+; cylon_1_ran.vhd                  ; yes             ; User Wizard-Generated File         ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/cylon_1_ran.vhd           ;         ;
+; state_wrrqe.v                    ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/state_wrrqe.v             ;         ;
+; dcfifo.tdf                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/dcfifo.tdf                                                      ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc                                                 ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                 ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                                    ;         ;
+; a_graycounter.inc                ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_graycounter.inc                                               ;         ;
+; a_fefifo.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_fefifo.inc                                                    ;         ;
+; a_gray2bin.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_gray2bin.inc                                                  ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/dffpipe.inc                                                     ;         ;
+; alt_sync_fifo.inc                ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/alt_sync_fifo.inc                                               ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc                                                 ;         ;
+; altsyncram_fifo.inc              ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram_fifo.inc                                             ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                                  ;         ;
+; db/dcfifo_cif1.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/dcfifo_cif1.tdf        ;         ;
+; db/a_graycounter_6p6.tdf         ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/a_graycounter_6p6.tdf  ;         ;
+; db/a_graycounter_27c.tdf         ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/a_graycounter_27c.tdf  ;         ;
+; db/altsyncram_0011.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/altsyncram_0011.tdf    ;         ;
+; db/alt_synch_pipe_e7d.tdf        ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/alt_synch_pipe_e7d.tdf ;         ;
+; db/dffpipe_f09.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/dffpipe_f09.tdf        ;         ;
+; db/alt_synch_pipe_f7d.tdf        ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/alt_synch_pipe_f7d.tdf ;         ;
+; db/dffpipe_g09.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/dffpipe_g09.tdf        ;         ;
+; db/cmpr_q76.tdf                  ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/cmpr_q76.tdf           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                                      ;         ;
+; db/altsyncram_6vg1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/db/altsyncram_6vg1.tdf    ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -232,29 +234,29 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 270       ;
+; Estimated Total logic elements              ; 274       ;
 ;                                             ;           ;
-; Total combinational functions               ; 126       ;
+; Total combinational functions               ; 128       ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 64        ;
-;     -- 3 input functions                    ; 46        ;
-;     -- <=2 input functions                  ; 16        ;
+;     -- 3 input functions                    ; 50        ;
+;     -- <=2 input functions                  ; 14        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 95        ;
+;     -- normal mode                          ; 97        ;
 ;     -- arithmetic mode                      ; 31        ;
 ;                                             ;           ;
-; Total registers                             ; 213       ;
-;     -- Dedicated logic registers            ; 213       ;
+; Total registers                             ; 217       ;
+;     -- Dedicated logic registers            ; 217       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 58        ;
+; I/O pins                                    ; 59        ;
 ; Total memory bits                           ; 34816     ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 123       ;
-; Total fan-out                               ; 1428      ;
-; Average fan-out                             ; 2.93      ;
+; Maximum fan-out                             ; 127       ;
+; Total fan-out                               ; 1443      ;
+; Average fan-out                             ; 2.92      ;
 +---------------------------------------------+-----------+
 
 
@@ -263,14 +265,14 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |FPGA_EP2C                                ; 126 (0)           ; 213 (0)      ; 34816       ; 0            ; 0       ; 0         ; 58   ; 0            ; |FPGA_EP2C                                                                                                                     ; work         ;
-;    |ADC_FIFO:inst4|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|ADC_FIFO:inst4                                                                                                      ; work         ;
+; |FPGA_EP2C                                ; 128 (0)           ; 217 (0)      ; 34816       ; 0            ; 0       ; 0         ; 59   ; 0            ; |FPGA_EP2C                                                                                                                     ; work         ;
+;    |ADC_FIFO:inst4|                       ; 6 (6)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|ADC_FIFO:inst4                                                                                                      ; work         ;
 ;    |BUFF:inst5|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|BUFF:inst5                                                                                                          ; work         ;
 ;    |BUFF:inst6|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|BUFF:inst6                                                                                                          ; work         ;
 ;    |BUFF_SEND_DATA:inst11|                ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|BUFF_SEND_DATA:inst11                                                                                               ; work         ;
-;    |FIFO_ADIN:inst8|                      ; 74 (0)            ; 127 (0)      ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8                                                                                                     ; work         ;
-;       |dcfifo:dcfifo_component|           ; 74 (0)            ; 127 (0)      ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component                                                                             ; work         ;
-;          |dcfifo_cif1:auto_generated|     ; 74 (6)            ; 127 (39)     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated                                                  ; work         ;
+;    |FIFO_ADIN:inst8|                      ; 72 (0)            ; 127 (0)      ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8                                                                                                     ; work         ;
+;       |dcfifo:dcfifo_component|           ; 72 (0)            ; 127 (0)      ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component                                                                             ; work         ;
+;          |dcfifo_cif1:auto_generated|     ; 72 (5)            ; 127 (39)     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated                                                  ; work         ;
 ;             |a_graycounter_27c:wrptr_g1p| ; 25 (25)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_27c:wrptr_g1p                      ; work         ;
 ;             |a_graycounter_6p6:rdptr_g1p| ; 26 (26)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p                      ; work         ;
 ;             |alt_synch_pipe_e7d:rs_dgwp|  ; 0 (0)             ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_e7d:rs_dgwp                       ; work         ;
@@ -278,10 +280,10 @@ applicable agreement for further details.
 ;             |alt_synch_pipe_f7d:ws_dgrp|  ; 0 (0)             ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_f7d:ws_dgrp                       ; work         ;
 ;                |dffpipe_g09:dffpipe15|    ; 0 (0)             ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|alt_synch_pipe_f7d:ws_dgrp|dffpipe_g09:dffpipe15 ; work         ;
 ;             |altsyncram_0011:fifo_ram|    ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|altsyncram_0011:fifo_ram                         ; work         ;
-;             |cmpr_q76:rdempty_eq_comp|    ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|cmpr_q76:rdempty_eq_comp                         ; work         ;
+;             |cmpr_q76:rdempty_eq_comp|    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|cmpr_q76:rdempty_eq_comp                         ; work         ;
 ;             |cmpr_q76:wrfull_eq_comp|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|cmpr_q76:wrfull_eq_comp                          ; work         ;
 ;    |SAVE_ADDR:inst|                       ; 0 (0)             ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SAVE_ADDR:inst                                                                                                      ; work         ;
-;    |SELECT_ADDR:inst7|                    ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SELECT_ADDR:inst7                                                                                                   ; work         ;
+;    |SELECT_ADDR:inst14|                   ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SELECT_ADDR:inst14                                                                                                  ; work         ;
 ;    |cylon_1_ran:inst1|                    ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|cylon_1_ran:inst1                                                                                                   ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|cylon_1_ran:inst1|altsyncram:altsyncram_component                                                                   ; work         ;
 ;          |altsyncram_6vg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|cylon_1_ran:inst1|altsyncram:altsyncram_component|altsyncram_6vg1:auto_generated                                    ; work         ;
@@ -300,25 +302,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                 ;
-+--------+--------------+---------+--------------+--------------+------------------------------+------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance              ; IP Include File                                                        ;
-+--------+--------------+---------+--------------+--------------+------------------------------+------------------------------------------------------------------------+
-; Altera ; RAM: 2-PORT  ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|cylon_1_ran:inst1 ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/cylon_1_ran.vhd ;
-; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|FIFO_ADIN:inst8   ; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/FIFO_ADIN.v     ;
-+--------+--------------+---------+--------------+--------------+------------------------------+------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                  ;
++--------+--------------+---------+--------------+--------------+------------------------------+---------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance              ; IP Include File                                                                                         ;
++--------+--------------+---------+--------------+--------------+------------------------------+---------------------------------------------------------------------------------------------------------+
+; Altera ; RAM: 2-PORT  ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|cylon_1_ran:inst1 ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/cylon_1_ran.vhd ;
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |FPGA_EP2C|FIFO_ADIN:inst8   ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/FIFO_ADIN.v     ;
++--------+--------------+---------+--------------+--------------+------------------------------+---------------------------------------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------+
-; State Machine - |FPGA_EP2C|ADC_FIFO:inst4|current_state ;
-+---------------------+-----------------------------------+
-; Name                ; current_state.START               ;
-+---------------------+-----------------------------------+
-; current_state.IDLE  ; 0                                 ;
-; current_state.START ; 1                                 ;
-+---------------------+-----------------------------------+
++---------------------------------------------------------------------------------------+
+; State Machine - |FPGA_EP2C|SPI_OUT:inst2|current_state                                ;
++----------------------+--------------------+----------------------+--------------------+
+; Name                 ; current_state.IDLE ; current_state.SEND_n ; current_state.SEND ;
++----------------------+--------------------+----------------------+--------------------+
+; current_state.IDLE   ; 0                  ; 0                    ; 0                  ;
+; current_state.SEND   ; 1                  ; 0                    ; 1                  ;
+; current_state.SEND_n ; 1                  ; 1                    ; 0                  ;
++----------------------+--------------------+----------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |FPGA_EP2C|ADC_FIFO:inst4|current_state                                      ;
++-------------------------+---------------------+-------------------------+--------------------+
+; Name                    ; current_state.START ; current_state.ACLK_WAIT ; current_state.IDLE ;
++-------------------------+---------------------+-------------------------+--------------------+
+; current_state.IDLE      ; 0                   ; 0                       ; 0                  ;
+; current_state.START     ; 1                   ; 0                       ; 1                  ;
+; current_state.ACLK_WAIT ; 0                   ; 1                       ; 1                  ;
++-------------------------+---------------------+-------------------------+--------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -340,14 +355,19 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; ADC_FIFO:inst4|current_state~5        ; Lost fanout        ;
-; Total Number of Removed Registers = 1 ;                    ;
-+---------------------------------------+--------------------+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; SPI_OUT:inst2|counter[0..3]           ; Stuck at GND due to stuck port clock_enable ;
+; SPI_OUT:inst2|sclk                    ; Stuck at GND due to stuck port clock_enable ;
+; SPI_OUT:inst2|current_state.IDLE      ; Lost fanout                                 ;
+; SPI_OUT:inst2|current_state.SEND      ; Lost fanout                                 ;
+; SPI_OUT:inst2|current_state.SEND_n    ; Lost fanout                                 ;
+; ADC_FIFO:inst4|current_state.IDLE     ; Merged with ADC_FIFO:inst4|wr_enable        ;
+; Total Number of Removed Registers = 9 ;                                             ;
++---------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -355,7 +375,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 213   ;
+; Total registers                              ; 217   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -371,10 +391,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                                                                                         ; Fan out ;
 +-----------------------------------------------------------------------------------------------------------+---------+
 ; ADC_FIFO:inst4|wr_enable                                                                                  ; 4       ;
-; FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p|counter5a0 ; 7       ;
 ; FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_27c:wrptr_g1p|counter8a0 ; 6       ;
-; FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p|parity6    ; 4       ;
 ; FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_27c:wrptr_g1p|parity9    ; 4       ;
+; FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p|counter5a0 ; 7       ;
+; FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|a_graycounter_6p6:rdptr_g1p|parity6    ; 4       ;
 ; Total number of inverted registers = 5                                                                    ;         ;
 +-----------------------------------------------------------------------------------------------------------+---------+
 
@@ -484,6 +504,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+-------+------------------------------------+
 ; IDLE           ; 00    ; Unsigned Binary                    ;
 ; START          ; 01    ; Unsigned Binary                    ;
+; ACLK_WAIT      ; 11    ; Unsigned Binary                    ;
 +----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -518,6 +539,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_ACLR_SYNCH         ; OFF          ; Untyped                                     ;
 ; CBXI_PARAMETER          ; dcfifo_cif1  ; Untyped                                     ;
 +-------------------------+--------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_OUT:inst2 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; IDLE           ; 00    ; Unsigned Binary                   ;
+; SEND           ; 01    ; Unsigned Binary                   ;
+; SEND_n         ; 10    ; Unsigned Binary                   ;
+; END            ; 11    ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -632,7 +666,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Apr 29 12:53:18 2015
+    Info: Processing started: Wed May 20 20:44:59 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 4 design units, including 4 entities, in source file fpga2mcu.v
@@ -658,12 +692,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file fifo_ad
 Info (12021): Found 2 design units, including 1 entities, in source file cylon_1_ran.vhd
     Info (12022): Found design unit 1: cylon_1_ran-SYN
     Info (12023): Found entity 1: cylon_1_ran
-Info (12021): Found 1 design units, including 1 entities, in source file state_wrrqe.v
+Info (12021): Found 2 design units, including 2 entities, in source file state_wrrqe.v
     Info (12023): Found entity 1: ADC_FIFO
+    Info (12023): Found entity 2: SPI_OUT
+Warning (10236): Verilog HDL Implicit Net warning at state_wrrqe.v(15): created implicit net for "aclk_pp"
 Info (12127): Elaborating entity "FPGA_EP2C" for the top level hierarchy
 Warning (275043): Pin "INT4" is missing source
+Warning (275043): Pin "ADS930_DIN" is missing source
 Warning (275043): Pin "rd_enable" is missing source
 Info (12128): Elaborating entity "ADC_FIFO" for hierarchy "ADC_FIFO:inst4"
+Info (10264): Verilog HDL Case Statement information at state_wrrqe.v(69): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "FIFO_ADIN" for hierarchy "FIFO_ADIN:inst8"
 Info (12128): Elaborating entity "dcfifo" for hierarchy "FIFO_ADIN:inst8|dcfifo:dcfifo_component"
 Info (12130): Elaborated megafunction instantiation "FIFO_ADIN:inst8|dcfifo:dcfifo_component"
@@ -706,30 +744,36 @@ Info (12128): Elaborating entity "dffpipe_g09" for hierarchy "FIFO_ADIN:inst8|dc
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_q76.tdf
     Info (12023): Found entity 1: cmpr_q76
 Info (12128): Elaborating entity "cmpr_q76" for hierarchy "FIFO_ADIN:inst8|dcfifo:dcfifo_component|dcfifo_cif1:auto_generated|cmpr_q76:rdempty_eq_comp"
-Info (12128): Elaborating entity "SELECT_ADDR" for hierarchy "SELECT_ADDR:inst7"
+Info (12128): Elaborating entity "SELECT_ADDR" for hierarchy "SELECT_ADDR:inst14"
 Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(20): inferring latch(es) for variable "read_en", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "read_en" at FPGA2MCU.v(20)
 Info (12128): Elaborating entity "SAVE_ADDR" for hierarchy "SAVE_ADDR:inst"
+Info (12128): Elaborating entity "SPI_OUT" for hierarchy "SPI_OUT:inst2"
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(100): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(110): truncated value with size 32 to match size of target (16)
+Warning (10235): Verilog HDL Always Construct warning at state_wrrqe.v(142): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(161): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(170): truncated value with size 32 to match size of target (4)
 Info (12128): Elaborating entity "BUFF_SEND_DATA" for hierarchy "BUFF_SEND_DATA:inst11"
-Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(61): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(61): inferring latch(es) for variable "FINISH", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "FINISH" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[0]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[1]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[2]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[3]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[4]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[5]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[6]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[7]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[8]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[9]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[10]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[11]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[12]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[13]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[14]" at FPGA2MCU.v(61)
-Info (10041): Inferred latch for "DATA_OUT[15]" at FPGA2MCU.v(61)
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(73): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(73): inferring latch(es) for variable "FINISH", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "FINISH" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[0]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[1]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[2]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[3]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[4]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[5]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[6]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[7]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[8]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[9]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[10]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[11]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[12]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[13]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[14]" at FPGA2MCU.v(73)
+Info (10041): Inferred latch for "DATA_OUT[15]" at FPGA2MCU.v(73)
 Info (12128): Elaborating entity "cylon_1_ran" for hierarchy "cylon_1_ran:inst1"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "cylon_1_ran:inst1|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "cylon_1_ran:inst1|altsyncram:altsyncram_component"
@@ -757,33 +801,35 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Info (12128): Elaborating entity "altsyncram_6vg1" for hierarchy "cylon_1_ran:inst1|altsyncram:altsyncram_component|altsyncram_6vg1:auto_generated"
 Info (12128): Elaborating entity "phase_acc" for hierarchy "phase_acc:inst3"
 Info (12128): Elaborating entity "BUFF" for hierarchy "BUFF:inst5"
-Warning (10036): Verilog HDL or VHDL warning at FPGA2MCU.v(78): object "en2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at FPGA2MCU.v(90): object "en2" assigned a value but never read
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "INT4" is stuck at GND
+    Warning (13410): Pin "ADS930_DIN" is stuck at GND
+    Warning (13410): Pin "ADS930_SCLK" is stuck at GND
     Warning (13410): Pin "rd_enable" is stuck at GND
     Warning (13410): Pin "ADS930_SEL" is stuck at VCC
     Warning (13410): Pin "ADCOE" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.map.smsg
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 345 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 19 input pins
+Info (21057): Implemented 350 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
     Info (21059): Implemented 23 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 271 logic cells
+    Info (21061): Implemented 275 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 510 megabytes
-    Info: Processing ended: Wed Apr 29 12:53:22 2015
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 503 megabytes
+    Info: Processing ended: Wed May 20 20:45:05 2015
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.map.smsg.
+The suppressed messages can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.map.smsg.
 
 

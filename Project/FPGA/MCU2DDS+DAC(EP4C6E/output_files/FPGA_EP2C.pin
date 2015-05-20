@@ -78,7 +78,7 @@ RESERVED_INPUT               : 7         :        :                   :         
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 8         : input  : 3.3-V LVTTL       :         : 1         : N              
 nSTATUS                      : 9         :        :                   :         : 1         :                
 J7_DIN                       : 10        : input  : 3.3-V LVTTL       :         : 1         : Y              
-RESERVED_INPUT               : 11        :        :                   :         : 1         :                
+panduan_FIFOADIN             : 11        : output : 3.3-V LVTTL       :         : 1         : N              
 ~ALTERA_DCLK~                : 12        : output : 3.3-V LVTTL       :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 13        : input  : 3.3-V LVTTL       :         : 1         : N              
 nCONFIG                      : 14        :        :                   :         : 1         :                
@@ -150,7 +150,7 @@ GND                          : 79        : gnd    :                   :         
 RESERVED_INPUT               : 80        :        :                   :         : 5         :                
 VCCIO5                       : 81        : power  :                   : 3.3V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
-panduan_FIFOADIN             : 83        : output : 3.3-V LVTTL       :         : 5         : N              
+RESERVED_INPUT               : 83        :        :                   :         : 5         :                
 RESERVED_INPUT               : 84        :        :                   :         : 5         :                
 ADS930_SEL                   : 85        : output : 3.3-V LVTTL       :         : 5         : Y              
 ADS930_SCLK                  : 86        : output : 3.3-V LVTTL       :         : 5         : Y              
@@ -180,7 +180,7 @@ VCCD_PLL2                    : 109       : power  :                   : 1.2V    
 ADS930_DATA[2]               : 110       : input  : 3.3-V LVTTL       :         : 7         : Y              
 ADS930_DATA[1]               : 111       : input  : 3.3-V LVTTL       :         : 7         : Y              
 ADS930_DATA[0]               : 112       : input  : 3.3-V LVTTL       :         : 7         : Y              
-RESERVED_INPUT               : 113       :        :                   :         : 7         :                
+ACLK_IN                      : 113       : input  : 3.3-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT               : 114       :        :                   :         : 7         :                
 RESERVED_INPUT               : 115       :        :                   :         : 7         :                
 VCCINT                       : 116       : power  :                   : 1.2V    :           :                

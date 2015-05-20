@@ -224,6 +224,23 @@ applicable agreement for further details.
 	(annotation_block (location)(rect -672 64 -616 80))
 )
 (pin
+	(input)
+	(rect -720 688 -552 704)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "ACLK_IN" (rect 5 0 51 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -736 640 -688 656))
+)
+(pin
 	(output)
 	(rect 744 440 920 456)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -493,6 +510,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 200 96 256 112))
 )
 (pin
 	(bidir)
@@ -676,56 +694,6 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 232 96))
-	)
-)
-(symbol
-	(rect 600 16 808 160)
-	(text "SELECT_ADDR" (rect 5 0 84 12)(font "Arial" ))
-	(text "inst7" (rect 8 128 31 140)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "ADDR[18..0]" (rect 0 0 63 12)(font "Arial" ))
-		(text "ADDR[18..0]" (rect 21 27 84 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 208 32)
-		(output)
-		(text "RAM_DDS" (rect 0 0 53 12)(font "Arial" ))
-		(text "RAM_DDS" (rect 143 27 196 39)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32))
-	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "FREWL" (rect 0 0 38 12)(font "Arial" ))
-		(text "FREWL" (rect 155 43 193 55)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48))
-	)
-	(port
-		(pt 208 64)
-		(output)
-		(text "FREWH" (rect 0 0 41 12)(font "Arial" ))
-		(text "FREWH" (rect 153 59 194 71)(font "Arial" ))
-		(line (pt 208 64)(pt 192 64))
-	)
-	(port
-		(pt 208 80)
-		(output)
-		(text "FIFO_ADIN" (rect 0 0 59 12)(font "Arial" ))
-		(text "FIFO_ADIN" (rect 138 75 197 87)(font "Arial" ))
-		(line (pt 208 80)(pt 192 80))
-	)
-	(port
-		(pt 208 96)
-		(output)
-		(text "read_en" (rect 0 0 38 12)(font "Arial" ))
-		(text "read_en" (rect 155 91 193 103)(font "Arial" ))
-		(line (pt 208 96)(pt 192 96))
-	)
-	(drawing
-		(rectangle (rect 16 16 192 128))
 	)
 )
 (symbol
@@ -964,68 +932,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -552 648 -368 760)
-	(text "ADC_FIFO" (rect 5 0 60 12)(font "Arial" ))
-	(text "inst4" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "rd_empty" (rect 0 0 47 12)(font "Arial" ))
-		(text "rd_empty" (rect 21 43 68 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "rst_n" (rect 0 0 24 12)(font "Arial" ))
-		(text "rst_n" (rect 21 59 45 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "wr_full" (rect 0 0 31 12)(font "Arial" ))
-		(text "wr_full" (rect 21 75 52 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 184 32)
-		(output)
-		(text "rd_enable" (rect 0 0 47 12)(font "Arial" ))
-		(text "rd_enable" (rect 124 27 171 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32))
-	)
-	(port
-		(pt 184 48)
-		(output)
-		(text "wr_enable" (rect 0 0 48 12)(font "Arial" ))
-		(text "wr_enable" (rect 123 43 171 55)(font "Arial" ))
-		(line (pt 184 48)(pt 168 48))
-	)
-	(parameter
-		"IDLE"
-		"00"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"START"
-		"01"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(drawing
-		(rectangle (rect 16 16 168 96))
-	)
-	(annotation_block (parameter)(rect -368 600 -176 648))
-)
-(symbol
-	(rect -584 696 -568 728)
+	(rect -584 712 -568 744)
 	(text "VCC" (rect 0 5 10 25)(font "Arial" (font_size 6))(vertical))
 	(text "inst9" (rect 5 6 17 29)(font "Arial" )(vertical)(invisible))
 	(port
@@ -1070,6 +977,207 @@ applicable agreement for further details.
 		(line (pt 8 8)(pt 16 16))
 		(line (pt 16 16)(pt 24 8))
 		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
+	(rect 144 784 312 896)
+	(text "SPI_OUT" (rect 5 0 51 12)(font "Arial" ))
+	(text "inst2" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "data_in[15..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "data_in[15..0]" (rect 21 43 88 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rst_n" (rect 0 0 24 12)(font "Arial" ))
+		(text "rst_n" (rect 21 59 45 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "en" (rect 0 0 11 12)(font "Arial" ))
+		(text "en" (rect 21 75 32 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 168 32)
+		(output)
+		(text "sclk" (rect 0 0 20 12)(font "Arial" ))
+		(text "sclk" (rect 131 27 151 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32))
+	)
+	(port
+		(pt 168 48)
+		(output)
+		(text "dout" (rect 0 0 21 12)(font "Arial" ))
+		(text "dout" (rect 130 43 151 55)(font "Arial" ))
+		(line (pt 168 48)(pt 152 48))
+	)
+	(parameter
+		"IDLE"
+		"00"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"SEND"
+		"01"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"SEND_n"
+		"10"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"END"
+		"11"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 152 96))
+	)
+	(annotation_block (parameter)(rect 312 712 504 784))
+)
+(symbol
+	(rect -552 648 -368 792)
+	(text "ADC_FIFO" (rect 5 0 60 12)(font "Arial" ))
+	(text "inst4" (rect 8 128 31 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "aclk_in" (rect 0 0 34 12)(font "Arial" ))
+		(text "aclk_in" (rect 21 43 55 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rd_empty" (rect 0 0 47 12)(font "Arial" ))
+		(text "rd_empty" (rect 21 59 68 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "rst_n" (rect 0 0 24 12)(font "Arial" ))
+		(text "rst_n" (rect 21 75 45 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "wr_full" (rect 0 0 31 12)(font "Arial" ))
+		(text "wr_full" (rect 21 91 52 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "rd_enable" (rect 0 0 47 12)(font "Arial" ))
+		(text "rd_enable" (rect 124 27 171 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32))
+	)
+	(port
+		(pt 184 48)
+		(output)
+		(text "wr_enable" (rect 0 0 48 12)(font "Arial" ))
+		(text "wr_enable" (rect 123 43 171 55)(font "Arial" ))
+		(line (pt 184 48)(pt 168 48))
+	)
+	(parameter
+		"IDLE"
+		"00"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"START"
+		"01"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"ACLK_WAIT"
+		"11"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 168 128))
+	)
+	(annotation_block (parameter)(rect -368 592 -168 648))
+)
+(symbol
+	(rect 600 16 808 160)
+	(text "SELECT_ADDR" (rect 5 0 84 12)(font "Arial" ))
+	(text "inst14" (rect 8 128 37 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "ADDR[18..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "ADDR[18..0]" (rect 21 27 84 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "RAM_DDS" (rect 0 0 53 12)(font "Arial" ))
+		(text "RAM_DDS" (rect 143 27 196 39)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "FREWL" (rect 0 0 38 12)(font "Arial" ))
+		(text "FREWL" (rect 155 43 193 55)(font "Arial" ))
+		(line (pt 208 48)(pt 192 48))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "FREWH" (rect 0 0 41 12)(font "Arial" ))
+		(text "FREWH" (rect 153 59 194 71)(font "Arial" ))
+		(line (pt 208 64)(pt 192 64))
+	)
+	(port
+		(pt 208 80)
+		(output)
+		(text "FIFO_ADIN" (rect 0 0 59 12)(font "Arial" ))
+		(text "FIFO_ADIN" (rect 138 75 197 87)(font "Arial" ))
+		(line (pt 208 80)(pt 192 80))
+	)
+	(port
+		(pt 208 96)
+		(output)
+		(text "SPI_in" (rect 0 0 31 12)(font "Arial" ))
+		(text "SPI_in" (rect 161 91 192 103)(font "Arial" ))
+		(line (pt 208 96)(pt 192 96))
+	)
+	(port
+		(pt 208 112)
+		(output)
+		(text "read_en" (rect 0 0 38 12)(font "Arial" ))
+		(text "read_en" (rect 155 107 193 119)(font "Arial" ))
+		(line (pt 208 112)(pt 192 112))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 128))
 	)
 )
 (connector
@@ -1245,16 +1353,6 @@ applicable agreement for further details.
 	(pt -352 208)
 )
 (connector
-	(text "STM_DIN" (rect -422 16 -375 28)(font "Arial" ))
-	(pt -352 32)
-	(pt -424 32)
-)
-(connector
-	(text "STM_SCLK" (rect -422 64 -367 76)(font "Arial" ))
-	(pt -352 80)
-	(pt -424 80)
-)
-(connector
 	(pt -448 56)
 	(pt -352 56)
 )
@@ -1367,13 +1465,13 @@ applicable agreement for further details.
 	(pt -640 680)
 )
 (connector
-	(text "empty" (rect -638 680 -607 692)(font "Arial" ))
-	(pt -552 696)
-	(pt -640 696)
+	(text "empty" (rect -638 696 -607 708)(font "Arial" ))
+	(pt -552 712)
+	(pt -640 712)
 )
 (connector
-	(pt -552 712)
-	(pt -568 712)
+	(pt -552 728)
+	(pt -568 728)
 )
 (connector
 	(text "wr_enable" (rect -366 680 -318 692)(font "Arial" ))
@@ -1404,17 +1502,17 @@ applicable agreement for further details.
 	(pt -344 480)
 )
 (connector
-	(pt -560 728)
-	(pt -560 736)
+	(pt -560 744)
+	(pt -560 752)
 )
 (connector
-	(pt -552 728)
-	(pt -560 728)
+	(pt -552 744)
+	(pt -560 744)
 )
 (connector
-	(text "wr_full" (rect -638 728 -607 740)(font "Arial" ))
-	(pt -560 736)
-	(pt -640 736)
+	(text "wr_full" (rect -638 744 -607 756)(font "Arial" ))
+	(pt -560 752)
+	(pt -640 752)
 )
 (connector
 	(text "wr_full" (rect -334 440 -303 452)(font "Arial" ))
@@ -1441,4 +1539,45 @@ applicable agreement for further details.
 (connector
 	(pt -80 88)
 	(pt -80 104)
+)
+(connector
+	(text "clk_in" (rect 90 800 118 812)(font "Arial" ))
+	(pt 144 816)
+	(pt 80 816)
+)
+(connector
+	(text "SPI_in" (rect 818 96 849 108)(font "Arial" ))
+	(pt 808 112)
+	(pt 856 112)
+)
+(connector
+	(text "SPI_in" (rect 90 848 121 860)(font "Arial" ))
+	(pt 144 864)
+	(pt 80 864)
+)
+(connector
+	(text "AD_IN[15..0]" (rect 50 816 114 828)(font "Arial" ))
+	(pt 40 832)
+	(pt 144 832)
+	(bus)
+)
+(connector
+	(text "STM_DIN1" (rect -422 24 -369 36)(font "Arial" ))
+	(pt -352 40)
+	(pt -424 40)
+)
+(connector
+	(text "STM_SCLK1" (rect -422 64 -361 76)(font "Arial" ))
+	(pt -352 80)
+	(pt -424 80)
+)
+(connector
+	(text "STM_SCLK1" (rect 322 800 383 812)(font "Arial" ))
+	(pt 312 816)
+	(pt 368 816)
+)
+(connector
+	(text "STM_DIN1" (rect 322 816 375 828)(font "Arial" ))
+	(pt 312 832)
+	(pt 368 832)
 )

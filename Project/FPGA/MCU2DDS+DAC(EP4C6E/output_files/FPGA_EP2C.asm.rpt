@@ -1,5 +1,5 @@
 Assembler report for FPGA_EP2C
-Wed Apr 29 12:53:37 2015
+Wed May 20 20:45:33 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.sof
-  6. Assembler Device Options: D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.pof
+  5. Assembler Device Options: E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.sof
+  6. Assembler Device Options: E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Apr 29 12:53:37 2015 ;
+; Assembler Status      ; Successful - Wed May 20 20:45:33 2015 ;
 ; Revision Name         ; FPGA_EP2C                             ;
 ; Top-level Entity Name ; FPGA_EP2C                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Assembler Generated Files                                                         ;
-+-----------------------------------------------------------------------------------+
-; File Name                                                                         ;
-+-----------------------------------------------------------------------------------+
-; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.sof ;
-; D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.pof ;
-+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                          ;
++--------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                          ;
++--------------------------------------------------------------------------------------------------------------------+
+; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.sof ;
+; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.pof ;
++--------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.sof ;
-+----------------+--------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                    ;
-+----------------+--------------------------------------------------------------------------------------------+
-; Device         ; EP4CE6E22C8                                                                                ;
-; JTAG usercode  ; 0x000BD331                                                                                 ;
-; Checksum       ; 0x000BD331                                                                                 ;
-+----------------+--------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.sof ;
++----------------+-----------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                     ;
++----------------+-----------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CE6E22C8                                                                                                                 ;
+; JTAG usercode  ; 0x000BF295                                                                                                                  ;
+; Checksum       ; 0x000BF295                                                                                                                  ;
++----------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: D:/study/fpga/quartusIIproject/MCU2DDS+DAC(EP1C6T144c8/output_files/FPGA_EP2C.pof ;
-+--------------------+----------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                ;
-+--------------------+----------------------------------------------------------------------------------------+
-; Device             ; EPCS4                                                                                  ;
-; JTAG usercode      ; 0x00000000                                                                             ;
-; Checksum           ; 0x067433C8                                                                             ;
-; Compression Ratio  ; 3                                                                                      ;
-+--------------------+----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.pof ;
++--------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                                 ;
++--------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Device             ; EPCS4                                                                                                                   ;
+; JTAG usercode      ; 0x00000000                                                                                                              ;
+; Checksum           ; 0x0674233D                                                                                                              ;
+; Compression Ratio  ; 3                                                                                                                       ;
++--------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Apr 29 12:53:35 2015
+    Info: Processing started: Wed May 20 20:45:30 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 415 megabytes
-    Info: Processing ended: Wed Apr 29 12:53:37 2015
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Wed May 20 20:45:33 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
