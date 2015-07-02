@@ -1,11 +1,11 @@
-Fitter Status : Successful - Tue Apr 14 13:17:10 2015
+Fitter Status : Successful - Thu Jul 02 16:43:51 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : TFTKEYSTM32
 Top-level Entity Name : TFTKEYSTM32
 Family : MAX II
 Device : EPM240T100C5
 Timing Models : Final
-Total logic elements : 50 / 240 ( 21 % )
+Total logic elements : 55 / 240 ( 23 % )
 Total pins : 53 / 80 ( 66 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

@@ -63,7 +63,10 @@ u32  SYS_TIME = 0;
     return ch;
   }
 #endif 
-u16 Num_Len(u32 num){
+u16 Num_Len(long num){
+  if(num<0){
+    num = -num;
+  }
   int i = 0;
   while (num){
     i++;

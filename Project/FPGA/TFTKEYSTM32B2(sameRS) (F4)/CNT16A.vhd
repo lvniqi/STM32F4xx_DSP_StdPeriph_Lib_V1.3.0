@@ -9,15 +9,15 @@ port(clk,clr: in std_logic;
 end CNT16A;
 
 architecture one of CNT16A is
-signal q:std_logic_vector(3 downto 0);
+signal q:std_logic_vector(7 downto 0);
 begin 
 process(clk,clr)
 begin
   if(clk'event and clk='1') then
       if(clr='1') then
-         q<="0000";
-      elsif(q="1111") then
-         q<="1111";
+         q<="00000000";
+		elsif(q>"01000000") then
+			q<="00000000";
       else 
          q<=q+1;
       end if;
@@ -25,7 +25,7 @@ begin
 end process;
 process(q)
 begin
-  if(q="1111") then
+  if(q>"01000000") then
       dav<='0';
    else
       dav<='1';

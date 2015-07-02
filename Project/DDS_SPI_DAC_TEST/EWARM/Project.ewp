@@ -3856,6 +3856,15 @@
       </file>
     </group>
     <group>
+      <name>ADC082S805</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\ADC082S805.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\ADC082S805.h</name>
+      </file>
+    </group>
+    <group>
       <name>common</name>
       <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\common.c</name>
@@ -4084,12 +4093,6 @@
   </group>
   <group>
     <name>User</name>
-    <file>
-      <name>$PROJ_DIR$\..\ADC082S805.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\ADC082S805.h</name>
-    </file>
     <file>
       <name>$PROJ_DIR$\..\DDS.c</name>
     </file>

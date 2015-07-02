@@ -33,7 +33,7 @@
   extern u32  SYS_TIME;
   extern int fputc(int ch, FILE *f);
   extern void delay_ms(volatile u16 time);
-  extern u16 Num_Len(u32 num);
+  extern u16 Num_Len(long num);
   typedef volatile unsigned short* EXTERN_RAM;
   #define PT_DEBUG(level,...)   { printf("\033[3%d;1m",level);\
                                   printf("[%d.%d]",SYS_TIME/100,SYS_TIME%100);\

@@ -9,6 +9,13 @@
    */
   #include "LCD.h"
   #include "FONT.h"
+  typedef enum {
+    LCD_STRING_LEFT,
+    LCD_STRING_MID,
+    LCD_STRING_RIGHT,
+  }LCD_PLACE_TYPE;
+  #define LCD_STRING_WIDTH (LCD_WIDTH/16)
+  #define LCD_STRING_HIGHT (LCD_HIGHT/32)
   extern char LCD_BUFFER[100];
 
   /********************************************************************
@@ -52,7 +59,7 @@
   * 输入 :  x y  大小 字符位于asc_3216数组中的位置 颜色
   * 输出 : 无 
   ***********************************************************************/
-  extern void LCD_ShowChineseStringBig(u16 x,u16 y,u8 num,u8 len,u16 color);
+  extern void LCD_ShowChineseStringBig(u16 x,u16 y,LCD_PLACE_TYPE type,u8 num,u8 len,u16 color);
   /********************************************************************
    * 名称 : LCD_ShowCharBig
    * 功能 : 显示3216字符
@@ -66,21 +73,15 @@
    * 输入 :  x y  大小 数字 颜色
    * 输出 : 无 
    ***********************************************************************/
-  extern void LCD_ShowStringBig(u16 x, u16 y, char *p, u16 color);
+  extern void LCD_ShowStringBig(u16 x, u16 y,LCD_PLACE_TYPE type, char *p, u16 color);
   /********************************************************************
    * 名称 : LCD_ShowChinese
    * 功能 : 显示1608中文字符
    * 输入 :  x y  大小 中文位于asc4_1608数组中的位置 颜色
    * 输出 : 无 
    ***********************************************************************/
-  extern void LCD_ShowNumBig(u16 x, u16 y, u32 num, u16 color);
-  /********************************************************************
-   * 名称 : LCD_ShowNumBig_L
-   * 功能 : 右对齐 显示3216数字
-   * 输入 :  x开始 x结束位置  y  大小 数字 颜色
-   * 输出 : 无 
-   ***********************************************************************/
-  extern void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, int num, u16 color);
+  extern void LCD_ShowNumBig(u16 x, u16 y,LCD_PLACE_TYPE type, long num, u16 color);
+  extern void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y,long num, u16 color);
   /********************************************************************
    * 名称 : LCD_ShowCharBig_DMA
    * 功能 : 显示3216字符

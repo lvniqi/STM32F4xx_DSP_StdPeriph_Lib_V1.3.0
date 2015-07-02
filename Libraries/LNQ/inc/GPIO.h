@@ -9,8 +9,10 @@
   #define _BIT_BAND(add, channel) ((add & 0xF0000000)+0x2000000+((add &0xFFFFF)<<5)+(channel<<2))
   /*警告！非用户使用*/
   #define _MEM_Add(add)  *((volatile unsigned long  *)(add)) 
+  #define _MEM_Add_Add(add)  ((volatile unsigned long  *)(add)) 
   /*警告！非用户使用*/
   #define _BIT_Add(add, channel)   _MEM_Add(_BIT_BAND(add, channel)) 
+  #define _BIT_Add_Add(add, channel)   _MEM_Add_Add(_BIT_BAND(add, channel)) 
 
 
   //IO口地址映射
@@ -36,6 +38,27 @@
 
   //IO口操作,只对单一的IO口!
   //确保n的值小于16!
+  #define PAout_ADDR(n)   _BIT_Add_Add(GPIOA_OUT_ADDRESS,n)  //输出 
+  #define PAin_ADDR(n)    _BIT_Add_Add(GPIOA_IN_ADDRESS,n)  //输入 
+
+  #define PBout_ADDR(n)   _BIT_Add_Add(GPIOB_OUT_ADDRESS,n)  //输出 
+  #define PBin_ADDR(n)    _BIT_Add_Add(GPIOB_IN_ADDRESS,n)  //输入 
+
+  #define PCout_ADDR(n)   _BIT_Add_Add(GPIOC_OUT_ADDRESS,n)  //输出 
+  #define PCin_ADDR(n)    _BIT_Add_Add(GPIOC_IN_ADDRESS,n)  //输入 
+
+  #define PDout_ADDR(n)   _BIT_Add_Add(GPIOD_OUT_ADDRESS,n)  //输出 
+  #define PDin_ADDR(n)    _BIT_Add_Add(GPIOD_IN_ADDRESS,n)  //输入 
+
+  #define PEout_ADDR(n)   _BIT_Add_Add(GPIOE_OUT_ADDRESS,n)  //输出 
+  #define PEin_ADDR(n)    _BIT_Add_Add(GPIOE_IN_ADDRESS,n)  //输入
+
+  #define PFout_ADDR(n)   _BIT_Add_Add(GPIOF_OUT_ADDRESS,n)  //输出 
+  #define PFin_ADDR(n)    _BIT_Add_Add(GPIOF_IN_ADDRESS,n)  //输入
+
+  #define PGout_ADDR(n)   _BIT_Add_Add(GPIOG_OUT_ADDRESS,n)  //输出 
+  #define PGin_ADDR(n)    _BIT_Add_Add(GPIOG_IN_ADDRESS,n)  //输入
+
   #define PAout(n)   _BIT_Add(GPIOA_OUT_ADDRESS,n)  //输出 
   #define PAin(n)    _BIT_Add(GPIOA_IN_ADDRESS,n)  //输入 
 

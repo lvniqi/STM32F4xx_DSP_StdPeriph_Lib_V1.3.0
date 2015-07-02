@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TFTKEYSTM32
-Tue Apr 14 13:16:56 2015
+Thu Jul 02 16:43:47 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -42,12 +42,12 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +-----------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Apr 14 13:16:56 2015            ;
+; Analysis & Synthesis Status ; Successful - Thu Jul 02 16:43:47 2015            ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name               ; TFTKEYSTM32                                      ;
 ; Top-level Entity Name       ; TFTKEYSTM32                                      ;
 ; Family                      ; MAX II                                           ;
-; Total logic elements        ; 52                                               ;
+; Total logic elements        ; 57                                               ;
 ; Total pins                  ; 53                                               ;
 ; Total virtual pins          ; 0                                                ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                    ;
@@ -168,33 +168,33 @@ applicable agreement for further details.
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Total logic elements                        ; 52     ;
-;     -- Combinational with no register       ; 28     ;
+; Total logic elements                        ; 57     ;
+;     -- Combinational with no register       ; 29     ;
 ;     -- Register only                        ; 3      ;
-;     -- Combinational with a register        ; 21     ;
+;     -- Combinational with a register        ; 25     ;
 ;                                             ;        ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 22     ;
-;     -- 3 input functions                    ; 7      ;
-;     -- 2 input functions                    ; 19     ;
-;     -- 1 input functions                    ; 1      ;
+;     -- 4 input functions                    ; 20     ;
+;     -- 3 input functions                    ; 6      ;
+;     -- 2 input functions                    ; 26     ;
+;     -- 1 input functions                    ; 2      ;
 ;     -- 0 input functions                    ; 0      ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 43     ;
-;     -- arithmetic mode                      ; 9      ;
+;     -- normal mode                          ; 41     ;
+;     -- arithmetic mode                      ; 16     ;
 ;     -- qfbk mode                            ; 0      ;
 ;     -- register cascade mode                ; 0      ;
-;     -- synchronous clear/load mode          ; 0      ;
+;     -- synchronous clear/load mode          ; 8      ;
 ;     -- asynchronous clear/load mode         ; 0      ;
 ;                                             ;        ;
-; Total registers                             ; 24     ;
-; Total logic cells in carry chains           ; 10     ;
+; Total registers                             ; 28     ;
+; Total logic cells in carry chains           ; 18     ;
 ; I/O pins                                    ; 53     ;
 ; Maximum fan-out node                        ; inst12 ;
 ; Maximum fan-out                             ; 16     ;
-; Total fan-out                               ; 242    ;
-; Average fan-out                             ; 2.30   ;
+; Total fan-out                               ; 258    ;
+; Average fan-out                             ; 2.35   ;
 +---------------------------------------------+--------+
 
 
@@ -203,9 +203,9 @@ applicable agreement for further details.
 +-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+--------------+
 ; Compilation Hierarchy Node  ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                 ; Library Name ;
 +-----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+--------------+
-; |TFTKEYSTM32                ; 52 (6)      ; 24           ; 0          ; 53   ; 0            ; 28 (5)       ; 3 (1)             ; 21 (0)           ; 10 (0)          ; 0 (0)      ; |TFTKEYSTM32                        ; work         ;
+; |TFTKEYSTM32                ; 57 (6)      ; 28           ; 0          ; 53   ; 0            ; 29 (5)       ; 3 (1)             ; 25 (0)           ; 18 (0)          ; 0 (0)      ; |TFTKEYSTM32                        ; work         ;
 ;    |CMD_DATA_SELECT:inst19| ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TFTKEYSTM32|CMD_DATA_SELECT:inst19 ; work         ;
-;    |CNT16A:inst7|           ; 6 (6)       ; 4            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TFTKEYSTM32|CNT16A:inst7           ; work         ;
+;    |CNT16A:inst7|           ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |TFTKEYSTM32|CNT16A:inst7           ; work         ;
 ;    |CNT4A:inst13|           ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TFTKEYSTM32|CNT4A:inst13           ; work         ;
 ;    |DECODE:inst14|          ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TFTKEYSTM32|DECODE:inst14          ; work         ;
 ;    |ENCODE:inst2|           ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TFTKEYSTM32|ENCODE:inst2           ; work         ;
@@ -222,8 +222,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 24    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 28    ;
+; Number of registers using Synchronous Clear  ; 8     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -237,7 +237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |TFTKEYSTM32|CNT16A:inst7|q[3]               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TFTKEYSTM32|CNT16A:inst7|q[7]               ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |TFTKEYSTM32|CMD_DATA_SELECT:inst19|DATA_OUT ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
@@ -248,7 +248,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Apr 14 13:16:45 2015
+    Info: Processing started: Thu Jul 02 16:43:44 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TFTKEYSTM32 -c TFTKEYSTM32
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file cnt16a.vhd
@@ -286,7 +286,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file cmd_or_
 Info (12021): Found 1 design units, including 1 entities, in source file test.v
     Info (12023): Found entity 1: TEST
 Info (12127): Elaborating entity "TFTKEYSTM32" for the top level hierarchy
-Warning (275008): Primitive "OPNDRN" of instance "inst" not used
 Info (12128): Elaborating entity "CNT16A" for hierarchy "CNT16A:inst7"
 Info (12128): Elaborating entity "FREDIV" for hierarchy "FREDIV:inst11"
 Info (12128): Elaborating entity "ENCODE" for hierarchy "ENCODE:inst2"
@@ -359,17 +358,17 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "DB~synth"
     Warning (13010): Node "DB~synth"
     Warning (13010): Node "DB~synth"
-Info (21057): Implemented 105 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 110 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 12 output pins
     Info (21060): Implemented 32 bidirectional pins
-    Info (21061): Implemented 52 logic cells
+    Info (21061): Implemented 57 logic cells
 Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/TFTKEYSTM32B2(sameRS) (F4)/TFTKEYSTM32.map.smsg
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 476 megabytes
-    Info: Processing ended: Tue Apr 14 13:16:56 2015
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Thu Jul 02 16:43:47 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

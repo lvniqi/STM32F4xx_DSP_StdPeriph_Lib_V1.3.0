@@ -30,7 +30,10 @@
   #define LCD_WRITE_COLOR(Color)  (LCD_DATA= (Color|0xC000) )
 
   //LCD重要参数集
-
+  //屏幕宽度
+  #define LCD_WIDTH 480
+  //屏幕高度
+  #define LCD_HEIGHT 320
   extern u16 POINT_COLOR; //默认红色
   extern u16 BACK_COLOR; //背景颜色.默认为白色
   //画笔颜色
