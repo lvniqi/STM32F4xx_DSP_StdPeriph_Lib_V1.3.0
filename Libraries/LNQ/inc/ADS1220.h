@@ -11,4 +11,6 @@ typedef struct {
   u8 Config_Reg3;
 }ADS1220;
 void ADS1220_Init(ADS1220* p);
+//SPI_CPOL_Low
+//SPI_CPHA_2Edge
 #endif
