@@ -89,7 +89,7 @@ void NumBar_SetValue_GUI(NumBar* p){
     }
   }
 }
-void NumBar_setFunc(NumBar* p,NumBarFunc func){
+void NumBar_SetFunc(NumBar* p,NumBarFunc func){
   p->func =func;
 }
 /*action*/

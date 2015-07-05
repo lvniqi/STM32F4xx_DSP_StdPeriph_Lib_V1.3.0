@@ -25,7 +25,7 @@
   extern void NumBar_Init(NumBar* p,u8 end_x,u8 y,int v_max,int v_min);
   extern void NumBar_SetValue(NumBar* p,int value);
   extern void NumBar_SetValue_GUI(NumBar* p);
-  extern void NumBar_setFunc(NumBar* p,NumBarFunc func);
+  extern void NumBar_SetFunc(NumBar* p,NumBarFunc func);
   /*status*/
   #define NumBar_IsActive(p) ((p)->isActive)
   #define NumBar_IsShow(p) ((p)->isShow)

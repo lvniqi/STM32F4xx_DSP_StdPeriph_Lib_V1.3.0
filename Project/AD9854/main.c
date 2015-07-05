@@ -47,13 +47,17 @@ void TEST_Init(){
 void TEST_1(){
   u16 t_I[10];
   u16 t_Q[10];
+  //delay_ms((40000-FREQ.value)/5000);
   for(int i=0;i<10;i++){
     ADC_SoftwareStartConv(ADC2);
-    t_I[i] = ADC_GetConversionValue(ADC2);
     ADC_SoftwareStartConv(ADC1);
+    t_I[i] = ADC_GetConversionValue(ADC2);
     t_Q[i] = ADC_GetConversionValue(ADC1);
   }
   I_GET = getAvr(t_I,10)-I_BASE;
+  if(I_GET<0){
+    I_GET = 0;
+  }
   Q_GET = getAvr(t_Q,10)-Q_BASE;
   //Lcd_Curve1.finish_flag = 0;
   //(Lcd_Curve1.Now_x) = 0;
@@ -70,6 +74,7 @@ double TEST_1_5(){
       max = V[i];
     }
   }
+  V_MAX = max;
   for(int i=0;i<400;i++){
     V[i] = 20*log(max/V[i]);
     LCD_Curve_Show(&Lcd_Curve4,256-V[i],1);
@@ -104,6 +109,7 @@ void TEST_2(){
   int min;
   for(int i=0;i<400;i++){
     NumBar_SetValue(&FREQ,100*i);
+    delay_ms(1);
     TEST_1();
     I[i] = I_GET;
     Q[i] = Q_GET;
@@ -118,6 +124,18 @@ void TEST_2(){
   }
   //LCD_ShowNumBig(10,4,LCD_STRING_RIGHT,min*100,RED);
   TEST_1_5();
+}
+void UpdateFreqPoint(int value){
+  double t = 2*pow(10,-10)*pow(value,2)-pow(10,-5)*value+1.7988;
+  double vp = 1*1.5/t;
+  AD9854_SetSinc(value*1000,vp*4095);
+  delay_ms(200);
+  TEST_1();
+  double t2 = atan((-Q_GET)*1.0/I_GET)/3.14*180;
+  LCD_ShowNumBig_L(10,20,4,t2,RED);
+  double t_v = sqrt(pow(I_GET,2)+pow(Q_GET,2));
+  t_v = 20*log(t_v/V_MAX);
+  LCD_ShowNumBig_L(10,20,3,t_v,RED);
 }
 int main(void){
   /* SysTick end of count event each 10ms */
@@ -137,10 +155,11 @@ int main(void){
   NumBar_SetLTag(&FREQ,t);
   t.string.ascii = "kHZ";
   NumBar_SetRTag(&FREQ,t);
-  NumBar_setFunc(&FREQ,UpdateFreq);
+  NumBar_SetFunc(&FREQ,UpdateFreq);
   NumBar_Show(&FREQ);
   NumBar_SetActive(&FREQ,false);
-  NumBar_SetValue(&FREQ,0);
+  NumBar_SetValue(&FREQ,100);
+  delay_ms(100);
   TEST_Init();
   TEST_2();
   while(1){
@@ -155,7 +174,10 @@ int main(void){
           LCD_Show_Rect_FULL(LCD_WIDTH/2-LCD_CURVE_WIDTH/2-1,39,LCD_CURVE_HEIGHT+3,LCD_CURVE_WIDTH+3,BACK_COLOR);
           isCurve = false;
           NumBar_SetActive(&FREQ,true);
+          NumBar_SetFunc(&FREQ,UpdateFreqPoint);
         }else{
+          LCD_Show_Rect_FULL(LCD_WIDTH/2-LCD_CURVE_WIDTH/2-1,39,LCD_CURVE_HEIGHT+3,LCD_CURVE_WIDTH+3,BACK_COLOR);
+          NumBar_SetFunc(&FREQ,UpdateFreq);
           NumBar_SetActive(&FREQ,false);
           LCD_Curve_Init(&Lcd_Curve1,LCD_WIDTH/2-LCD_CURVE_WIDTH/2,40,RED);
           LCD_Curve_Init(&Lcd_Curve2,LCD_WIDTH/2-LCD_CURVE_WIDTH/2,40,WHITE);

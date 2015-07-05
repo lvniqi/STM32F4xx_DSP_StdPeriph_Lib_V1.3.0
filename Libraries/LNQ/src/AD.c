@@ -101,7 +101,7 @@ u8 ADC1_Soft_Init(ADC_TypeDef* adcx,uint32_t ADC_Channelx){
   ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None; //不用外部触发,软件触发转换
   ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;
   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-  ADC_InitStructure.ADC_NbrOfConversion = 1;
+  ADC_InitStructure.ADC_NbrOfConversion = 5;
   ADC_Init(adcx, &ADC_InitStructure);
   ADC_RegularChannelConfig(adcx, ADC_Channelx, 1, ADC_SampleTime_3Cycles);
   ADC_Cmd(adcx, ENABLE);
