@@ -8,6 +8,7 @@
 #ifndef SPI_H_
   #define SPI_H_
   #include "common.h"
+  #define SPI2_CS PBout(12)
   extern u8 InitSpi(SPI_TypeDef *SPIx, u8 master_flag);
   extern u8 SPI2_ReadByte();
   extern void SPI2_WriteByte(u8 TxData);
