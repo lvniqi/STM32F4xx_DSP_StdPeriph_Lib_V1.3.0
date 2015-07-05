@@ -146,6 +146,7 @@ int main(void){
   LCD_Curve_Init(&Lcd_Curve3,LCD_WIDTH/2-LCD_CURVE_WIDTH/2,40,YELLOW);
   LCD_Curve_Init(&Lcd_Curve4,LCD_WIDTH/2-LCD_CURVE_WIDTH/2,40,BLUE);
   EXTI_init();
+  
   u16 i = 1;
   AD9854_Init();
   NumBar_Init(&FREQ,10,0,40000,0);
