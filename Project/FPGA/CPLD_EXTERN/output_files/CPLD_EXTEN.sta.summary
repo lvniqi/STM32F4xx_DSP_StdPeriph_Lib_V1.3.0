@@ -1,0 +1,33 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'NWE'
+Slack : -8.095
+TNS   : -147.857
+
+Type  : Setup 'SAVE_ADDR:inst26|ADDR[0]'
+Slack : -2.108
+TNS   : -28.998
+
+Type  : Hold 'NWE'
+Slack : -3.037
+TNS   : -32.350
+
+Type  : Hold 'SAVE_ADDR:inst26|ADDR[0]'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'NADV'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'NWE'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'SAVE_ADDR:inst26|ADDR[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

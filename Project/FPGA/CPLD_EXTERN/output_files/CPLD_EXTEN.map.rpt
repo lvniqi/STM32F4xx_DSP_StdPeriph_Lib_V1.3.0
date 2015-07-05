@@ -1,0 +1,334 @@
+Analysis & Synthesis report for CPLD_EXTEN
+Sat Jul 04 11:40:03 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Analysis & Synthesis Messages
+ 11. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++-----------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Jul 04 11:40:03 2015            ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name               ; CPLD_EXTEN                                       ;
+; Top-level Entity Name       ; CPLD_EXTEN                                       ;
+; Family                      ; MAX II                                           ;
+; Total logic elements        ; 64                                               ;
+; Total pins                  ; 42                                               ;
+; Total virtual pins          ; 0                                                ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                    ;
++-----------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                      ; CPLD_EXTEN         ; CPLD_EXTEN         ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; FPGA2MCU.v                       ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/CPLD_EXTERN/FPGA2MCU.v     ;         ;
+; CPLD_EXTEN.bdf                   ; yes             ; User Block Diagram/Schematic File  ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/CPLD_EXTERN/CPLD_EXTEN.bdf ;         ;
+; AD9854.v                         ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/CPLD_EXTERN/AD9854.v       ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Total logic elements                        ; 64                        ;
+;     -- Combinational with no register       ; 26                        ;
+;     -- Register only                        ; 38                        ;
+;     -- Combinational with a register        ; 0                         ;
+;                                             ;                           ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 22                        ;
+;     -- 3 input functions                    ; 3                         ;
+;     -- 2 input functions                    ; 1                         ;
+;     -- 1 input functions                    ; 0                         ;
+;     -- 0 input functions                    ; 0                         ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 64                        ;
+;     -- arithmetic mode                      ; 0                         ;
+;     -- qfbk mode                            ; 0                         ;
+;     -- register cascade mode                ; 0                         ;
+;     -- synchronous clear/load mode          ; 0                         ;
+;     -- asynchronous clear/load mode         ; 0                         ;
+;                                             ;                           ;
+; Total registers                             ; 38                        ;
+; I/O pins                                    ; 42                        ;
+; Maximum fan-out node                        ; SELECT_ADDR:inst|Equal0~6 ;
+; Maximum fan-out                             ; 33                        ;
+; Total fan-out                               ; 244                       ;
+; Average fan-out                             ; 2.30                      ;
++---------------------------------------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name               ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+--------------+
+; |CPLD_EXTEN                ; 64 (0)      ; 38           ; 0          ; 42   ; 0            ; 26 (0)       ; 38 (0)            ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN                       ; work         ;
+;    |AD9854:inst3|          ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN|AD9854:inst3          ; work         ;
+;    |AD9854_CON:inst4|      ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 3 (3)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN|AD9854_CON:inst4      ; work         ;
+;    |BUFF:inst1|            ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 16 (16)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN|BUFF:inst1            ; work         ;
+;    |BUFF_SEND_DATA:inst11| ; 17 (17)     ; 0            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN|BUFF_SEND_DATA:inst11 ; work         ;
+;    |SAVE_ADDR:inst26|      ; 19 (19)     ; 19           ; 0          ; 0    ; 0            ; 0 (0)        ; 19 (19)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN|SAVE_ADDR:inst26      ; work         ;
+;    |SELECT_ADDR:inst|      ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPLD_EXTEN|SELECT_ADDR:inst      ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; BUFF_SEND_DATA:inst11|DATA_OUT[13]$latch            ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[0]_89                ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[12]$latch            ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[11]$latch            ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[10]$latch            ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[9]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[8]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[7]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[6]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[5]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[4]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[3]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[2]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[1]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[0]$latch             ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[15]$latch            ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; BUFF_SEND_DATA:inst11|DATA_OUT[14]$latch            ; BUFF_SEND_DATA:inst11|DATA_OUT[15] ; yes                    ;
+; Number of user-specified and inferred latches = 17  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 19    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Jul 04 11:40:01 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPLD_EXTEN -c CPLD_EXTEN
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 5 design units, including 5 entities, in source file fpga2mcu.v
+    Info (12023): Found entity 1: SAVE_ADDR
+    Info (12023): Found entity 2: SELECT_ADDR
+    Info (12023): Found entity 3: BUFF_SEND_DATA
+    Info (12023): Found entity 4: BUFF
+    Info (12023): Found entity 5: TEST_Block
+Info (12021): Found 1 design units, including 1 entities, in source file cpld_exten.bdf
+    Info (12023): Found entity 1: CPLD_EXTEN
+Info (12021): Found 2 design units, including 2 entities, in source file ad9854.v
+    Info (12023): Found entity 1: AD9854
+    Info (12023): Found entity 2: AD9854_CON
+Info (12127): Elaborating entity "CPLD_EXTEN" for the top level hierarchy
+Warning (275009): Pin "clk" not connected
+Info (12128): Elaborating entity "AD9854" for hierarchy "AD9854:inst3"
+Info (12128): Elaborating entity "SELECT_ADDR" for hierarchy "SELECT_ADDR:inst"
+Info (12128): Elaborating entity "SAVE_ADDR" for hierarchy "SAVE_ADDR:inst26"
+Info (12128): Elaborating entity "AD9854_CON" for hierarchy "AD9854_CON:inst4"
+Info (12128): Elaborating entity "BUFF_SEND_DATA" for hierarchy "BUFF_SEND_DATA:inst11"
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(55): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(55): inferring latch(es) for variable "FINISH", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "FINISH" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[0]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[1]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[2]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[3]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[4]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[5]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[6]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[7]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[8]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[9]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[10]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[11]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[12]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[13]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[14]" at FPGA2MCU.v(55)
+Info (10041): Inferred latch for "DATA_OUT[15]" at FPGA2MCU.v(55)
+Info (12128): Elaborating entity "BUFF" for hierarchy "BUFF:inst1"
+Warning (10036): Verilog HDL or VHDL warning at FPGA2MCU.v(72): object "en2" assigned a value but never read
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DAC_RD" is stuck at VCC
+Warning (18029): Output pin "DAC_ADDR[5]" driven by bidirectional pin "AD_IN[13]" cannot be tri-stated
+Warning (18029): Output pin "DAC_ADDR[4]" driven by bidirectional pin "AD_IN[12]" cannot be tri-stated
+Warning (18029): Output pin "DAC_ADDR[3]" driven by bidirectional pin "AD_IN[11]" cannot be tri-stated
+Warning (18029): Output pin "DAC_ADDR[2]" driven by bidirectional pin "AD_IN[10]" cannot be tri-stated
+Warning (18029): Output pin "DAC_ADDR[1]" driven by bidirectional pin "AD_IN[9]" cannot be tri-stated
+Warning (18029): Output pin "DAC_ADDR[0]" driven by bidirectional pin "AD_IN[8]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[7]" driven by bidirectional pin "AD_IN[7]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[6]" driven by bidirectional pin "AD_IN[6]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[5]" driven by bidirectional pin "AD_IN[5]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[4]" driven by bidirectional pin "AD_IN[4]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[3]" driven by bidirectional pin "AD_IN[3]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[2]" driven by bidirectional pin "AD_IN[2]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[1]" driven by bidirectional pin "AD_IN[1]" cannot be tri-stated
+Warning (18029): Output pin "DAC_DAT[0]" driven by bidirectional pin "AD_IN[0]" cannot be tri-stated
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 106 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 64 logic cells
+Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/CPLD_EXTERN/output_files/CPLD_EXTEN.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 456 megabytes
+    Info: Processing ended: Sat Jul 04 11:40:03 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/CPLD_EXTERN/output_files/CPLD_EXTEN.map.smsg.
+
+

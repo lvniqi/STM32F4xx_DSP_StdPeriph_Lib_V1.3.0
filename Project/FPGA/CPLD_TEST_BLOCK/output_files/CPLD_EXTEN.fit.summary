@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Jul 03 13:00:51 2015
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : CPLD_EXTEN
+Top-level Entity Name : TEST_Block2
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 0 / 240 ( 0 % )
+Total pins : 49 / 80 ( 61 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

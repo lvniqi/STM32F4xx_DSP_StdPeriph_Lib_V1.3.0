@@ -14,10 +14,8 @@
     //0x0002
   #define FPGA_AD_READ()              (*(((__IO uint16_t*) 0x6003006C))) 
     //0x0002
-  #define FPGA_AD_START()          {(*((volatile unsigned short *) 0x6003008E))
-    = 1;} //0x0002
-  #define FPGA_AD_END()             {(*((volatile unsigned short *) 0x6003008E))
-    = 0;} //0x0002
+  #define FPGA_AD_START()          {(*((volatile unsigned short *) 0x6003008E))= 1;} //0x0002
+  #define FPGA_AD_END()             {(*((volatile unsigned short *) 0x6003008E))= 0;} //0x0002
   extern u32 FPGA_FREQ;
   #define Fpga_Freq_Get_Service() \
   {       \

@@ -1,5 +1,8 @@
 #include "AD9854.h"
-
+//数据及地址
+#define DAC_DAA *((EXTERN_RAM)0x600a0002)
+//FSK UCLK RST
+#define DAC_CON *((EXTERN_RAM)0x600a0004)
 volatile unsigned long  * const AD9854_ADDRESS[6] = {
   PBout_ADDR(12),PBout_ADDR(13),PAout_ADDR(7),
   PAout_ADDR(5),PAout_ADDR(3),PAout_ADDR(1)
@@ -64,27 +67,29 @@ void AD9854_WriteData(u8 data){
 }
 
 void AD9854_WR_Byte(u8 addr,u8 dat){
-  AD9854_WriteAddr(addr);
-  AD9854_WriteData(dat);
-  AD9854_WR=0;
-  AD9854_WR=1;
+  //AD9854_WriteAddr(addr);
+  //AD9854_WriteData(dat);
+  //AD9854_WR=0;
+  //AD9854_WR=1;
+  DAC_DAA = (((u16)addr)<<8)|dat;
 }
 void AD9854_Init(void){
-  AD9854_GPIO_Init();
+  /*AD9854_GPIO_Init();
   AD9854_WR=1;//将读、写控制端口设为无效
-  AD9854_RD=1;
-                                                          
+  AD9854_RD=1;                                             
   AD9854_UDCLK=0;
   AD9854_RST=1;//复位AD9854
-  AD9854_RST=0;
+  AD9854_RST=0;*/
+  DAC_CON = 1; 
+  DAC_CON = 0;
   AD9854_WR_Byte(0x1d,0x10);//关闭比较器
   AD9854_WR_Byte(0x1e,CLK_Set);//设置系统时钟倍频
   AD9854_WR_Byte(0x1f,0x00);//设置系统为模式0，由外部更新
   AD9854_WR_Byte(0x20,0x60);//设置为可调节幅度，取消插值补偿
-
-  AD9854_UDCLK=1;//更新AD9854输出
-  AD9854_UDCLK=0;
-
+  //AD9854_UDCLK=1;//更新AD9854输出
+  DAC_CON = 4;
+  //AD9854_UDCLK=0;
+  DAC_CON = 0;
 }  
 const double Freq_mult_doulle = 938249.9223688533;
 void Freq_convert(u8* temp_data,long Freq){
@@ -113,18 +118,21 @@ void Freq_convert(u8* temp_data,long Freq){
   temp_data[5]=FreqBuf>>8;
 }
 void AD9854_SetSinc(u32 Freq,u16 Shape){
-  int count;
   u8 temp_data[6];//6个字节频率控制字
-  int Adress=0x04;//选择频率控制字地址的初值
   Freq_convert(temp_data,Freq);//频率转换
-  for(count=6;count>0;)//写入6字节的频率控制字
-  {
-          AD9854_WR_Byte(Adress++,temp_data[--count]);
-  }
   AD9854_WR_Byte(0x21,Shape>>8);//设置I通道幅度
-  AD9854_WR_Byte(0x22,(u8)(Shape&0xff));
+  AD9854_WR_Byte(0x22,(Shape&0xff));
   AD9854_WR_Byte(0x23,Shape>>8);//设置Q通道幅度
   AD9854_WR_Byte(0x24,(u8)(Shape&0xff));
-  AD9854_UDCLK=1;//更新AD9854输出
-  AD9854_UDCLK=0;
+  for(int i=0;i<2;i++){
+    int Adress=0x04;//选择频率控制字地址的初值
+    for(int count=6;count>0;)//写入6字节的频率控制字
+    {
+            AD9854_WR_Byte(Adress++,temp_data[--count]);
+    }
+  }
+  //AD9854_UDCLK=1;//更新AD9854输出
+  DAC_CON = 4;
+  //AD9854_UDCLK=0;
+  DAC_CON = 0;
 }

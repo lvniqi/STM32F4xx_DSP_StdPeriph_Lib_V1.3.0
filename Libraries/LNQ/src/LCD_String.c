@@ -58,9 +58,9 @@ void LCD_ShowCharBig(u16 x, u16 y, u8 num, u16 color){
       temp <<= 1;
     }
   }
-  LCD_SetCursor(x, y); //设置光标位置
+  LCD_SetCursor(x, y+1); //设置光标位置
   LCD_WriteRAM_Prepare(); //开始写入GRAM
-  for (t = 31; t >= 16; t--){
+  for (t = 30; t >= 16; t--){
     temp = asc_3216[num - ' '][t]; //调用1608字体
     for (t1 = 0; t1 < 8; t1++){
       if (temp &0x80){
@@ -86,9 +86,9 @@ void LCD_ShowCharBig(u16 x, u16 y, u8 num, u16 color){
       temp <<= 1;
     }
   }
-  LCD_SetCursor(x + 8, y); //设置光标位置
+  LCD_SetCursor(x + 8, y+1); //设置光标位置
   LCD_WriteRAM_Prepare(); //开始写入GRAM
-  for (t = 63; t >= 48; t--){
+  for (t = 62; t >= 48; t--){
     temp = asc_3216[num - ' '][t]; //调用1608字体
     for (t1 = 0; t1 < 8; t1++){
       if (temp &0x80){
@@ -104,7 +104,7 @@ void LCD_ShowCharBig(u16 x, u16 y, u8 num, u16 color){
 }
 
 /********************************************************************
- * 名称 : LCD_ShowNumBig
+ * 名称 : LCD_ShowStringBig
  * 功能 : 显示3216数字
  * 输入 :  x y  大小 数字 颜色
  * 输出 : 无 
@@ -125,7 +125,20 @@ void LCD_ShowStringBig(u16 x, u16 y,LCD_PLACE_TYPE type, char* p, u16 color){
     p++;
   }
 }
-
+ /********************************************************************
+  * 名称 : LCD_ShowChineseStringBig_Union
+  * 功能 : 显示3216字符
+  * 输入 :  x y  大小 字符位于asc_3216数组中的位置 颜色
+  * 输出 : 无 
+  ***********************************************************************/
+void LCD_ShowStringBig_Union(u16 x, u16 y,LCD_PLACE_TYPE type, LCD_STRING d, u16 color){
+  if(d.type == _LCD_STRING_CHINESE){
+    LCD_ShowChineseStringBig(x,y,type,d.string.chinese.start,d.string.chinese.len,color);
+  }
+  else{
+    LCD_ShowStringBig(x,y,type,d.string.ascii,color);
+  }
+}
 u32 LCD_GetCharBig(u16 x, u16 y2, char* string){
   u32 data = 0;
   u16 x2 = x;
@@ -248,6 +261,8 @@ void LCD_ShowChinese(u16 x, u16 y, u8 size, u8 num, u16 color){
 ***********************************************************************/
 void LCD_ShowChineseBig(u16 x,u16 y,u8 num,u16 color)
 {
+  x = 16 * x;
+  y = 32 * y;
   int temp, t1,t2;
   u16 color_2 = POINT_COLOR;
   for (t2 = 127; t2 >= 0; t2--)
@@ -293,11 +308,11 @@ void LCD_ShowChineseStringBig(u16 x,u16 y,LCD_PLACE_TYPE type,u8 num,u8 len,u16 
     x -= len*2;
   }
   else if(LCD_STRING_MID == type){
-    x -= len*32/2;
+    x -= len;
   }
   for(int i=0;i<len;i++)
   {
-    LCD_ShowChineseBig(x+32*i,y,num+i,color);
+    LCD_ShowChineseBig(x+2*i,y,num+i,color);
   }
 }
 /********************************************************************

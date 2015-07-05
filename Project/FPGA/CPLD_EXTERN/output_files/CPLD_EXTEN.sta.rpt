@@ -1,0 +1,967 @@
+TimeQuest Timing Analyzer report for CPLD_EXTEN
+Sat Jul 04 11:40:11 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'NWE'
+ 12. Setup: 'SAVE_ADDR:inst26|ADDR[0]'
+ 13. Hold: 'NWE'
+ 14. Hold: 'SAVE_ADDR:inst26|ADDR[0]'
+ 15. Minimum Pulse Width: 'NADV'
+ 16. Minimum Pulse Width: 'NWE'
+ 17. Minimum Pulse Width: 'SAVE_ADDR:inst26|ADDR[0]'
+ 18. Setup Times
+ 19. Hold Times
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Propagation Delay
+ 23. Minimum Propagation Delay
+ 24. Setup Transfers
+ 25. Hold Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; CPLD_EXTEN                                                         ;
+; Device Family      ; MAX II                                                             ;
+; Device Name        ; EPM240T100C5                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Slow Model                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                             ;
++--------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------+
+; Clock Name               ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                      ;
++--------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------+
+; NADV                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { NADV }                     ;
+; NWE                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { NWE }                      ;
+; SAVE_ADDR:inst26|ADDR[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SAVE_ADDR:inst26|ADDR[0] } ;
++--------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------+
+
+
+----------------
+; Fmax Summary ;
+----------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Setup Summary                                     ;
++--------------------------+--------+---------------+
+; Clock                    ; Slack  ; End Point TNS ;
++--------------------------+--------+---------------+
+; NWE                      ; -8.095 ; -147.857      ;
+; SAVE_ADDR:inst26|ADDR[0] ; -2.108 ; -28.998       ;
++--------------------------+--------+---------------+
+
+
++---------------------------------------------------+
+; Hold Summary                                      ;
++--------------------------+--------+---------------+
+; Clock                    ; Slack  ; End Point TNS ;
++--------------------------+--------+---------------+
+; NWE                      ; -3.037 ; -32.350       ;
+; SAVE_ADDR:inst26|ADDR[0] ; 0.328  ; 0.000         ;
++--------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Minimum Pulse Width Summary                       ;
++--------------------------+--------+---------------+
+; Clock                    ; Slack  ; End Point TNS ;
++--------------------------+--------+---------------+
+; NADV                     ; -2.289 ; -2.289        ;
+; NWE                      ; -2.289 ; -2.289        ;
+; SAVE_ADDR:inst26|ADDR[0] ; 0.500  ; 0.000         ;
++--------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'NWE'                                                                                                                       ;
++--------+---------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -8.095 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.821      ;
+; -8.095 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.821      ;
+; -8.095 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.821      ;
+; -8.095 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.821      ;
+; -7.984 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.710      ;
+; -7.984 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.710      ;
+; -7.984 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.710      ;
+; -7.975 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.701      ;
+; -7.975 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.701      ;
+; -7.975 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.701      ;
+; -7.975 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.701      ;
+; -7.974 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[4]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.700      ;
+; -7.974 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[3]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.700      ;
+; -7.974 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[15] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.700      ;
+; -7.974 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[14] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.700      ;
+; -7.934 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.660      ;
+; -7.934 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.660      ;
+; -7.934 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.660      ;
+; -7.934 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.660      ;
+; -7.927 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.653      ;
+; -7.927 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.653      ;
+; -7.927 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.653      ;
+; -7.927 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.653      ;
+; -7.885 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[5]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.611      ;
+; -7.864 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.590      ;
+; -7.864 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.590      ;
+; -7.864 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.590      ;
+; -7.854 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[4]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.580      ;
+; -7.854 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[3]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.580      ;
+; -7.854 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[15] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.580      ;
+; -7.854 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[14] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.580      ;
+; -7.823 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.549      ;
+; -7.823 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.549      ;
+; -7.823 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.549      ;
+; -7.816 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.542      ;
+; -7.816 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.542      ;
+; -7.816 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.542      ;
+; -7.813 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[4]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.539      ;
+; -7.813 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[3]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.539      ;
+; -7.813 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[15] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.539      ;
+; -7.813 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[14] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.539      ;
+; -7.806 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[4]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.532      ;
+; -7.806 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[3]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.532      ;
+; -7.806 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[15] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.532      ;
+; -7.806 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[14] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.532      ;
+; -7.791 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.517      ;
+; -7.791 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.517      ;
+; -7.791 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.517      ;
+; -7.791 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.517      ;
+; -7.774 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.500      ;
+; -7.774 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.500      ;
+; -7.774 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.500      ;
+; -7.774 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.500      ;
+; -7.765 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[5]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.491      ;
+; -7.724 ; SAVE_ADDR:inst26|ADDR[15] ; BUFF:inst1|DATA_OUT[5]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.450      ;
+; -7.717 ; SAVE_ADDR:inst26|ADDR[4]  ; BUFF:inst1|DATA_OUT[5]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.443      ;
+; -7.680 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.406      ;
+; -7.680 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.406      ;
+; -7.680 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.406      ;
+; -7.670 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[4]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.396      ;
+; -7.670 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[3]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.396      ;
+; -7.670 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[15] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.396      ;
+; -7.670 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[14] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.396      ;
+; -7.663 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.389      ;
+; -7.663 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.389      ;
+; -7.663 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.389      ;
+; -7.653 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[4]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.379      ;
+; -7.653 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[3]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.379      ;
+; -7.653 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[15] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.379      ;
+; -7.653 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[14] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.379      ;
+; -7.581 ; SAVE_ADDR:inst26|ADDR[12] ; BUFF:inst1|DATA_OUT[5]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.307      ;
+; -7.564 ; SAVE_ADDR:inst26|ADDR[3]  ; BUFF:inst1|DATA_OUT[5]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.290      ;
+; -7.434 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[12] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.160      ;
+; -7.434 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[9]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.160      ;
+; -7.434 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[7]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.160      ;
+; -7.434 ; SAVE_ADDR:inst26|ADDR[14] ; BUFF:inst1|DATA_OUT[6]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.160      ;
+; -7.394 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.120      ;
+; -7.394 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.120      ;
+; -7.394 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.120      ;
+; -7.394 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.120      ;
+; -7.389 ; SAVE_ADDR:inst26|ADDR[7]  ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.115      ;
+; -7.389 ; SAVE_ADDR:inst26|ADDR[7]  ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.115      ;
+; -7.389 ; SAVE_ADDR:inst26|ADDR[7]  ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.115      ;
+; -7.389 ; SAVE_ADDR:inst26|ADDR[7]  ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.115      ;
+; -7.336 ; SAVE_ADDR:inst26|ADDR[14] ; AD9854_CON:inst4|Dat[2] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.062      ;
+; -7.336 ; SAVE_ADDR:inst26|ADDR[14] ; AD9854_CON:inst4|Dat[1] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.062      ;
+; -7.336 ; SAVE_ADDR:inst26|ADDR[14] ; AD9854_CON:inst4|Dat[0] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.062      ;
+; -7.314 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[12] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.040      ;
+; -7.314 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[9]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.040      ;
+; -7.314 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[7]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.040      ;
+; -7.314 ; SAVE_ADDR:inst26|ADDR[13] ; BUFF:inst1|DATA_OUT[6]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.040      ;
+; -7.299 ; SAVE_ADDR:inst26|ADDR[11] ; BUFF:inst1|DATA_OUT[8]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.025      ;
+; -7.299 ; SAVE_ADDR:inst26|ADDR[11] ; BUFF:inst1|DATA_OUT[2]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.025      ;
+; -7.299 ; SAVE_ADDR:inst26|ADDR[11] ; BUFF:inst1|DATA_OUT[1]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.025      ;
+; -7.299 ; SAVE_ADDR:inst26|ADDR[11] ; BUFF:inst1|DATA_OUT[0]  ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.025      ;
+; -7.283 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.009      ;
+; -7.283 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.009      ;
+; -7.283 ; SAVE_ADDR:inst26|ADDR[17] ; BUFF:inst1|DATA_OUT[10] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.009      ;
+; -7.278 ; SAVE_ADDR:inst26|ADDR[7]  ; BUFF:inst1|DATA_OUT[13] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.004      ;
+; -7.278 ; SAVE_ADDR:inst26|ADDR[7]  ; BUFF:inst1|DATA_OUT[11] ; NADV         ; NWE         ; 1.000        ; 0.059      ; 8.004      ;
++--------+---------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'SAVE_ADDR:inst26|ADDR[0]'                                                                                                                              ;
++--------+-------------------------+------------------------------------------+--------------+--------------------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                                  ; Launch Clock ; Latch Clock              ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+------------------------------------------+--------------+--------------------------+--------------+------------+------------+
+; -2.108 ; BUFF:inst1|DATA_OUT[14] ; BUFF_SEND_DATA:inst11|DATA_OUT[14]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.065      ; 1.851      ;
+; -2.088 ; BUFF:inst1|DATA_OUT[15] ; BUFF_SEND_DATA:inst11|DATA_OUT[15]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.064      ; 1.849      ;
+; -2.046 ; BUFF:inst1|DATA_OUT[8]  ; BUFF_SEND_DATA:inst11|DATA_OUT[8]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.104      ; 1.847      ;
+; -1.984 ; BUFF:inst1|DATA_OUT[10] ; BUFF_SEND_DATA:inst11|DATA_OUT[10]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.011      ; 1.839      ;
+; -1.972 ; BUFF:inst1|DATA_OUT[9]  ; BUFF_SEND_DATA:inst11|DATA_OUT[9]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.028      ; 1.845      ;
+; -1.965 ; BUFF:inst1|DATA_OUT[12] ; BUFF_SEND_DATA:inst11|DATA_OUT[12]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.031      ; 1.840      ;
+; -1.926 ; BUFF:inst1|DATA_OUT[4]  ; BUFF_SEND_DATA:inst11|DATA_OUT[4]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.057      ; 1.828      ;
+; -1.913 ; BUFF:inst1|DATA_OUT[2]  ; BUFF_SEND_DATA:inst11|DATA_OUT[2]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.106      ; 1.855      ;
+; -1.851 ; BUFF:inst1|DATA_OUT[7]  ; BUFF_SEND_DATA:inst11|DATA_OUT[7]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.566      ; 1.471      ;
+; -1.829 ; BUFF:inst1|DATA_OUT[6]  ; BUFF_SEND_DATA:inst11|DATA_OUT[6]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.657      ; 1.961      ;
+; -1.826 ; BUFF:inst1|DATA_OUT[3]  ; BUFF_SEND_DATA:inst11|DATA_OUT[3]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.603      ; 1.484      ;
+; -1.746 ; BUFF:inst1|DATA_OUT[1]  ; BUFF_SEND_DATA:inst11|DATA_OUT[1]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.654      ; 1.484      ;
+; -1.501 ; BUFF:inst1|DATA_OUT[5]  ; BUFF_SEND_DATA:inst11|DATA_OUT[5]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.475      ; 1.470      ;
+; -1.448 ; BUFF:inst1|DATA_OUT[13] ; BUFF_SEND_DATA:inst11|DATA_OUT[13]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.554      ; 1.486      ;
+; -1.444 ; BUFF:inst1|DATA_OUT[11] ; BUFF_SEND_DATA:inst11|DATA_OUT[11]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.555      ; 1.485      ;
+; -1.351 ; BUFF:inst1|DATA_OUT[0]  ; BUFF_SEND_DATA:inst11|DATA_OUT[0]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; 0.500        ; 1.658      ; 1.486      ;
++--------+-------------------------+------------------------------------------+--------------+--------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'NWE'                                                                                                                                    ;
++--------+---------------------------+-------------------------+--------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                 ; Launch Clock             ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+-------------------------+--------------------------+-------------+--------------+------------+------------+
+; -3.037 ; SAVE_ADDR:inst26|ADDR[0]  ; AD9854_CON:inst4|Dat[2] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 3.335      ;
+; -3.037 ; SAVE_ADDR:inst26|ADDR[0]  ; AD9854_CON:inst4|Dat[1] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 3.335      ;
+; -3.037 ; SAVE_ADDR:inst26|ADDR[0]  ; AD9854_CON:inst4|Dat[0] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 3.335      ;
+; -2.537 ; SAVE_ADDR:inst26|ADDR[0]  ; AD9854_CON:inst4|Dat[2] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 3.335      ;
+; -2.537 ; SAVE_ADDR:inst26|ADDR[0]  ; AD9854_CON:inst4|Dat[1] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 3.335      ;
+; -2.537 ; SAVE_ADDR:inst26|ADDR[0]  ; AD9854_CON:inst4|Dat[0] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 3.335      ;
+; -1.884 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[12] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 4.488      ;
+; -1.884 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[9]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 4.488      ;
+; -1.884 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[7]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 4.488      ;
+; -1.884 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[6]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 4.488      ;
+; -1.433 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[5]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 4.939      ;
+; -1.384 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[12] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 4.488      ;
+; -1.384 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[9]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 4.488      ;
+; -1.384 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[7]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 4.488      ;
+; -1.384 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[6]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 4.488      ;
+; -1.344 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[4]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.028      ;
+; -1.344 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[3]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.028      ;
+; -1.344 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[15] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.028      ;
+; -1.344 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[14] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.028      ;
+; -1.334 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[13] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.038      ;
+; -1.334 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[11] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.038      ;
+; -1.334 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[10] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.038      ;
+; -1.223 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[8]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.149      ;
+; -1.223 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[2]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.149      ;
+; -1.223 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[1]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.149      ;
+; -1.223 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[0]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; 0.000        ; 5.775      ; 5.149      ;
+; -0.933 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[5]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 4.939      ;
+; -0.844 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[4]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.028      ;
+; -0.844 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[3]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.028      ;
+; -0.844 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[15] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.028      ;
+; -0.844 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[14] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.028      ;
+; -0.834 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[13] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.038      ;
+; -0.834 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[11] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.038      ;
+; -0.834 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[10] ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.038      ;
+; -0.723 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[8]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.149      ;
+; -0.723 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[2]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.149      ;
+; -0.723 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[1]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.149      ;
+; -0.723 ; SAVE_ADDR:inst26|ADDR[0]  ; BUFF:inst1|DATA_OUT[0]  ; SAVE_ADDR:inst26|ADDR[0] ; NWE         ; -0.500       ; 5.775      ; 5.149      ;
+; 3.152  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[12] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.432      ;
+; 3.152  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[9]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.432      ;
+; 3.152  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[7]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.432      ;
+; 3.152  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[6]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.432      ;
+; 3.603  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[5]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.883      ;
+; 3.692  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[4]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.972      ;
+; 3.692  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[3]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.972      ;
+; 3.692  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[15] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.972      ;
+; 3.692  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[14] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.972      ;
+; 3.702  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[13] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.982      ;
+; 3.702  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[11] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.982      ;
+; 3.702  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[10] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 3.982      ;
+; 3.813  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[8]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.093      ;
+; 3.813  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[2]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.093      ;
+; 3.813  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[1]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.093      ;
+; 3.813  ; SAVE_ADDR:inst26|ADDR[1]  ; BUFF:inst1|DATA_OUT[0]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.093      ;
+; 3.999  ; SAVE_ADDR:inst26|ADDR[18] ; AD9854_CON:inst4|Dat[2] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.279      ;
+; 3.999  ; SAVE_ADDR:inst26|ADDR[18] ; AD9854_CON:inst4|Dat[1] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.279      ;
+; 3.999  ; SAVE_ADDR:inst26|ADDR[18] ; AD9854_CON:inst4|Dat[0] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.279      ;
+; 4.097  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[12] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.377      ;
+; 4.097  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[9]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.377      ;
+; 4.097  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[7]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.377      ;
+; 4.097  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[6]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.377      ;
+; 4.269  ; SAVE_ADDR:inst26|ADDR[1]  ; AD9854_CON:inst4|Dat[2] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.549      ;
+; 4.269  ; SAVE_ADDR:inst26|ADDR[1]  ; AD9854_CON:inst4|Dat[1] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.549      ;
+; 4.269  ; SAVE_ADDR:inst26|ADDR[1]  ; AD9854_CON:inst4|Dat[0] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.549      ;
+; 4.548  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[5]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.828      ;
+; 4.637  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[4]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.917      ;
+; 4.637  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[3]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.917      ;
+; 4.637  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[15] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.917      ;
+; 4.637  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[14] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.917      ;
+; 4.647  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[13] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.927      ;
+; 4.647  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[11] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.927      ;
+; 4.647  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[10] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 4.927      ;
+; 4.758  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[8]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.038      ;
+; 4.758  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[2]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.038      ;
+; 4.758  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[1]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.038      ;
+; 4.758  ; SAVE_ADDR:inst26|ADDR[18] ; BUFF:inst1|DATA_OUT[0]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.038      ;
+; 4.928  ; SAVE_ADDR:inst26|ADDR[8]  ; AD9854_CON:inst4|Dat[2] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.208      ;
+; 4.928  ; SAVE_ADDR:inst26|ADDR[8]  ; AD9854_CON:inst4|Dat[1] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.208      ;
+; 4.928  ; SAVE_ADDR:inst26|ADDR[8]  ; AD9854_CON:inst4|Dat[0] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.208      ;
+; 5.026  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[12] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.306      ;
+; 5.026  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[9]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.306      ;
+; 5.026  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[7]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.306      ;
+; 5.026  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[6]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.306      ;
+; 5.477  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[5]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.757      ;
+; 5.566  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[4]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.846      ;
+; 5.566  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[3]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.846      ;
+; 5.566  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[15] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.846      ;
+; 5.566  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[14] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.846      ;
+; 5.576  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[13] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.856      ;
+; 5.576  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[11] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.856      ;
+; 5.576  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[10] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.856      ;
+; 5.687  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[8]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.967      ;
+; 5.687  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[2]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.967      ;
+; 5.687  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[1]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.967      ;
+; 5.687  ; SAVE_ADDR:inst26|ADDR[8]  ; BUFF:inst1|DATA_OUT[0]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 5.967      ;
+; 5.860  ; SAVE_ADDR:inst26|ADDR[6]  ; AD9854_CON:inst4|Dat[2] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 6.140      ;
+; 5.860  ; SAVE_ADDR:inst26|ADDR[6]  ; AD9854_CON:inst4|Dat[1] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 6.140      ;
+; 5.860  ; SAVE_ADDR:inst26|ADDR[6]  ; AD9854_CON:inst4|Dat[0] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 6.140      ;
+; 5.958  ; SAVE_ADDR:inst26|ADDR[6]  ; BUFF:inst1|DATA_OUT[12] ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 6.238      ;
+; 5.958  ; SAVE_ADDR:inst26|ADDR[6]  ; BUFF:inst1|DATA_OUT[9]  ; NADV                     ; NWE         ; 0.000        ; 0.059      ; 6.238      ;
++--------+---------------------------+-------------------------+--------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'SAVE_ADDR:inst26|ADDR[0]'                                                                                                                              ;
++-------+-------------------------+------------------------------------------+--------------+--------------------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node                                  ; Launch Clock ; Latch Clock              ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+------------------------------------------+--------------+--------------------------+--------------+------------+------------+
+; 0.328 ; BUFF:inst1|DATA_OUT[0]  ; BUFF_SEND_DATA:inst11|DATA_OUT[0]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.658      ; 1.486      ;
+; 0.330 ; BUFF:inst1|DATA_OUT[1]  ; BUFF_SEND_DATA:inst11|DATA_OUT[1]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.654      ; 1.484      ;
+; 0.381 ; BUFF:inst1|DATA_OUT[3]  ; BUFF_SEND_DATA:inst11|DATA_OUT[3]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.603      ; 1.484      ;
+; 0.405 ; BUFF:inst1|DATA_OUT[7]  ; BUFF_SEND_DATA:inst11|DATA_OUT[7]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.566      ; 1.471      ;
+; 0.430 ; BUFF:inst1|DATA_OUT[11] ; BUFF_SEND_DATA:inst11|DATA_OUT[11]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.555      ; 1.485      ;
+; 0.432 ; BUFF:inst1|DATA_OUT[13] ; BUFF_SEND_DATA:inst11|DATA_OUT[13]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.554      ; 1.486      ;
+; 0.495 ; BUFF:inst1|DATA_OUT[5]  ; BUFF_SEND_DATA:inst11|DATA_OUT[5]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.475      ; 1.470      ;
+; 0.804 ; BUFF:inst1|DATA_OUT[6]  ; BUFF_SEND_DATA:inst11|DATA_OUT[6]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.657      ; 1.961      ;
+; 1.243 ; BUFF:inst1|DATA_OUT[8]  ; BUFF_SEND_DATA:inst11|DATA_OUT[8]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.104      ; 1.847      ;
+; 1.249 ; BUFF:inst1|DATA_OUT[2]  ; BUFF_SEND_DATA:inst11|DATA_OUT[2]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.106      ; 1.855      ;
+; 1.271 ; BUFF:inst1|DATA_OUT[4]  ; BUFF_SEND_DATA:inst11|DATA_OUT[4]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.057      ; 1.828      ;
+; 1.285 ; BUFF:inst1|DATA_OUT[15] ; BUFF_SEND_DATA:inst11|DATA_OUT[15]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.064      ; 1.849      ;
+; 1.286 ; BUFF:inst1|DATA_OUT[14] ; BUFF_SEND_DATA:inst11|DATA_OUT[14]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.065      ; 1.851      ;
+; 1.309 ; BUFF:inst1|DATA_OUT[12] ; BUFF_SEND_DATA:inst11|DATA_OUT[12]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.031      ; 1.840      ;
+; 1.317 ; BUFF:inst1|DATA_OUT[9]  ; BUFF_SEND_DATA:inst11|DATA_OUT[9]$latch  ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.028      ; 1.845      ;
+; 1.328 ; BUFF:inst1|DATA_OUT[10] ; BUFF_SEND_DATA:inst11|DATA_OUT[10]$latch ; NWE          ; SAVE_ADDR:inst26|ADDR[0] ; -0.500       ; 1.011      ; 1.839      ;
++-------+-------------------------+------------------------------------------+--------------+--------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'NADV'                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; NADV  ; Rise       ; NADV                      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[10] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[10] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[11] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[11] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[12] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[12] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[13] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[13] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[14] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[14] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[15] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[15] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[16] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[16] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[17] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[17] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[18] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[18] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NADV  ; Rise       ; SAVE_ADDR:inst26|ADDR[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; NADV|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; NADV|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[8]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[8]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NADV  ; Rise       ; inst26|ADDR[9]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NADV  ; Rise       ; inst26|ADDR[9]|clk        ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'NWE'                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; NWE   ; Rise       ; NWE                     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; AD9854_CON:inst4|Dat[0] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; AD9854_CON:inst4|Dat[0] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; AD9854_CON:inst4|Dat[1] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; AD9854_CON:inst4|Dat[1] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; AD9854_CON:inst4|Dat[2] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; AD9854_CON:inst4|Dat[2] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[10] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[10] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[11] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[11] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[12] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[12] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[13] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[13] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[14] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[14] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[15] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[15] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; NWE   ; Rise       ; BUFF:inst1|DATA_OUT[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; NWE|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; NWE|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[10]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[10]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[11]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[11]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[12]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[12]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[13]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[13]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[14]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[14]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[15]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[15]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[4]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[4]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[5]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[5]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[6]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[6]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[7]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[7]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[8]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[8]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst1|DATA_OUT[9]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst1|DATA_OUT[9]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst4|Dat[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst4|Dat[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst4|Dat[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst4|Dat[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; NWE   ; Rise       ; inst4|Dat[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; NWE   ; Rise       ; inst4|Dat[2]|clk        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'SAVE_ADDR:inst26|ADDR[0]'                                                                                             ;
++-------+--------------+----------------+------------------+--------------------------+------------+------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                    ; Clock Edge ; Target                                   ;
++-------+--------------+----------------+------------------+--------------------------+------------+------------------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[0]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[0]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[10]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[10]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[11]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[11]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[12]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[12]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[13]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[13]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[14]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[14]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[15]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[15]$latch ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[1]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[1]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[2]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[2]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[3]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[3]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[4]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[4]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[5]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[5]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[6]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[6]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[7]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[7]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[8]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[8]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[9]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Fall       ; BUFF_SEND_DATA:inst11|DATA_OUT[9]$latch  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[0]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[0]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[10]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[10]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[11]$latch|datab          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[11]$latch|datab          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[12]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[12]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[13]$latch|datab          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[13]$latch|datab          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[14]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[14]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[15]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[15]$latch|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[1]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[1]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[2]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[2]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[3]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[3]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[4]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[4]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[5]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[5]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[6]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[6]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[7]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[7]$latch|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[8]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[8]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[9]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst11|DATA_OUT[9]$latch|datad           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst26|ADDR[0]|regout                    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst26|ADDR[0]|regout                    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst26|ADDR[1]|combout                   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst26|ADDR[1]|combout                   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst26|ADDR[1]|datab                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; SAVE_ADDR:inst26|ADDR[0] ; Rise       ; inst26|ADDR[1]|datab                     ;
++-------+--------------+----------------+------------------+--------------------------+------------+------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; A16        ; NADV       ; 0.277 ; 0.277 ; Rise       ; NADV            ;
+; A17        ; NADV       ; 0.083 ; 0.083 ; Rise       ; NADV            ;
+; A18        ; NADV       ; 1.016 ; 1.016 ; Rise       ; NADV            ;
+; AD_IN[*]   ; NADV       ; 1.892 ; 1.892 ; Rise       ; NADV            ;
+;  AD_IN[0]  ; NADV       ; 1.728 ; 1.728 ; Rise       ; NADV            ;
+;  AD_IN[1]  ; NADV       ; 1.892 ; 1.892 ; Rise       ; NADV            ;
+;  AD_IN[2]  ; NADV       ; 0.380 ; 0.380 ; Rise       ; NADV            ;
+;  AD_IN[3]  ; NADV       ; 0.601 ; 0.601 ; Rise       ; NADV            ;
+;  AD_IN[4]  ; NADV       ; 1.542 ; 1.542 ; Rise       ; NADV            ;
+;  AD_IN[5]  ; NADV       ; 0.401 ; 0.401 ; Rise       ; NADV            ;
+;  AD_IN[6]  ; NADV       ; 0.425 ; 0.425 ; Rise       ; NADV            ;
+;  AD_IN[7]  ; NADV       ; 1.844 ; 1.844 ; Rise       ; NADV            ;
+;  AD_IN[8]  ; NADV       ; 0.412 ; 0.412 ; Rise       ; NADV            ;
+;  AD_IN[9]  ; NADV       ; 0.388 ; 0.388 ; Rise       ; NADV            ;
+;  AD_IN[10] ; NADV       ; 0.363 ; 0.363 ; Rise       ; NADV            ;
+;  AD_IN[11] ; NADV       ; 0.632 ; 0.632 ; Rise       ; NADV            ;
+;  AD_IN[12] ; NADV       ; 0.379 ; 0.379 ; Rise       ; NADV            ;
+;  AD_IN[13] ; NADV       ; 0.363 ; 0.363 ; Rise       ; NADV            ;
+;  AD_IN[14] ; NADV       ; 0.840 ; 0.840 ; Rise       ; NADV            ;
+;  AD_IN[15] ; NADV       ; 0.892 ; 0.892 ; Rise       ; NADV            ;
+; AD_IN[*]   ; NWE        ; 1.629 ; 1.629 ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; 0.565 ; 0.565 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 1.606 ; 1.606 ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 0.701 ; 0.701 ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; 0.869 ; 0.869 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; 1.533 ; 1.533 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; 0.573 ; 0.573 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; 0.975 ; 0.975 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; 1.629 ; 1.629 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; 1.626 ; 1.626 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; 1.344 ; 1.344 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; 1.031 ; 1.031 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; 0.568 ; 0.568 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; 1.354 ; 1.354 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 0.314 ; 0.314 ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 0.285 ; 0.285 ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; 0.555 ; 0.555 ; Rise       ; NWE             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A16        ; NADV       ; 0.277  ; 0.277  ; Rise       ; NADV            ;
+; A17        ; NADV       ; 0.471  ; 0.471  ; Rise       ; NADV            ;
+; A18        ; NADV       ; -0.462 ; -0.462 ; Rise       ; NADV            ;
+; AD_IN[*]   ; NADV       ; 0.191  ; 0.191  ; Rise       ; NADV            ;
+;  AD_IN[0]  ; NADV       ; -1.174 ; -1.174 ; Rise       ; NADV            ;
+;  AD_IN[1]  ; NADV       ; -1.338 ; -1.338 ; Rise       ; NADV            ;
+;  AD_IN[2]  ; NADV       ; 0.174  ; 0.174  ; Rise       ; NADV            ;
+;  AD_IN[3]  ; NADV       ; -0.047 ; -0.047 ; Rise       ; NADV            ;
+;  AD_IN[4]  ; NADV       ; -0.988 ; -0.988 ; Rise       ; NADV            ;
+;  AD_IN[5]  ; NADV       ; 0.153  ; 0.153  ; Rise       ; NADV            ;
+;  AD_IN[6]  ; NADV       ; 0.129  ; 0.129  ; Rise       ; NADV            ;
+;  AD_IN[7]  ; NADV       ; -1.290 ; -1.290 ; Rise       ; NADV            ;
+;  AD_IN[8]  ; NADV       ; 0.142  ; 0.142  ; Rise       ; NADV            ;
+;  AD_IN[9]  ; NADV       ; 0.166  ; 0.166  ; Rise       ; NADV            ;
+;  AD_IN[10] ; NADV       ; 0.191  ; 0.191  ; Rise       ; NADV            ;
+;  AD_IN[11] ; NADV       ; -0.078 ; -0.078 ; Rise       ; NADV            ;
+;  AD_IN[12] ; NADV       ; 0.175  ; 0.175  ; Rise       ; NADV            ;
+;  AD_IN[13] ; NADV       ; 0.191  ; 0.191  ; Rise       ; NADV            ;
+;  AD_IN[14] ; NADV       ; -0.286 ; -0.286 ; Rise       ; NADV            ;
+;  AD_IN[15] ; NADV       ; -0.338 ; -0.338 ; Rise       ; NADV            ;
+; AD_IN[*]   ; NWE        ; 0.269  ; 0.269  ; Rise       ; NWE             ;
+;  AD_IN[0]  ; NWE        ; -0.009 ; -0.009 ; Rise       ; NWE             ;
+;  AD_IN[1]  ; NWE        ; 0.239  ; 0.239  ; Rise       ; NWE             ;
+;  AD_IN[2]  ; NWE        ; 0.210  ; 0.210  ; Rise       ; NWE             ;
+;  AD_IN[3]  ; NWE        ; -0.315 ; -0.315 ; Rise       ; NWE             ;
+;  AD_IN[4]  ; NWE        ; -0.979 ; -0.979 ; Rise       ; NWE             ;
+;  AD_IN[5]  ; NWE        ; -0.019 ; -0.019 ; Rise       ; NWE             ;
+;  AD_IN[6]  ; NWE        ; -0.421 ; -0.421 ; Rise       ; NWE             ;
+;  AD_IN[7]  ; NWE        ; -1.075 ; -1.075 ; Rise       ; NWE             ;
+;  AD_IN[8]  ; NWE        ; -1.072 ; -1.072 ; Rise       ; NWE             ;
+;  AD_IN[9]  ; NWE        ; -0.790 ; -0.790 ; Rise       ; NWE             ;
+;  AD_IN[10] ; NWE        ; -0.477 ; -0.477 ; Rise       ; NWE             ;
+;  AD_IN[11] ; NWE        ; -0.014 ; -0.014 ; Rise       ; NWE             ;
+;  AD_IN[12] ; NWE        ; -0.800 ; -0.800 ; Rise       ; NWE             ;
+;  AD_IN[13] ; NWE        ; 0.240  ; 0.240  ; Rise       ; NWE             ;
+;  AD_IN[14] ; NWE        ; 0.269  ; 0.269  ; Rise       ; NWE             ;
+;  AD_IN[15] ; NWE        ; -0.001 ; -0.001 ; Rise       ; NWE             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+--------------------------+--------+--------+------------+--------------------------+
+; Data Port  ; Clock Port               ; Rise   ; Fall   ; Clock Edge ; Clock Reference          ;
++------------+--------------------------+--------+--------+------------+--------------------------+
+; DAC_WR     ; NADV                     ; 16.889 ; 16.889 ; Rise       ; NADV                     ;
+; DAC_FSK    ; NWE                      ; 11.163 ; 11.163 ; Rise       ; NWE                      ;
+; DAC_RST    ; NWE                      ; 11.009 ; 11.009 ; Rise       ; NWE                      ;
+; DAC_UCLK   ; NWE                      ; 10.989 ; 10.989 ; Rise       ; NWE                      ;
+; DAC_WR     ; NWE                      ; 8.239  ; 8.239  ; Rise       ; NWE                      ;
+; DAC_WR     ; NWE                      ; 8.239  ; 8.239  ; Fall       ; NWE                      ;
+; DAC_WR     ; SAVE_ADDR:inst26|ADDR[0] ; 6.956  ;        ; Rise       ; SAVE_ADDR:inst26|ADDR[0] ;
+; AD_IN[*]   ; SAVE_ADDR:inst26|ADDR[0] ; 13.020 ; 13.020 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[0]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.532 ; 11.532 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[1]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.524 ; 11.524 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[2]  ; SAVE_ADDR:inst26|ADDR[0] ; 10.972 ; 10.972 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[3]  ; SAVE_ADDR:inst26|ADDR[0] ; 12.250 ; 12.250 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[4]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.542 ; 11.542 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[5]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.268 ; 11.268 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[6]  ; SAVE_ADDR:inst26|ADDR[0] ; 12.755 ; 12.755 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[7]  ; SAVE_ADDR:inst26|ADDR[0] ; 13.020 ; 13.020 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[8]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.618 ; 11.618 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[9]  ; SAVE_ADDR:inst26|ADDR[0] ; 12.474 ; 12.474 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[10] ; SAVE_ADDR:inst26|ADDR[0] ; 11.648 ; 11.648 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[11] ; SAVE_ADDR:inst26|ADDR[0] ; 11.425 ; 11.425 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[12] ; SAVE_ADDR:inst26|ADDR[0] ; 11.555 ; 11.555 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[13] ; SAVE_ADDR:inst26|ADDR[0] ; 11.427 ; 11.427 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[14] ; SAVE_ADDR:inst26|ADDR[0] ; 11.558 ; 11.558 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[15] ; SAVE_ADDR:inst26|ADDR[0] ; 11.056 ; 11.056 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+; DAC_WR     ; SAVE_ADDR:inst26|ADDR[0] ;        ; 6.956  ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
++------------+--------------------------+--------+--------+------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+--------------------------+--------+--------+------------+--------------------------+
+; Data Port  ; Clock Port               ; Rise   ; Fall   ; Clock Edge ; Clock Reference          ;
++------------+--------------------------+--------+--------+------------+--------------------------+
+; DAC_WR     ; NADV                     ; 13.106 ; 13.106 ; Rise       ; NADV                     ;
+; DAC_FSK    ; NWE                      ; 11.163 ; 11.163 ; Rise       ; NWE                      ;
+; DAC_RST    ; NWE                      ; 11.009 ; 11.009 ; Rise       ; NWE                      ;
+; DAC_UCLK   ; NWE                      ; 10.989 ; 10.989 ; Rise       ; NWE                      ;
+; DAC_WR     ; NWE                      ; 8.239  ; 8.239  ; Rise       ; NWE                      ;
+; DAC_WR     ; NWE                      ; 8.239  ; 8.239  ; Fall       ; NWE                      ;
+; DAC_WR     ; SAVE_ADDR:inst26|ADDR[0] ; 6.956  ;        ; Rise       ; SAVE_ADDR:inst26|ADDR[0] ;
+; AD_IN[*]   ; SAVE_ADDR:inst26|ADDR[0] ; 10.972 ; 10.972 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[0]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.532 ; 11.532 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[1]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.524 ; 11.524 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[2]  ; SAVE_ADDR:inst26|ADDR[0] ; 10.972 ; 10.972 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[3]  ; SAVE_ADDR:inst26|ADDR[0] ; 12.250 ; 12.250 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[4]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.542 ; 11.542 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[5]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.268 ; 11.268 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[6]  ; SAVE_ADDR:inst26|ADDR[0] ; 12.755 ; 12.755 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[7]  ; SAVE_ADDR:inst26|ADDR[0] ; 13.020 ; 13.020 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[8]  ; SAVE_ADDR:inst26|ADDR[0] ; 11.618 ; 11.618 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[9]  ; SAVE_ADDR:inst26|ADDR[0] ; 12.474 ; 12.474 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[10] ; SAVE_ADDR:inst26|ADDR[0] ; 11.648 ; 11.648 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[11] ; SAVE_ADDR:inst26|ADDR[0] ; 11.425 ; 11.425 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[12] ; SAVE_ADDR:inst26|ADDR[0] ; 11.555 ; 11.555 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[13] ; SAVE_ADDR:inst26|ADDR[0] ; 11.427 ; 11.427 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[14] ; SAVE_ADDR:inst26|ADDR[0] ; 11.558 ; 11.558 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+;  AD_IN[15] ; SAVE_ADDR:inst26|ADDR[0] ; 11.056 ; 11.056 ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
+; DAC_WR     ; SAVE_ADDR:inst26|ADDR[0] ;        ; 6.956  ; Fall       ; SAVE_ADDR:inst26|ADDR[0] ;
++------------+--------------------------+--------+--------+------------+--------------------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; AD_IN[0]   ; DAC_DAT[0]  ; 8.893 ;    ;    ; 8.893 ;
+; AD_IN[1]   ; DAC_DAT[1]  ; 8.938 ;    ;    ; 8.938 ;
+; AD_IN[2]   ; DAC_DAT[2]  ; 9.033 ;    ;    ; 9.033 ;
+; AD_IN[3]   ; DAC_DAT[3]  ; 8.821 ;    ;    ; 8.821 ;
+; AD_IN[4]   ; DAC_DAT[4]  ; 8.923 ;    ;    ; 8.923 ;
+; AD_IN[5]   ; DAC_DAT[5]  ; 8.316 ;    ;    ; 8.316 ;
+; AD_IN[6]   ; DAC_DAT[6]  ; 8.909 ;    ;    ; 8.909 ;
+; AD_IN[7]   ; DAC_DAT[7]  ; 8.855 ;    ;    ; 8.855 ;
+; AD_IN[8]   ; DAC_ADDR[0] ; 8.954 ;    ;    ; 8.954 ;
+; AD_IN[9]   ; DAC_ADDR[1] ; 8.951 ;    ;    ; 8.951 ;
+; AD_IN[10]  ; DAC_ADDR[2] ; 8.885 ;    ;    ; 8.885 ;
+; AD_IN[11]  ; DAC_ADDR[3] ; 8.949 ;    ;    ; 8.949 ;
+; AD_IN[12]  ; DAC_ADDR[4] ; 8.984 ;    ;    ; 8.984 ;
+; AD_IN[13]  ; DAC_ADDR[5] ; 8.896 ;    ;    ; 8.896 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; AD_IN[0]   ; DAC_DAT[0]  ; 8.893 ;    ;    ; 8.893 ;
+; AD_IN[1]   ; DAC_DAT[1]  ; 8.938 ;    ;    ; 8.938 ;
+; AD_IN[2]   ; DAC_DAT[2]  ; 9.033 ;    ;    ; 9.033 ;
+; AD_IN[3]   ; DAC_DAT[3]  ; 8.821 ;    ;    ; 8.821 ;
+; AD_IN[4]   ; DAC_DAT[4]  ; 8.923 ;    ;    ; 8.923 ;
+; AD_IN[5]   ; DAC_DAT[5]  ; 8.316 ;    ;    ; 8.316 ;
+; AD_IN[6]   ; DAC_DAT[6]  ; 8.909 ;    ;    ; 8.909 ;
+; AD_IN[7]   ; DAC_DAT[7]  ; 8.855 ;    ;    ; 8.855 ;
+; AD_IN[8]   ; DAC_ADDR[0] ; 8.954 ;    ;    ; 8.954 ;
+; AD_IN[9]   ; DAC_ADDR[1] ; 8.951 ;    ;    ; 8.951 ;
+; AD_IN[10]  ; DAC_ADDR[2] ; 8.885 ;    ;    ; 8.885 ;
+; AD_IN[11]  ; DAC_ADDR[3] ; 8.949 ;    ;    ; 8.949 ;
+; AD_IN[12]  ; DAC_ADDR[4] ; 8.984 ;    ;    ; 8.984 ;
+; AD_IN[13]  ; DAC_ADDR[5] ; 8.896 ;    ;    ; 8.896 ;
++------------+-------------+-------+----+----+-------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                 ;
++--------------------------+--------------------------+----------+----------+----------+----------+
+; From Clock               ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------+--------------------------+----------+----------+----------+----------+
+; NADV                     ; NWE                      ; 345      ; 0        ; 0        ; 0        ;
+; SAVE_ADDR:inst26|ADDR[0] ; NWE                      ; 19       ; 19       ; 0        ; 0        ;
+; NWE                      ; SAVE_ADDR:inst26|ADDR[0] ; 0        ; 0        ; 16       ; 0        ;
++--------------------------+--------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                  ;
++--------------------------+--------------------------+----------+----------+----------+----------+
+; From Clock               ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------+--------------------------+----------+----------+----------+----------+
+; NADV                     ; NWE                      ; 345      ; 0        ; 0        ; 0        ;
+; SAVE_ADDR:inst26|ADDR[0] ; NWE                      ; 19       ; 19       ; 0        ; 0        ;
+; NWE                      ; SAVE_ADDR:inst26|ADDR[0] ; 0        ; 0        ; 16       ; 0        ;
++--------------------------+--------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 21    ; 21   ;
+; Unconstrained Input Port Paths  ; 70    ; 70   ;
+; Unconstrained Output Ports      ; 34    ; 34   ;
+; Unconstrained Output Port Paths ; 69    ; 69   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Jul 04 11:40:09 2015
+Info: Command: quartus_sta CPLD_EXTEN -c CPLD_EXTEN
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 17 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'CPLD_EXTEN.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name NADV NADV
+    Info (332105): create_clock -period 1.000 -name SAVE_ADDR:inst26|ADDR[0] SAVE_ADDR:inst26|ADDR[0]
+    Info (332105): create_clock -period 1.000 -name NWE NWE
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332140): No fmax paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -8.095
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -8.095      -147.857 NWE 
+    Info (332119):    -2.108       -28.998 SAVE_ADDR:inst26|ADDR[0] 
+Info (332146): Worst-case hold slack is -3.037
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.037       -32.350 NWE 
+    Info (332119):     0.328         0.000 SAVE_ADDR:inst26|ADDR[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 NADV 
+    Info (332119):    -2.289        -2.289 NWE 
+    Info (332119):     0.500         0.000 SAVE_ADDR:inst26|ADDR[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Sat Jul 04 11:40:11 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
