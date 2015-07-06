@@ -5,12 +5,13 @@
  *      Author: lvniqi
  */
 #include "Timer.h"
-void TIM2_Configuration(void){
+void TIM2_Configuration(u32 freq){
   TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
   TIM_OCInitTypeDef TIM_OCInitStructure;
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-  TIM_TimeBaseStructure.TIM_Period = 20; //设置0.05ms一次TIM2比较的周期
-  TIM_TimeBaseStructure.TIM_Prescaler = 168;
+  u16 f_r = 1000000/(freq)-1;
+  TIM_TimeBaseStructure.TIM_Period = f_r; //设置0.05ms一次TIM2比较的周期
+  TIM_TimeBaseStructure.TIM_Prescaler = 167;
   //系统主频72M，这里分频72，相当于1M的定时器2时钟
   TIM_TimeBaseStructure.TIM_ClockDivision = 0x0;
   TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;

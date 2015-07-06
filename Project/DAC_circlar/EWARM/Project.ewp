@@ -4094,6 +4094,12 @@
   <group>
     <name>User</name>
     <file>
+      <name>$PROJ_DIR$\..\ADC082S805.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\ADC082S805.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\main.c</name>
     </file>
     <file>

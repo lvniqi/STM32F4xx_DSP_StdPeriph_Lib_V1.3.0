@@ -134,12 +134,15 @@ void ADS1220_Init(ADS1220* p){
   p->Config_Reg2 = ADS1220_Read(CONFIG_REG2_ADDRESS);
   p->Config_Reg3 = ADS1220_Read(CONFIG_REG3_ADDRESS);
 
-  printf("Config_Reg : \n");
-  printf("%x\n",p->Config_Reg0);
-  printf("%x\n",p->Config_Reg1);
-  printf("%x\n",p->Config_Reg2);
-  printf("%x\n",p->Config_Reg3);
-  printf(" ");
+  if(p->Config_Reg0 == 0x01&&
+     p->Config_Reg1 == 0x04&&
+     p->Config_Reg2 == 0x10&&
+     p->Config_Reg3 == 0x00){
+    PT_DEBUG(4,"ADS1220 OK!\r\n");
+   }
+  else{
+    PT_DEBUG(4,"ADS1220 ERROR!\r\n");
+  }
   ADS1220_CS = 1;
   ADS1220_Command(START);
   delay_ms(100);

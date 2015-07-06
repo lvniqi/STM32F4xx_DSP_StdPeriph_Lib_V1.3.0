@@ -42,7 +42,7 @@
    * 输入 : DAC通道 触发方式
    * 输出 : 无 
    ***********************************************************************/
-  extern u8 Dac_Init(uint32_t DAC_Channel, uint32_t DAC_TRIGGER);
+  extern u8 Dac_Init(uint32_t DAC_Channel, uint32_t DAC_TRIGGER,uint32_t isDMA,uint32_t DMA_Mode);
   /********************************************************************
  * 名称 :Dac_Send_Service
  * 功能 : DAC发送服务函数

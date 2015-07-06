@@ -9,6 +9,7 @@
 u8 DacTxFinishedFlag = 1;
 /*乒乓组 da*/
 pingpang pingpang_da;
+u16 DAC_DATA[64] ={2048, 2148, 2247, 2344, 2439, 2530, 2616, 2696, 2771, 2838, 2898, 2950, 2993, 3026, 3051, 3066, 3071, 3066, 3051, 3026, 2993, 2950, 2898, 2838, 2771, 2696, 2616, 2530, 2439, 2344, 2247, 2148, 2048, 1947, 1848, 1751, 1656, 1565, 1479, 1399, 1324, 1257, 1197, 1145, 1102, 1069, 1044, 1029, 1025, 1029, 1044, 1069, 1102, 1145, 1197, 1257, 1324, 1399, 1479, 1565, 1656, 1751, 1848, 1947};
 /********************************************************************
  * 名称 : DAC_GPIO_Config
  * 功能 : DAC GPIO设置
@@ -46,7 +47,7 @@ u8 DAC_GPIO_Config(u32 DAC_Channelx){
  * 输入 : 无
  * 输出 : 无
  ***********************************************************************/
-u8 DAC_Dma_Config(u32 DAC_Channelx){
+u8 DAC_Dma_Config(u32 DAC_Channelx,u32 DMA_Mode){
   if(DAC_Channel_1 == DAC_Channelx){
     //DMA设置
     DMA_InitTypeDef DMA_InitStructure;
@@ -54,27 +55,37 @@ u8 DAC_Dma_Config(u32 DAC_Channelx){
     DMA_DeInit(DAC1_DMA_STREAM);
     DMA_InitStructure.DMA_Channel = DAC1_DMA_CHANNEL;
     DMA_InitStructure.DMA_PeripheralBaseAddr = DAC1_DR_BASE;
-    DMA_InitStructure.DMA_Memory0BaseAddr = (u32)(pingpang_da.busy->data);
+    if(DMA_Mode_Circular == DMA_Mode){
+      DMA_InitStructure.DMA_Memory0BaseAddr = (u32)DAC_DATA;
+      DMA_InitStructure.DMA_BufferSize = 64;
+    }
+    else{
+      DMA_InitStructure.DMA_Memory0BaseAddr = (u32)(pingpang_da.busy->data);
+      DMA_InitStructure.DMA_BufferSize = PINGPANG_LEN;
+    }
+    //DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
+    //DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+    DMA_InitStructure.DMA_Mode = DMA_Mode;
     DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;
-    DMA_InitStructure.DMA_BufferSize = PINGPANG_LEN;
     DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
     DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
     DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
     DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
-    //DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
-    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+    
     DMA_InitStructure.DMA_Priority = DMA_Priority_VeryHigh;
     DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;
     DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_Full;
     DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
     DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
     DMA_Init(DAC1_DMA_STREAM, &DMA_InitStructure);
-    NVIC_InitTypeDef NVIC_InitStructure;
-    NVIC_InitStructure.NVIC_IRQChannel = DMA1_Stream5_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-    NVIC_Init(&NVIC_InitStructure);
+    if(DMA_Mode_Normal == DMA_Mode){
+      NVIC_InitTypeDef NVIC_InitStructure;
+      NVIC_InitStructure.NVIC_IRQChannel = DMA1_Stream5_IRQn;
+      NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
+      NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+      NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+      NVIC_Init(&NVIC_InitStructure);
+    }
     return 1;
   }
   return 0;
@@ -108,7 +119,7 @@ u8 Dac_Soft_Init(uint32_t DAC_Channelx)
  * 输入 : DAC通道 触发方式
  * 输出 : 无 
  ***********************************************************************/
-u8 Dac_Init(uint32_t DAC_Channel, uint32_t DAC_TRIGGER){
+u8 Dac_Init(uint32_t DAC_Channel, uint32_t DAC_TRIGGER,uint32_t isDMA,uint32_t DMA_Mode){
   if (not(IS_DAC_CHANNEL(DAC_Channel)and IS_DAC_TRIGGER(DAC_TRIGGER))){
     return 0;
   }
@@ -116,7 +127,9 @@ u8 Dac_Init(uint32_t DAC_Channel, uint32_t DAC_TRIGGER){
     //GPIO初始化
     DAC_GPIO_Config(DAC_Channel);
     //DMA初始化
-    DAC_Dma_Config(DAC_Channel);
+    if(isDMA){
+      DAC_Dma_Config(DAC_Channel,DMA_Mode);
+    }
     //DAC初始化
     DAC_InitTypeDef DAC_InitStructure;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);

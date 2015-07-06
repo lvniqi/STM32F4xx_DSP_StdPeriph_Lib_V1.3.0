@@ -26,14 +26,14 @@ void Spi2_GPIO_Config(void){
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
   //A7 NSS2
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
+  //GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
+  //GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+  //GPIO_Init(GPIOA, &GPIO_InitStructure);
   
   GPIO_PinAFConfig(GPIOB, GPIO_PinSource13, GPIO_AF_SPI2);
   GPIO_PinAFConfig(GPIOB, GPIO_PinSource14, GPIO_AF_SPI2);
   GPIO_PinAFConfig(GPIOB, GPIO_PinSource15, GPIO_AF_SPI2);
-  PAout(7) = 1;
+  //PAout(7) = 1;
   PBout(12) = 1;
 }
 u8 InitSpi(SPI_TypeDef* SPIx, u8 master_flag){
@@ -50,10 +50,10 @@ u8 InitSpi(SPI_TypeDef* SPIx, u8 master_flag){
       SPI_InitStructure.SPI_Mode = SPI_Mode_Master; //主
       SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b; //8位
       SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low; //CPOL=0 时钟悬空低
-      SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge; //CPHA=0 数据捕获第1个
+      SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge; //CPHA=0 数据捕获第1个
       SPI_InitStructure.SPI_NSS = SPI_NSS_Soft; //软件NSS
       //警告！ 使用库函数时，APB2时钟为72M 而SPI需要低于18M 所以至少需要4分频
-      SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32;
+      SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_64;
       //4分频 18Mhz
       SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB; //高位在前
       SPI_InitStructure.SPI_CRCPolynomial = 7;
@@ -68,10 +68,10 @@ u8 InitSpi(SPI_TypeDef* SPIx, u8 master_flag){
       SPI_InitStructure.SPI_Mode = SPI_Mode_Slave; //从
       SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b; //8位
       SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low; //CPOL=0 时钟悬空低
-      SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge; //CPHA=0 数据捕获第1个
+      SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge; //CPHA=0 数据捕获第1个
       SPI_InitStructure.SPI_NSS = SPI_NSS_Soft; //软件NSS
       //警告！ 使用库函数时，APB2时钟为72M 而SPI需要低于18M 所以至少需要4分频
-      SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32; //4分频
+      SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_64; //4分频
       SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB; //高位在前
       SPI_InitStructure.SPI_CRCPolynomial = 7;
       //CRC7 片子复位后，该位的值默认为0x07，因此将其设为7。

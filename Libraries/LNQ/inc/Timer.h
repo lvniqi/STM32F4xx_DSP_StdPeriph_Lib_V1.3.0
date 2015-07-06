@@ -8,6 +8,6 @@
 #ifndef TIMER_H_
   #define TIMER_H_
   #include "common.h"
-  extern void TIM2_Configuration(void);
+  extern void TIM2_Configuration(u32 freq);
 
 #endif /* TIMER_H_ */
