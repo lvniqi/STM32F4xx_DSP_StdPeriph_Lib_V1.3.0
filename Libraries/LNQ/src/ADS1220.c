@@ -53,7 +53,8 @@
 
 #define _BV(bit) (1<<(bit))  
 //const u8 INIT_REG[4] = {0x51,0x04,0x10,0x00};
-const u8 INIT_REG[4] = {0x01,0x04,0x10,0x00};
+//const u8 INIT_REG[4] = {0x01,0x04,0x10,0x00};
+const u8 INIT_REG[4] = {0x01,0x04,0x50,0x00};
 const u8 CONFIG_REG_ADDRESS[4] = 
    {CONFIG_REG0_ADDRESS,
     CONFIG_REG1_ADDRESS,

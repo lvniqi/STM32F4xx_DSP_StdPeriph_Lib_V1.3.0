@@ -88,3 +88,26 @@ void DebugMon_Handler(void)
 void PendSV_Handler(void)
 {
 }
+
+void SysTick_Handler(void)
+{
+  SYS_TIME++;
+  PT *p = THREADS_HEAD;
+  while(p){
+    if(p->count >0){
+      p->count -=1;
+    }
+    else{
+      p->ready = 1;
+      p->count = p->load-1;
+    }
+    p = p->next;
+  }
+}
+void EXTI9_5_IRQHandler(void){
+  EXTI_ClearITPendingBit(EXTI_Line7);
+  //ADCÖÐ¶Ï
+  int d = ADS1220_Read_Data()-1880;
+  Sequeue_Out_Queue(&DAC_1_SEQ);
+  Sequeue_In_Queue(&DAC_1_SEQ,d);
+}

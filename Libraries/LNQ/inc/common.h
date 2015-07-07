@@ -18,6 +18,7 @@
   #include "USART.h"
   #include "GPIO.h"
   #include <stdio.h>
+  #include "pt.h"
   #define pass asm("nop")
   #define True 1
   #define False 0
@@ -31,6 +32,7 @@
   //RCCÊ±ÖÓÊý¾Ý
   extern RCC_ClocksTypeDef RCC_Clocks;
   extern u32  SYS_TIME;
+  extern PT *THREADS_HEAD;
   extern int fputc(int ch, FILE *f);
   extern void delay_ms(volatile u16 time);
   extern u16 Num_Len(long num);
@@ -39,4 +41,8 @@
                                   printf("[%d.%d]",SYS_TIME/100,SYS_TIME%100);\
                                   printf(__VA_ARGS__);\
                                   printf("\033[0m");}
+  extern void PT_SERVICE();
+  extern void PT_ADD_THREAD(PT *in);
+  extern void PT_REMOVE_THREAD(const char* FUNSTR);
+  extern PT* PT_GET_THREAD(const char* FUNSTR);
 #endif /* COMMON_H_ */

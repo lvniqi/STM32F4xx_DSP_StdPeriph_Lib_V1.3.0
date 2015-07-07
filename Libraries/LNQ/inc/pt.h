@@ -5,6 +5,9 @@
     u16 count;
     u16 load;
     u8 ready;
+    struct pt* next;
+    const char* FUNSTR;
+    char (*fun) (struct pt *pt);
   } PT;
   /*等待这一步完成*/
 
@@ -13,10 +16,10 @@
   #define PT_EXITED  2
   #define PT_ENDED   3
   #define PT_RELOAD_TIME(pt)       ((pt)->count=(pt)->load);         
-  #define PT_INIT(pt,a)	((pt)->lc)=0;((pt)->count)=a;((pt)->load)=a;
+  #define PT_INIT(pt,a,fun_t)	((pt)->next) = NULL;((pt)->fun)=fun_t;((pt)->lc)=0;((pt)->count)=a;((pt)->load)=a;
   #define PT_THREAD(name_args) char name_args
-  #define PT_BEGIN(pt)  {char PT_YIELD_FLAG = 1; switch((pt)->lc) { case 0:
-  #define PT_END(pt) } PT_YIELD_FLAG = 0; PT_INIT(pt,((pt)->load)); return PT_ENDED; }
+  #define PT_BEGIN(pt)  {char PT_YIELD_FLAG = 1;pt->FUNSTR = __func__; switch((pt)->lc) { case 0:
+  #define PT_END(pt) } PT_YIELD_FLAG = 0; PT_INIT(pt,((pt)->load),((pt)->fun)); return PT_ENDED; }
   #define PT_WAIT_UNTIL(pt, condition) \
   do{						\
   ((pt)->lc) = __LINE__; case __LINE__:\

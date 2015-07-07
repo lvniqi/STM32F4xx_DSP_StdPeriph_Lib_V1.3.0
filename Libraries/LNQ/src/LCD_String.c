@@ -202,6 +202,40 @@ void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, long num, u16 color){
   }
 }
 /********************************************************************
+ * 名称 : LCD_ShowNumBig
+ * 功能 : 显示3216数字
+ * 输入 :  x y  大小 数字 颜色
+ * 输出 : 无 
+ ***********************************************************************/
+void LCD_ShowFloatBig(u16 x, u16 y,LCD_PLACE_TYPE type,float num, u16 color){
+  char temp[100];
+  char l = 6-(Num_Len((int)num))+'0';
+  char s[] = "%.0f";
+  s[2] = l;
+  if(num != 0){
+    sprintf(temp,s,num);
+  }else{
+    sprintf(temp,"%d",(int)num);
+  }
+  LCD_ShowStringBig(x, y,type,temp, color);
+}
+void LCD_ShowFloatBig_L(u16 x, u16 x_end, u16 y, float num, u16 color){
+  char temp[100];
+  char l = 6-(Num_Len((int)num))+'0';
+  char s[] = "%.0f";
+  s[2] = l;
+  if(num != 0){
+    sprintf(temp,s,num);
+  }else{
+    sprintf(temp,"%d",(int)num);
+  }
+  LCD_ShowStringBig(x_end, y,LCD_STRING_RIGHT,temp, color);
+  int t = x_end-strlen(temp);
+  for(int i=x;i<t;i++){
+    LCD_ShowCharBig(i,y,' ',color);
+  }
+}
+/********************************************************************
  * 名称 : LCD_ShowString
  * 功能 : 显示1608字符串
  * 输入 :  x y  大小 字符串 颜色

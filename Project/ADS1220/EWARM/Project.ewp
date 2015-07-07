@@ -48,11 +48,11 @@
         <option>
           <name>Output variant</name>
           <version>2</version>
-          <state>5</state>
+          <state>0</state>
         </option>
         <option>
           <name>Output description</name>
-          <state>No specifier a, A, no specifier n, no float nor long long.</state>
+          <state>Automatic choice of formatter.</state>
         </option>
         <option>
           <name>GOutputBinary</name>
@@ -3864,6 +3864,12 @@
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\common.h</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\malloc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\malloc.h</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\PINGPANG.c</name>
       </file>
       <file>
@@ -3918,6 +3924,24 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\LCD_Tools.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\NumBar.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\NumBar.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\SelectBar.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SelectBar.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\SelectItem.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SelectItem.h</name>
         </file>
       </group>
       <file>
@@ -4097,7 +4121,13 @@
       <name>$PROJ_DIR$\..\main.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\main.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\thread.c</name>
     </file>
   </group>
 </project>

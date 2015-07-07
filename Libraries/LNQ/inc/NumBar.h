@@ -2,8 +2,7 @@
   #define NUMBAR_H_
   #include "LCD.h"
   #include "stdbool.h"
-  typedef  void (*NumBarFunc)(int value);
-  typedef struct{
+  typedef struct _NumBar{
     u8 end_x;
     u8 start_x;
     u8 y;
@@ -12,6 +11,7 @@
     LCD_STRING rtag;
     bool isActive;
     bool isShow;
+    bool isDisableNumShow;
     int value;
     int value_max;
     int value_min;
@@ -19,8 +19,9 @@
     u16 back_color;
     u16 ltag_color;
     u16 rtag_color;
-    NumBarFunc func;
+    void (*func)(struct _NumBar* p,int value) ;
   }NumBar;
+  typedef  void (*NumBarFunc)(NumBar* p,int value);
   /*main*/
   extern void NumBar_Init(NumBar* p,u8 end_x,u8 y,int v_max,int v_min);
   extern void NumBar_SetValue(NumBar* p,int value);
@@ -30,8 +31,10 @@
   #define NumBar_IsActive(p) ((p)->isActive)
   #define NumBar_IsShow(p) ((p)->isShow)
   #define NumBar_GetValue(p) ((p)->value)
+  #define NumBar_IsDisableNumShow(p) ((p)->isDisableNumShow)
   /*action*/
   extern void NumBar_SetActive(NumBar* p,bool isActive);
+  extern void NumBar_DisableNumShow(NumBar* p);
   extern void NumBar_ShiftLeft(NumBar* p);
   extern void NumBar_ShiftRight(NumBar* p);
   extern void NumBar_Add(NumBar* p);

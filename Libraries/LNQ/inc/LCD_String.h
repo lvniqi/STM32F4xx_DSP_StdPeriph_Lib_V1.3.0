@@ -108,6 +108,14 @@
   extern void LCD_ShowNumBig(u16 x, u16 y,LCD_PLACE_TYPE type, long num, u16 color);
   extern void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y,long num, u16 color);
   /********************************************************************
+   * 名称 : LCD_ShowNumBig
+   * 功能 : 显示3216数字
+   * 输入 :  x y  大小 数字 颜色
+   * 输出 : 无 
+   ***********************************************************************/
+  extern void LCD_ShowFloatBig(u16 x, u16 y,LCD_PLACE_TYPE type,float num, u16 color);
+  extern void LCD_ShowFloatBig_L(u16 x, u16 x_end, u16 y, float num, u16 color);
+  /********************************************************************
    * 名称 : LCD_ShowCharBig_DMA
    * 功能 : 显示3216字符
    * 输入 :  x y  大小 字符位于asc_3216数组中的位置 颜色

@@ -8,6 +8,7 @@
 #include "common.h"
 //RCC时钟数据
 RCC_ClocksTypeDef RCC_Clocks;
+PT *THREADS_HEAD = NULL;
 u32  SYS_TIME = 0;
 /********************************************************************
  * 名称 : assert_failed
@@ -82,4 +83,51 @@ void delay_ms(volatile u16 time){
     while (i--)
       ;
   }
+}
+void PT_SERVICE(){
+  PT* p = THREADS_HEAD;
+  while(p != NULL){
+    p->fun(p);
+    p = p->next;
+  }
+}
+void PT_ADD_THREAD(PT *in){
+  in->FUNSTR = NULL;
+  in->next = THREADS_HEAD;
+  THREADS_HEAD = in;
+}
+void PT_REMOVE_THREAD(const char* FUNSTR){
+  if(THREADS_HEAD){
+    if(THREADS_HEAD->FUNSTR && strcmp(FUNSTR,THREADS_HEAD->FUNSTR) == 0){
+      THREADS_HEAD = THREADS_HEAD->next;
+      return ;
+    }
+    else{
+      PT* p = THREADS_HEAD;
+      while(p->next != NULL){
+        if(p->next->FUNSTR && strcmp(FUNSTR,p->next->FUNSTR) == 0){
+          p->next = p->next->next;
+          return ;
+        }
+      }
+      p = p->next;
+    }
+  }
+}
+PT* PT_GET_THREAD(const char* FUNSTR){
+  if(THREADS_HEAD){
+    if(THREADS_HEAD->FUNSTR && strcmp(FUNSTR,THREADS_HEAD->FUNSTR) == 0){
+      return THREADS_HEAD;
+    }
+    else{
+      PT* p = THREADS_HEAD;
+      while(p->next != NULL){
+        if(p->next->FUNSTR && strcmp(FUNSTR,p->next->FUNSTR) == 0){
+          return p;
+        }
+      }
+      p = p->next;
+    }
+  }
+  return NULL;
 }
