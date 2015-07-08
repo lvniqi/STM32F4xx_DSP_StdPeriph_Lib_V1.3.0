@@ -187,7 +187,7 @@ float Get_CAP_AUTO(double value){
     }else{
       CAP_LEVEL_1(NULL);
     }
-    CAP_CAP_Select(true); 
+    RES_CAP_Select(false); 
   }
   return t_r;
 }

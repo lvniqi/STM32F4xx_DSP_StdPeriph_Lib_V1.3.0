@@ -266,109 +266,17 @@ PT_THREAD(PRINT_TEST(PT *pt)){
     //float t_r = t2/2555*14.7;
     //t_r = -0.0313*t_r*t_r + 1.0012*t_r - 0.0951;
     //NumBar_SetValue(&CAP,*(int*)(&t_r));
-    float t_r = t2*RES_BASE_0/(4096.0-t2);
+    //float t_r = t2*RES_BASE_0/(4096.0-t2);
     if(SelectBar_GetPos(&main_menu) == 2){
-      bool change_flag = false;
-      //原来为500档
-      if(PEin(5) == 0&&PEin(3) == 1){
-        t_r = RES_ZOOM_500(t_r);
-        if(t_r>500){
-          change_flag = true;
-        }
-      }
-      //原来为5K档
-      else if(PEin(5) == 1&&PEin(3) == 0){
-        t_r = RES_ZOOM_5K(t_r);
-        if(t_r>6000|| t_r<400){
-          change_flag = true;
-        }
-      }
-      //原来为50K档
-      else{
-        t_r = RES_ZOOM_50K(t_r);
-        if(t2>4090.0){
-          t_r = 9999999;
-        }
-        if(t_r<4000){
-          change_flag = true;
-        }
-      }
-      if(change_flag){
-        if(t_r>5000){
-          RES_LEVEL_3(NULL);
-        }
-        else if(t_r>500){
-          RES_LEVEL_2(NULL);
-        }else{
-          RES_LEVEL_1(NULL);
-        }
-        RES_CAP_Select(true);
-      }
+      float t_r = Get_RES_AUTO(t2);
       NumBar_SetValue(&RES,*(int*)(&t_r));
     }
-    if(SelectBar_GetPos(&main_menu) == 0){
-      float t_r = t2*RES_BASE_0/(4096.0-t2);
-      //500欧姆档
-      if(SelectBar_GetPos(&sub_menu) == 0){
-        t_r = RES_ZOOM_500(t_r);
-        if(t_r>499.999||t2>4090.0){
-          t_r = 499.999;
-        }
-      }
-      //5K欧姆档
-      else if(SelectBar_GetPos(&sub_menu) == 1){
-        t_r = RES_ZOOM_5K(t_r);
-        if(t_r>4999.99||t2>4090.0){
-          t_r = 4999.99;
-        }
-      }
-      //50K欧姆档
-      else if(SelectBar_GetPos(&sub_menu) == 2){
-        t_r = RES_ZOOM_50K(t_r);
-        if(t_r>49999.9||t2>4090.0){
-          t_r = 49999.9;
-        }
-      }
-      //自动档
-      else if(SelectBar_GetPos(&sub_menu) == 3){
-        bool change_flag = false;
-        //原来为500档
-        if(PEin(5) == 0&&PEin(3) == 1){
-          t_r = RES_ZOOM_500(t_r);
-          if(t_r>500){
-            change_flag = true;
-          }
-        }
-        //原来为5K档
-        else if(PEin(5) == 1&&PEin(3) == 0){
-          t_r = RES_ZOOM_5K(t_r);
-          if(t_r>6000|| t_r<400){
-            change_flag = true;
-          }
-        }
-        //原来为50K档
-        else{
-          t_r = RES_ZOOM_50K(t_r);
-          if(t2>4090.0){
-            t_r = 9999999;
-          }
-          if(t_r<4000){
-            change_flag = true;
-          }
-        }
-        if(change_flag){
-          if(t_r>5000){
-            RES_LEVEL_3(NULL);
-          }
-          else if(t_r>500){
-            RES_LEVEL_2(NULL);
-          }else{
-            RES_LEVEL_1(NULL);
-          }
-          RES_CAP_Select(true);
-          
-        }
-      }
+    else if(SelectBar_GetPos(&main_menu) == 1){
+      float t_r = Get_CAP(t2);
+      NumBar_SetValue(&CAP,*(int*)(&t_r));
+    }
+    else if(SelectBar_GetPos(&main_menu) == 0){
+      float t_r = Get_RES(t2);
       NumBar_SetValue(&RES,*(int*)(&t_r));
     }
   }
