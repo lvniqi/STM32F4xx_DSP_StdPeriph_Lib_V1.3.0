@@ -76,6 +76,9 @@ void CAP_EN(SelectItem* p){
   t.string.chinese.len  = 2;
   t.string.chinese.start  = 43;
   SelectBar_AddSelect(&sub_menu,t);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,0),CAP_LEVEL_1);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,1),CAP_LEVEL_2);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,2),CAP_LEVEL_3);
   NumBar_Show(&CAP);
   SelectBar_Show(&sub_menu);
   SubTitleSelect(true);
@@ -132,17 +135,6 @@ void SetRes(NumBar* p,int value){
   if(t<0){
     t = 0;
   }
-  /*if(t>245){
-    LCD_STRING t;
-    t.type = _LCD_STRING_ASCII;
-    t.string.ascii = "kOhm";
-    NumBar_SetRTag(p,t);
-  }else if(t<245){
-    LCD_STRING t;
-    t.type = _LCD_STRING_ASCII;
-    t.string.ascii = "Ohm ";
-    NumBar_SetRTag(p,t);
-  }*/  
   LCD_ShowFloatBig_L(p->start_x,p->end_x,p->y,t,p->color);
   p->value = value;
 }

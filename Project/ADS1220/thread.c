@@ -295,18 +295,14 @@ PT_THREAD(PRINT_TEST(PT *pt)){
       }
       if(change_flag){
         if(t_r>5000){
-          PEout(5) = 0;
-          PEout(3) = 0;
+          RES_LEVEL_3(NULL);
         }
         else if(t_r>500){
-          PEout(5) = 1;
-          PEout(3) = 0;
+          RES_LEVEL_2(NULL);
         }else{
-          PEout(5) = 0;
-          PEout(3) = 1;
+          RES_LEVEL_1(NULL);
         }
         RES_CAP_Select(true);
-        
       }
       NumBar_SetValue(&RES,*(int*)(&t_r));
     }
@@ -362,15 +358,12 @@ PT_THREAD(PRINT_TEST(PT *pt)){
         }
         if(change_flag){
           if(t_r>5000){
-            PEout(5) = 0;
-            PEout(3) = 0;
+            RES_LEVEL_3(NULL);
           }
           else if(t_r>500){
-            PEout(5) = 1;
-            PEout(3) = 0;
+            RES_LEVEL_2(NULL);
           }else{
-            PEout(5) = 0;
-            PEout(3) = 1;
+            RES_LEVEL_1(NULL);
           }
           RES_CAP_Select(true);
           

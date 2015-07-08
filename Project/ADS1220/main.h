@@ -34,6 +34,7 @@ extern void RES_FIND_EN(SelectItem* p);
 extern void RES_FIND_UN(SelectItem* p);
 extern void CAP_FIND_EN(SelectItem* p);
 extern void CAP_FIND_UN(SelectItem* p);
+extern void RES_CAP_Select(bool isRES);
 
 extern void RES_LEVEL_1(SelectItem* p);
 extern void RES_LEVEL_2(SelectItem* p);
@@ -43,7 +44,22 @@ extern float RES_ZOOM_500(float t_r);
 extern float RES_ZOOM_5K(float t_r);
 extern float RES_ZOOM_50K(float t_r);
 
+extern float Get_RES(double value);
+extern float Get_RES_AUTO(double value);
+
 extern void SetRes(NumBar* p,int value);
+
+extern void CAP_LEVEL_1(SelectItem* p);
+extern void CAP_LEVEL_2(SelectItem* p);
+extern void CAP_LEVEL_3(SelectItem* p);
+
+extern float CAP_ZOOM_500(double value);
+extern float CAP_ZOOM_5(double value);
+extern float CAP_ZOOM_50(double value);
+
+extern float Get_CAP(double value);
+extern float Get_CAP_AUTO(double value);
+
 extern void SetCap(NumBar* p,int value);
 
 extern void MenuInit(void);
