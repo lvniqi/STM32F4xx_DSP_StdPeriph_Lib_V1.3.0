@@ -5,6 +5,7 @@ void SelectBar_Init(SelectBar* p,u8 start_x,u8 end_x,u8 y){
   p->end_x = end_x;
   p->y = y;
   p->item_y = y-1;
+  p->pos = -1;
   p->len = 0;
   p->title = NULL;
   p->selectNode_Start = NULL;
@@ -12,7 +13,7 @@ void SelectBar_Init(SelectBar* p,u8 start_x,u8 end_x,u8 y){
   p->selectNode_End = NULL;
   p->isShow = false;
   p->color = YELLOW;
-  p->title_color = RED;
+  p->title_color = BLUE;
   p->back_color = RED;
 }
 void SelectBar_SetFunc(SelectBar* p,SelectBarFunc func){
@@ -21,9 +22,10 @@ void SelectBar_SetFunc(SelectBar* p,SelectBarFunc func){
 /*action*/
 void SelectBar_ShiftDown(SelectBar* p){
   if(p->isShow){
-    if(p->selectNode_Now->next){
+    if(p->selectNode_Now&&p->selectNode_Now->next){
       SelectItem_SetActive(p->selectNode_Now,false);
       p->selectNode_Now = p->selectNode_Now->next;
+      p->pos++;
       SelectItem_SetActive(p->selectNode_Now,true);
     }
   }
@@ -41,6 +43,7 @@ void SelectBar_ShiftUp(SelectBar* p){
       SelectItem_SetActive(p->selectNode_Now,false);
       SelectItem_SetActive(p_i,true);
       p->selectNode_Now = p_i;
+      p->pos--;
     }
   }
 }
@@ -53,7 +56,9 @@ void SelectBar_Show(SelectBar* p){
     SelectItem_Show(p_i);
     p_i = p_i->next;
   }
-  SelectItem_SetActive(p->selectNode_Now,true);
+  if(p->selectNode_Now){
+    SelectItem_SetActive(p->selectNode_Now,true);
+  }
   p->isShow = true;
 }
 
@@ -98,6 +103,7 @@ void SelectBar_AddSelect(SelectBar* p,LCD_STRING string){
     if(p->selectNode_Start == NULL){
       p->selectNode_Start = new_one;
       p->selectNode_Now = new_one;
+      p->pos = 0;
       p->selectNode_End = new_one;
     }
     else{
@@ -115,4 +121,18 @@ SelectItem* SelectBar_GetSelect(SelectBar* p,int n){
     }
   }
   return p_i;
+}
+void SelectBar_ClearSelect(SelectBar* p){
+  SelectItem* p_i = p->selectNode_Start;
+  while(p_i){
+    SelectItem* p_l = p_i;
+    p_i = p_i->next;
+    SelectItem_Hide(p_l);
+    myfree(p_l);
+  }
+  p->item_y = p->y-1;
+  p->selectNode_Start = NULL;
+  p->selectNode_Now = NULL;
+  p->selectNode_End = NULL;
+  p->pos = NULL;
 }

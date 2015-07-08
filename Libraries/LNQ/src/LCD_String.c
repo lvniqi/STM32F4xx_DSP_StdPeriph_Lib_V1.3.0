@@ -222,6 +222,12 @@ void LCD_ShowFloatBig(u16 x, u16 y,LCD_PLACE_TYPE type,float num, u16 color){
 void LCD_ShowFloatBig_L(u16 x, u16 x_end, u16 y, float num, u16 color){
   char temp[100];
   char l = 6-(Num_Len((int)num))+'0';
+  if((int)num == 0){
+    l = 5+'0';
+  }
+  else if(l < '0'){
+    l = '0';
+  }
   char s[] = "%.0f";
   s[2] = l;
   if(num != 0){
@@ -229,6 +235,7 @@ void LCD_ShowFloatBig_L(u16 x, u16 x_end, u16 y, float num, u16 color){
   }else{
     sprintf(temp,"%d",(int)num);
   }
+  temp[7] = '\0';
   LCD_ShowStringBig(x_end, y,LCD_STRING_RIGHT,temp, color);
   int t = x_end-strlen(temp);
   for(int i=x;i<t;i++){

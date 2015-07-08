@@ -40,8 +40,9 @@
   //2bit ±£Áô 4bit RED 5bit GREEN 5bit BLUE
   #define WHITE         	 0xFFFF
   #define BLACK         	 0x0000	  
-  #define BLUE         	         0x001F  
+  #define BLUE         	         0x0279  
   #define RED           	 0x3C00
+  #define ORANGE                 0x3f20   
   #define GREEN         	 0x03E0
   #define YELLOW                 0x3FE0     
   /*Òº¾§DMA»º³å³¤¶È*/

@@ -7,6 +7,12 @@ def fun(Vmax,size):
 	result = '{' + result[1:]
 	result = result[:-1] + '}'
 	return result
+def change_color(in_data):
+    t_r = 0
+    t_r |= (in_data&0x0000f8)>>3
+    t_r |= (in_data&0x00f800)>>6
+    t_r |= (in_data&0xf00000)>>10
+    return hex(t_r)
 
 if __name__ == "__main__":
     temp = open("temp123.c",'w')

@@ -1,9 +1,13 @@
 #include "main.h"
 NumBar RES;
 NumBar CAP;
-ADS1220 DAC_1;
-int_sequeue DAC_1_SEQ;
-int _DAC_1_SEQ_BASE[SHIFT_FITHER_LEN+1];
+NumBar RES_MAX,RES_MIN;
+NumBar CAP_MAX,CAP_MIN;
+SelectBar main_menu;
+SelectBar sub_menu;
+ADS1220 ADC_1;
+int_sequeue ADC_1_SEQ;
+int _ADC_1_SEQ_BASE[SHIFT_FITHER_LEN+1];
 double Dds_SetFreq(u32 div){
   TIM2_Configuration(div);
   return  14000000.0/(64*div*2);
@@ -14,23 +18,15 @@ void Sequeue_Copy(int* r,int_sequeue* s){
     r[i] = Sequeue_Get_One(s,i);
   }
 }
-void CS1_TEST(SelectItem* p){
-  NumBar_Hide(&CAP);
-  NumBar_Show(&RES);
-}
-void CS2_TEST(SelectItem* p){
-  NumBar_Hide(&RES);
-  NumBar_Show(&CAP);
-}
 int getMid(int_sequeue* s){
   int temp_data[SHIFT_FITHER_LEN];
   Sequeue_Copy(temp_data,s);
   for(int i=0;i<SHIFT_FITHER_LEN;i++){
     for(int j=SHIFT_FITHER_LEN-1;j>i;j--){
       if(temp_data[j]>temp_data[j-1]){
-        int DAC_1 = temp_data[j];
+        int ADC_1 = temp_data[j];
         temp_data[j] = temp_data[j-1];
-        temp_data[j-1] = DAC_1;
+        temp_data[j-1] = ADC_1;
       }
     }
   }
@@ -39,34 +35,6 @@ int getMid(int_sequeue* s){
     +temp_data[SHIFT_FITHER_LEN/2]
     +temp_data[SHIFT_FITHER_LEN/2+1]
     +temp_data[SHIFT_FITHER_LEN/2+2])/5;
-}
-void SetRes(NumBar* p,int value){
-  float t = *(float*)(&value);
-  float last = *(float*)(&p->value);
-  if(t<0){
-    t = -t;
-  }
-  if(t>245){
-    LCD_STRING t;
-    t.type = _LCD_STRING_ASCII;
-    t.string.ascii = "kOhm";
-    NumBar_SetRTag(p,t);
-  }else if(t<245){
-    LCD_STRING t;
-    t.type = _LCD_STRING_ASCII;
-    t.string.ascii = "Ohm ";
-    NumBar_SetRTag(p,t);
-  }  
-  LCD_ShowFloatBig_L(p->start_x,p->end_x,p->y,t,p->color);
-  p->value = value;
-}
-void SetCap(NumBar* p,int value){
-  float t = *(float*)(&value);
-  if(t<0){
-    t = -t;
-  }
-  LCD_ShowFloatBig_L(p->start_x,p->end_x,p->y,t,p->color);
-  p->value = value;
 }
 void RES_Init(void){
   NumBar_Init(&RES,26,0,400000,0);
@@ -84,9 +52,39 @@ void RES_Init(void){
   NumBar_DisableNumShow(&RES);
   NumBar_Show(&RES);
   //NumBar_ShowRect(&RES);
+  NumBar_Init(&RES_MAX,14,3,50000,0);
+  NumBar_Init(&RES_MIN,14,2,50000,0);
+  NumBar_SetRTag(&RES_MAX,t);
+  NumBar_SetRTag(&RES_MIN,t);
+  t.type = _LCD_STRING_CHINESE;
+  t.string.chinese.start =4;
+  t.string.chinese.len =4;
+  NumBar_SetLTag(&RES_MAX,t);
+  NumBar_Hide(&RES_MAX);
+  t.type = _LCD_STRING_CHINESE;
+  t.string.chinese.start =8;
+  t.string.chinese.len =4;
+  NumBar_SetLTag(&RES_MIN,t);
+  NumBar_Hide(&RES_MIN);
+  NumBar_SetLtagColor(&RES_MIN,BLUE);
+  NumBar_SetRtagColor(&RES_MIN,BLUE);
+  NumBar_SetLtagColor(&RES_MAX,BLUE);
+  NumBar_SetRtagColor(&RES_MAX,BLUE);
+  
+  GPIO_InitTypeDef GPIO_InitStructure;
+  //E5 E3 E1 B9
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE|RCC_AHB1Periph_GPIOB, ENABLE);
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1|GPIO_Pin_3|GPIO_Pin_5;
+  GPIO_Init(GPIOE, &GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
 void CAP_Init(void){
-  NumBar_Init(&CAP,11,0,400000,0);
+  NumBar_Init(&CAP,26,0,400000,0);
   LCD_STRING t;
   LCD_STRING_CHINESE chinese;
   chinese.len = 2;
@@ -101,34 +99,94 @@ void CAP_Init(void){
   NumBar_DisableNumShow(&CAP);
   NumBar_Show(&CAP);
   //NumBar_ShowRect(&CAP);
+  NumBar_Init(&CAP_MAX,14,3,50000,0);
+  NumBar_Init(&CAP_MIN,14,2,50000,0);
+  NumBar_SetRTag(&CAP_MAX,t);
+  NumBar_SetRTag(&CAP_MIN,t);
+  t.type = _LCD_STRING_CHINESE;
+  t.string.chinese.start =12;
+  t.string.chinese.len =4;
+  NumBar_SetLTag(&CAP_MAX,t);
+  NumBar_Hide(&CAP_MAX);
+  t.type = _LCD_STRING_CHINESE;
+  t.string.chinese.start =16;
+  t.string.chinese.len =4;
+  NumBar_SetLTag(&CAP_MIN,t);
+  NumBar_Hide(&CAP_MIN);
+  NumBar_SetLtagColor(&CAP_MIN,BLUE);
+  NumBar_SetRtagColor(&CAP_MIN,BLUE);
+  NumBar_SetLtagColor(&CAP_MAX,BLUE);
+  NumBar_SetRtagColor(&CAP_MAX,BLUE);
+}
+void MenuInit(void){
+  
+  SelectBar_Init(&main_menu,0,5,9);
+  LCD_STRING t;
+  t.type = _LCD_STRING_CHINESE;
+  //sub menu
+  t.string.chinese.start =39;
+  t.string.chinese.len =4;
+  SelectBar_Init(&sub_menu,0,5,4);
+  SelectBar_SetTitle(&sub_menu,t);
+  SelectBar_Show(&sub_menu);
+  
+  //main menu
+  t.string.chinese.start =20;
+  t.string.chinese.len =4;
+  SelectBar_AddSelect(&main_menu,t);
+
+  t.string.chinese.start =24;
+  t.string.chinese.len =4;
+  SelectBar_AddSelect(&main_menu,t);
+  
+  t.string.chinese.start =32;
+  t.string.chinese.len =4;
+  SelectBar_AddSelect(&main_menu,t);
+  
+  t.string.chinese.start =28;
+  t.string.chinese.len =4;
+  SelectBar_AddSelect(&main_menu,t);
+  
+  t.string.chinese.start =36;
+  t.string.chinese.len =3;
+  SelectBar_SetTitle(&main_menu,t);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&main_menu,0),RES_EN);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&main_menu,0),RES_UN);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&main_menu,1),CAP_EN);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&main_menu,1),CAP_UN);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&main_menu,2),RES_FIND_EN);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&main_menu,2),RES_FIND_UN);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&main_menu,3),CAP_FIND_EN);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&main_menu,3),CAP_FIND_UN);
+  SelectBar_Show(&main_menu);
 }
 void Init(void){
   LCD_Init();
   EXTI_init();
-  ADS1220_Init(&DAC_1);
-  Dds_SetFreq(15);
+  ADS1220_Init(&ADC_1);
+  Dds_SetFreq(60);
   Dac_Init(DAC_Channel_1, DAC_Trigger_T2_TRGO,true,DMA_Mode_Circular);
   DAC_Cmd(DAC_Channel_1,ENABLE);
   DMA_Cmd(DAC1_DMA_STREAM, ENABLE);
   DAC_Cmd(DAC_Channel_1, ENABLE);
   DAC_DMACmd(DAC_Channel_1, ENABLE);
-  ADS1220_Set_Rate(&DAC_1,20);
-  ADS1220_PGA_OFF(&DAC_1);
+  ADS1220_Set_Rate(&ADC_1,20);
+  ADS1220_PGA_OFF(&ADC_1);
   //ADS1220_PGA_ON(&t);
   //1 +68074*i
   //ADS1220_Set_Gain(&t,GATE_ZOOM);
   //ADS1220_Continuous_Mode_ON(&t);
-  Sequeue_Init(&DAC_1_SEQ,_DAC_1_SEQ_BASE,SHIFT_FITHER_LEN+1);
-  while(!Sequeue_Full(&DAC_1_SEQ)){
+  Sequeue_Init(&ADC_1_SEQ,_ADC_1_SEQ_BASE,SHIFT_FITHER_LEN+1);
+  while(!Sequeue_Full(&ADC_1_SEQ)){
     if(ADS1220_DRDY_PIN == 0){
-      Sequeue_In_Queue(&DAC_1_SEQ,ADS1220_Read_Data());
+      Sequeue_In_Queue(&ADC_1_SEQ,ADS1220_Read_Data());
     }
     delay_ms(1);
   }
   
   RES_Init();
   CAP_Init();
-  
+  MenuInit();
   
   EXTI_InitTypeDef EXTI_InitStructure;
   NVIC_InitTypeDef NVIC_InitStructure;
@@ -154,22 +212,172 @@ PT_THREAD(PRINT_TEST(PT *pt)){
     PT_WAIT_UNTIL(pt,pt->ready);
     pt->ready = 0;
     __disable_irq();
-    double t2 = getMid(&DAC_1_SEQ);
-    u32 d = Sequeue_Get_Rear(&DAC_1_SEQ);
+    double t2 = getMid(&ADC_1_SEQ);
+    u32 d = Sequeue_Get_Rear(&ADC_1_SEQ);
     __enable_irq();
     char c[40];
-    sprintf(c,"0x%x        ",d);
-    LCD_ShowNumBig_L(10,20,3,t2,RED); 
-    LCD_ShowStringBig(10,2,LCD_STRING_LEFT,c,RED);
-    t2 = t2*4096.0/0x7fffff;
+    sprintf(c,"0x%4x  ",d);
+    //LCD_ShowNumBig_L(20,30,3,t2,RED); 
+    LCD_ShowStringBig(15,2,LCD_STRING_LEFT,c,RED);
+    //t2 = t2*4096.0/0x7fffff;
     //0~500
-    double t3 = (REG*t2/(4096-t2));
-    double t4 = (1.0014*t3 - 47.333);
-    LCD_ShowNumBig_L(10,20,1,t4,RED);
-    float t5 = t4;
-    NumBar_SetValue(&RES,*(int*)(&t5));
-    float t6 = t3;
-    NumBar_SetValue(&CAP,*(int*)(&t6));
+    //double t3 = (REG*t2/(4096-t2));
+    //double t4 = (1.0014*t3 - 47.333);
+    //LCD_ShowNumBig_L(20,30,1,t4,RED);
+    //float t5 = t4;
+    //NumBar_SetValue(&RES,*(int*)(&t5));
+    //float t6 = t3;
+    //NumBar_SetValue(&CAP,*(int*)(&t6));
+    //LCD_ShowNumBig_L(20,30,6,SelectBar_GetPos(&main_menu),RED);
+    //LCD_ShowNumBig_L(20,30,5,SelectBar_GetPos(&sub_menu),RED);
+    t2 = t2*4096.0/0x7fffff;
+    t2 = 1.0004*t2 + 0.8115;
+    //float t_r = t2*RES_BASE_0/(4096.0-t2);
+    //500欧姆档
+    /*if(t_r<50){
+      t_r = 0.9965*t_r - 0.0951;
+    }else{
+      t_r = 0.9962*t_r - 0.0583;
+    }
+    if(t_r<0){
+      t_r = 0;
+    }*/
+    //5000欧姆档
+    /*if(t_r<100){
+      t_r = 9.9656*t_r - 0.7881;
+    }else{
+      t_r = 9.9632*t_r - 0.3323;
+    }*/
+    //50K欧姆档
+    /*if(t_r<100){
+      t_r = 104.66*t_r + 0.0775;
+    }
+    else{
+      t_r = 104.74*t_r - 11.168;
+    }*/
+    //电容
+    //500nF
+    //float t_r = t2/2969*470;
+    //t_r = 0.00021*t_r*t_r + 0.8969*t_r + 2.116;
+    //50nF
+    //float t_r = t2/2868*46.2;
+    //t_r = -0.0065*t_r*t_r + 1.309*t_r - 0.8243;
+    //5nF
+    //float t_r = t2/2555*14.7;
+    //t_r = -0.0313*t_r*t_r + 1.0012*t_r - 0.0951;
+    //NumBar_SetValue(&CAP,*(int*)(&t_r));
+    float t_r = t2*RES_BASE_0/(4096.0-t2);
+    if(SelectBar_GetPos(&main_menu) == 2){
+      bool change_flag = false;
+      //原来为500档
+      if(PEin(5) == 0&&PEin(3) == 1){
+        t_r = RES_ZOOM_500(t_r);
+        if(t_r>500){
+          change_flag = true;
+        }
+      }
+      //原来为5K档
+      else if(PEin(5) == 1&&PEin(3) == 0){
+        t_r = RES_ZOOM_5K(t_r);
+        if(t_r>6000|| t_r<400){
+          change_flag = true;
+        }
+      }
+      //原来为50K档
+      else{
+        t_r = RES_ZOOM_50K(t_r);
+        if(t2>4090.0){
+          t_r = 9999999;
+        }
+        if(t_r<4000){
+          change_flag = true;
+        }
+      }
+      if(change_flag){
+        if(t_r>5000){
+          PEout(5) = 0;
+          PEout(3) = 0;
+        }
+        else if(t_r>500){
+          PEout(5) = 1;
+          PEout(3) = 0;
+        }else{
+          PEout(5) = 0;
+          PEout(3) = 1;
+        }
+        RES_CAP_Select(true);
+        
+      }
+      NumBar_SetValue(&RES,*(int*)(&t_r));
+    }
+    if(SelectBar_GetPos(&main_menu) == 0){
+      float t_r = t2*RES_BASE_0/(4096.0-t2);
+      //500欧姆档
+      if(SelectBar_GetPos(&sub_menu) == 0){
+        t_r = RES_ZOOM_500(t_r);
+        if(t_r>499.999||t2>4090.0){
+          t_r = 499.999;
+        }
+      }
+      //5K欧姆档
+      else if(SelectBar_GetPos(&sub_menu) == 1){
+        t_r = RES_ZOOM_5K(t_r);
+        if(t_r>4999.99||t2>4090.0){
+          t_r = 4999.99;
+        }
+      }
+      //50K欧姆档
+      else if(SelectBar_GetPos(&sub_menu) == 2){
+        t_r = RES_ZOOM_50K(t_r);
+        if(t_r>49999.9||t2>4090.0){
+          t_r = 49999.9;
+        }
+      }
+      //自动档
+      else if(SelectBar_GetPos(&sub_menu) == 3){
+        bool change_flag = false;
+        //原来为500档
+        if(PEin(5) == 0&&PEin(3) == 1){
+          t_r = RES_ZOOM_500(t_r);
+          if(t_r>500){
+            change_flag = true;
+          }
+        }
+        //原来为5K档
+        else if(PEin(5) == 1&&PEin(3) == 0){
+          t_r = RES_ZOOM_5K(t_r);
+          if(t_r>6000|| t_r<400){
+            change_flag = true;
+          }
+        }
+        //原来为50K档
+        else{
+          t_r = RES_ZOOM_50K(t_r);
+          if(t2>4090.0){
+            t_r = 9999999;
+          }
+          if(t_r<4000){
+            change_flag = true;
+          }
+        }
+        if(change_flag){
+          if(t_r>5000){
+            PEout(5) = 0;
+            PEout(3) = 0;
+          }
+          else if(t_r>500){
+            PEout(5) = 1;
+            PEout(3) = 0;
+          }else{
+            PEout(5) = 0;
+            PEout(3) = 1;
+          }
+          RES_CAP_Select(true);
+          
+        }
+      }
+      NumBar_SetValue(&RES,*(int*)(&t_r));
+    }
   }
   PT_END(pt);
 }

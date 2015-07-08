@@ -44,6 +44,8 @@
   extern void NumBar_Hide(NumBar* p);
   /*color*/
   extern void NumBar_SetColor(NumBar* p,u16 value);
+  extern void NumBar_SetLtagColor(NumBar* p,u16 value);
+  extern void NumBar_SetRtagColor(NumBar* p,u16 value);
   extern void NumBar_SetBackColor(NumBar* p,u16 value);
   extern u16 NumBar_GetColor(NumBar* p);
   extern u16 NumBar_GetBackColor(NumBar* p);

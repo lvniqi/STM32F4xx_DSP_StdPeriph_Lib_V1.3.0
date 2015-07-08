@@ -107,7 +107,7 @@ void SysTick_Handler(void)
 void EXTI9_5_IRQHandler(void){
   EXTI_ClearITPendingBit(EXTI_Line7);
   //ADCÖÐ¶Ï
-  int d = ADS1220_Read_Data()-1880;
-  Sequeue_Out_Queue(&DAC_1_SEQ);
-  Sequeue_In_Queue(&DAC_1_SEQ,d);
+  int d = ADS1220_Read_Data();
+  Sequeue_Out_Queue(&ADC_1_SEQ);
+  Sequeue_In_Queue(&ADC_1_SEQ,d);
 }

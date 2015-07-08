@@ -10,6 +10,7 @@
     u8 y;
     u8 item_y;
     u8 len;
+    short pos;
     LCD_STRING* title;
     SelectItem* selectNode_Start;
     SelectItem* selectNode_Now;
@@ -26,7 +27,7 @@
   extern void SelectBar_SetFunc(SelectBar* p,SelectBarFunc func);
   /*status*/
   #define SelectBar_IsShow(p) ((p)->isShow)
-  #define SelectBar_GetValue(p) ((p)->value)
+  #define SelectBar_GetPos(p) ((p)->pos)
   #define SelectBar_IsDisableNumShow(p) ((p)->isDisableNumShow)
   /*action*/
   extern void SelectBar_ShiftDown(SelectBar* p);
@@ -44,4 +45,5 @@
   /*node*/
   extern void SelectBar_AddSelect(SelectBar* p,LCD_STRING string);
   extern SelectItem* SelectBar_GetSelect(SelectBar* p,int n);
+  extern void SelectBar_ClearSelect(SelectBar* p);
 #endif

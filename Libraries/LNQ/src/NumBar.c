@@ -243,3 +243,9 @@ void NumBar_SetRTag(NumBar *p,LCD_STRING tag){
   p->rtag = tag;
   LCD_ShowStringBig_Union(p->end_x,p->y,LCD_STRING_LEFT,p->rtag,p->rtag_color);
 }
+void NumBar_SetLtagColor(NumBar* p,u16 value){
+  p->ltag_color = value;
+}
+void NumBar_SetRtagColor(NumBar* p,u16 value){
+  p->rtag_color = value;
+}

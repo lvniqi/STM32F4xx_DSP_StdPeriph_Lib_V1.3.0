@@ -9,13 +9,18 @@ void SelectItem_Init(SelectItem* p,u8 start_x,u8 y){
   t.type = _LCD_STRING_ASCII;
   t.string.ascii = "NULL";
   p->string = t;
+  p->func_en = NULL;
+  p->func_un = NULL;
   p->isActive = false;
   p->isShow = false;
   p->color = YELLOW;
   p->back_color = RED;
 }
-void SelectItem_SetFunc(SelectItem* p,SelectItemFunc func){
-  p->func = func;
+void SelectItem_SetFunc_En(SelectItem* p,SelectItemFunc func_en){
+  p->func_en = func_en;
+}
+void SelectItem_SetFunc_Un(SelectItem* p,SelectItemFunc func_un){
+  p->func_un = func_un;
 }
 /*action*/
 void SelectItem_SetActive(SelectItem* p,bool isActive){
@@ -25,13 +30,16 @@ void SelectItem_SetActive(SelectItem* p,bool isActive){
     LCD_ShowStringBig_Union(p->start_x,p->y,LCD_STRING_LEFT,p->string,p->color);
     BACK_COLOR = temp_color;
     p->isActive = true;
-    if(p->func){
-      p->func(p);
+    if(p->func_en){
+      p->func_en(p);
     }
   }
   else{
     LCD_ShowStringBig_Union(p->start_x,p->y,LCD_STRING_LEFT,p->string,p->color);
     p->isActive = false;
+    if(p->func_un){
+      p->func_un(p);
+    }
   }
 }
 

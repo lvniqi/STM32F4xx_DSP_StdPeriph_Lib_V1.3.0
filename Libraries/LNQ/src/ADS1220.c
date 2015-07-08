@@ -54,7 +54,13 @@
 #define _BV(bit) (1<<(bit))  
 //const u8 INIT_REG[4] = {0x51,0x04,0x10,0x00};
 //const u8 INIT_REG[4] = {0x01,0x04,0x10,0x00};
-const u8 INIT_REG[4] = {0x01,0x04,0x50,0x00};
+//const u8 INIT_REG[4] = {0x01,0x04,0x50,0x00};
+//const u8 INIT_REG[4] = {0x21,0x04,0x50,0x00};
+//const u8 INIT_REG[4] = {0x81,0x04,0x50,0x00};
+//²âµç×è
+u8 INIT_REG[4] = {0x81,0x04,0x50,0x00};
+//²âµçÈÝ
+//u8 INIT_REG[4] = {0xA1,0x04,0x50,0x00};
 const u8 CONFIG_REG_ADDRESS[4] = 
    {CONFIG_REG0_ADDRESS,
     CONFIG_REG1_ADDRESS,
@@ -196,6 +202,18 @@ int ADS1220_Read_Data(){
   delay_ms(1);
   ADS1220_CS = 1;                  //  Clear CS to high
   return data;
+}
+void ADS1220_ChangeChannel(ADS1220* p,int pin){
+  if(pin == 0){
+    p->Config_Reg[0] &= 0x0F;
+    p->Config_Reg[0] |= 0x80;
+    ADS1220_Write( CONFIG_REG_ADDRESS[0] , p->Config_Reg[0]);
+  }
+  else if(pin == 2){
+    p->Config_Reg[0] &= 0x0F;
+    p->Config_Reg[0] |= 0xA1;
+    ADS1220_Write( CONFIG_REG_ADDRESS[0] , p->Config_Reg[0]);
+  }
 }
 void ADS1220_Init(ADS1220* p){
   InitSpi(SPI2,true);
