@@ -1,8 +1,8 @@
 #include "main.h"
 NumBar RES;
 NumBar CAP;
-NumBar RES_MAX,RES_MIN;
-NumBar CAP_MAX,CAP_MIN;
+NumBar RES_SAMPLE,RES_RANGE;
+NumBar CAP_SAMPLE,CAP_RANGE;
 SelectBar main_menu;
 SelectBar sub_menu;
 ADS1220 ADC_1;
@@ -49,27 +49,28 @@ void RES_Init(void){
   t.string.ascii = "Ohm ";
   NumBar_SetRTag(&RES,t);
   NumBar_SetFunc(&RES,SetRes);
-  NumBar_DisableNumShow(&RES);
+  NumBar_ClearPrintFunc(&RES);
   NumBar_Show(&RES);
   //NumBar_ShowRect(&RES);
-  NumBar_Init(&RES_MAX,14,3,50000,0);
-  NumBar_Init(&RES_MIN,14,2,50000,0);
-  NumBar_SetRTag(&RES_MAX,t);
-  NumBar_SetRTag(&RES_MIN,t);
+  NumBar_Init(&RES_SAMPLE,12,3,50000,0);
+  NumBar_Init(&RES_RANGE,10,2,100,1);
+  NumBar_SetRTag(&RES_SAMPLE,t);
+  t.string.ascii = "%";
+  NumBar_SetRTag(&RES_RANGE,t);
   t.type = _LCD_STRING_CHINESE;
-  t.string.chinese.start =4;
-  t.string.chinese.len =4;
-  NumBar_SetLTag(&RES_MAX,t);
-  NumBar_Hide(&RES_MAX);
+  t.string.chinese.start =52;
+  t.string.chinese.len =3;
+  NumBar_SetLTag(&RES_SAMPLE,t);
+  NumBar_Hide(&RES_SAMPLE);
   t.type = _LCD_STRING_CHINESE;
-  t.string.chinese.start =8;
-  t.string.chinese.len =4;
-  NumBar_SetLTag(&RES_MIN,t);
-  NumBar_Hide(&RES_MIN);
-  NumBar_SetLtagColor(&RES_MIN,BLUE);
-  NumBar_SetRtagColor(&RES_MIN,BLUE);
-  NumBar_SetLtagColor(&RES_MAX,BLUE);
-  NumBar_SetRtagColor(&RES_MAX,BLUE);
+  t.string.chinese.start =49;
+  t.string.chinese.len =3;
+  NumBar_SetLTag(&RES_RANGE,t);
+  NumBar_Hide(&RES_RANGE);
+  NumBar_SetLtagColor(&RES_RANGE,BLUE);
+  NumBar_SetRtagColor(&RES_RANGE,BLUE);
+  NumBar_SetLtagColor(&RES_SAMPLE,BLUE);
+  NumBar_SetRtagColor(&RES_SAMPLE,BLUE);
   
   GPIO_InitTypeDef GPIO_InitStructure;
   //E5 E3 E1 B9
@@ -96,27 +97,28 @@ void CAP_Init(void){
   t.string.ascii = "nF";
   NumBar_SetRTag(&CAP,t);
   NumBar_SetFunc(&CAP,SetCap);
-  NumBar_DisableNumShow(&CAP);
+  NumBar_ClearPrintFunc(&CAP);
   NumBar_Show(&CAP);
   //NumBar_ShowRect(&CAP);
-  NumBar_Init(&CAP_MAX,14,3,50000,0);
-  NumBar_Init(&CAP_MIN,14,2,50000,0);
-  NumBar_SetRTag(&CAP_MAX,t);
-  NumBar_SetRTag(&CAP_MIN,t);
+  NumBar_Init(&CAP_SAMPLE,10,3,500,0);
+  NumBar_Init(&CAP_RANGE,10,2,100,1);
+  NumBar_SetRTag(&CAP_SAMPLE,t);
+  t.string.ascii = "%";
+  NumBar_SetRTag(&CAP_RANGE,t);
   t.type = _LCD_STRING_CHINESE;
-  t.string.chinese.start =12;
-  t.string.chinese.len =4;
-  NumBar_SetLTag(&CAP_MAX,t);
-  NumBar_Hide(&CAP_MAX);
+  t.string.chinese.start =55;
+  t.string.chinese.len =3;
+  NumBar_SetLTag(&CAP_SAMPLE,t);
+  NumBar_Hide(&CAP_SAMPLE);
   t.type = _LCD_STRING_CHINESE;
-  t.string.chinese.start =16;
-  t.string.chinese.len =4;
-  NumBar_SetLTag(&CAP_MIN,t);
-  NumBar_Hide(&CAP_MIN);
-  NumBar_SetLtagColor(&CAP_MIN,BLUE);
-  NumBar_SetRtagColor(&CAP_MIN,BLUE);
-  NumBar_SetLtagColor(&CAP_MAX,BLUE);
-  NumBar_SetRtagColor(&CAP_MAX,BLUE);
+  t.string.chinese.start =49;
+  t.string.chinese.len =3;
+  NumBar_SetLTag(&CAP_RANGE,t);
+  NumBar_Hide(&CAP_RANGE);
+  NumBar_SetLtagColor(&CAP_RANGE,BLUE);
+  NumBar_SetRtagColor(&CAP_RANGE,BLUE);
+  NumBar_SetLtagColor(&CAP_SAMPLE,BLUE);
+  NumBar_SetRtagColor(&CAP_SAMPLE,BLUE);
 }
 void MenuInit(void){
   
@@ -215,60 +217,66 @@ PT_THREAD(PRINT_TEST(PT *pt)){
     double t2 = getMid(&ADC_1_SEQ);
     u32 d = Sequeue_Get_Rear(&ADC_1_SEQ);
     __enable_irq();
-    char c[40];
-    sprintf(c,"0x%4x  ",d);
-    //LCD_ShowNumBig_L(20,30,3,t2,RED); 
-    LCD_ShowStringBig(15,2,LCD_STRING_LEFT,c,RED);
-    //t2 = t2*4096.0/0x7fffff;
-    //0~500
-    //double t3 = (REG*t2/(4096-t2));
-    //double t4 = (1.0014*t3 - 47.333);
-    //LCD_ShowNumBig_L(20,30,1,t4,RED);
-    //float t5 = t4;
-    //NumBar_SetValue(&RES,*(int*)(&t5));
-    //float t6 = t3;
-    //NumBar_SetValue(&CAP,*(int*)(&t6));
-    //LCD_ShowNumBig_L(20,30,6,SelectBar_GetPos(&main_menu),RED);
-    //LCD_ShowNumBig_L(20,30,5,SelectBar_GetPos(&sub_menu),RED);
     t2 = t2*4096.0/0x7fffff;
     t2 = 1.0004*t2 + 0.8115;
-    //float t_r = t2*RES_BASE_0/(4096.0-t2);
-    //500欧姆档
-    /*if(t_r<50){
-      t_r = 0.9965*t_r - 0.0951;
-    }else{
-      t_r = 0.9962*t_r - 0.0583;
+    if(SelectBar_GetPos(&main_menu) == 3){
+      float t_r = Get_CAP_AUTO(t2);
+      if(t_r>499.999||t2>4090.0){
+        t_r = 499.999;
+      }
+      float range;
+      if(t_r < NumBar_GetValue(&CAP_SAMPLE)){
+        range = NumBar_GetValue(&CAP_SAMPLE)-t_r;
+      }else{
+        range = t_r-NumBar_GetValue(&CAP_SAMPLE);
+      }
+      if((range/NumBar_GetValue(&CAP_SAMPLE))*100<NumBar_GetValue(&CAP_RANGE)){
+        LCD_STRING t;
+        LCD_STRING_CHINESE chinese;
+        chinese.len = 3;
+        chinese.start = 59;
+        t.type = _LCD_STRING_CHINESE;
+        t.string.chinese = chinese;
+        LCD_ShowStringBig_Union(0,0,LCD_STRING_LEFT,t,GREEN);
+      }else{
+        LCD_STRING t;
+        LCD_STRING_CHINESE chinese;
+        chinese.len = 3;
+        chinese.start = 58;
+        t.type = _LCD_STRING_CHINESE;
+        t.string.chinese = chinese;
+        LCD_ShowStringBig_Union(0,0,LCD_STRING_LEFT,t,RED);
+      }
+      NumBar_SetValue(&CAP,*(int*)(&t_r));
     }
-    if(t_r<0){
-      t_r = 0;
-    }*/
-    //5000欧姆档
-    /*if(t_r<100){
-      t_r = 9.9656*t_r - 0.7881;
-    }else{
-      t_r = 9.9632*t_r - 0.3323;
-    }*/
-    //50K欧姆档
-    /*if(t_r<100){
-      t_r = 104.66*t_r + 0.0775;
-    }
-    else{
-      t_r = 104.74*t_r - 11.168;
-    }*/
-    //电容
-    //500nF
-    //float t_r = t2/2969*470;
-    //t_r = 0.00021*t_r*t_r + 0.8969*t_r + 2.116;
-    //50nF
-    //float t_r = t2/2868*46.2;
-    //t_r = -0.0065*t_r*t_r + 1.309*t_r - 0.8243;
-    //5nF
-    //float t_r = t2/2555*14.7;
-    //t_r = -0.0313*t_r*t_r + 1.0012*t_r - 0.0951;
-    //NumBar_SetValue(&CAP,*(int*)(&t_r));
-    //float t_r = t2*RES_BASE_0/(4096.0-t2);
     if(SelectBar_GetPos(&main_menu) == 2){
       float t_r = Get_RES_AUTO(t2);
+      if(t_r>49999.9||t2>4090.0){
+        t_r = 49999.9;
+      }
+      float range;
+      if(t_r < NumBar_GetValue(&RES_SAMPLE)){
+        range = NumBar_GetValue(&RES_SAMPLE)-t_r;
+      }else{
+        range = t_r-NumBar_GetValue(&RES_SAMPLE);
+      }
+      if((range/NumBar_GetValue(&RES_SAMPLE))*100<NumBar_GetValue(&RES_RANGE)){
+        LCD_STRING t;
+        LCD_STRING_CHINESE chinese;
+        chinese.len = 3;
+        chinese.start = 59;
+        t.type = _LCD_STRING_CHINESE;
+        t.string.chinese = chinese;
+        LCD_ShowStringBig_Union(0,0,LCD_STRING_LEFT,t,GREEN);
+      }else{
+        LCD_STRING t;
+        LCD_STRING_CHINESE chinese;
+        chinese.len = 3;
+        chinese.start = 58;
+        t.type = _LCD_STRING_CHINESE;
+        t.string.chinese = chinese;
+        LCD_ShowStringBig_Union(0,0,LCD_STRING_LEFT,t,RED);
+      }
       NumBar_SetValue(&RES,*(int*)(&t_r));
     }
     else if(SelectBar_GetPos(&main_menu) == 1){

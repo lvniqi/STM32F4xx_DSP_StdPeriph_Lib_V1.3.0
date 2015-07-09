@@ -9,49 +9,76 @@ int main(void){
   PT* thread_1 = mymalloc(sizeof(PT));
   PT_INIT(thread_1,20,PRINT_TEST);
   PT_ADD_THREAD(thread_1);
-  //SelectBar sb;
-  //SelectBar_Init(&sb,1,5,8);
-  //LCD_STRING t;
-  //t.type = _LCD_STRING_CHINESE;
-  /*t.string.chinese.start =4;
-  t.string.chinese.len =4;
-  SelectBar_AddSelect(&sb,t);
-  t.string.chinese.start =8;
-  SelectBar_AddSelect(&sb,t);
-  t.string.chinese.start =12;
-  SelectBar_AddSelect(&sb,t);
-  t.string.chinese.start =16;
-  
-  SelectBar_AddSelect(&sb,t);*/
   while(1){
     PT_SERVICE();
     if(MAIN_KEY.keysign){
       if(MAIN_KEY.keycode == 5){
           SelectBar_ShiftUp(&sub_menu);
-        //SelectBar_ShiftUp(&main_menu);
-        //NumBar_Add(&RES);
       }
       else if(MAIN_KEY.keycode == 9){
           SelectBar_ShiftDown(&sub_menu);
-        //SelectBar_ShiftUp(&main_menu);
-        //NumBar_Add(&RES);
       }
       else if(MAIN_KEY.keycode == 8){
         SelectBar_ShiftDown(&main_menu);
-        //NumBar_Cut(&RES);
       }
       else if(MAIN_KEY.keycode == 4){
         SelectBar_ShiftUp(&main_menu);
-        //SelectBar_Hide(&main_menu);
-        //NumBar_Hide(&CAP);
-        //NumBar_Show(&RES);
-        //NumBar_ShiftLeft(&RES);
+      }
+      else if(MAIN_KEY.keycode == 10){
+        if(NumBar_IsActive(&RES_SAMPLE)&&NumBar_IsShow(&RES_SAMPLE)){
+          NumBar_Add(&RES_SAMPLE);
+        }
+        else if(NumBar_IsActive(&RES_RANGE)&&NumBar_IsShow(&RES_RANGE)){
+          NumBar_Add(&RES_RANGE);
+        }
+        else if(NumBar_IsActive(&CAP_SAMPLE)&&NumBar_IsShow(&CAP_SAMPLE)){
+          NumBar_Add(&CAP_SAMPLE);
+        }
+        else if(NumBar_IsActive(&CAP_RANGE)&&NumBar_IsShow(&CAP_RANGE)){
+          NumBar_Add(&CAP_RANGE);
+        }
+      }
+      else if(MAIN_KEY.keycode == 14){
+        if(NumBar_IsActive(&RES_SAMPLE)&&NumBar_IsShow(&RES_SAMPLE)){
+          NumBar_Cut(&RES_SAMPLE);
+        }
+        else if(NumBar_IsActive(&RES_RANGE)&&NumBar_IsShow(&RES_RANGE)){
+          NumBar_Cut(&RES_RANGE);
+        }
+        else if(NumBar_IsActive(&CAP_SAMPLE)&&NumBar_IsShow(&CAP_SAMPLE)){
+          NumBar_Cut(&CAP_SAMPLE);
+        }
+        else if(NumBar_IsActive(&CAP_RANGE)&&NumBar_IsShow(&CAP_RANGE)){
+          NumBar_Cut(&CAP_RANGE);
+        }
+      }
+      else if(MAIN_KEY.keycode == 13){
+        if(NumBar_IsActive(&RES_SAMPLE)&&NumBar_IsShow(&RES_SAMPLE)){
+          NumBar_ShiftLeft(&RES_SAMPLE);
+        }
+        else if(NumBar_IsActive(&RES_RANGE)&&NumBar_IsShow(&RES_RANGE)){
+          NumBar_ShiftLeft(&RES_RANGE);
+        }
+        else if(NumBar_IsActive(&CAP_SAMPLE)&&NumBar_IsShow(&CAP_SAMPLE)){
+          NumBar_ShiftLeft(&CAP_SAMPLE);
+        }
+        else if(NumBar_IsActive(&CAP_RANGE)&&NumBar_IsShow(&CAP_RANGE)){
+          NumBar_ShiftLeft(&CAP_RANGE);
+        }
       }
       else if(MAIN_KEY.keycode == 15){
-        //SelectBar_Show(&main_menu);
-        //NumBar_ShiftRight(&RES);
-        //NumBar_Hide(&RES);
-        //NumBar_Show(&CAP);
+        if(NumBar_IsActive(&RES_SAMPLE)&&NumBar_IsShow(&RES_SAMPLE)){
+          NumBar_ShiftRight(&RES_SAMPLE);
+        }
+        else if(NumBar_IsActive(&RES_RANGE)&&NumBar_IsShow(&RES_RANGE)){
+          NumBar_ShiftRight(&RES_RANGE);
+        }
+        else if(NumBar_IsActive(&CAP_SAMPLE)&&NumBar_IsShow(&CAP_SAMPLE)){
+          NumBar_ShiftRight(&CAP_SAMPLE);
+        }
+        else if(NumBar_IsActive(&CAP_RANGE)&&NumBar_IsShow(&CAP_RANGE)){
+          NumBar_ShiftRight(&CAP_RANGE);
+        }
       }
       MAIN_KEY.keysign = 0;
     }

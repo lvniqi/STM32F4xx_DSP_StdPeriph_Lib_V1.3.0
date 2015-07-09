@@ -30,13 +30,12 @@ void NumBar_Init(NumBar* p,u8 end_x,u8 y,int v_max,int v_min){
   p->y = y;
   p->value_max = v_max;
   p->value_min = v_min;
-  p->value = 0;
+  p->value = v_min;
   p->pos = 0;
   p->color = YELLOW;
   p->back_color = RED;
   p->func = NULL;
   p->isActive = false;
-  p->isDisableNumShow = false;
   LCD_STRING t;
   t.type = _LCD_STRING_NULL;
   p->ltag = t;
@@ -44,6 +43,7 @@ void NumBar_Init(NumBar* p,u8 end_x,u8 y,int v_max,int v_min){
   p->ltag_color = WHITE;
   p->rtag_color = WHITE;
   p->isShow = false;
+  p->print_func = NumBar_ShowValue;
 }
 void NumBar_SetValue(NumBar* p,int value){
   if(p->value_max>= value && value >=p->value_min){
@@ -53,15 +53,16 @@ void NumBar_SetValue(NumBar* p,int value){
     if(p->func){
       p->func(p,value);
     }
-    if(!p->isDisableNumShow){
-      LCD_ShowNumBig_L(p->start_x,p->end_x,p->y,p->value,p->color);
-      NumBar_SetActive(p,p->isActive);
+    if(p->print_func){
+      p->print_func(p);
+      if(p->print_func == NumBar_ShowValue){
+        NumBar_SetActive(p,p->isActive);
+      }
     }
+    
   }
 }
-void NumBar_DisableNumShow(NumBar* p){
-  p->isDisableNumShow = true;
-}
+
 void NumBar_SetValue_GUI(NumBar* p){
   if(p->isShow){
     int data = 0;
@@ -94,6 +95,12 @@ void NumBar_SetValue_GUI(NumBar* p){
       NumBar_SetValue(p,p->value);
     }
   }
+}
+void NumBar_SetPrintFunc(NumBar* p,NumBarPrintFunc func){
+  p->print_func = func;
+}
+void NumBar_ClearPrintFunc(NumBar* p){
+  p->print_func = NULL;
 }
 void NumBar_SetFunc(NumBar* p,NumBarFunc func){
   p->func =func;
@@ -163,9 +170,11 @@ void NumBar_Add(NumBar* p){
     if(p->func){
       p->func(p,p->value);
     }
-    if(!p->isDisableNumShow){
-      LCD_ShowNumBig_L(p->start_x,p->end_x,p->y,p->value,p->color);
-      NumBar_SetActive(p,true);
+    if(p->print_func){
+      p->print_func(p);
+      if(p->print_func == NumBar_ShowValue){
+        NumBar_SetActive(p,true);
+      }
     }
   }
 }
@@ -186,9 +195,11 @@ void NumBar_Cut(NumBar* p){
     if(p->func){
       p->func(p,p->value);
     }
-    if(!p->isDisableNumShow){
-      LCD_ShowNumBig_L(p->start_x,p->end_x,p->y,p->value,p->color); 
-      NumBar_SetActive(p,true);
+    if(p->print_func){
+      p->print_func(p);
+      if(p->print_func == NumBar_ShowValue){
+        NumBar_SetActive(p,true);
+      }
     }
   }
 }
@@ -197,18 +208,23 @@ void NumBar_Show(NumBar* p){
   if(p->ltag.type != _LCD_STRING_NULL){
     LCD_ShowStringBig_Union(p->start_x,p->y,LCD_STRING_RIGHT,p->ltag,p->ltag_color);
   }
-  if(!p->isDisableNumShow){
-    LCD_ShowNumBig_L(p->start_x,p->end_x,p->y,p->value,p->color);
-  }else{
-    if(p->func){
-      p->func(p,p->value);
-    }
+  if(p->print_func){
+      p->print_func(p);
+      if(p->print_func == NumBar_ShowValue){
+        NumBar_SetActive(p,p->isActive);
+      }
   }
-  NumBar_SetActive(p,p->isActive);
+  if(p->func){
+    p->func(p,p->value);
+  }
   if(p->rtag.type != _LCD_STRING_NULL){
     LCD_ShowStringBig_Union(p->end_x,p->y,LCD_STRING_LEFT,p->rtag,p->rtag_color);
   }
   //NumBar_ShowRect(p);
+}
+void NumBar_ShowValue(NumBar* p){
+  LCD_ShowNumBig_L(p->start_x,p->end_x,p->y,p->value,p->color);
+  //NumBar_SetActive(p,true);
 }
 void NumBar_Hide(NumBar* p){
   p->isShow = false;

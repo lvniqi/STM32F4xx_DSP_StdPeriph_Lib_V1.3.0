@@ -68,7 +68,7 @@ void RES_UN(SelectItem* p){
 void CAP_EN(SelectItem* p){
   LCD_STRING t;
   t.type = _LCD_STRING_ASCII;
-  t.string.ascii = "5nF";
+  t.string.ascii = "50nF";
   SelectBar_AddSelect(&sub_menu,t);
   t.string.ascii = "500nF";
   SelectBar_AddSelect(&sub_menu,t);
@@ -76,9 +76,9 @@ void CAP_EN(SelectItem* p){
   t.string.chinese.len  = 2;
   t.string.chinese.start  = 43;
   SelectBar_AddSelect(&sub_menu,t);
-  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,0),CAP_LEVEL_1);
-  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,1),CAP_LEVEL_2);
-  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,2),CAP_LEVEL_3);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,0),CAP_LEVEL_2);
+  //SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,2),CAP_LEVEL_2);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,1),CAP_LEVEL_3);
   NumBar_Show(&CAP);
   SelectBar_Show(&sub_menu);
   SubTitleSelect(true);
@@ -95,37 +95,52 @@ void CAP_UN(SelectItem* p){
 void RES_FIND_EN(SelectItem* p){
   RES_CAP_Select(true);
   SubTitleSelect(false);
-  NumBar_Show(&RES_MAX);
-  NumBar_Show(&RES_MIN);
+  NumBar_Show(&RES_SAMPLE);
+  NumBar_Show(&RES_RANGE);
   NumBar_Show(&RES);
+  LCD_STRING t;
+  t.type = _LCD_STRING_ASCII;
+  t.string.ascii = "";
+  SelectBar_AddSelect(&sub_menu,t);
+  SelectBar_AddSelect(&sub_menu,t);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,0),Select_RES_SAMPLE);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&sub_menu,0),UnSelect_RES_SAMPLE);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,1),Select_RES_RANGE);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&sub_menu,1),UnSelect_RES_RANGE);
 }
 
 void RES_FIND_UN(SelectItem* p){
-  NumBar_Hide(&RES_MAX);
-  NumBar_Hide(&RES_MIN);
+  NumBar_Hide(&RES_SAMPLE);
+  NumBar_Hide(&RES_RANGE);
   NumBar_Hide(&RES);
   SelectBar_ClearSelect(&sub_menu);
+  LCD_ShowStringBig(0,0,LCD_STRING_LEFT,"      ",GREEN);
 }
 
 //电容查找
 void CAP_FIND_EN(SelectItem* p){
   RES_CAP_Select(false);
   SubTitleSelect(false);
-  NumBar_Show(&CAP_MAX);
-  NumBar_Show(&CAP_MIN);
+  NumBar_Show(&CAP_SAMPLE);
+  NumBar_Show(&CAP_RANGE);
   NumBar_Show(&CAP);
   LCD_STRING t;
   t.type = _LCD_STRING_ASCII;
   t.string.ascii = "";
   SelectBar_AddSelect(&sub_menu,t);
   SelectBar_AddSelect(&sub_menu,t);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,0),Select_CAP_SAMPLE);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&sub_menu,0),UnSelect_CAP_SAMPLE);
+  SelectItem_SetFunc_En(SelectBar_GetSelect(&sub_menu,1),Select_CAP_RANGE);
+  SelectItem_SetFunc_Un(SelectBar_GetSelect(&sub_menu,1),UnSelect_CAP_RANGE);
 }
 
 void CAP_FIND_UN(SelectItem* p){
-  NumBar_Hide(&CAP_MAX);
-  NumBar_Hide(&CAP_MIN);
+  NumBar_Hide(&CAP_SAMPLE);
+  NumBar_Hide(&CAP_RANGE);
   NumBar_Hide(&CAP);
   SelectBar_ClearSelect(&sub_menu);
+  LCD_ShowStringBig(0,0,LCD_STRING_LEFT,"      ",GREEN);
 }
 
 //设置电阻显示

@@ -20,6 +20,7 @@
 #include "malloc.h"
 #include "SelectItem.h"
 #include "SelectBar.h"
+#include "math.h"
 #define SHIFT_FITHER_LEN 13
 extern double Dds_SetFreq(u32 div);
 extern int getMid(int_sequeue* s);
@@ -57,6 +58,15 @@ extern float CAP_ZOOM_500(double value);
 extern float CAP_ZOOM_5(double value);
 extern float CAP_ZOOM_50(double value);
 
+extern void Select_CAP_SAMPLE(SelectItem* p);
+extern void UnSelect_CAP_SAMPLE(SelectItem* p);
+extern void Select_CAP_RANGE(SelectItem* p);
+extern void UnSelect_CAP_RANGE(SelectItem* p);
+extern void Select_RES_SAMPLE(SelectItem* p);
+extern void UnSelect_RES_SAMPLE(SelectItem* p);
+extern void Select_RES_RANGE(SelectItem* p);
+extern void UnSelect_RES_RANGE(SelectItem* p);
+
 extern float Get_CAP(double value);
 extern float Get_CAP_AUTO(double value);
 
@@ -71,8 +81,8 @@ extern void MenuInit(void);
 #define RES_OFFSET_1 0.0672
 extern NumBar RES;
 extern NumBar CAP;
-extern NumBar RES_MAX,RES_MIN;
-extern NumBar CAP_MAX,CAP_MIN;
+extern NumBar RES_SAMPLE,RES_RANGE;
+extern NumBar CAP_SAMPLE,CAP_RANGE;
 extern ADS1220 ADC_1;
 extern SelectBar main_menu;
 extern SelectBar sub_menu;

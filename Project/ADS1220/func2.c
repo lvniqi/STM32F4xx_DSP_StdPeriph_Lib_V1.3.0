@@ -23,9 +23,34 @@ void CAP_LEVEL_3(SelectItem* p){
   PEout(1) = 0;
   PBout(9) = 0;
 }
+void Select_CAP_SAMPLE(SelectItem* p){
+  NumBar_SetActive(&CAP_SAMPLE,true);
+}
+void UnSelect_CAP_SAMPLE(SelectItem* p){
+  NumBar_SetActive(&CAP_SAMPLE,false);
+}
+void Select_CAP_RANGE(SelectItem* p){
+  NumBar_SetActive(&CAP_RANGE,true);
+}
+void UnSelect_CAP_RANGE(SelectItem* p){
+  NumBar_SetActive(&CAP_RANGE,false);
+}
+void Select_RES_SAMPLE(SelectItem* p){
+  NumBar_SetActive(&RES_SAMPLE,true);
+}
+void UnSelect_RES_SAMPLE(SelectItem* p){
+  NumBar_SetActive(&RES_SAMPLE,false);
+}
+void Select_RES_RANGE(SelectItem* p){
+  NumBar_SetActive(&RES_RANGE,true);
+}
+void UnSelect_RES_RANGE(SelectItem* p){
+  NumBar_SetActive(&RES_RANGE,false);
+}
+
 float RES_ZOOM_500(float t_r){
   if(t_r<50){
-    t_r = 0.9965*t_r - 0.0909;
+    t_r = 0.997*t_r - 0.0909;
   }else{
     t_r = 0.9962*t_r - 0.0553;
   }
@@ -35,23 +60,25 @@ float RES_ZOOM_5K(float t_r){
   if(t_r<100){
     t_r = 9.9657*t_r - 0.5881;
   }else{
-    t_r = 9.966*t_r - 0.3323;
+    t_r = 9.968*t_r - 0.3323;
   }
   return t_r;
 }
 float RES_ZOOM_50K(float t_r){
+  
   if(t_r<100){
-    t_r = 104.705*t_r - 2;
-  }
-  else{
-    t_r = 104.75*t_r - 11.168;
-  }
+      t_r = 104.85*t_r - 4.0975;
+    }
+    else{
+      t_r = 0.0008*t_r*t_r + 104.69*t_r - 7.6;
+    }
+  
   return t_r;
 }
 
 float CAP_ZOOM_500(double value){
   float t_r = value/2969*470;
-  t_r = 0.00021*t_r*t_r + 0.8969*t_r + 2.116;
+  t_r = 0.0002*t_r*t_r + 0.8960*t_r + 3.216;
   return t_r;
 }
 float CAP_ZOOM_5(double value){
@@ -60,8 +87,26 @@ float CAP_ZOOM_5(double value){
   return t_r;
 }
 float CAP_ZOOM_50(double value){
-  float t_r = value/2868*46.2;
-  t_r = -0.0065*t_r*t_r + 1.309*t_r - 0.8243;
+  float t_r;
+  if(PEin(1) == 0&&PBin(9) == 1){
+    t_r = CAP_ZOOM_5(value);
+    if(t_r > 6){
+      CAP_LEVEL_2(NULL);
+      RES_CAP_Select(false);
+    }
+  }else{
+    t_r = 0.0159*value - 0.1461;
+    if(t_r >43 && t_r <48){
+      t_r = t_r-((float)(int)(t_r*10))/10+46.2;
+    }
+    else if(t_r >11.5 && t_r <16){
+      t_r = t_r-((float)(int)(t_r*10))/10+15;
+    }
+    if(t_r < 5){
+      CAP_LEVEL_1(NULL);
+      RES_CAP_Select(false);
+    }
+  }
   return t_r;
 }
 
@@ -92,6 +137,9 @@ float Get_RES(double value){
   //自动档
   else if(SelectBar_GetPos(&sub_menu) == 3){
     t_r = Get_RES_AUTO(value);
+    if(t_r>49999.9||value>4090.0){
+      t_r = 49999.9;
+    }
   }
   return t_r;
 }
@@ -141,14 +189,14 @@ float Get_CAP(double value){
   float t_r;
   //50nF档
   if(SelectBar_GetPos(&sub_menu) == 0){
-    t_r = CAP_ZOOM_50(t_r);
+    t_r = CAP_ZOOM_50(value);
     if(t_r>49.9999||value>4090.0){
       t_r = 49.9999;
     }
   }
   //500nF档
   else if(SelectBar_GetPos(&sub_menu) == 1){
-    t_r = CAP_ZOOM_500(t_r);
+    t_r = CAP_ZOOM_500(value);
     if(t_r>499.999||value>4090.0){
       t_r = 499.999;
     }
@@ -156,6 +204,9 @@ float Get_CAP(double value){
   //自动档
   else if(SelectBar_GetPos(&sub_menu) == 2){
     t_r = Get_CAP_AUTO(value);
+    if(t_r>499.999||value>4090.0){
+      t_r = 499.999;
+    }
   }
   return t_r;
 }
@@ -164,22 +215,21 @@ float Get_CAP_AUTO(double value){
   float t_r = 0;
   bool change_flag = false;
   //原来为50档
-  if(PEin(1) == 1&&PBin(9) == 0){
-    t_r = CAP_ZOOM_500(t_r);
-    if(t_r>60){
+  if(PEin(1) == 1||PBin(9) == 1){
+    t_r = CAP_ZOOM_50(value);
+    if(t_r>52){
       change_flag = true;
     }
   }
-  //原来为50档
-  else if(PEin(1) == 0&&PBin(9) == 1){
-    t_r = CAP_ZOOM_50(t_r);
-    if(t_r<40){
+  //原来为500档
+  else if(PEin(1) == 0&&PBin(9) == 0){
+    t_r = CAP_ZOOM_500(value);
+    if(t_r<50){
       change_flag = true;
     }
   }
-  
   if(change_flag){
-    if(t_r>60){
+    if(t_r>52){
       CAP_LEVEL_3(NULL);
     }
     else if(t_r>5){

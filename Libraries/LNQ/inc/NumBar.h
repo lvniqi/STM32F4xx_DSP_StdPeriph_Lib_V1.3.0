@@ -11,7 +11,6 @@
     LCD_STRING rtag;
     bool isActive;
     bool isShow;
-    bool isDisableNumShow;
     int value;
     int value_max;
     int value_min;
@@ -20,26 +19,30 @@
     u16 ltag_color;
     u16 rtag_color;
     void (*func)(struct _NumBar* p,int value) ;
+    void (*print_func)(struct _NumBar* p) ;
   }NumBar;
   typedef  void (*NumBarFunc)(NumBar* p,int value);
+  typedef  void (*NumBarPrintFunc)(NumBar* p);
   /*main*/
   extern void NumBar_Init(NumBar* p,u8 end_x,u8 y,int v_max,int v_min);
   extern void NumBar_SetValue(NumBar* p,int value);
   extern void NumBar_SetValue_GUI(NumBar* p);
+  extern void NumBar_SetPrintFunc(NumBar* p,NumBarPrintFunc func);
+  extern void NumBar_ClearPrintFunc(NumBar* p);
   extern void NumBar_SetFunc(NumBar* p,NumBarFunc func);
   /*status*/
   #define NumBar_IsActive(p) ((p)->isActive)
   #define NumBar_IsShow(p) ((p)->isShow)
   #define NumBar_GetValue(p) ((p)->value)
-  #define NumBar_IsDisableNumShow(p) ((p)->isDisableNumShow)
+  #define NumBar_IsDisableNumShow(p) ((p)->print_func == NULL)
   /*action*/
   extern void NumBar_SetActive(NumBar* p,bool isActive);
-  extern void NumBar_DisableNumShow(NumBar* p);
   extern void NumBar_ShiftLeft(NumBar* p);
   extern void NumBar_ShiftRight(NumBar* p);
   extern void NumBar_Add(NumBar* p);
   extern void NumBar_Cut(NumBar* p);
   extern void NumBar_Show(NumBar* p);
+  extern void NumBar_ShowValue(NumBar* p);
   extern void NumBar_ShowRect(NumBar* p);
   extern void NumBar_Hide(NumBar* p);
   /*color*/

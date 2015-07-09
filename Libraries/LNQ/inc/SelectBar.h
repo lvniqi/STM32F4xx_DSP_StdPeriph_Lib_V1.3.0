@@ -20,6 +20,7 @@
     u16 color;
     u16 back_color;
     void (*func)(struct _SelectBar* p,int value) ;
+    //struct _SelectBar* next;
   }SelectBar;
   typedef  void (*SelectBarFunc)(SelectBar* p,int value);
   /*main*/
