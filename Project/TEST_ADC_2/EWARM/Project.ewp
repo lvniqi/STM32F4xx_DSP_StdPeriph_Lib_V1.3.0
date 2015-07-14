@@ -4130,12 +4130,6 @@
       <name>$PROJ_DIR$\..\NumBar_CPP.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\SelectBar_L.cpp</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\SelectBar_L.h</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>
     </file>
     <file>

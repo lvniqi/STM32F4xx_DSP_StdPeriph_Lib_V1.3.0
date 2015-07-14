@@ -213,11 +213,11 @@ void NumBar_CPP::showRect(){
   }
   LCD_Show_Rect(x1*16-1,y*32,(x2-x1)*16,32,color);
 }
-void NumBar_CPP::setLtag(const String_L& tag){
+void NumBar_CPP::setLtag(String_L tag){
   ltag = tag;
   ltag.moveTo(start_x-ltag.getLen(),y);
 }
-void NumBar_CPP::setRtag(const String_L& tag){
+void NumBar_CPP::setRtag(String_L tag){
   rtag = tag;
   rtag.moveTo(end_x,y);
 }

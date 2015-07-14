@@ -8,31 +8,8 @@
 #include "PINGPANG.h"
 /*乒乓数据列表*/
 _pingpang_data _PINGPANG_DATA_LIST[PINGPANG_DATA_LIST_LEN];
-/*乒乓空闲数据列表*/
-_pingpang_data* _PINGPANG_FREE[PINGPANG_DATA_FREE_LIST_LEN];
-/********************************************************************
- * 名称 : PingPang_Service
- * 功能 : 乒乓服务函数 为了实时得到空闲乒乓数据
- * 输入 : 无
- * 输出 : 无
- ***********************************************************************/
-void PingPang_Service(){
-  u8 i, j;
-  __disable_irq();
-  for (i = 0, j = 0; (i < PINGPANG_DATA_LIST_LEN)and(j <
-       PINGPANG_DATA_FREE_LIST_LEN); i++){
-
-    if ((_PINGPANG_DATA_LIST + i)->status == PINGPANG_NULL){
-      _PINGPANG_FREE[j] = (_PINGPANG_DATA_LIST + i);
-      j++;
-    }
-  }
-  while(j <PINGPANG_DATA_FREE_LIST_LEN){
-    _PINGPANG_FREE[j++] = NULL;
-  }
-  __enable_irq();
-}
-
+/*测试 空闲链表*/
+free_node pingpang_free_head = NULL;
 /********************************************************************
  * 名称 : PingPang_GetFree
  * 功能 : 得到空闲乒乓数据
@@ -40,21 +17,20 @@ void PingPang_Service(){
  * 输出 : _pingpang_data* 乒乓数据指针
  ***********************************************************************/
 _pingpang_data* PingPang_GetFree(){
-  char i;
-  _pingpang_data* temp;
   __disable_irq();
-  for (i = 0; i < PINGPANG_DATA_FREE_LIST_LEN; i++){
-    if (_PINGPANG_FREE[i]){
-      temp = _PINGPANG_FREE[i];
-      temp->status = PINGPANG_USED;
-      temp->len = 0;
-      _PINGPANG_FREE[i] = NULL;
-      __enable_irq();
-      return temp;
-    }
+  //测试链表
+  if(pingpang_free_head){
+    //得到一个空闲缓冲
+    _pingpang_data* getone = pingpang_free_head;
+    pingpang_free_head = pingpang_free_head->next;
+    getone->next = NULL; 
+    __enable_irq();
+    return getone;
   }
-  __enable_irq();
-  return NULL;
+  else{
+    __enable_irq();
+    return NULL;
+  }
 }
 
 /********************************************************************
@@ -63,9 +39,11 @@ _pingpang_data* PingPang_GetFree(){
  * 输入 : 乒乓缓冲通道指针
  * 输出 : 无
  ***********************************************************************/
-void PingPang_Init(pingpang* data){
+void PingPang_Init(pingpang* data,PINGPANG_TYPE type){
   u8 i;
-  (data)->busy = PingPang_GetFree();
+  if(type == PINGPANG_IN){
+    (data)->busy = PingPang_GetFree();
+  }
   for (i = 0; i < PINGPANG_GETED_LEN; i++){
     (data)->geted[i] = NULL;
   }
@@ -79,10 +57,14 @@ void PingPang_Init(pingpang* data){
  ***********************************************************************/
 void PingPang_Data_Free_Init(){
   u8 i;
-  for (i = 0; i < PINGPANG_DATA_FREE_LIST_LEN; i++){
-    _PINGPANG_FREE[i] = &(_PINGPANG_DATA_LIST[i]);
+  pingpang_free_head = _PINGPANG_DATA_LIST;
+  pingpang_free_head->next = NULL;
+  _pingpang_data* p = pingpang_free_head;
+  for(i=1;i<PINGPANG_DATA_LIST_LEN;i++){
+    p->next = &(_PINGPANG_DATA_LIST[i]);
+    p = p->next;
   }
-  PingPang_Service();
+  p->next = NULL;
 }
 
 /********************************************************************
@@ -235,29 +217,33 @@ void PingPang_Process(_pingpang_data* data){
  ***********************************************************************/
 void _Display_PingpPang(pingpang p1){
   _pingpang_data* temp;
-  u16 i;
-  temp = p1.geted[2];
-  if (temp){
-    for (i = 0; i < temp->len; i++){
-      printf("geted3:%d:\t%d\n", i, (temp->data)[i]);
-    }
-  }
-  temp = p1.geted[1];
-  if (temp){
-    for (i = 0; i < temp->len; i++){
-      printf("geted2:%d:\t%d\n", i, (temp->data)[i]);
-    }
-  }
-  temp = p1.geted[0];
-  if (temp){
-    for (i = 0; i < temp->len; i++){
-      printf("geted1:%d:\t%d\n", i, (temp->data)[i]);
+  for(int j=PINGPANG_GETED_LEN-1;j>=0;j--){
+    temp = p1.geted[j];
+    if (temp){
+      for (int i = 0; i < temp->len; i++){
+        printf("geted%d:%d:\t%d\n",j, i, (temp->data)[i]);
+      }
     }
   }
   temp = p1.busy;
   if (temp->status != PINGPANG_NULL){
-    for (i = 0; i < temp->len; i++){
+    for (int i = 0; i < temp->len; i++){
       printf("busy:%d:\t%d\n", i, (temp->data)[i]);
     }
   }
+}
+
+void PingPang_Free(_pingpang_data *i){
+  __disable_irq();            
+  i->status = PINGPANG_NULL;
+  //测试链表
+  if(pingpang_free_head== NULL){
+    pingpang_free_head = i;
+    i->next = NULL;
+  }
+  else{
+    i->next = pingpang_free_head;
+    pingpang_free_head = i;
+  }
+  __enable_irq();             
 }

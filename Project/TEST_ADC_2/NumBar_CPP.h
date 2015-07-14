@@ -14,8 +14,8 @@
       void setValue(int value);
       void setFunc(NumBar_CPP_func func);
       void setValue_GUI();
-      void setLtag(const String_L& tag);
-      void setRtag(const String_L& tag);
+      void setLtag(String_L tag);
+      void setRtag(String_L tag);
       /*status*/
       bool getActive();
       bool getShow();

@@ -8,44 +8,40 @@
 #ifndef PINGPANG_H_
   #define PINGPANG_H_
   #include "common.h"
-  #define PINGPANG_LEN 315
-  #define PINGPANG_NULL 0
-  #define PINGPANG_USED 1
-  #define PINGPANG_FULL 2
-  #define PINGPANG_USED_BY_GUI 3
-
-  #define PINGPANG_DATA_LIST_LEN 15
-  #define PINGPANG_DATA_FREE_LIST_LEN 6
-  #define PINGPANG_GETED_LEN 3
+  // 缓冲状态 
+  typedef enum _PINGPANG_STATUS{
+    PINGPANG_NULL,
+    PINGPANG_USED,
+    PINGPANG_FULL,
+    PINGPANG_USED_BY_GUI,
+  }PINGPANG_STATUS;
+  //缓冲类型
+  typedef enum _PINGPANG_TYPE{
+    PINGPANG_IN,
+    PINGPANG_OUT,
+  }PINGPANG_TYPE;
+  #define PINGPANG_LEN 400
+  #define PINGPANG_DATA_LIST_LEN 4
+  #define PINGPANG_GETED_LEN 2
   typedef u16 PINGPANG_DATATYPE;
   /*乒乓数据*/
   typedef struct __pingpang_data
   {
     PINGPANG_DATATYPE data[PINGPANG_LEN];
     u16 len;
-    u8 status;
+    PINGPANG_STATUS status;
+    struct __pingpang_data* next;
   } _pingpang_data;
   /*乒乓通道*/
   typedef struct _pingpang
   {
-    _pingpang_data *busy;
-    _pingpang_data *geted[PINGPANG_GETED_LEN];
+    _pingpang_data *busy;//正在处理的
+    
+    _pingpang_data *geted[PINGPANG_GETED_LEN];//已经得到的
   } pingpang;
-
-  #define PingPang_Free(i)	\
-  {	\
-    __disable_irq();            \
-    (i)->status = PINGPANG_NULL;\
-    __enable_irq();             \
-  }
-  /*乒乓通道1*/
-  /********************************************************************
-   * 名称 : PingPang_Service
-   * 功能 : 乒乓服务函数 为了实时得到空闲乒乓数据
-   * 输入 : 无
-   * 输出 : 无
-   ***********************************************************************/
-  extern void PingPang_Service();
+  typedef struct __pingpang_data* free_node;
+  
+  
   /********************************************************************
    * 名称 : PingPang_GetFree
    * 功能 : 得到空闲乒乓数据
@@ -56,10 +52,10 @@
   /********************************************************************
    * 名称 : PingPang_Init
    * 功能 : 乒乓缓冲通道1初始化
-   * 输入 : 乒乓缓冲通道指针
+   * 输入 : 乒乓缓冲通道指针 缓冲类型
    * 输出 : 无
    ***********************************************************************/
-  extern void PingPang_Init(pingpang *data);
+  extern void PingPang_Init(pingpang* data,PINGPANG_TYPE type);
   /********************************************************************
    * 名称 : _PingPang_Data_Free_Init
    * 功能 : 乒乓缓冲空闲通道初始化
@@ -102,4 +98,10 @@
    * 输出 : 成功 1 ， 0
    ***********************************************************************/
   extern u8 PingPang_ChangeBusy(pingpang *i);
+  /********************************************************************
+   * 名称 : PingPang_Free
+   * 功能 : 释放缓冲
+   * 输入 : pingpang*通道
+   ***********************************************************************/
+  extern void PingPang_Free(_pingpang_data *i);
 #endif /* PINGPANG_H_ */

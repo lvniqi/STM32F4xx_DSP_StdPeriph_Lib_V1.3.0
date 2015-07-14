@@ -37,7 +37,7 @@ void ADC_GPIO_Config(uint32_t GPIO_Pin){
  * 输出 : 无
  ***********************************************************************/
 void ADC1_Dma_Config(){
-  PingPang_Init(&pingpang_ad);
+  PingPang_Init(&pingpang_ad,PINGPANG_IN);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA2, ENABLE); //使能DMA2时钟
   DMA_InitTypeDef DMA_InitStructure;
   DMA_DeInit(ADC1_DMA_STREAM); //指定DMA通道 禁用
