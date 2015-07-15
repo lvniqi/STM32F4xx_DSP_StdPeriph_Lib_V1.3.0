@@ -311,6 +311,7 @@
           <state>$PROJ_DIR$\..\..\..\Utilities\STM32_EVAL\Common</state>
           <state>$PROJ_DIR$\..\..\..\Utilities\STM32_EVAL\STM324x9I_EVAL</state>
           <state>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc</state>
+          <state>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -4124,19 +4125,7 @@
       <name>$PROJ_DIR$\..\main.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\NumBar_CPP.cpp</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\NumBar_CPP.h</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\String_L.cpp</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\String_L.h</name>
     </file>
   </group>
 </project>

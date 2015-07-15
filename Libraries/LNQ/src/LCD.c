@@ -111,10 +111,10 @@ void LCD_Init(void){
   FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
   FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = 
     &FSMC_NORSRAMTimingInitStructure;
-  FSMC_NORSRAMTimingInitStructure.FSMC_AddressSetupTime = 7;
+  FSMC_NORSRAMTimingInitStructure.FSMC_AddressSetupTime = 5;
   //3<8，TFT控制芯片的地址建立时间最快是10ns，所以这个和下一行的参数加起来要保证能让地址建立的时间高于这个数字，
-  FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 4; //1or2<16
-  FSMC_NORSRAMTimingInitStructure.FSMC_DataSetupTime = 20;
+  FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 5; //1or2<16
+  FSMC_NORSRAMTimingInitStructure.FSMC_DataSetupTime = 8;
   //5<64（+1）,相比译码写入的速度慢很多 因此加大写入延时可以提高数据稳定性，这也是与tft和fpga通形唯一差异的地方
   FSMC_NORSRAMTimingInitStructure.FSMC_CLKDivision = 0x00;
   //以上参数通过调试已经比极限要高一点，极限要求低于10MHz的点数据传输速度。

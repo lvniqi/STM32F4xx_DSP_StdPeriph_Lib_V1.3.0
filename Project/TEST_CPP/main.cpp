@@ -21,13 +21,15 @@ int main(void){
   t_select_Item.setActive(true);
   t_select_Item.setBackColor(GREEN);
   t_select_Item.setActive(false);
-  SelectBar_L t_select_bar(5,5,true);
+  SelectBar_L t_select_bar(0,5,true);
   t_select_bar.show();
+  t_select_bar.setTitle(String_L(3,0,0,4,BLUE));
   while(1){
     if(MAIN_KEY.keysign){
       if(MAIN_KEY.keycode == 10){
         t_numBar.add();
-        t_select_bar.addSelect(String_L(3,0,"nF",WHITE));
+        u16 color = 7<<(t_select_bar.getLen()+1);
+        t_select_bar.addSelect(String_L(0,0,0,2,color));
       }
       else if(MAIN_KEY.keycode == 14){
         t_numBar.cut();
@@ -40,9 +42,17 @@ int main(void){
       }
       else if(MAIN_KEY.keycode == 0){
         t_numBar.hide();
+        t_select_bar.toggleLayout();
       }
       else if(MAIN_KEY.keycode == 1){
         t_numBar.show();
+        t_select_bar.show();
+      }
+      else if(MAIN_KEY.keycode == 4){
+        t_select_bar.shiftLast();
+      }
+      else if(MAIN_KEY.keycode == 8){
+        t_select_bar.shiftNext();
       }
       MAIN_KEY.keysign = 0;
     }
