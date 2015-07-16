@@ -166,7 +166,7 @@ void Init(void){
   LCD_Init();
   EXTI_init();
   ADS1220_Init(&ADC_1);
-  Dds_SetFreq(60);
+  Dds_SetFreq(20);
   Dac_Init(DAC_Channel_1, DAC_Trigger_T2_TRGO,true,DMA_Mode_Circular);
   DAC_Cmd(DAC_Channel_1,ENABLE);
   DMA_Cmd(DAC1_DMA_STREAM, ENABLE);

@@ -22,7 +22,7 @@ int main(void){
     if(temp){
       PingPang_Free(temp);
     }
-    if(MAIN_KEY.keysign){
+    //if(MAIN_KEY.keysign){
       //if(MAIN_KEY.keycode == 10){
         temp = PingPang_Out(&pingpang_ad);
         while(temp == NULL){
@@ -52,5 +52,5 @@ int main(void){
         
       }*/
       MAIN_KEY.keysign = 0;
-    }
+    //}
 }

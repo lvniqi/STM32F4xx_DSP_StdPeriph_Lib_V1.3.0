@@ -52,6 +52,17 @@ void SelectItem_L::hide(){
 }
 
 SelectBar_L::SelectBar_L(u16 x,u16 y,bool isV){
+  pos = -1;
+  len = 0;
+  selectNode_Start = NULL;
+  selectNode_Now = NULL;
+  selectNode_End = NULL;
+  title = NULL;
+  sub = NULL;
+  isShow = false;
+  back_color = RED;
+  this->isV = isV;
+  
   start_x = x;
   start_y = y;
   if(isV){
@@ -62,17 +73,12 @@ SelectBar_L::SelectBar_L(u16 x,u16 y,bool isV){
   if(isV){
     item_x = x;
   }else{
-    item_x = x+8;
+    if(title){
+      item_x = x+title->getLen();
+    }else{
+      item_x = x+8;
+    }
   }
-  pos = -1;
-  len = 0;
-  selectNode_Start = NULL;
-  selectNode_Now = NULL;
-  selectNode_End = NULL;
-  title = NULL;
-  isShow = false;
-  back_color = RED;
-  this->isV = isV;
 }
 void SelectBar_L::addSelect(String_L s){
   SelectItem_L* new_one = (SelectItem_L*)mymalloc(sizeof(SelectItem_L));
@@ -85,15 +91,17 @@ void SelectBar_L::addSelect(String_L s){
   else{
     item_x += s.getLen();
   }
-  if(isShow){
-    new_one->show();
-  }
   if(selectNode_Start == NULL){
     selectNode_Start = new_one;
     selectNode_Now = new_one;
-    new_one->setActive(true);
+    if(isShow){
+      new_one->setActive(true);
+    }
     pos = 0;
     selectNode_End = new_one;
+  }
+  if(isShow){
+    new_one->show();
   }
   else{
     selectNode_End->addNext(new_one);
@@ -112,6 +120,9 @@ void SelectBar_L::show(){
   if(selectNode_Now){
     selectNode_Now->setActive(true);
   }
+  if(sub){
+    sub->show();
+  }
   isShow = true;
 }
 void SelectBar_L::hide(){
@@ -122,6 +133,9 @@ void SelectBar_L::hide(){
   while(p_i){
     p_i->hide();
     p_i = p_i->getNext();
+  }
+  if(sub){
+    sub->hide();
   }
   isShow = false;
 }
@@ -162,6 +176,9 @@ void SelectBar_L::setTitle(String_L s){
   if(isShow){
     title->show();
   }
+  if(selectNode_Start == NULL&& !isV){
+    item_x = start_x+title->getLen();
+  }
 }
 SelectItem_L* SelectBar_L::getSelect(int n){
   SelectItem_L* p_i = selectNode_Start;
@@ -187,7 +204,11 @@ void SelectBar_L::clearSelect(void){
     item_x = start_x;
   }else{
     item_y = start_y;
-    item_x = start_x+8;
+    if(title){
+      item_x = start_x+title->getLen();
+    }else{
+      item_x = start_x+8;
+    }
   }
   selectNode_Start = NULL;
   selectNode_Now = NULL;
@@ -203,7 +224,11 @@ void SelectBar_L::toggleLayout(){
     item_x = start_x;
   }else{
     item_y = start_y;
-    item_x = start_x+8;
+    if(title){
+      item_x = start_x+title->getLen();
+    }else{
+      item_x = start_x+8;
+    }
   }
   SelectItem_L* p_i = selectNode_Start;
   while(p_i){
@@ -216,4 +241,14 @@ void SelectBar_L::toggleLayout(){
     p_i = p_i->getNext();
   }
   show();
+}
+void SelectBar_L::setSub(SelectBar_L& sub){
+  if(this->sub){
+    myfree(this->sub);
+  }
+  this->sub = (SelectBar_L*)mymalloc(sizeof(SelectBar_L));
+  *(this->sub) = sub;
+}
+SelectBar_L* SelectBar_L::getSub(){
+  return sub;
 }

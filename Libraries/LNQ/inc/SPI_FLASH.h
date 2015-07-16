@@ -33,19 +33,19 @@
   /*无意义字符*/
   #define Dummy_Byte 0xA5
   /******************************************************************************/
-  #define SPI_FLASH_BUFFER_LEN 10
+  #define SPI_FLASH_BUFFER_LEN 403
   typedef struct _spi_flash_buffer{
     u32 address;
     u32 address_max;
-    int_sequeue buffer;
+    u16_sequeue buffer;
   } spi_flash_buffer;
   extern u16 _SPI_FLASH_BUFFER[SPI_FLASH_BUFFER_LEN];
   extern spi_flash_buffer SPI_FLASH_BUFFER;
 
   /* 片选使能信号 置低  */
-  #define SPI_FLASH_CS_LOW()     GPIO_ResetBits(GPIOA, GPIO_Pin_3)
+  #define SPI_FLASH_CS_LOW()     GPIO_ResetBits(GPIOB, GPIO_Pin_12)
   /* 片选使能信号 置高  */
-  #define SPI_FLASH_CS_HIGH()    GPIO_SetBits(GPIOA, GPIO_Pin_3)
+  #define SPI_FLASH_CS_HIGH()    GPIO_SetBits(GPIOB, GPIO_Pin_12)
 
   extern void Spi_Flash_Init(void);
   extern void SPI_FLASH_SectorErase(u32 SectorAddr);
@@ -65,7 +65,7 @@
   extern u16 SPI_FLASH_SendHalfWord(u16 HalfWord);
   extern void SPI_FLASH_WriteEnable(void);
   extern void SPI_FLASH_WaitForWriteEnd(void);
-  extern void SPI_FLASH_PageWrite_Squeue(int_sequeue *sq, u32 WriteAddr, u16
+  extern void SPI_FLASH_PageWrite_Squeue(u16_sequeue *sq, u32 WriteAddr, u16
     NumByteToWrite);
   extern void SPI_FLASH_Sequeue_Write(spi_flash_buffer *sq);
   extern void SPI_FLASH_Sequeue_Read(spi_flash_buffer *sq);

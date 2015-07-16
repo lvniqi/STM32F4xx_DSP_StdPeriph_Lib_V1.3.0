@@ -43,6 +43,8 @@
     SelectItem_L* getSelect(int n);
     void clearSelect();
     void toggleLayout();
+    void setSub(SelectBar_L& sub);
+    SelectBar_L* getSub();
     short getPos(){return pos;}
     short getLen(){return len;}
   private:
@@ -61,5 +63,6 @@
     u16 back_color;
     SelectBar_L_func func_en;
     SelectBar_L_func func_un;
+    SelectBar_L* sub;
   };
 #endif

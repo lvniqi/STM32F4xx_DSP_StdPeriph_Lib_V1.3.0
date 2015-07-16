@@ -127,7 +127,7 @@ void ADC1_Init(uint32_t ADC_Channelx){
   ADC_InitStructure.ADC_ScanConvMode = DISABLE; //单通道 无需扫描
   ADC_InitStructure.ADC_ContinuousConvMode = DISABLE; //连续转换 关闭
   //使用外部触发
-  ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_RisingFalling;
+  ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising;
   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right; //右对齐
   ADC_InitStructure.ADC_NbrOfConversion = 1; //一个转换通道
   ADC_Init(ADC1, &ADC_InitStructure);

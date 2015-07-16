@@ -21,8 +21,8 @@
     PINGPANG_OUT,
   }PINGPANG_TYPE;
   #define PINGPANG_LEN 400
-  #define PINGPANG_DATA_LIST_LEN 4
-  #define PINGPANG_GETED_LEN 2
+  #define PINGPANG_DATA_LIST_LEN 16
+  #define PINGPANG_GETED_LEN 12
   typedef u16 PINGPANG_DATATYPE;
   /*Æ¹ÅÒÊý¾Ý*/
   typedef struct __pingpang_data

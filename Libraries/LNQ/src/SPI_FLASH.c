@@ -9,31 +9,9 @@ spi_flash_buffer SPI_FLASH_BUFFER;
 u16 _SPI_FLASH_BUFFER[SPI_FLASH_BUFFER_LEN];
 void Spi_Flash_Init(void){
   SPI_InitTypeDef SPI_InitStructure;
-
-  /* 启用时钟 */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1 | RCC_APB2Periph_GPIOA, ENABLE);
-  /* GPIO配置*/
-  GPIO_InitTypeDef GPIO_InitStructure;
-  /* A5: SCK, A7: MOSI */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_7;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-  /* MISO  为 浮空输入*/
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-  /*A3为软件片选 */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-  /* Deselect the FLASH: Chip Select high */
-  SPI_FLASH_CS_HIGH();
-
-  /* SPI1 configuration */
+  Spi2_GPIO_Config();
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
+  /* SPI2 configuration */
   SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
   SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
   SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
@@ -43,16 +21,15 @@ void Spi_Flash_Init(void){
   SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;
   SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
   SPI_InitStructure.SPI_CRCPolynomial = 7;
-  SPI_Init(SPI1, &SPI_InitStructure);
+  SPI_Init(SPI2, &SPI_InitStructure);
 
-  /* Enable SPI1  */
-  SPI_Cmd(SPI1, ENABLE);
-  SPI_FLASH_BUFFER.address_max = 0x0f0000;
+  /* Enable SPI2  */
+  SPI_Cmd(SPI2, ENABLE);
+  SPI_FLASH_BUFFER.address_max = 0x200000;
   SPI_FLASH_BUFFER.address = 0;
   Sequeue_Init(&(SPI_FLASH_BUFFER.buffer), _SPI_FLASH_BUFFER,
                SPI_FLASH_BUFFER_LEN);
 }
-
 /*******************************************************************************
  * Function Name  : SPI_FLASH_SectorErase
  * Description    : Erases the specified FLASH sector.
@@ -397,18 +374,18 @@ u8 SPI_FLASH_ReadByte(void){
  *******************************************************************************/
 u8 SPI_FLASH_SendByte(u8 byte){
   /* Loop while DR register in not emplty */
-  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET)
+  while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET)
     ;
 
-  /* Send byte through the SPI1 peripheral */
-  SPI_I2S_SendData(SPI1, byte);
+  /* Send byte through the SPI2 peripheral */
+  SPI_I2S_SendData(SPI2, byte);
 
   /* Wait to receive a byte */
-  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET)
+  while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET)
     ;
 
   /* Return the byte read from the SPI bus */
-  return SPI_I2S_ReceiveData(SPI1);
+  return SPI_I2S_ReceiveData(SPI2);
 }
 
 /*******************************************************************************
@@ -421,18 +398,18 @@ u8 SPI_FLASH_SendByte(u8 byte){
  *******************************************************************************/
 u16 SPI_FLASH_SendHalfWord(u16 HalfWord){
   /* Loop while DR register in not emplty */
-  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET)
+  while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET)
     ;
 
-  /* Send Half Word through the SPI1 peripheral */
-  SPI_I2S_SendData(SPI1, HalfWord);
+  /* Send Half Word through the SPI2 peripheral */
+  SPI_I2S_SendData(SPI2, HalfWord);
 
   /* Wait to receive a Half Word */
-  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET)
+  while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET)
     ;
 
   /* Return the Half Word read from the SPI bus */
-  return SPI_I2S_ReceiveData(SPI1);
+  return SPI_I2S_ReceiveData(SPI2);
 }
 
 /*******************************************************************************
@@ -484,7 +461,7 @@ void SPI_FLASH_WaitForWriteEnd(void){
   SPI_FLASH_CS_HIGH();
 }
 
-void SPI_FLASH_PageWrite_Squeue(int_sequeue* sq, u32 WriteAddr, u16
+void SPI_FLASH_PageWrite_Squeue(u16_sequeue* sq, u32 WriteAddr, u16
                                 NumByteToWrite){
   /* Enable the write access to the FLASH */
   SPI_FLASH_WriteEnable();
@@ -519,7 +496,7 @@ void SPI_FLASH_PageWrite_Squeue(int_sequeue* sq, u32 WriteAddr, u16
 int count_2;
 void SPI_FLASH_Sequeue_Write(spi_flash_buffer* sq){
   int count;
-  if (sq->address >= sq->address_max){
+  if (sq->address >= sq->address_max-SPI_FLASH_PageSize){
     return ;
   }
   while ((sq->buffer).len){

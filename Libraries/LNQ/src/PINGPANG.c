@@ -78,6 +78,7 @@ u8 PingPang_ChangeBusy(pingpang* i){
   _pingpang_data* temp = (i->busy);
   int count;
   if (i->geted[0]){
+    __enable_irq();
     return 0;
   }
   //移到已得到的地方
