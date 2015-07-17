@@ -28,9 +28,8 @@ int main(void){
   TIM4_Configuration();
   while(1){
     TIM3_SEND_DATA++;
-    LCD_ShowNumBig_L(0,5,1,TIM3_SEND_DATA,WHITE);
-    delay_ms(100);
-    while(captureEnable);
-    LCD_ShowNumBig_L(0,5,0,data,WHITE);
+    LCD_ShowNumBig_L(0,5,2,TIM3_SEND_DATA,WHITE);
+    LCD_ShowNumBig_L(0,5,1,TIM4_GET_DATA,WHITE);
+    LCD_ShowNumBig_L(0,10,0,TIM4_GET_COUNT,WHITE);
   }
 }

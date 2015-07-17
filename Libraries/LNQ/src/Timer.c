@@ -143,13 +143,13 @@ void TIM3_IRQHandler(){
   TIM_ClearFlag(TIM3, TIM_FLAG_Update);
 }
 const u32 DATA_CAPTURE[4] = {87,92,97,101};
-#include "LCD.h"
 int Capture;
-u16 data=0;
+u16 TIM4_GET_DATA = 0;
+u32 TIM4_GET_COUNT = 0;
 u8 captureEnable = 0;
 void TIM4_IRQHandler(void){
   static u8 pos;
-  //static u8 data = 0;
+  static u16 data = 0;
   static u32 counter_last,counter_this;
   if (TIM_GetITStatus(TIM4, TIM_IT_CC3) == SET){
     counter_this = TIM_GetCapture3(TIM4);
@@ -171,6 +171,8 @@ void TIM4_IRQHandler(void){
       if(pos == 16){
         captureEnable = 0;
         pos = 0;
+        TIM4_GET_DATA = data;
+        TIM4_GET_COUNT++;
       }else if(Capture<DATA_CAPTURE[0]||Capture>DATA_CAPTURE[3]){
         captureEnable = 0;
         pos = 0;
