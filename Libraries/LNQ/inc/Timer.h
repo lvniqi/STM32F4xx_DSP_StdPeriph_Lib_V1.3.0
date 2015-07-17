@@ -10,5 +10,9 @@
   #include "common.h"
   extern void TIM2_Configuration(u32 div);
   extern void TIM4_Configuration();
-  extern void TIM4_Delay_hus(int us);
+  extern void TIM3_Configuration();
+  extern int Capture;
+  extern u16 data;
+  extern u16 TIM3_SEND_DATA;
+  extern u8 captureEnable;
 #endif /* TIMER_H_ */

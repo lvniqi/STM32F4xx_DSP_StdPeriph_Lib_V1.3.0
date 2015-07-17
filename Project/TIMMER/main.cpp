@@ -24,6 +24,13 @@ int main(void){
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.SYSCLK_Frequency / 100);
   Gpio_Init();
+  TIM3_Configuration();
   TIM4_Configuration();
-  while(1);
+  while(1){
+    TIM3_SEND_DATA++;
+    LCD_ShowNumBig_L(0,5,1,TIM3_SEND_DATA,WHITE);
+    delay_ms(100);
+    while(captureEnable);
+    LCD_ShowNumBig_L(0,5,0,data,WHITE);
+  }
 }
