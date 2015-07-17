@@ -131,3 +131,22 @@ PT* PT_GET_THREAD(const char* FUNSTR){
   }
   return NULL;
 }
+#include "exti.h"
+static void(*KEY_FUNC[15])() = {0,0,};
+void Set_Key_Func(void(*func)(),char n){
+  if(n<16&&n>=0){
+    KEY_FUNC[n] = func;
+  }
+}
+PT_THREAD(KEY_SERVICE(PT *pt)){
+  PT_BEGIN(pt);
+  while(1){
+    PT_WAIT_UNTIL(pt,pt->ready&&MAIN_KEY.keysign);
+    MAIN_KEY.keysign = 0;
+    pt->ready = 0;
+    if(KEY_FUNC[MAIN_KEY.keycode]){
+      KEY_FUNC[MAIN_KEY.keycode]();
+    }
+  }
+  PT_END(pt);
+}

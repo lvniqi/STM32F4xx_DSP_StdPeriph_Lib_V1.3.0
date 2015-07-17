@@ -45,4 +45,6 @@
   extern void PT_ADD_THREAD(PT *in);
   extern void PT_REMOVE_THREAD(const char* FUNSTR);
   extern PT* PT_GET_THREAD(const char* FUNSTR);
+  extern void Set_Key_Func(void(*func)(),char n);
+  extern PT_THREAD(KEY_SERVICE(PT *pt));
 #endif /* COMMON_H_ */

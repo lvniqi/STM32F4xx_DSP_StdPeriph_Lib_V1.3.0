@@ -26,7 +26,13 @@ int main(void){
   Gpio_Init();
   TIM3_Configuration();
   TIM4_Configuration();
+  {
+    PT *t = (PT *)mymalloc(sizeof(PT));
+    PT_INIT(t,1,KEY_SERVICE);
+    PT_ADD_THREAD(t);
+  }
   while(1){
+    PT_SERVICE();
     TIM3_SEND_DATA++;
     LCD_ShowNumBig_L(0,5,2,TIM3_SEND_DATA,WHITE);
     LCD_ShowNumBig_L(0,5,1,TIM4_GET_DATA,WHITE);
