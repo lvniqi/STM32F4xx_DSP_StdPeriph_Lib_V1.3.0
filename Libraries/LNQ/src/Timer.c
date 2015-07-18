@@ -110,7 +110,7 @@ void TIM4_Configuration(void){
   /* Reset the flags */
   TIM4->SR = 0;
 }
-u16 TIM3_SEND_DATA = 0x5521;
+u32 TIM3_SEND_DATA = 0;
 #define TIM3_BASE_1 18
 #define TIM3_DIFF 1
 void TIM3_IRQHandler(){
@@ -133,7 +133,7 @@ void TIM3_IRQHandler(){
       GPIO_ToggleBits(GPIOE,GPIO_Pin_5);
       i++;
       l_count = count;
-      if(i == 32){
+      if(i == 64){
         i=0;
         l_count = 0;
         count = 0;
@@ -144,12 +144,12 @@ void TIM3_IRQHandler(){
 }
 const u32 DATA_CAPTURE[4] = {87,92,97,101};
 int Capture;
-u16 TIM4_GET_DATA = 0;
+u32 TIM4_GET_DATA = 0;
 u32 TIM4_GET_COUNT = 0;
 u8 captureEnable = 0;
 void TIM4_IRQHandler(void){
   static u8 pos;
-  static u16 data = 0;
+  static u32 data = 0;
   static u32 counter_last,counter_this;
   if (TIM_GetITStatus(TIM4, TIM_IT_CC3) == SET){
     counter_this = TIM_GetCapture3(TIM4);
@@ -168,11 +168,13 @@ void TIM4_IRQHandler(void){
       int tempf = (Capture-DATA_CAPTURE[1]);
       data += (tempf/5)<<(pos);
       pos++;
-      if(pos == 16){
+      if(pos == 32){
         captureEnable = 0;
         pos = 0;
-        TIM4_GET_DATA = data;
-        TIM4_GET_COUNT++;
+        if((data&0x0000ffff) == ((data&0xffff0000)>>16)){
+          TIM4_GET_DATA = data&0x0000ffff;
+          TIM4_GET_COUNT++;
+        }
       }else if(Capture<DATA_CAPTURE[0]||Capture>DATA_CAPTURE[3]){
         captureEnable = 0;
         pos = 0;

@@ -11,7 +11,7 @@
   extern void TIM2_Configuration(u32 div);
   extern void TIM4_Configuration();
   extern void TIM3_Configuration();
-  extern u16 TIM4_GET_DATA;
-  extern u16 TIM3_SEND_DATA;
+  extern u32 TIM4_GET_DATA;
+  extern u32 TIM3_SEND_DATA;
   extern u32 TIM4_GET_COUNT;
 #endif /* TIMER_H_ */

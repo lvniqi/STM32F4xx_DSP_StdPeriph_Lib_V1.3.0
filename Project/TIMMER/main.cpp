@@ -33,9 +33,9 @@ int main(void){
   }
   while(1){
     PT_SERVICE();
-    TIM3_SEND_DATA++;
-    LCD_ShowNumBig_L(0,5,2,TIM3_SEND_DATA,WHITE);
-    LCD_ShowNumBig_L(0,5,1,TIM4_GET_DATA,WHITE);
+    TIM3_SEND_DATA = TIM3_SEND_DATA+0x0001+0x00010000;
+    LCD_ShowNumBig_L(0,10,2,TIM3_SEND_DATA,WHITE);
+    LCD_ShowNumBig_L(0,10,1,TIM4_GET_DATA,WHITE);
     LCD_ShowNumBig_L(0,10,0,TIM4_GET_COUNT,WHITE);
   }
 }
