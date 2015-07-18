@@ -171,8 +171,10 @@ void TIM4_IRQHandler(void){
       if(pos == 32){
         captureEnable = 0;
         pos = 0;
-        if((data&0x0000ffff) == ((data&0xffff0000)>>16)){
-          TIM4_GET_DATA = data&0x0000ffff;
+        u16 t1 = data&0x0000ffff;
+        u16 t2 = ((data&0xffff0000)>>16);
+        if(t2 == (u16)(~t1)){
+          TIM4_GET_DATA = t2;
           TIM4_GET_COUNT++;
         }
       }else if(Capture<DATA_CAPTURE[0]||Capture>DATA_CAPTURE[3]){
