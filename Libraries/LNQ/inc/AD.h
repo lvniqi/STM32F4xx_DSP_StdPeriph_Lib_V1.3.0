@@ -25,7 +25,7 @@
    * 输入 : 无
    * 输出 : 无
    ***********************************************************************/
-  extern void ADC1_Init(uint32_t ADC_Channel);
+  extern void ADC1_Init(uint32_t ADC_Channelx,u32 ADC_ExternalTrigConvEdge);
   /********************************************************************
    * 名称 : Ad_Get_Service
    * 功能 : ADC 得到服务函数

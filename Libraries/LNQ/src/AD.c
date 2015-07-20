@@ -114,7 +114,7 @@ u8 ADC1_Soft_Init(ADC_TypeDef* adcx,uint32_t ADC_Channelx){
  * 输入 : ADC_Channel ADC通道
  * 输出 : 无
  ***********************************************************************/
-void ADC1_Init(uint32_t ADC_Channelx){
+void ADC1_Init(uint32_t ADC_Channelx,u32 ADC_ExternalTrigConvEdge){
   //设定GPIO
   ADC_GPIO_Config(((u32)1) << ADC_Channelx);
   //设定DMA
@@ -127,7 +127,7 @@ void ADC1_Init(uint32_t ADC_Channelx){
   ADC_InitStructure.ADC_ScanConvMode = DISABLE; //单通道 无需扫描
   ADC_InitStructure.ADC_ContinuousConvMode = DISABLE; //连续转换 关闭
   //使用外部触发
-  ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising;
+  ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge;
   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right; //右对齐
   ADC_InitStructure.ADC_NbrOfConversion = 1; //一个转换通道
   ADC_Init(ADC1, &ADC_InitStructure);
