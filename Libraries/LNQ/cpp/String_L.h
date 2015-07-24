@@ -1,9 +1,13 @@
 #ifndef STRING_L_H_
 #define STRING_L_H_
-  extern "C"{
+  #ifdef __cplusplus
+	extern "C" {
+	#endif
     #include "common.h"
     #include "LCD.h"
-  }
+  #ifdef __cplusplus
+		}
+	#endif
   class String_L{
     public:
       String_L();

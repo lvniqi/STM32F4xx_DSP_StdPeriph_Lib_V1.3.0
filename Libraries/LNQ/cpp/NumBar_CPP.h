@@ -1,9 +1,13 @@
 #ifndef NUMBAR_CPP_H_
 #define NUMBAR_CPP_H_
-  extern "C"{
+  #ifdef __cplusplus
+	extern "C" {
+	#endif
     #include "common.h"
     #include "LCD.h"
-  }
+  #ifdef __cplusplus
+		}
+	#endif
   #include "String_L.h"
   class NumBar_CPP;
   typedef void (*NumBar_CPP_func)(NumBar_CPP* p,int value);
