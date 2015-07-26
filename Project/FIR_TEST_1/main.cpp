@@ -33,7 +33,7 @@ int main(void){
   EXTI_init();
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.SYSCLK_Frequency / 100);
-  TIM2_Configuration(350);
+  TIM2_Configuration(28);
   //¿ªÆôÆ¹ÅÒ»º³å
   PingPang_Data_Free_Init();
   ADC1_Init(ADC_Channel_3,ADC_ExternalTrigConvEdge_Rising);

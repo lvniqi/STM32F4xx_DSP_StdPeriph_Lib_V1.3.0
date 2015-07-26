@@ -20,7 +20,7 @@ void TIM2_Configuration(u32 div){
   TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1; //输出PWM1说明
   TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
   //TIM_OutputState_Disable;
-  TIM_OCInitStructure.TIM_Pulse = 10; //设置了待装入捕获比较器的脉冲值
+  TIM_OCInitStructure.TIM_Pulse = div/2; //设置了待装入捕获比较器的脉冲值
   TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low; //设置输出极性
   TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCPolarity_High; //设置互补输出极性
   //如果是PWM1要为Low，PWM2则为High

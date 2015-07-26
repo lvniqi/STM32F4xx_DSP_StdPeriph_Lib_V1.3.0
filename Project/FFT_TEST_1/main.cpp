@@ -25,7 +25,7 @@ int main(void){
   EXTI_init();
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.SYSCLK_Frequency / 100);
-  TIM2_Configuration(25);
+  TIM2_Configuration(350);
   //¿ªÆôÆ¹ÅÒ»º³å
   PingPang_Data_Free_Init();
   ADC1_Init(ADC_Channel_3,ADC_ExternalTrigConvEdge_Rising);
@@ -67,14 +67,14 @@ int main(void){
       arm_cmplx_mag_f32(testInput_2_2048, testOutput, fftSize);
       arm_max_f32(testOutput, fftSize, &maxValue, &testIndex); 
       if(pingpang_da.geted[5]){
-        //LCD_Curve_Go_0(&Lcd_Curve1);
-        //LCD_Curve_Go_0(&Lcd_Curve2);
+        LCD_Curve_Go_0(&Lcd_Curve1);
+        LCD_Curve_Go_0(&Lcd_Curve2);
         LCD_Curve_Go_0(&Lcd_Curve3);
         float t_f[TEST_LENGTH_SAMPLES/2];
         arm_cmplx_mag_f32(testInput_1_2048, t_f, fftSize);
         for(int i=0;i<LCD_CURVE_WIDTH;i++){
-          //LCD_Curve_Show(&Lcd_Curve2,(temp->data)[i]/16,1);
-          //LCD_Curve_Show(&Lcd_Curve1,testOutput[i]/16,1);
+          LCD_Curve_Show(&Lcd_Curve2,(temp->data)[i]/16,1);
+          LCD_Curve_Show(&Lcd_Curve1,testOutput[i]/16,1);
           LCD_Curve_Show(&Lcd_Curve3,t_f[i]/5000,1);
         }
         while(pingpang_da.geted[0]){
