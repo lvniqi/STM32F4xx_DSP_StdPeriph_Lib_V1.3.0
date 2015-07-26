@@ -5,7 +5,7 @@
 extern "C"{
   #include "main.h"
 }
-#define TEST_LENGTH_SAMPLES  320
+#define TEST_LENGTH_SAMPLES  1024
 #define SNR_THRESHOLD_F32    140.0f
 #define BLOCK_SIZE            32
 #define NUM_TAPS              29
@@ -20,6 +20,13 @@ const float32_t firCoeffs32[NUM_TAPS] = {
   +0.1522061835f, +0.0676308395f, +0.0000000000f, -0.0333591565f, -0.0341458607f, -0.0173976984f, -0.0000000000f, +0.0085302217f,
   +0.0080754303f, +0.0036977508f, +0.0000000000f, -0.0015879294f, -0.0018225230f
 };
+float32_t testOutput[TEST_LENGTH_SAMPLES];
+float32_t testInput[TEST_LENGTH_SAMPLES];
+float32_t firStateF32[BLOCK_SIZE + NUM_TAPS - 1];
+uint32_t blockSize = BLOCK_SIZE;
+uint32_t numBlocks = TEST_LENGTH_SAMPLES/BLOCK_SIZE;
+float32_t  snr;
+arm_fir_instance_f32 S;
 int main(void){
   /* SysTick end of count event each 10ms */
   LCD_Init();
@@ -32,6 +39,7 @@ int main(void){
   ADC1_Init(ADC_Channel_3,ADC_ExternalTrigConvEdge_Rising);
   Dac_Init(DAC_Channel_1, DAC_Trigger_T2_TRGO,true,DMA_Mode_Normal);
   LCD_Curve_Init(&Lcd_Curve1,10,10,GREEN);
+  arm_fir_init_f32(&S, NUM_TAPS, (float32_t *)firCoeffs32, firStateF32, blockSize);
   while(!pingpang_ad.geted[3]){
     Ad_Get_Service();
   }
@@ -49,10 +57,15 @@ int main(void){
           Dac_Send_Service();
         }
       }
-      /*
-      for(int i=0;i<TEST_LENGTH_SAMPLES/2;i++){
+      for(int i=0;i<TEST_LENGTH_SAMPLES;i++){
+        testInput[i] = (temp->data)[i];
+      }
+      for(int i=0; i < numBlocks; i++){
+        arm_fir_f32(&S, testInput + (i * blockSize), testOutput + (i * blockSize), blockSize);
+      }
+      for(int i=0;i<TEST_LENGTH_SAMPLES;i++){
         (temp->data)[i] = testOutput[i];
-      }*/
+      }
       PingPang_In_By_PingPang(&pingpang_da,temp);
     }
   }
