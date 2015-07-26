@@ -242,7 +242,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>11111110</state>
+          <state>11111111</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -341,7 +341,7 @@
         <option>
           <name>CCOptStrategy</name>
           <version>0</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>CCOptLevelSlave</name>
@@ -416,7 +416,7 @@
         <option>
           <name>CCOptStrategySlave</name>
           <version>0</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>CCGuardCalls</name>
@@ -4126,6 +4126,12 @@
   </group>
   <group>
     <name>User</name>
+    <file>
+      <name>$PROJ_DIR$\..\fft_window.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\fft_window.h</name>
+    </file>
     <file>
       <name>$PROJ_DIR$\..\main.cpp</name>
     </file>

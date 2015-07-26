@@ -17,4 +17,5 @@
   #include <stdbool.h>
   #include "malloc.h"
   #include "math.h"
+  #include "fft_window.h"
 #endif /* __MAIN_H */
