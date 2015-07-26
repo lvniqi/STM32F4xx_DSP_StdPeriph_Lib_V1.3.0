@@ -37,7 +37,7 @@ void ADC_GPIO_Config(uint32_t GPIO_Pin){
  * 输出 : 无
  ***********************************************************************/
 void ADC1_Dma_Config(){
-  PingPang_Init(&pingpang_ad,PINGPANG_IN);
+  PingPang_Init(&pingpang_ad,PINGPANG_IN_2);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA2, ENABLE); //使能DMA2时钟
   DMA_InitTypeDef DMA_InitStructure;
   DMA_DeInit(ADC1_DMA_STREAM); //指定DMA通道 禁用
@@ -46,6 +46,7 @@ void ADC1_Dma_Config(){
   DMA_InitStructure.DMA_PeripheralBaseAddr = DRIVE_DR_BASE(ADC1);
   //设置DMA内存地址，ADC转换结果直接放入该地址
   DMA_InitStructure.DMA_Memory0BaseAddr = (u32)(pingpang_ad.busy->data);
+  
   //外设为设置为数据传输的来源
   DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
   //DMA缓冲区设置为PINGPANG_LEN；
@@ -62,7 +63,9 @@ void ADC1_Dma_Config(){
   DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
   DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
   DMA_Init(ADC1_DMA_STREAM, &DMA_InitStructure);
-
+  //双缓冲模式
+  DMA_DoubleBufferModeConfig(ADC1_DMA_STREAM, (uint32_t)(pingpang_ad.busy_2->data), DMA_Memory_1);
+  DMA_DoubleBufferModeCmd(ADC1_DMA_STREAM, ENABLE);
   //DMA 中断设置
   NVIC_InitTypeDef NVIC_InitStructure;
   NVIC_InitStructure.NVIC_IRQChannel = DMA2_Stream4_IRQn;
@@ -151,11 +154,12 @@ void ADC1_Init(uint32_t ADC_Channelx,u32 ADC_ExternalTrigConvEdge){
  ***********************************************************************/
 void Ad_Get_Service(){
   if (True == AdcTxFinishedFlag){
-    if (pingpang_ad.busy){
+    if (pingpang_ad.busy&&pingpang_ad.busy_2){
       AdcTxFinishedFlag = False;
       (pingpang_ad.busy)->status = PINGPANG_USED;
       (pingpang_ad.busy)->len = 0;
       ADC1_DMA_STREAM->M0AR = (u32)(pingpang_ad.busy->data);
+      ADC1_DMA_STREAM->M1AR = (u32)(pingpang_ad.busy_2->data);
       ADC1_DMA_STREAM->NDTR = PINGPANG_LEN;
       //结束后使能DMA
       ADC_DMARequestAfterLastTransferCmd(ADC1,ENABLE);
@@ -164,11 +168,49 @@ void Ad_Get_Service(){
       ADC_DMACmd(ADC1, ENABLE);
       ADC_Cmd(ADC1, ENABLE);
     }
-    else{
+    else if(pingpang_ad.busy){
+      pingpang_ad.busy_2 = PingPang_GetFree();
+      if(pingpang_ad.busy_2){
+        AdcTxFinishedFlag = False;
+        (pingpang_ad.busy)->status = PINGPANG_USED;
+        (pingpang_ad.busy)->len = 0;
+        ADC1_DMA_STREAM->M0AR = (u32)(pingpang_ad.busy->data);
+        ADC1_DMA_STREAM->M1AR = (u32)(pingpang_ad.busy_2->data);
+        ADC1_DMA_STREAM->NDTR = PINGPANG_LEN;
+        //结束后使能DMA
+        ADC_DMARequestAfterLastTransferCmd(ADC1,ENABLE);
+        DMA_ITConfig(ADC1_DMA_STREAM, DMA_IT_TC, ENABLE);
+        DMA_Cmd(ADC1_DMA_STREAM, ENABLE);
+        ADC_DMACmd(ADC1, ENABLE);
+        ADC_Cmd(ADC1, ENABLE);
+      }
+    }
+    else if(pingpang_ad.busy_2){
       pingpang_ad.busy = PingPang_GetFree();
       if(pingpang_ad.busy){
         AdcTxFinishedFlag = False;
+        (pingpang_ad.busy)->status = PINGPANG_USED;
+        (pingpang_ad.busy)->len = 0;
         ADC1_DMA_STREAM->M0AR = (u32)(pingpang_ad.busy->data);
+        ADC1_DMA_STREAM->M1AR = (u32)(pingpang_ad.busy_2->data);
+        ADC1_DMA_STREAM->NDTR = PINGPANG_LEN;
+        //结束后使能DMA
+        ADC_DMARequestAfterLastTransferCmd(ADC1,ENABLE);
+        DMA_ITConfig(ADC1_DMA_STREAM, DMA_IT_TC, ENABLE);
+        DMA_Cmd(ADC1_DMA_STREAM, ENABLE);
+        ADC_DMACmd(ADC1, ENABLE);
+        ADC_Cmd(ADC1, ENABLE);
+      }
+    }
+    else{
+      pingpang_ad.busy = PingPang_GetFree();
+      pingpang_ad.busy_2 = PingPang_GetFree();
+      if(pingpang_ad.busy&&pingpang_ad.busy_2){
+        AdcTxFinishedFlag = False;
+        (pingpang_ad.busy)->status = PINGPANG_USED;
+        (pingpang_ad.busy)->len = 0;
+        ADC1_DMA_STREAM->M0AR = (u32)(pingpang_ad.busy->data);
+        ADC1_DMA_STREAM->M1AR = (u32)(pingpang_ad.busy_2->data);
         ADC1_DMA_STREAM->NDTR = PINGPANG_LEN;
         //结束后使能DMA
         ADC_DMARequestAfterLastTransferCmd(ADC1,ENABLE);
@@ -188,25 +230,30 @@ void Ad_Get_Service(){
  ***********************************************************************/
 void DMA2_Stream4_IRQHandler(void){
   if (DMA_GetFlagStatus(ADC1_DMA_STREAM, DMA_IT_TCIF4) != RESET){
-    ADC_Cmd(ADC1, DISABLE);
-    ADC_DMACmd(ADC1, DISABLE);
-    DMA_ClearITPendingBit(ADC1_DMA_STREAM, DMA_IT_TCIF4);
-    DMA_Cmd(ADC1_DMA_STREAM, DISABLE);
-    DMA_ITConfig(ADC1_DMA_STREAM, DMA_IT_TC, DISABLE);
+    if(ADC1_DMA_STREAM->CR&DMA_SxCR_CT){
+      pingpang_ad.busy = (_pingpang_data *)(ADC1_DMA_STREAM->M0AR);
+      pingpang_ad.busy_2 = (_pingpang_data *)(ADC1_DMA_STREAM->M1AR);
+    }else{
+      pingpang_ad.busy = (_pingpang_data *)(ADC1_DMA_STREAM->M1AR);
+      pingpang_ad.busy_2 = (_pingpang_data *)(ADC1_DMA_STREAM->M0AR);
+    }
     (pingpang_ad.busy)->status = PINGPANG_FULL;
     (pingpang_ad.busy)->len = PINGPANG_LEN;
     if (PingPang_ChangeBusy(&pingpang_ad)){
       ADC1_DMA_STREAM->NDTR = PINGPANG_LEN;
-      ADC1_DMA_STREAM->M0AR = (u32)(pingpang_ad.busy->data);
-      //结束后使能DMA
-      ADC_DMARequestAfterLastTransferCmd(ADC1,ENABLE);
-      DMA_ITConfig(ADC1_DMA_STREAM, DMA_IT_TC, ENABLE);
-      DMA_Cmd(ADC1_DMA_STREAM, ENABLE);
-      ADC_DMACmd(ADC1, ENABLE);
-      ADC_Cmd(ADC1, ENABLE);
+      if(ADC1_DMA_STREAM->CR&DMA_SxCR_CT){
+        (ADC1_DMA_STREAM->M0AR) = (u32)pingpang_ad.busy;
+      }else{
+        (ADC1_DMA_STREAM->M1AR) = (u32)pingpang_ad.busy;
+      }
     }
     else{
+      ADC_Cmd(ADC1, DISABLE);
+      ADC_DMACmd(ADC1, DISABLE);
+      DMA_Cmd(ADC1_DMA_STREAM, DISABLE);
+      DMA_ITConfig(ADC1_DMA_STREAM, DMA_IT_TC, DISABLE);
       AdcTxFinishedFlag = True;
     }
+    DMA_ClearITPendingBit(ADC1_DMA_STREAM, DMA_IT_TCIF4);
   }
 }

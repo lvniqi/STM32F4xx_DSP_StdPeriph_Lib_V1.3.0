@@ -18,6 +18,7 @@
   //缓冲类型
   typedef enum _PINGPANG_TYPE{
     PINGPANG_IN,
+    PINGPANG_IN_2,
     PINGPANG_OUT,
   }PINGPANG_TYPE;
   #define PINGPANG_LEN 1024
@@ -36,7 +37,7 @@
   typedef struct _pingpang
   {
     _pingpang_data *busy;//正在处理的
-    
+    _pingpang_data *busy_2;//为双缓冲而设
     _pingpang_data *geted[PINGPANG_GETED_LEN];//已经得到的
   } pingpang;
   typedef struct __pingpang_data* free_node;

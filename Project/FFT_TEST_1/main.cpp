@@ -25,7 +25,7 @@ int main(void){
   EXTI_init();
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.SYSCLK_Frequency / 100);
-  TIM2_Configuration(350);
+  TIM2_Configuration(25);
   //¿ªÆôÆ¹ÅÒ»º³å
   PingPang_Data_Free_Init();
   ADC1_Init(ADC_Channel_3,ADC_ExternalTrigConvEdge_Rising);
@@ -55,13 +55,13 @@ int main(void){
       }
       arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_1_2048, false, doBitReverse);
       arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_2_2048, false, doBitReverse);
-      #define start_x 162
+      /*#define start_x 162
       for(int i=start_x;i<start_x+4;i++){
         testInput_2_2048[i] *= 10;
       }
       for(int i=TEST_LENGTH_SAMPLES-start_x-4;i<TEST_LENGTH_SAMPLES-start_x;i++){
         testInput_2_2048[i] *= 10;
-      }
+      }*/
       //arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_1_2048, true, doBitReverse);
       arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_2_2048, true, doBitReverse);
       arm_cmplx_mag_f32(testInput_2_2048, testOutput, fftSize);

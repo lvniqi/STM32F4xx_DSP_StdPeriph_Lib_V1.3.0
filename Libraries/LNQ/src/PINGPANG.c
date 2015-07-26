@@ -43,6 +43,9 @@ void PingPang_Init(pingpang* data,PINGPANG_TYPE type){
   u8 i;
   if(type == PINGPANG_IN){
     (data)->busy = PingPang_GetFree();
+  }else if(type == PINGPANG_IN_2){
+    (data)->busy = PingPang_GetFree();
+    (data)->busy_2 = PingPang_GetFree();
   }
   for (i = 0; i < PINGPANG_GETED_LEN; i++){
     (data)->geted[i] = NULL;
@@ -156,12 +159,14 @@ u8 PingPang_In_By_PingPang(pingpang* i, _pingpang_data* data){
   }
   //移到已得到的地方
   else{
+    __disable_irq();
     for (count = PINGPANG_GETED_LEN - 1; count >= 0; count--){
       if (i->geted[count] == NULL){
         i->geted[count] = data;
         break;
       }
     }
+    __enable_irq();
     return 1;
   }
 }
@@ -183,13 +188,6 @@ _pingpang_data* PingPang_Out(pingpang* i){
     i->geted[count] = NULL;
     return temp;
   }
-  /*如果PingPang_GetFree()得不到，则会出错...放弃
-    
-    else if ((i->busy)and((i->busy)->len)){
-    temp = (i->busy);
-    i->busy = PingPang_GetFree();
-    return temp;
-  }*/
   else{
     return NULL;
   }
