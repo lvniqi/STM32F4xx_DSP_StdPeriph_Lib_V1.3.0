@@ -23,6 +23,9 @@
   } Lcd_Curve;
   #define LCD_Curve_Go_0(Lcd_Curve1)\
   {       \
+    if(!((Lcd_Curve1)->finish_flag)){\
+      LCD_Curve_Grid((Lcd_Curve1));\
+    }\
   ((Lcd_Curve1)->finish_flag) = 0;        \
   ((Lcd_Curve1)->Now_x) = 0;\
   }

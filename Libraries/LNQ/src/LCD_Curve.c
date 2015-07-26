@@ -2,7 +2,7 @@
 u8 _LCD_Curve_Buffer[LCD_CURVE_BUFFER_LEN];
 /********************************************************************
  * 名称 : _LCD_Set_Curve_Pixel
- * 功能 : 设置曲线像素点 (不建议用户使用)
+ * 功能 : 设置曲线像素点 (不建议用户使用 已废弃)
  * 输入 : 曲线 x,y,color
  * 输出 : 无 
  ***********************************************************************/
@@ -29,52 +29,7 @@ void inline _LCD_Set_Curve_Pixel(Lcd_Curve* Lcd_Curvel1, u16 x, u16 y, u16
  ***********************************************************************/
 inline void _LCD_Show_Curve_Compensation(Lcd_Curve* Lcd_Curve1, u16 x1, u16 y1,
   u16 x2, u16 y2_before, u16 color){
-  int i, j = 0;
-  int x_different = (int)x2 - x1;
-  int y_different = (int)y2_before - y1;
-  int y_now = y1;
-  int count = y_different / x_different;
-  for (i = 0; i < x_different; i++){
-    if (count > 0){
-      for (j = 0; j < (count + 1) / 2; j++){
-        y_now = y_different * i / x_different + y1 + j;
-        _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, y_now, color);
-      }
-      x1++;
-      for (j = count / 2; j <= count; j++){
-        y_now = y_different * i / x_different + y1 + j;
-        _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, y_now, color);
-      }
-    }
-    else if (count < 0){
-      for (j = 0; j > (count - 1) / 2; j--){
-        y_now = y_different * i / x_different + y1 + j;
-        _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, y_now, color);
-      }
-      x1++;
-      for (j = count / 2; j >= count; j--){
-        y_now = y_different * i / x_different + y1 + j;
-        _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, y_now, color);
-      }
-    }
-    else{
-      y_now = y_different * i / x_different + y1;
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, y_now, color);
-      x1++;
-    }
-  }
-
-  if (y_different > 0){
-    for (i = y_now; i < y2_before; i++){
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, i, color);
-    }
-  }
-  else if (y_different < 0){
-    for (i = y_now; i > y2_before; i--){
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, x1, i, color);
-    }
-  }
-
+  Lcd_Show_Line(x1,y1,x2,y2_before,color);
 }
 
 /********************************************************************
@@ -98,22 +53,15 @@ void LCD_Curve_Show(Lcd_Curve* Lcd_Curve1, u16 y2, u8 step){
   }
   if (Lcd_Curve1->finish_flag != 1){
     if ((Lcd_Curve1->Now_x) == 0){
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, (Lcd_Curve1->Now_x) + Lcd_Curve1
-                           ->Start_x, (Lcd_Curve1->Curve_last_y)[(Lcd_Curve1
-                           ->Now_x)] + Lcd_Curve1->Start_y, BACK_COLOR);
       _LCD_Show_Curve_Compensation(Lcd_Curve1, (Lcd_Curve1->Now_x) + Lcd_Curve1
                                    ->Start_x, y2_before + Lcd_Curve1->Start_y, 
                                    (Lcd_Curve1->Now_x) + step + Lcd_Curve1
                                    ->Start_x, y3 + Lcd_Curve1->Start_y,
                                    BACK_COLOR);
       (Lcd_Curve1->Curve_last_y)[(Lcd_Curve1->Now_x)] = y2;
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, (Lcd_Curve1->Now_x) + Lcd_Curve1
-                           ->Start_x, y2 + Lcd_Curve1->Start_y, color);
     }
     else{
       /*首先清除数据*/
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, (Lcd_Curve1->Now_x + step + Lcd_Curve1
-                           ->Start_x), y3 + Lcd_Curve1->Start_y, BACK_COLOR);
       _LCD_Show_Curve_Compensation(Lcd_Curve1, (Lcd_Curve1->Now_x + Lcd_Curve1
                                    ->Start_x), y2_before + Lcd_Curve1->Start_y,
                                    (Lcd_Curve1->Now_x) + step + Lcd_Curve1
@@ -121,8 +69,6 @@ void LCD_Curve_Show(Lcd_Curve* Lcd_Curve1, u16 y2, u8 step){
                                    BACK_COLOR);
       /*再添加数据*/
       (Lcd_Curve1->Curve_last_y)[(Lcd_Curve1->Now_x)] = y2;
-      _LCD_Set_Curve_Pixel(Lcd_Curve1, (Lcd_Curve1->Now_x) + Lcd_Curve1
-                           ->Start_x, y2 + Lcd_Curve1->Start_y, color);
       /*写入现有数据*/
       _LCD_Show_Curve_Compensation(Lcd_Curve1, (Lcd_Curve1->Now_x) - step +
                                    Lcd_Curve1->Start_x, y1_after + Lcd_Curve1
@@ -131,8 +77,9 @@ void LCD_Curve_Show(Lcd_Curve* Lcd_Curve1, u16 y2, u8 step){
     }
     y1_before = y2_before;
     (Lcd_Curve1->Now_x) += step;
-    if (Lcd_Curve1->Now_x >= len){
+    if (Lcd_Curve1->Now_x+step > len+1){
       Lcd_Curve1->finish_flag = 1;
+      LCD_Curve_Grid(Lcd_Curve1);
     }
   }
 }
@@ -327,6 +274,7 @@ void LCD_Curve_Show_DMA(Lcd_Curve* Lcd_Curve1, u16 y2, u8 step){
     (Lcd_Curve1->Now_x) += step;
     if (Lcd_Curve1->Now_x >= len){
       Lcd_Curve1->finish_flag = 1;
+      LCD_Curve_Grid(Lcd_Curve1);
     }
   }
 }

@@ -102,9 +102,7 @@ void LCD_Show_Rect(u16 x, u16 y, u16 lenth, u16 width, u16 point_color){
 void LCD_Show_Rect_FULL(u16 x, u16 y, u16 lenth, u16 width, u16 point_color){
   u16 i, j;
   for(i=0;i<width;i++){
-    for (j = 0; j < lenth; j++){
-      _LCD_Set_Pixel(x + i, y + j, point_color);
-    }
+    Lcd_Show_Line(x+i,y,x+i,y+lenth,point_color);
   }
 }
 /********************************************************************
