@@ -227,9 +227,10 @@ void DMA1_Stream5_IRQHandler(void){
       }else{
         DAC1_DMA_STREAM->M1AR = 0;
       }
-      (DacTxFinishedFlag) = True;
     }
     if(DAC1_DMA_STREAM->M0AR == 0 && DAC1_DMA_STREAM->M1AR == 0){
+      DMA_ITConfig(DAC1_DMA_STREAM, DMA_IT_TC, DISABLE);
+      DMA_Cmd(DAC1_DMA_STREAM, DISABLE);
       DAC_Cmd(DAC_Channel_1, DISABLE);
       DAC_DMACmd(DAC_Channel_1, DISABLE);
       (DacTxFinishedFlag) = True;
