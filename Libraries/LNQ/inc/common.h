@@ -8,7 +8,7 @@
 
 #ifndef COMMON_H_
   #define COMMON_H_
-
+  #include "string.h"
   #include "stm32f4xx_it.h"
   #include "stm32f4xx_exti.h"
   #include "stm32f4xx_gpio.h"
@@ -47,4 +47,6 @@
   extern PT* PT_GET_THREAD(const char* FUNSTR);
   extern void Set_Key_Func(void(*func)(),char n);
   extern PT_THREAD(KEY_SERVICE(PT *pt));
+  extern int abs_int(int t);
+  #define swap_u16(x1,x2) {u16 t = (x1);(x1) = (x2);(x2) = t;}
 #endif /* COMMON_H_ */

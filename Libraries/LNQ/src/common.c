@@ -150,3 +150,9 @@ PT_THREAD(KEY_SERVICE(PT *pt)){
   }
   PT_END(pt);
 }
+int abs_int(int t){
+  if(t<0){
+    t = -t;
+  }
+  return t;
+}

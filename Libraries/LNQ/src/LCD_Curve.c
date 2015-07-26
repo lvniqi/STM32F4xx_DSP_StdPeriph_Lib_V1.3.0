@@ -152,15 +152,7 @@ void LCD_Curve_Init(Lcd_Curve* Lcd_Curve1, u16 start_x1, u16 start_y1, u16
   Lcd_Curve1->point_color = color;
   Sequeue_Init(&(Lcd_Curve1->LCD_Curve_Buffer), _LCD_Curve_Buffer,
                LCD_CURVE_BUFFER_LEN);
-  u16 i;
-  for (i = Lcd_Curve1->Start_y; i <= Lcd_Curve1->End_y; i++){
-    _LCD_Set_Pixel(Lcd_Curve1->Start_x - 1, i, WHITE);
-    _LCD_Set_Pixel(Lcd_Curve1->End_x + 1, i, WHITE);
-  }
-  for (i = Lcd_Curve1->Start_x; i <= Lcd_Curve1->End_x; i++){
-    _LCD_Set_Pixel(i, Lcd_Curve1->Start_y - 1, WHITE);
-    _LCD_Set_Pixel(i, Lcd_Curve1->End_y + 1, WHITE);
-  }
+  LCD_Show_Rect(start_x1-1,start_y1-1,LCD_CURVE_WIDTH+2,LCD_CURVE_HEIGHT+2,WHITE);
   LCD_Curve_Grid(Lcd_Curve1);
 }
 
@@ -181,7 +173,6 @@ void LCD_Clear_Curve(Lcd_Curve* Lcd_Curve1, u8 step){
   }
   LCD_Curve_Init(Lcd_Curve1, Lcd_Curve1->Start_x, Lcd_Curve1->Start_y, color);
 }
-
 /********************************************************************
  * 名称 : LCD_Curve_Grid
  * 功能 : 曲线画标志线
@@ -192,28 +183,23 @@ void LCD_Curve_Grid(Lcd_Curve* Lcd_Curve1){
   u16 i, j;
   int k;
   for (j = HEIGHT_PART_SIZE; j < LCD_CURVE_HEIGHT; j += HEIGHT_PART_SIZE){
-    for (i = 0; i < WIDTH_EDGE; i++){
-
-      _LCD_Set_Pixel(i + Lcd_Curve1->Start_x, Lcd_Curve1->Start_y + j, WHITE);
-      _LCD_Set_Pixel(LCD_CURVE_WIDTH - i + Lcd_Curve1->Start_x, Lcd_Curve1
-                     ->Start_y + j, WHITE);
-    }
+    Lcd_Show_Line(Lcd_Curve1->Start_x,j+Lcd_Curve1->Start_y,
+                  WIDTH_EDGE+Lcd_Curve1->Start_x,j+Lcd_Curve1->Start_y,WHITE);
+    Lcd_Show_Line(LCD_CURVE_WIDTH+Lcd_Curve1->Start_x,j+Lcd_Curve1->Start_y,
+                LCD_CURVE_WIDTH-WIDTH_EDGE+Lcd_Curve1->Start_x,j+Lcd_Curve1->Start_y,WHITE);
   }
   for (j = HEIGHT_PART_SIZE; j < LCD_CURVE_HEIGHT; j += HEIGHT_PART_SIZE){
     for (i = WIDTH_PART_SIZE; i < LCD_CURVE_WIDTH; i += WIDTH_PART_SIZE){
-
       _LCD_Set_Pixel(i + Lcd_Curve1->Start_x, Lcd_Curve1->Start_y + j, WHITE);
     }
   }
   for (i = WIDTH_PART_SIZE; i < LCD_CURVE_WIDTH; i += WIDTH_PART_SIZE){
-    for (j = 0; j < HEIGHT_EDGE; j++){
-      _LCD_Set_Pixel(i + Lcd_Curve1->Start_x, Lcd_Curve1->Start_y + j, WHITE);
-      _LCD_Set_Pixel(i + Lcd_Curve1->Start_x, Lcd_Curve1->Start_y +
-                     LCD_CURVE_HEIGHT - j, WHITE);
-    }
+    Lcd_Show_Line(i+Lcd_Curve1->Start_x,Lcd_Curve1->Start_y,
+                  i+Lcd_Curve1->Start_x,HEIGHT_EDGE+Lcd_Curve1->Start_y,WHITE);
+    Lcd_Show_Line(i+Lcd_Curve1->Start_x,LCD_CURVE_HEIGHT+Lcd_Curve1->Start_y,
+                  i+Lcd_Curve1->Start_x,LCD_CURVE_HEIGHT-HEIGHT_EDGE+Lcd_Curve1->Start_y,WHITE);
   }
 }
-
 /********************************************************************
  * 名称 : _LCD_Set_Curve_Pixel
  * 功能 : 设置曲线像素点 (不建议用户使用)
