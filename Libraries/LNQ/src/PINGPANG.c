@@ -95,6 +95,7 @@ u8 PingPang_ChangeBusy(pingpang* i){
     }
     i->busy = PingPang_GetFree();
     if (i->busy){
+      i->busy->status = PINGPANG_USED;
       __enable_irq();
       return 1;
     }
@@ -233,16 +234,18 @@ void _Display_PingpPang(pingpang p1){
 }
 
 void PingPang_Free(_pingpang_data *i){
-  __disable_irq();            
-  i->status = PINGPANG_NULL;
-  //²âÊÔÁ´±í
-  if(pingpang_free_head== NULL){
-    pingpang_free_head = i;
-    i->next = NULL;
+  if(i){
+    __disable_irq();            
+    i->status = PINGPANG_NULL;
+    //²âÊÔÁ´±í
+    if(pingpang_free_head == NULL){
+      pingpang_free_head = i;
+      i->next = NULL;
+    }
+    else{
+      i->next = pingpang_free_head;
+      pingpang_free_head = i;
+    }
+    __enable_irq();      
   }
-  else{
-    i->next = pingpang_free_head;
-    pingpang_free_head = i;
-  }
-  __enable_irq();             
 }
