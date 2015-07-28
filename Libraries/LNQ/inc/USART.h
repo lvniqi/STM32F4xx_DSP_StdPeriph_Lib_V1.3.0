@@ -39,6 +39,7 @@
     extern void Usart1_Dma_Open(u32 BaudRate);
     extern u8 InitUsart(USART_TypeDef *USARTx, u32 BaudRate);
     extern u8 Usart_Send(USART_BUFFER *p, u8 data);
+    extern void Usart_Flush(void);
     extern void USART_Buffer_Init(USART_BUFFER *p, u8 *rx_buffer, u8
       *tx_buffer, u32 rx_len, u32 tx_len);
 

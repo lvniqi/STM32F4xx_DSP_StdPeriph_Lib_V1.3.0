@@ -300,3 +300,15 @@ void DMA2_Stream7_IRQHandler(void){
     (USART1_BUFFER.TxFinishedFlag) = True;
   }
 }
+/********************************************************************
+ * 名称 : Usart_Flush
+ * 功能 : 同步输出缓冲
+ * 输入 : 无
+ * 输出 : 无
+ ***********************************************************************/
+void Usart_Flush(void){
+  while(USART1_BUFFER.TxBuffer.len != 0){
+    Usart1_Buffer_Tx_Service();
+  }
+  delay_ns(120);
+}

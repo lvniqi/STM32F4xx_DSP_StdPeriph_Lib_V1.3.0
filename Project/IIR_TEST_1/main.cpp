@@ -6,12 +6,15 @@ extern "C"{
   #include "main.h"
 }
 #define TEST_LENGTH_SAMPLES  1024
-#define NUM_STAGES 2 
-const float SCALE_VALUE = 0.30608951300286774*0.22053942767957796;
+#define NUM_STAGES 4 
+const float SCALE_VALUE = 0.000163672332029248*0.000120705509278592*
+  6.03958570287577e-05*1.78899347736049e-05*0.974679434480896;
 Lcd_Curve Lcd_Curve1;
 const float32_t IIRCoeffs32LP[NUM_STAGES*5] = {
-  1,2,1,0.22705028708083497,-0.4514083390923061,
-  1,2,1,0.16359116611362662,-0.045748876831938463      
+  1,2,1,1.99664604259722,-0.997300731925341,
+  1,2,1,1.99184910825142,-0.992331930288533,
+  1,2,1,1.98830345996529,-0.988545043393400,
+  1,2,1,1.98642970814294,-0.986501267882032    
 };
 float32_t testOutput[TEST_LENGTH_SAMPLES];
 float32_t testInput[TEST_LENGTH_SAMPLES];
@@ -33,19 +36,18 @@ int main(void){
   while(!pingpang_ad.geted[3]){
     Ad_Get_Service();
   }
+  u8 t_t_t;
   while(1){
     Ad_Get_Service();
     Dac_Send_Service();
     _pingpang_data *temp = PingPang_Out(&pingpang_ad);
     if(temp){
-      if(pingpang_da.geted[5]){
+      if(pingpang_da.geted[PINGPANG_GETED_LEN-5]){
         LCD_Curve_Go_0(&Lcd_Curve1);
         for(int i=0;i<LCD_CURVE_WIDTH;i++){
           LCD_Curve_Show(&Lcd_Curve1,(temp->data)[i]/16,1);
         }
-        while(pingpang_da.geted[0]){
-          Dac_Send_Service();
-        }
+        Ad_Get_Service();
       }
       for(int i=0;i<TEST_LENGTH_SAMPLES;i++){
         testInput[i] = (temp->data)[i];
@@ -54,7 +56,9 @@ int main(void){
       for(int i=0;i<TEST_LENGTH_SAMPLES;i++){
         (temp->data)[i] = testOutput[i]*SCALE_VALUE;
       }
-      PingPang_In_By_PingPang(&pingpang_da,temp);
+      if(!PingPang_In_By_PingPang(&pingpang_da,temp)){
+        PingPang_Free(temp);
+      }
     }
   }
 }

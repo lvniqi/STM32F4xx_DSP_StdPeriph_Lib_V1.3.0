@@ -208,6 +208,7 @@ void Ad_Get_Service(){
       if(pingpang_ad.busy&&pingpang_ad.busy_2){
         AdcTxFinishedFlag = False;
         (pingpang_ad.busy)->status = PINGPANG_USED;
+        (pingpang_ad.busy_2)->status = PINGPANG_USED;
         (pingpang_ad.busy)->len = 0;
         ADC1_DMA_STREAM->M0AR = (u32)(pingpang_ad.busy->data);
         ADC1_DMA_STREAM->M1AR = (u32)(pingpang_ad.busy_2->data);
@@ -230,6 +231,7 @@ void Ad_Get_Service(){
  ***********************************************************************/
 void DMA2_Stream4_IRQHandler(void){
   if (DMA_GetFlagStatus(ADC1_DMA_STREAM, DMA_IT_TCIF4) != RESET){
+    DMA_ClearITPendingBit(ADC1_DMA_STREAM, DMA_IT_TCIF4);
     if(ADC1_DMA_STREAM->CR&DMA_SxCR_CT){
       pingpang_ad.busy = (_pingpang_data *)(ADC1_DMA_STREAM->M0AR);
       pingpang_ad.busy_2 = (_pingpang_data *)(ADC1_DMA_STREAM->M1AR);
@@ -239,7 +241,7 @@ void DMA2_Stream4_IRQHandler(void){
     }
     (pingpang_ad.busy)->status = PINGPANG_FULL;
     (pingpang_ad.busy)->len = PINGPANG_LEN;
-    if (PingPang_ChangeBusy(&pingpang_ad)){
+    if(PingPang_ChangeBusy(&pingpang_ad)){
       ADC1_DMA_STREAM->NDTR = PINGPANG_LEN;
       if(ADC1_DMA_STREAM->CR&DMA_SxCR_CT){
         (ADC1_DMA_STREAM->M0AR) = (u32)pingpang_ad.busy;
@@ -252,8 +254,18 @@ void DMA2_Stream4_IRQHandler(void){
       ADC_DMACmd(ADC1, DISABLE);
       DMA_Cmd(ADC1_DMA_STREAM, DISABLE);
       DMA_ITConfig(ADC1_DMA_STREAM, DMA_IT_TC, DISABLE);
+      ADC_DMARequestAfterLastTransferCmd(ADC1,DISABLE);
       AdcTxFinishedFlag = True;
+      if(pingpang_ad.busy){
+        PingPang_Free(pingpang_ad.busy);
+      }
+      if(pingpang_ad.busy_2){
+        PingPang_Free(pingpang_ad.busy_2);
+      }
+      pingpang_ad.busy = 0;
+      pingpang_ad.busy_2 = 0;
+      ADC1_DMA_STREAM->M0AR = 0;
+      ADC1_DMA_STREAM->M1AR = 0;
     }
-    DMA_ClearITPendingBit(ADC1_DMA_STREAM, DMA_IT_TCIF4);
   }
 }

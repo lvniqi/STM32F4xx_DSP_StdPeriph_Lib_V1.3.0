@@ -35,6 +35,7 @@
   extern PT *THREADS_HEAD;
   extern int fputc(int ch, FILE *f);
   extern void delay_ms(volatile u16 time);
+  extern void delay_ns(volatile u16 time);
   extern u16 Num_Len(long num);
   typedef volatile unsigned short* EXTERN_RAM;
   #define PT_DEBUG(level,...)   { printf("\033[3%d;1m",level);\

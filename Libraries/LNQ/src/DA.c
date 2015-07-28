@@ -166,13 +166,13 @@ void Dac_Send_Service(){
       DAC1_DMA_STREAM->NDTR = PINGPANG_LEN;
       //Ë«»º³åÄ£Ê½
       DMA_DoubleBufferModeConfig(DAC1_DMA_STREAM, (u32)((pingpang_da.geted)[PINGPANG_GETED_LEN - 2]), DMA_Memory_0);
+      PingPang_Out(&pingpang_da);
+      PingPang_Out(&pingpang_da);
       DMA_DoubleBufferModeCmd(DAC1_DMA_STREAM, ENABLE);
       DMA_ITConfig(DAC1_DMA_STREAM, DMA_IT_TC, ENABLE);
       DMA_Cmd(DAC1_DMA_STREAM, ENABLE);
       DAC_Cmd(DAC_Channel_1, ENABLE);
       DAC_DMACmd(DAC_Channel_1, ENABLE);
-      PingPang_Out(&pingpang_da);
-      PingPang_Out(&pingpang_da);
       DacTxFinishedFlag = False;
     }
   }
@@ -201,6 +201,7 @@ void DAC_Soft_Set(uint32_t DAC_Channelx,u16 i){
  ***********************************************************************/
 void DMA1_Stream5_IRQHandler(void){
   if (DMA_GetFlagStatus(DAC1_DMA_STREAM,DMA_IT_TCIF5) != RESET){
+    DMA_ClearITPendingBit(DAC1_DMA_STREAM,DMA_IT_TCIF5);
     //DAC_Cmd(DAC_Channel_1, DISABLE);
     //DAC_DMACmd(DAC_Channel_1, DISABLE);
     if(DAC_GetFlagStatus(DAC_Channel_1,DAC_FLAG_DMAUDR)){
@@ -212,7 +213,9 @@ void DMA1_Stream5_IRQHandler(void){
     }else{
       temp = (_pingpang_data *)(DAC1_DMA_STREAM->M1AR);
     }
-    PingPang_Free(temp);
+    if(temp){
+      PingPang_Free(temp);
+    }
     if ((pingpang_da.geted)[PINGPANG_GETED_LEN - 1]){
       _pingpang_data* temp = PingPang_Out(&pingpang_da);
       if(DAC1_DMA_STREAM->CR&DMA_SxCR_CT){
@@ -235,7 +238,6 @@ void DMA1_Stream5_IRQHandler(void){
       DAC_DMACmd(DAC_Channel_1, DISABLE);
       (DacTxFinishedFlag) = True;
     }
-    DMA_ClearITPendingBit(DAC1_DMA_STREAM,DMA_IT_TCIF5);
     //Dac_Send_Service();
   }
 }

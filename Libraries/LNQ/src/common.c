@@ -84,6 +84,14 @@ void delay_ms(volatile u16 time){
       ;
   }
 }
+void delay_ns(volatile u16 time){
+  volatile u32 i = 0;
+  while (time--){
+    i = 8; //自己定义
+    while (i--)
+      ;
+  }
+}
 void PT_SERVICE(){
   PT* p = THREADS_HEAD;
   while(p != NULL){

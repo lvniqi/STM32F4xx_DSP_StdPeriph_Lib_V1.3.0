@@ -177,11 +177,6 @@
           <state>USE_STM324x7I_EVAL</state>
           <state>USART1_USED_</state>
           <state>USART1_WELLCOME_</state>
-          <state>ARM_MATH_CM4</state>
-          <state>ARM_MATH_MATRIX_CHECK</state>
-          <state>ARM_MATH_ROUNDING</state>
-          <state>__FPU_PRESENT</state>
-          <state>__FPU_USED</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -242,7 +237,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>11111111</state>
+          <state>11111110</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -341,7 +336,7 @@
         <option>
           <name>CCOptStrategy</name>
           <version>0</version>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCOptLevelSlave</name>
@@ -416,7 +411,7 @@
         <option>
           <name>CCOptStrategySlave</name>
           <version>0</version>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCGuardCalls</name>
@@ -3816,9 +3811,6 @@
     </file>
   </group>
   <group>
-    <name>DSP</name>
-  </group>
-  <group>
     <name>EWARM</name>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\iar\startup_stm32f401xx.s</name>
@@ -3889,6 +3881,27 @@
       </file>
     </group>
     <group>
+      <name>CPP</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp\NumBar_CPP.cpp</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp\NumBar_CPP.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp\SelectBar_L.cpp</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp\SelectBar_L.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp\String_L.cpp</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\cpp\String_L.h</name>
+      </file>
+    </group>
+    <group>
       <name>DAC</name>
       <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\DA.c</name>
@@ -3934,24 +3947,6 @@
         <file>
           <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\LCD_Tools.h</name>
         </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\NumBar.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\NumBar.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\SelectBar.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SelectBar.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\SelectItem.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SelectItem.h</name>
-        </file>
       </group>
       <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\FONT.c</name>
@@ -3991,6 +3986,12 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SPI.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\SPI_FLASH.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\SPI_FLASH.h</name>
       </file>
     </group>
     <group>
