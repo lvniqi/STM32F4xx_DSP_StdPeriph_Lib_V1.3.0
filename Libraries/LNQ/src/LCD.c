@@ -111,6 +111,8 @@ void LCD_Init(void){
   FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
   FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = 
     &FSMC_NORSRAMTimingInitStructure;
+  FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = 
+    &FSMC_NORSRAMTimingInitStructure;
   FSMC_NORSRAMTimingInitStructure.FSMC_AddressSetupTime = 5;
   //3<8，TFT控制芯片的地址建立时间最快是10ns，所以这个和下一行的参数加起来要保证能让地址建立的时间高于这个数字，
   FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 5; //1or2<16
