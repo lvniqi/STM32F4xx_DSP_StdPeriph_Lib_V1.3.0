@@ -113,8 +113,8 @@
    * 输入 :  x y  大小 数字 颜色
    * 输出 : 无 
    ***********************************************************************/
-  extern void LCD_ShowFloatBig(u16 x, u16 y,LCD_PLACE_TYPE type,float num, u16 color);
-  extern void LCD_ShowFloatBig_L(u16 x, u16 x_end, u16 y, float num, u16 color);
+  extern void LCD_ShowDoubleBig(u16 x, u16 y,LCD_PLACE_TYPE type,double num, u16 color);
+  extern void LCD_ShowDoubleBig_L(u16 x, u16 x_end, u16 y, double num, u16 color);
   /********************************************************************
    * 名称 : LCD_ShowCharBig_DMA
    * 功能 : 显示3216字符

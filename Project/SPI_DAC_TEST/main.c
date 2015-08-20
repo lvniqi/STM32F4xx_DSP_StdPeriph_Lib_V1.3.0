@@ -29,7 +29,7 @@ int main(void){
   while(1){
     int i;
     for(i=0;i<256;i++){
-      Set_Adc082(1,0);
+      Set_Adc082(0,i);
       delay_ms(1);
     }
   }

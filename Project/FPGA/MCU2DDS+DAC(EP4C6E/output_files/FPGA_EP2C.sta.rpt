@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for FPGA_EP2C
-Wed May 20 20:45:42 2015
+Wed Aug 12 09:33:44 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -1729,8 +1729,10 @@ HTML report is unavailable in plain text report export.
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 8.604 ;    ;    ; 8.776 ;
-; J7_DIN     ; J1_DIN      ; 8.305 ;    ;    ; 8.497 ;
-; J7_SCLK    ; J1_SCLk     ; 8.340 ;    ;    ; 8.549 ;
+; J7_DIN     ; ADS930_DIN  ; 8.070 ;    ;    ; 8.261 ;
+; J7_DIN     ; J1_DIN      ; 8.316 ;    ;    ; 8.510 ;
+; J7_SCLK    ; ADS930_SCLK ; 8.683 ;    ;    ; 8.820 ;
+; J7_SCLK    ; J1_SCLk     ; 8.343 ;    ;    ; 8.552 ;
 ; J7_SYNC    ; J1_SYNC     ; 8.606 ;    ;    ; 8.776 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -1741,8 +1743,10 @@ HTML report is unavailable in plain text report export.
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 8.299 ;    ;    ; 8.462 ;
-; J7_DIN     ; J1_DIN      ; 8.016 ;    ;    ; 8.195 ;
-; J7_SCLK    ; J1_SCLk     ; 8.050 ;    ;    ; 8.245 ;
+; J7_DIN     ; ADS930_DIN  ; 7.791 ;    ;    ; 7.969 ;
+; J7_DIN     ; J1_DIN      ; 8.026 ;    ;    ; 8.207 ;
+; J7_SCLK    ; ADS930_SCLK ; 8.380 ;    ;    ; 8.506 ;
+; J7_SCLK    ; J1_SCLk     ; 8.052 ;    ;    ; 8.248 ;
 ; J7_SYNC    ; J1_SYNC     ; 8.305 ;    ;    ; 8.462 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -4186,8 +4190,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 7.760 ;    ;    ; 7.726 ;
-; J7_DIN     ; J1_DIN      ; 7.535 ;    ;    ; 7.535 ;
-; J7_SCLK    ; J1_SCLk     ; 7.570 ;    ;    ; 7.585 ;
+; J7_DIN     ; ADS930_DIN  ; 7.261 ;    ;    ; 7.260 ;
+; J7_DIN     ; J1_DIN      ; 7.545 ;    ;    ; 7.548 ;
+; J7_SCLK    ; ADS930_SCLK ; 7.870 ;    ;    ; 7.759 ;
+; J7_SCLK    ; J1_SCLk     ; 7.572 ;    ;    ; 7.588 ;
 ; J7_SYNC    ; J1_SYNC     ; 7.833 ;    ;    ; 7.785 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -4198,8 +4204,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 7.468 ;    ;    ; 7.434 ;
-; J7_DIN     ; J1_DIN      ; 7.254 ;    ;    ; 7.250 ;
-; J7_SCLK    ; J1_SCLk     ; 7.288 ;    ;    ; 7.298 ;
+; J7_DIN     ; ADS930_DIN  ; 6.992 ;    ;    ; 6.986 ;
+; J7_DIN     ; J1_DIN      ; 7.264 ;    ;    ; 7.263 ;
+; J7_SCLK    ; ADS930_SCLK ; 7.576 ;    ;    ; 7.465 ;
+; J7_SCLK    ; J1_SCLk     ; 7.290 ;    ;    ; 7.301 ;
 ; J7_SYNC    ; J1_SYNC     ; 7.541 ;    ;    ; 7.490 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -6632,8 +6640,10 @@ Synchronizer Chain #26: Worst-Case MTBF is Not Calculated
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 4.173 ;    ;    ; 4.904 ;
-; J7_DIN     ; J1_DIN      ; 4.013 ;    ;    ; 4.759 ;
-; J7_SCLK    ; J1_SCLk     ; 4.028 ;    ;    ; 4.783 ;
+; J7_DIN     ; ADS930_DIN  ; 3.899 ;    ;    ; 4.616 ;
+; J7_DIN     ; J1_DIN      ; 4.019 ;    ;    ; 4.768 ;
+; J7_SCLK    ; ADS930_SCLK ; 4.137 ;    ;    ; 4.896 ;
+; J7_SCLK    ; J1_SCLk     ; 4.029 ;    ;    ; 4.786 ;
 ; J7_SYNC    ; J1_SYNC     ; 4.127 ;    ;    ; 4.898 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -6644,8 +6654,10 @@ Synchronizer Chain #26: Worst-Case MTBF is Not Calculated
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 4.037 ;    ;    ; 4.758 ;
-; J7_DIN     ; J1_DIN      ; 3.878 ;    ;    ; 4.616 ;
-; J7_SCLK    ; J1_SCLk     ; 3.892 ;    ;    ; 4.639 ;
+; J7_DIN     ; ADS930_DIN  ; 3.772 ;    ;    ; 4.482 ;
+; J7_DIN     ; J1_DIN      ; 3.884 ;    ;    ; 4.624 ;
+; J7_SCLK    ; ADS930_SCLK ; 4.001 ;    ;    ; 4.751 ;
+; J7_SCLK    ; J1_SCLk     ; 3.894 ;    ;    ; 4.641 ;
 ; J7_SYNC    ; J1_SYNC     ; 3.988 ;    ;    ; 4.749 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -7833,8 +7845,10 @@ Synchronizer Chain #26: Worst-Case MTBF is Not Calculated
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 8.604 ;    ;    ; 8.776 ;
-; J7_DIN     ; J1_DIN      ; 8.305 ;    ;    ; 8.497 ;
-; J7_SCLK    ; J1_SCLk     ; 8.340 ;    ;    ; 8.549 ;
+; J7_DIN     ; ADS930_DIN  ; 8.070 ;    ;    ; 8.261 ;
+; J7_DIN     ; J1_DIN      ; 8.316 ;    ;    ; 8.510 ;
+; J7_SCLK    ; ADS930_SCLK ; 8.683 ;    ;    ; 8.820 ;
+; J7_SCLK    ; J1_SCLk     ; 8.343 ;    ;    ; 8.552 ;
 ; J7_SYNC    ; J1_SYNC     ; 8.606 ;    ;    ; 8.776 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -7845,8 +7859,10 @@ Synchronizer Chain #26: Worst-Case MTBF is Not Calculated
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
 ; ADS_SYNC   ; ADS930_SYNC ; 4.037 ;    ;    ; 4.758 ;
-; J7_DIN     ; J1_DIN      ; 3.878 ;    ;    ; 4.616 ;
-; J7_SCLK    ; J1_SCLk     ; 3.892 ;    ;    ; 4.639 ;
+; J7_DIN     ; ADS930_DIN  ; 3.772 ;    ;    ; 4.482 ;
+; J7_DIN     ; J1_DIN      ; 3.884 ;    ;    ; 4.624 ;
+; J7_SCLK    ; ADS930_SCLK ; 4.001 ;    ;    ; 4.751 ;
+; J7_SCLK    ; J1_SCLk     ; 3.894 ;    ;    ; 4.641 ;
 ; J7_SYNC    ; J1_SYNC     ; 3.988 ;    ;    ; 4.749 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -8168,9 +8184,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 33    ; 33   ;
-; Unconstrained Input Port Paths  ; 74    ; 74   ;
-; Unconstrained Output Ports      ; 33    ; 33   ;
-; Unconstrained Output Port Paths ; 59    ; 59   ;
+; Unconstrained Input Port Paths  ; 76    ; 76   ;
+; Unconstrained Output Ports      ; 35    ; 35   ;
+; Unconstrained Output Port Paths ; 61    ; 61   ;
 +---------------------------------+-------+------+
 
 
@@ -8180,7 +8196,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed May 20 20:45:34 2015
+    Info: Processing started: Wed Aug 12 09:33:35 2015
 Info: Command: quartus_sta FPGA_EP2C -c FPGA_EP2C
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
@@ -8314,9 +8330,9 @@ Info (332114): Report Metastability: Found 26 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 483 megabytes
-    Info: Processing ended: Wed May 20 20:45:42 2015
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 519 megabytes
+    Info: Processing ended: Wed Aug 12 09:33:44 2015
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:07
 
 

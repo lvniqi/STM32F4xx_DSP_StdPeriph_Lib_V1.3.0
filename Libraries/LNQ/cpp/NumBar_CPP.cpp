@@ -36,6 +36,33 @@ NumBar_CPP::NumBar_CPP(u8 end_x,u8 y,int v_max,int v_min){
   this->color = YELLOW;
   this->back_color = RED;
   this->isActive = false;
+  value = 0;
+  value_double = 0;
+  isFloat = false;
+  /*LCD_STRING t;
+  t.type = _LCD_STRING_NULL;
+  this->ltag = t;
+  this->rtag = t;
+  this->ltag_color = WHITE;
+  this->rtag_color = WHITE;*/
+  this->isShow = false;
+}
+/*main*/
+NumBar_CPP::NumBar_CPP(u8 end_x,u8 y,float v_max,float v_min){
+  this->start_x = end_x-Num_Len(v_max)-1;
+  this->end_x = end_x;
+  this->y = y;
+  this->value_max = v_max;
+  this->value_min = v_min;
+  this->value = v_min;
+  this->pos = 0;
+  this->func = NULL;
+  this->color = YELLOW;
+  this->back_color = RED;
+  this->isActive = false;
+  value = 0;
+  value_double = 0;
+  isFloat = true;
   /*LCD_STRING t;
   t.type = _LCD_STRING_NULL;
   this->ltag = t;
@@ -58,9 +85,32 @@ void NumBar_CPP::setValue(int value){
    
   }
 }
+void NumBar_CPP::setValue(double value){
+  if(isFloat && value >=value_min){
+    this->value_double = value;
+    if(func){
+      func(this,(int)(void*)&value_double);
+    }
+  }
+  if(isShow){
+    showValue();
+    setActive(isActive);
+   
+  }
+}
+void NumBar_CPP::setValueReal(int value){
+  this->value = value;
+}
 
+void NumBar_CPP::setValueReal(double value){
+  this->value_double = value;
+}
 void NumBar_CPP::showValue(){
-  LCD_ShowNumBig_L(start_x,end_x,y,value,color);
+  if(isFloat){
+    LCD_ShowDoubleBig_L(start_x,end_x,y,value_double,color);
+  }else{
+    LCD_ShowNumBig_L(start_x,end_x,y,value,color);
+  }
 }
 
 void NumBar_CPP::setValue_GUI(){
@@ -186,7 +236,11 @@ void NumBar_CPP::show(){
   if(!ltag.isNull()){
     ltag.show();
   }
-  setValue(value);
+  if(isFloat){
+    setValue(value_double);
+  }else{
+    setValue(value);
+  }
   if(!rtag.isNull()){
     rtag.show();
   }
@@ -220,4 +274,8 @@ void NumBar_CPP::setLtag(const String_L& tag){
 void NumBar_CPP::setRtag(const String_L& tag){
   rtag = tag;
   rtag.moveTo(end_x,y);
+  if(isShow){
+    rtag.hide();
+    rtag.show();
+  }
 }

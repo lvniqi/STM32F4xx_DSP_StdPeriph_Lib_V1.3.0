@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_EP2C
-Wed May 20 20:45:05 2015
+Wed Aug 12 09:32:59 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -33,8 +33,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  25. Source assignments for cylon_1_ran:inst1|altsyncram:altsyncram_component|altsyncram_6vg1:auto_generated
  26. Parameter Settings for User Entity Instance: ADC_FIFO:inst4
  27. Parameter Settings for User Entity Instance: FIFO_ADIN:inst8|dcfifo:dcfifo_component
- 28. Parameter Settings for User Entity Instance: SPI_OUT:inst2
- 29. Parameter Settings for User Entity Instance: cylon_1_ran:inst1|altsyncram:altsyncram_component
+ 28. Parameter Settings for User Entity Instance: cylon_1_ran:inst1|altsyncram:altsyncram_component
+ 29. Parameter Settings for User Entity Instance: SPI_OUT:inst2
  30. dcfifo Parameter Settings by Entity Instance
  31. altsyncram Parameter Settings by Entity Instance
  32. Elapsed Time Per Partition
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 20 20:45:05 2015            ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 12 09:32:59 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
@@ -255,7 +255,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 127       ;
-; Total fan-out                               ; 1443      ;
+; Total fan-out                               ; 1445      ;
 ; Average fan-out                             ; 2.92      ;
 +---------------------------------------------+-----------+
 
@@ -360,8 +360,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+---------------------------------------------+
 ; Register name                         ; Reason for Removal                          ;
 +---------------------------------------+---------------------------------------------+
+; SPI_OUT:inst2|sclk                    ; Lost fanout                                 ;
 ; SPI_OUT:inst2|counter[0..3]           ; Stuck at GND due to stuck port clock_enable ;
-; SPI_OUT:inst2|sclk                    ; Stuck at GND due to stuck port clock_enable ;
 ; SPI_OUT:inst2|current_state.IDLE      ; Lost fanout                                 ;
 ; SPI_OUT:inst2|current_state.SEND      ; Lost fanout                                 ;
 ; SPI_OUT:inst2|current_state.SEND_n    ; Lost fanout                                 ;
@@ -542,19 +542,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_OUT:inst2 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; IDLE           ; 00    ; Unsigned Binary                   ;
-; SEND           ; 01    ; Unsigned Binary                   ;
-; SEND_n         ; 10    ; Unsigned Binary                   ;
-; END            ; 11    ; Unsigned Binary                   ;
-+----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: cylon_1_ran:inst1|altsyncram:altsyncram_component ;
 +------------------------------------+----------------------+------------------------------------+
@@ -616,6 +603,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_OUT:inst2 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; IDLE           ; 00    ; Unsigned Binary                   ;
+; SEND           ; 01    ; Unsigned Binary                   ;
+; SEND_n         ; 10    ; Unsigned Binary                   ;
+; END            ; 11    ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------+
 ; dcfifo Parameter Settings by Entity Instance                         ;
 +----------------------------+-----------------------------------------+
@@ -656,7 +656,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -666,7 +666,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed May 20 20:44:59 2015
+    Info: Processing started: Wed Aug 12 09:32:41 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 4 design units, including 4 entities, in source file fpga2mcu.v
@@ -698,7 +698,6 @@ Info (12021): Found 2 design units, including 2 entities, in source file state_w
 Warning (10236): Verilog HDL Implicit Net warning at state_wrrqe.v(15): created implicit net for "aclk_pp"
 Info (12127): Elaborating entity "FPGA_EP2C" for the top level hierarchy
 Warning (275043): Pin "INT4" is missing source
-Warning (275043): Pin "ADS930_DIN" is missing source
 Warning (275043): Pin "rd_enable" is missing source
 Info (12128): Elaborating entity "ADC_FIFO" for hierarchy "ADC_FIFO:inst4"
 Info (10264): Verilog HDL Case Statement information at state_wrrqe.v(69): all case item expressions in this case statement are onehot
@@ -748,12 +747,6 @@ Info (12128): Elaborating entity "SELECT_ADDR" for hierarchy "SELECT_ADDR:inst14
 Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(20): inferring latch(es) for variable "read_en", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "read_en" at FPGA2MCU.v(20)
 Info (12128): Elaborating entity "SAVE_ADDR" for hierarchy "SAVE_ADDR:inst"
-Info (12128): Elaborating entity "SPI_OUT" for hierarchy "SPI_OUT:inst2"
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(100): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(110): truncated value with size 32 to match size of target (16)
-Warning (10235): Verilog HDL Always Construct warning at state_wrrqe.v(142): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(161): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(170): truncated value with size 32 to match size of target (4)
 Info (12128): Elaborating entity "BUFF_SEND_DATA" for hierarchy "BUFF_SEND_DATA:inst11"
 Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(73): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(73): inferring latch(es) for variable "FINISH", which holds its previous value in one or more paths through the always construct
@@ -802,15 +795,19 @@ Info (12128): Elaborating entity "altsyncram_6vg1" for hierarchy "cylon_1_ran:in
 Info (12128): Elaborating entity "phase_acc" for hierarchy "phase_acc:inst3"
 Info (12128): Elaborating entity "BUFF" for hierarchy "BUFF:inst5"
 Warning (10036): Verilog HDL or VHDL warning at FPGA2MCU.v(90): object "en2" assigned a value but never read
+Info (12128): Elaborating entity "SPI_OUT" for hierarchy "SPI_OUT:inst2"
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(100): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(110): truncated value with size 32 to match size of target (16)
+Warning (10235): Verilog HDL Always Construct warning at state_wrrqe.v(142): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(161): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(170): truncated value with size 32 to match size of target (4)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "INT4" is stuck at GND
-    Warning (13410): Pin "ADS930_DIN" is stuck at GND
-    Warning (13410): Pin "ADS930_SCLK" is stuck at GND
     Warning (13410): Pin "rd_enable" is stuck at GND
     Warning (13410): Pin "ADS930_SEL" is stuck at VCC
     Warning (13410): Pin "ADCOE" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU2DDS+DAC(EP4C6E/output_files/FPGA_EP2C.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -820,11 +817,11 @@ Info (21057): Implemented 350 device resources after synthesis - the final resou
     Info (21060): Implemented 16 bidirectional pins
     Info (21061): Implemented 275 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 503 megabytes
-    Info: Processing ended: Wed May 20 20:45:05 2015
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 535 megabytes
+    Info: Processing ended: Wed Aug 12 09:32:59 2015
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+

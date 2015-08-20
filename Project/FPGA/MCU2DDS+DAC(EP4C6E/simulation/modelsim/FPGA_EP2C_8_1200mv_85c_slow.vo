@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
-// DATE "05/20/2015 20:45:45"
+// DATE "08/12/2015 09:33:47"
 
 // 
 // Device: Altera EP4CE6E22C8 Package TQFP144
@@ -524,17 +524,17 @@ wire \inst3|acc[30]~92_combout ;
 wire \inst6|DATA_OUT[15]~feeder_combout ;
 wire \inst3|acc[30]~93 ;
 wire \inst3|acc[31]~94_combout ;
-wire [7:0] \inst1|altsyncram_component|auto_generated|q_b ;
-wire [12:0] \inst8|dcfifo_component|auto_generated|rs_dgwp|dffpipe12|dffe14a ;
+wire [3:0] \inst8|dcfifo_component|auto_generated|rdptr_g1p|sub_parity7a ;
 wire [18:0] \inst|ADDR ;
 wire [12:0] \inst8|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe16a ;
-wire [3:0] \inst8|dcfifo_component|auto_generated|rdptr_g1p|sub_parity7a ;
-wire [7:0] \inst8|dcfifo_component|auto_generated|fifo_ram|q_b ;
-wire [12:0] \inst8|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a ;
-wire [12:0] \inst8|dcfifo_component|auto_generated|rs_dgwp|dffpipe12|dffe13a ;
 wire [31:0] \inst3|acc ;
-wire [15:0] \inst5|DATA_OUT ;
+wire [7:0] \inst1|altsyncram_component|auto_generated|q_b ;
 wire [3:0] \inst8|dcfifo_component|auto_generated|wrptr_g1p|sub_parity10a ;
+wire [12:0] \inst8|dcfifo_component|auto_generated|rs_dgwp|dffpipe12|dffe13a ;
+wire [12:0] \inst8|dcfifo_component|auto_generated|ws_dgrp|dffpipe15|dffe17a ;
+wire [15:0] \inst5|DATA_OUT ;
+wire [7:0] \inst8|dcfifo_component|auto_generated|fifo_ram|q_b ;
+wire [12:0] \inst8|dcfifo_component|auto_generated|rs_dgwp|dffpipe12|dffe14a ;
 wire [15:0] \inst6|DATA_OUT ;
 wire [2:0] \inst4|aclk_p ;
 wire [12:0] \inst8|dcfifo_component|auto_generated|wrptr_g ;
@@ -3789,7 +3789,7 @@ defparam \J1_SCLk~output .open_drain_output = "false";
 
 // Location: IOOBUF_X34_Y17_N23
 cycloneive_io_obuf \ADS930_DIN~output (
-	.i(gnd),
+	.i(\J7_DIN~input_o ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -3815,7 +3815,7 @@ defparam \ADS930_SYNC~output .open_drain_output = "false";
 
 // Location: IOOBUF_X34_Y9_N2
 cycloneive_io_obuf \ADS930_SCLK~output (
-	.i(gnd),
+	.i(\J7_SCLK~input_o ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),

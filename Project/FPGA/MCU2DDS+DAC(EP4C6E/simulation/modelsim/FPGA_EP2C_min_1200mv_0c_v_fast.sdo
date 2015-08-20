@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "FPGA_EP2C")
-  (DATE "05/20/2015 20:45:46")
+  (DATE "08/12/2015 09:33:49")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version")
@@ -2390,7 +2390,7 @@
     (INSTANCE J1_DIN\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (2118:2118:2118) (2367:2367:2367))
+        (PORT i (2124:2124:2124) (2376:2376:2376))
         (IOPATH i o (1662:1662:1662) (1607:1607:1607))
       )
     )
@@ -2410,8 +2410,18 @@
     (INSTANCE J1_SCLk\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (2133:2133:2133) (2391:2391:2391))
+        (PORT i (2134:2134:2134) (2394:2394:2394))
         (IOPATH i o (1662:1662:1662) (1607:1607:1607))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE ADS930_DIN\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (1981:1981:1981) (2212:2212:2212))
+        (IOPATH i o (1685:1685:1685) (1619:1619:1619))
       )
     )
   )
@@ -2421,6 +2431,16 @@
     (DELAY
       (ABSOLUTE
         (PORT i (2255:2255:2255) (2501:2501:2501))
+        (IOPATH i o (1685:1685:1685) (1619:1619:1619))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE ADS930_SCLK\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (2219:2219:2219) (2492:2492:2492))
         (IOPATH i o (1685:1685:1685) (1619:1619:1619))
       )
     )

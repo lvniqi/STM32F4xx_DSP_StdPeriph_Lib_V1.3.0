@@ -16,12 +16,5 @@
     //0x0002
   #define FPGA_AD_START()          {(*((volatile unsigned short *) 0x6003008E))= 1;} //0x0002
   #define FPGA_AD_END()             {(*((volatile unsigned short *) 0x6003008E))= 0;} //0x0002
-  extern u32 FPGA_FREQ;
-  #define Fpga_Freq_Get_Service() \
-  {       \
-  FPGA_FREQ = FPGA_FREQ_L&0xffff;   \
-  FPGA_FREQ += (FPGA_FREQ_H&0xffff)<<16;    \
-  FPGA_FREQ -= FPGA_FREQ*0.0237;   \
-  }
   extern void FPGA_EXTI4_init(void);
 #endif /* FPGA_H_ */

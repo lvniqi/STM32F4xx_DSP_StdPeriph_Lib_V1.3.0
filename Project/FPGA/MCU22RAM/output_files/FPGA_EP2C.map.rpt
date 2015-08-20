@@ -1,6 +1,6 @@
 Analysis & Synthesis report for FPGA_EP2C
-Tue Apr 14 14:29:18 2015
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+Wed Aug 12 15:04:48 2015
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -17,13 +17,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   9. Analysis & Synthesis IP Cores Summary
  10. User-Specified and Inferred Latches
  11. General Register Statistics
- 12. Source assignments for RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated
- 13. Source assignments for RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1
- 14. Parameter Settings for User Entity Instance: RAM_2PORT:inst4|altsyncram:altsyncram_component
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+ 12. Source assignments for RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_7bn1:auto_generated
+ 13. Parameter Settings for User Entity Instance: RAM_2PORT:inst4|altsyncram:altsyncram_component
+ 14. altsyncram Parameter Settings by Entity Instance
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,15 +48,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 14 14:29:18 2015            ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 12 15:04:48 2015            ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
-; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 22                                               ;
-;     Total combinational functions  ; 10                                               ;
-;     Dedicated logic registers      ; 12                                               ;
-; Total registers                    ; 12                                               ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 23                                               ;
+;     Total combinational functions  ; 11                                               ;
+;     Dedicated logic registers      ; 13                                               ;
+; Total registers                    ; 13                                               ;
 ; Total pins                         ; 27                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 2,048                                            ;
@@ -71,9 +70,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C8T144C8        ;                    ;
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
 ; Top-level entity name                                                      ; FPGA_EP2C          ; FPGA_EP2C          ;
-; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -112,12 +111,14 @@ applicable agreement for further details.
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
 ; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
 ; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
@@ -125,7 +126,7 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -185,66 +186,64 @@ applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                         ;         ;
 ; altram.inc                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                         ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                       ;         ;
-; db/altsyncram_l6n1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU22RAM/db/altsyncram_l6n1.tdf ;         ;
-; db/altsyncram_9us1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU22RAM/db/altsyncram_9us1.tdf ;         ;
+; db/altsyncram_7bn1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU22RAM/db/altsyncram_7bn1.tdf ;         ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 22    ;
-;                                             ;       ;
-; Total combinational functions               ; 10    ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 9     ;
-;     -- 3 input functions                    ; 1     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 10    ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 12    ;
-;     -- Dedicated logic registers            ; 12    ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 27    ;
-; Total memory bits                           ; 2048  ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; NADV  ;
-; Maximum fan-out                             ; 20    ;
-; Total fan-out                               ; 186   ;
-; Average fan-out                             ; 3.26  ;
-+---------------------------------------------+-------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 23         ;
+;                                             ;            ;
+; Total combinational functions               ; 11         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 9          ;
+;     -- 3 input functions                    ; 1          ;
+;     -- <=2 input functions                  ; 1          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 11         ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 13         ;
+;     -- Dedicated logic registers            ; 13         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 27         ;
+; Total memory bits                           ; 2048       ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; NADV~input ;
+; Maximum fan-out                             ; 21         ;
+; Total fan-out                               ; 241        ;
+; Average fan-out                             ; 2.36       ;
++---------------------------------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
-; |FPGA_EP2C                                ; 10 (0)            ; 12 (0)       ; 2048        ; 0            ; 0       ; 0         ; 27   ; 0            ; |FPGA_EP2C                                                                                                            ; work         ;
-;    |BUFF_SEND_DATA:inst6|                 ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|BUFF_SEND_DATA:inst6                                                                                       ; work         ;
-;    |RAM_2PORT:inst4|                      ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4                                                                                            ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4|altsyncram:altsyncram_component                                                            ; work         ;
-;          |altsyncram_l6n1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated                             ; work         ;
-;             |altsyncram_9us1:altsyncram1| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1 ; work         ;
-;    |SAVE_ADDR:inst|                       ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SAVE_ADDR:inst                                                                                             ; work         ;
-;    |SELECT_ADDR:inst5|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SELECT_ADDR:inst5                                                                                          ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+; |FPGA_EP2C                                ; 11 (0)            ; 13 (0)       ; 2048        ; 0            ; 0       ; 0         ; 27   ; 0            ; |FPGA_EP2C                                                                                ; work         ;
+;    |BUFF_SEND_DATA:inst6|                 ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|BUFF_SEND_DATA:inst6                                                           ; work         ;
+;    |RAM_2PORT:inst4|                      ; 1 (0)             ; 1 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4                                                                ; work         ;
+;       |altsyncram:altsyncram_component|   ; 1 (0)             ; 1 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4|altsyncram:altsyncram_component                                ; work         ;
+;          |altsyncram_7bn1:auto_generated| ; 1 (1)             ; 1 (1)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_7bn1:auto_generated ; work         ;
+;    |SAVE_ADDR:inst|                       ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SAVE_ADDR:inst                                                                 ; work         ;
+;    |SELECT_ADDR:inst5|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SELECT_ADDR:inst5                                                              ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                        ;
-+-----------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                                                  ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+-----------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------+
-; RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; None ;
-+-----------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                              ;
++-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_7bn1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; None ;
++-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -280,7 +279,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 12    ;
+; Total registers                              ; 13    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -291,21 +290,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-------------------------------------------------------------------------------------------------------+
-; Source assignments for RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated ;
+; Source assignments for RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_7bn1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                      ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                       ;
 +---------------------------------+--------------------+------+-----------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1 ;
-+---------------------------------+--------------------+------+---------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                  ;
-+---------------------------------+--------------------+------+---------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                   ;
-+---------------------------------+--------------------+------+---------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -363,8 +353,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                          ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                          ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                          ;
-; CBXI_PARAMETER                     ; altsyncram_l6n1      ; Untyped                          ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_7bn1      ; Untyped                          ;
 +------------------------------------+----------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -394,7 +384,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -402,9 +392,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Apr 14 14:29:14 2015
+    Info: Processing started: Wed Aug 12 15:04:37 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 4 design units, including 4 entities, in source file fpga2mcu.v
@@ -444,12 +434,9 @@ Info (12133): Instantiated megafunction "RAM_2PORT:inst4|altsyncram:altsyncram_c
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_b" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l6n1.tdf
-    Info (12023): Found entity 1: altsyncram_l6n1
-Info (12128): Elaborating entity "altsyncram_l6n1" for hierarchy "RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9us1.tdf
-    Info (12023): Found entity 1: altsyncram_9us1
-Info (12128): Elaborating entity "altsyncram_9us1" for hierarchy "RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_l6n1:auto_generated|altsyncram_9us1:altsyncram1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7bn1.tdf
+    Info (12023): Found entity 1: altsyncram_7bn1
+Info (12128): Elaborating entity "altsyncram_7bn1" for hierarchy "RAM_2PORT:inst4|altsyncram:altsyncram_component|altsyncram_7bn1:auto_generated"
 Info (12128): Elaborating entity "SELECT_ADDR" for hierarchy "SELECT_ADDR:inst5"
 Info (12128): Elaborating entity "BUFF_SEND_DATA" for hierarchy "BUFF_SEND_DATA:inst6"
 Warning (10240): Verilog HDL Always Construct warning at FPGA2MCU.v(39): inferring latch(es) for variable "DATA_OUT", which holds its previous value in one or more paths through the always construct
@@ -474,20 +461,21 @@ Info (10041): Inferred latch for "DATA_OUT[15]" at FPGA2MCU.v(39)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "INT0" is stuck at GND
     Warning (13410): Pin "INT4" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/MCU22RAM/output_files/FPGA_EP2C.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 5 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 22 logic cells
+    Info (21061): Implemented 24 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 472 megabytes
-    Info: Processing ended: Tue Apr 14 14:29:18 2015
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 399 megabytes
+    Info: Processing ended: Wed Aug 12 15:04:48 2015
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+

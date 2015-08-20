@@ -207,10 +207,11 @@ void LCD_ShowNumBig_L(u16 x, u16 x_end, u16 y, long num, u16 color){
  * 输入 :  x y  大小 数字 颜色
  * 输出 : 无 
  ***********************************************************************/
-void LCD_ShowFloatBig(u16 x, u16 y,LCD_PLACE_TYPE type,float num, u16 color){
+void LCD_ShowDoubleBig(u16 x, u16 y,LCD_PLACE_TYPE type,double num, u16 color){
   char temp[100];
+  //浮点长度
   char l = 6-(Num_Len((int)num))+'0';
-  char s[] = "%.0f";
+  char s[] = "%.0lf";
   s[2] = l;
   if(num != 0){
     sprintf(temp,s,num);
@@ -219,23 +220,21 @@ void LCD_ShowFloatBig(u16 x, u16 y,LCD_PLACE_TYPE type,float num, u16 color){
   }
   LCD_ShowStringBig(x, y,type,temp, color);
 }
-void LCD_ShowFloatBig_L(u16 x, u16 x_end, u16 y, float num, u16 color){
+void LCD_ShowDoubleBig_L(u16 x, u16 x_end, u16 y, double num, u16 color){
   char temp[100];
-  char l = 6-(Num_Len((int)num))+'0';
-  if((int)num == 0){
-    l = 5+'0';
-  }
-  else if(l < '0'){
+  //浮点长度
+  char l = x_end-x-(Num_Len((int)num))+'0';
+  if(l < '0'){
     l = '0';
   }
-  char s[] = "%.0f";
+  char s[] = "%.0lf";
   s[2] = l;
-  if(num != 0){
+  if(num < -0.01|| num > 0.01){
     sprintf(temp,s,num);
   }else{
     sprintf(temp,"%d",(int)num);
   }
-  temp[7] = '\0';
+  temp[x_end-x] = '\0';
   LCD_ShowStringBig(x_end, y,LCD_STRING_RIGHT,temp, color);
   int t = x_end-strlen(temp);
   for(int i=x;i<t;i++){

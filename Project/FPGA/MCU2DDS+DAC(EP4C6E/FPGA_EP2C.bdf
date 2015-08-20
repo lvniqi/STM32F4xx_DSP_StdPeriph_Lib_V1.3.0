@@ -1562,16 +1562,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "STM_DIN1" (rect -422 24 -369 36)(font "Arial" ))
-	(pt -352 40)
-	(pt -424 40)
-)
-(connector
-	(text "STM_SCLK1" (rect -422 64 -361 76)(font "Arial" ))
-	(pt -352 80)
-	(pt -424 80)
-)
-(connector
 	(text "STM_SCLK1" (rect 322 800 383 812)(font "Arial" ))
 	(pt 312 816)
 	(pt 368 816)
@@ -1580,4 +1570,14 @@ applicable agreement for further details.
 	(text "STM_DIN1" (rect 322 816 375 828)(font "Arial" ))
 	(pt 312 832)
 	(pt 368 832)
+)
+(connector
+	(text "STM_SCLK" (rect -422 64 -367 76)(font "Arial" ))
+	(pt -352 80)
+	(pt -424 80)
+)
+(connector
+	(text "STM_DIN" (rect -422 16 -375 28)(font "Arial" ))
+	(pt -352 32)
+	(pt -424 32)
 )

@@ -30,6 +30,6 @@
   FPGA_SET_FREQ_L((_FREQ_TEMP&0x0000ffff));     \
   /*Freq_Service(0);*/\
 }
-extern void Freq_Service(int L);
+//extern void Freq_Service(int L);
 extern u32 FREQ;
 //extern u16 VPP;

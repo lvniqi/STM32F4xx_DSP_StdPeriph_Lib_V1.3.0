@@ -56,6 +56,22 @@
       u16 len_should_cut;
       u16 len_max;
     } u32_sequeue;
+  typedef struct _float_sequeue{
+      float *dataspace;
+      u16 front;
+      u16 rear;
+      u16 len;
+      u16 len_should_cut;
+      u16 len_max;
+    } float_sequeue;
+  typedef struct _double_sequeue{
+      double *dataspace;
+      u16 front;
+      u16 rear;
+      u16 len;
+      u16 len_should_cut;
+      u16 len_max;
+    } double_sequeue;
   /**************循环缓冲区 函数*************************************/
   /*Sequeue地址*/
   #define SEQUEUE_DR_BASE(SEQUEUE) ((uint32_t)((SEQUEUE.dataspace)))
