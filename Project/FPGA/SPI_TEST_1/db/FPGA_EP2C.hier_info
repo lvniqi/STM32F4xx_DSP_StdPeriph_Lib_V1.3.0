@@ -1,0 +1,72 @@
+|FPGA_EP2C
+sclk <= SPI_OUT:inst2.sclk
+clk_in => SPI_OUT:inst2.clk
+rst_n => SPI_OUT:inst2.rst_n
+en => SPI_OUT:inst2.en
+data_in[0] => SPI_OUT:inst2.data_in[0]
+data_in[1] => SPI_OUT:inst2.data_in[1]
+data_in[2] => SPI_OUT:inst2.data_in[2]
+data_in[3] => SPI_OUT:inst2.data_in[3]
+data_in[4] => SPI_OUT:inst2.data_in[4]
+data_in[5] => SPI_OUT:inst2.data_in[5]
+data_in[6] => SPI_OUT:inst2.data_in[6]
+data_in[7] => SPI_OUT:inst2.data_in[7]
+data_in[8] => SPI_OUT:inst2.data_in[8]
+data_in[9] => SPI_OUT:inst2.data_in[9]
+data_in[10] => SPI_OUT:inst2.data_in[10]
+data_in[11] => SPI_OUT:inst2.data_in[11]
+data_in[12] => SPI_OUT:inst2.data_in[12]
+data_in[13] => SPI_OUT:inst2.data_in[13]
+data_in[14] => SPI_OUT:inst2.data_in[14]
+data_in[15] => SPI_OUT:inst2.data_in[15]
+mosi <= SPI_OUT:inst2.dout
+
+
+|FPGA_EP2C|SPI_OUT:inst2
+clk => dout~reg0.CLK
+clk => sclk~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => data_in_save[0].CLK
+clk => data_in_save[1].CLK
+clk => data_in_save[2].CLK
+clk => data_in_save[3].CLK
+clk => data_in_save[4].CLK
+clk => data_in_save[5].CLK
+clk => data_in_save[6].CLK
+clk => data_in_save[7].CLK
+clk => current_state~1.DATAIN
+data_in[0] => data_in_save.DATAB
+data_in[1] => data_in_save.DATAB
+data_in[2] => data_in_save.DATAB
+data_in[3] => data_in_save.DATAB
+data_in[4] => data_in_save.DATAB
+data_in[5] => data_in_save.DATAB
+data_in[6] => data_in_save.DATAB
+data_in[7] => data_in_save.DATAB
+rst_n => next_state.IDLE.OUTPUTSELECT
+rst_n => next_state.SEND.OUTPUTSELECT
+rst_n => next_state.SEND_n.OUTPUTSELECT
+rst_n => current_state~3.DATAIN
+rst_n => dout~reg0.ENA
+rst_n => data_in_save[7].ENA
+rst_n => data_in_save[6].ENA
+rst_n => data_in_save[5].ENA
+rst_n => data_in_save[4].ENA
+rst_n => data_in_save[3].ENA
+rst_n => data_in_save[2].ENA
+rst_n => data_in_save[1].ENA
+rst_n => data_in_save[0].ENA
+rst_n => counter[3].ENA
+rst_n => counter[2].ENA
+rst_n => counter[1].ENA
+rst_n => counter[0].ENA
+rst_n => sclk~reg0.ENA
+en => Selector1.IN1
+en => Selector0.IN1
+sclk <= sclk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout <= dout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
