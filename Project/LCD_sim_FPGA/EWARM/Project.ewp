@@ -48,11 +48,11 @@
         <option>
           <name>Output variant</name>
           <version>2</version>
-          <state>5</state>
+          <state>0</state>
         </option>
         <option>
           <name>Output description</name>
-          <state>No specifier a, A, no specifier n, no float nor long long.</state>
+          <state>Automatic choice of formatter.</state>
         </option>
         <option>
           <name>GOutputBinary</name>
@@ -175,6 +175,7 @@
           <state>USE_STDPERIPH_DRIVER</state>
           <state>STM32F40XX</state>
           <state>USE_STM324x7I_EVAL</state>
+          <state>USART1_USED_</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -259,7 +260,7 @@
         </option>
         <option>
           <name>CCLangConformance</name>
-          <state>2</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCSignedPlainChar</name>
@@ -3880,6 +3881,9 @@
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\inc\Sequeue.h</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\LNQ\src\USART.c</name>
+    </file>
   </group>
   <group>
     <name>STM32F4xx_StdPeriph_Driver</name>
@@ -3997,6 +4001,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\UART2FPGA.c</name>
     </file>
   </group>
 </project>

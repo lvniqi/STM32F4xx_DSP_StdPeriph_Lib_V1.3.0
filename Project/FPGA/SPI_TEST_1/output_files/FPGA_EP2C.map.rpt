@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_EP2C
-Sat Aug 29 15:20:47 2015
+Fri Sep 04 15:55:57 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,14 +13,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |FPGA_EP2C|SPI_OUT:inst2|current_state
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: SPI_OUT:inst2
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |FPGA_EP2C|SPI_OUT:inst|current_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: SPI_OUT:inst
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,16 +47,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 29 15:20:47 2015            ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 04 15:55:56 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA_EP2C                                        ;
 ; Top-level Entity Name              ; FPGA_EP2C                                        ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 31                                               ;
-;     Total combinational functions  ; 23                                               ;
-;     Dedicated logic registers      ; 17                                               ;
-; Total registers                    ; 17                                               ;
-; Total pins                         ; 21                                               ;
+; Total logic elements               ; 45                                               ;
+;     Total combinational functions  ; 37                                               ;
+;     Dedicated logic registers      ; 20                                               ;
+; Total registers                    ; 20                                               ;
+; Total pins                         ; 14                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -182,52 +183,64 @@ applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 31           ;
+; Estimated Total logic elements              ; 45           ;
 ;                                             ;              ;
-; Total combinational functions               ; 23           ;
+; Total combinational functions               ; 37           ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 17           ;
-;     -- 3 input functions                    ; 2            ;
-;     -- <=2 input functions                  ; 4            ;
+;     -- 4 input functions                    ; 22           ;
+;     -- 3 input functions                    ; 6            ;
+;     -- <=2 input functions                  ; 9            ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 23           ;
-;     -- arithmetic mode                      ; 0            ;
+;     -- normal mode                          ; 33           ;
+;     -- arithmetic mode                      ; 4            ;
 ;                                             ;              ;
-; Total registers                             ; 17           ;
-;     -- Dedicated logic registers            ; 17           ;
+; Total registers                             ; 20           ;
+;     -- Dedicated logic registers            ; 20           ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 21           ;
+; I/O pins                                    ; 14           ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ; Maximum fan-out node                        ; clk_in~input ;
-; Maximum fan-out                             ; 17           ;
-; Total fan-out                               ; 154          ;
-; Average fan-out                             ; 1.88         ;
+; Maximum fan-out                             ; 20           ;
+; Total fan-out                               ; 198          ;
+; Average fan-out                             ; 2.33         ;
 +---------------------------------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
-; |FPGA_EP2C                 ; 23 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |FPGA_EP2C               ; work         ;
-;    |SPI_OUT:inst2|         ; 23 (23)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SPI_OUT:inst2 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                             ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+; |FPGA_EP2C                 ; 37 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |FPGA_EP2C              ; work         ;
+;    |SPI_OUT:inst|          ; 37 (37)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_EP2C|SPI_OUT:inst ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------+
-; State Machine - |FPGA_EP2C|SPI_OUT:inst2|current_state                                ;
-+----------------------+--------------------+----------------------+--------------------+
-; Name                 ; current_state.IDLE ; current_state.SEND_n ; current_state.SEND ;
-+----------------------+--------------------+----------------------+--------------------+
-; current_state.IDLE   ; 0                  ; 0                    ; 0                  ;
-; current_state.SEND   ; 1                  ; 0                    ; 1                  ;
-; current_state.SEND_n ; 1                  ; 1                    ; 0                  ;
-+----------------------+--------------------+----------------------+--------------------+
++-----------------------------------------------------------------------------------------------------------+
+; State Machine - |FPGA_EP2C|SPI_OUT:inst|current_state                                                     ;
++----------------------+-------------------+----------------------+--------------------+--------------------+
+; Name                 ; current_state.END ; current_state.SEND_n ; current_state.SEND ; current_state.IDLE ;
++----------------------+-------------------+----------------------+--------------------+--------------------+
+; current_state.IDLE   ; 0                 ; 0                    ; 0                  ; 0                  ;
+; current_state.SEND   ; 0                 ; 0                    ; 1                  ; 1                  ;
+; current_state.SEND_n ; 0                 ; 1                    ; 0                  ; 1                  ;
+; current_state.END    ; 1                 ; 0                    ; 0                  ; 1                  ;
++----------------------+-------------------+----------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; SPI_OUT:inst|current_state~4          ; Lost fanout        ;
+; SPI_OUT:inst|current_state~5          ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -235,12 +248,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
+; Total registers                              ; 20    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 13    ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -250,30 +263,30 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; SPI_OUT:inst2|counter[3]               ; 3       ;
+; SPI_OUT:inst|counter[3]                ; 6       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |FPGA_EP2C|SPI_OUT:inst2|counter[2] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |FPGA_EP2C|SPI_OUT:inst|counter[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_OUT:inst2 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; IDLE           ; 00    ; Unsigned Binary                   ;
-; SEND           ; 01    ; Unsigned Binary                   ;
-; SEND_n         ; 10    ; Unsigned Binary                   ;
-; END            ; 11    ; Unsigned Binary                   ;
-+----------------+-------+-----------------------------------+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_OUT:inst ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 00    ; Unsigned Binary                  ;
+; SEND           ; 01    ; Unsigned Binary                  ;
+; SEND_n         ; 10    ; Unsigned Binary                  ;
+; END            ; 11    ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -282,7 +295,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -292,7 +305,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sat Aug 29 15:20:43 2015
+    Info: Processing started: Fri Sep 04 15:55:52 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_EP2C -c FPGA_EP2C
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 4 design units, including 4 entities, in source file fpga2mcu.v
@@ -318,45 +331,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file fifo_ad
 Info (12021): Found 2 design units, including 1 entities, in source file cylon_1_ran.vhd
     Info (12022): Found design unit 1: cylon_1_ran-SYN
     Info (12023): Found entity 1: cylon_1_ran
-Info (12021): Found 2 design units, including 2 entities, in source file state_wrrqe.v
-    Info (12023): Found entity 1: ADC_FIFO
-    Info (12023): Found entity 2: SPI_OUT
-Warning (10236): Verilog HDL Implicit Net warning at state_wrrqe.v(15): created implicit net for "aclk_pp"
+Info (12021): Found 1 design units, including 1 entities, in source file state_wrrqe.v
+    Info (12023): Found entity 1: SPI_OUT
 Info (12127): Elaborating entity "FPGA_EP2C" for the top level hierarchy
-Info (12128): Elaborating entity "SPI_OUT" for hierarchy "SPI_OUT:inst2"
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(110): truncated value with size 32 to match size of target (16)
-Warning (10235): Verilog HDL Always Construct warning at state_wrrqe.v(142): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(161): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(170): truncated value with size 32 to match size of target (4)
-Warning (12001): Port "data_in[10]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[11]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[12]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[13]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[14]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[15]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[8]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
-Warning (12001): Port "data_in[9]" does not exist in entity definition of "SPI_OUT".  The port's range differs between the entity definition and its actual instantiation, "SPI_OUT:inst2".
+Info (12128): Elaborating entity "SPI_OUT" for hierarchy "SPI_OUT:inst"
+Warning (10235): Verilog HDL Always Construct warning at state_wrrqe.v(40): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_wrrqe.v(54): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(77): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at state_wrrqe.v(87): truncated value with size 32 to match size of target (5)
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/WORKSPACE/STM32F4/STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project/FPGA/SPI_TEST_1/output_files/FPGA_EP2C.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "data_in[15]"
-    Warning (15610): No output dependent on input pin "data_in[14]"
-    Warning (15610): No output dependent on input pin "data_in[13]"
-    Warning (15610): No output dependent on input pin "data_in[12]"
-    Warning (15610): No output dependent on input pin "data_in[11]"
-    Warning (15610): No output dependent on input pin "data_in[10]"
-    Warning (15610): No output dependent on input pin "data_in[9]"
-    Warning (15610): No output dependent on input pin "data_in[8]"
-Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 33 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 49 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 529 megabytes
-    Info: Processing ended: Sat Aug 29 15:20:47 2015
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Fri Sep 04 15:55:57 2015
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 
 

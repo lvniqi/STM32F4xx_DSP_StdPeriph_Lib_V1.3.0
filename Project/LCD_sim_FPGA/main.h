@@ -31,8 +31,18 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx.h"
-
-
+#include "stm32f4xx_fsmc.h"
+#include "LCD.h"
+#include "exti.h"
+#include "USART.h"
+#include <stdbool.h>
+void AR9331_Write(u8 addr,u8 subaddr,u16 data);
+bool AR9331_Read(u8* result);
+void AR9331_SET_POS(u8 channel,u16 data);
+void AR9331_SET_ZOOM(u8 channel,u16 data);
+void AR9331_SET_FREQ(u8 channel,u16 data);
+void AR9331_UN_ADC();
+void AR9331_EN_ADC();
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/

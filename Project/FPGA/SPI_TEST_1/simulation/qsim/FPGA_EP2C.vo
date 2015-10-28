@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
-// DATE "09/04/2015 15:40:35"
+// DATE "09/04/2015 15:46:55"
 
 // 
 // Device: Altera EP4CE6E22C8 Package TQFP144
@@ -72,10 +72,6 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-// synopsys translate_off
-initial $sdf_annotate("FPGA_EP2C_min_1200mv_0c_v_fast.sdo");
-// synopsys translate_on
-
 wire \inst|Add0~0_combout ;
 wire \inst|Mux0~0_combout ;
 wire \inst|Mux0~1_combout ;

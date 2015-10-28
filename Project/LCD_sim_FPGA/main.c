@@ -5,9 +5,11 @@
 #include "stm32f4xx_fsmc.h"
 #include "LCD.h"
 #include "exti.h"
+#include "USART.h"
 #define FPGA_Clk_In() GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_1)
 #define FPGA_Clk_Next() GPIO_ToggleBits(GPIOE,GPIO_Pin_2)
 #define FPGA_Data_Get() GPIO_ReadInputData(GPIOA)
+#define TIMEOUT 1
 /** @addtogroup Template_Project
   * @{
   */ 
@@ -53,12 +55,11 @@ void GPIO_Init_Test(void)
   */
 u8 a[4096];
 Lcd_Curve Lcd_Curve1;
-int main(void)
-{
+int main(void){
   /* SysTick end of count event each 10ms */
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
-  
+  Usart1_Dma_Open(115200);
   LCD_Init();
   LCD_Curve_Init(&Lcd_Curve1,10,10,RED);
   EXTI_init();
@@ -68,40 +69,92 @@ int main(void)
   /* Infinite loop */
   u16 i;
   u16 j;
+  u16 k=0;
+  u16 l=0;
   GPIO_Init_Test();
   GPIO_WriteBit(GPIOE,GPIO_Pin_2,0);
-  while (1)
+  /*while (1)
   {
+    LCD_Curve_Show(&Lcd_Curve1,FPGA_Data_Get()&0xff,1);
+    if(Lcd_Curve1.finish_flag){
+      Lcd_Curve1.finish_flag = 0;
+      (Lcd_Curve1.Now_x) = 0;
+    }
+  }*/
+  AR9331_UN_ADC();
+  AR9331_EN_ADC();
+  AR9331_SET_POS(1,875);
+  AR9331_SET_ZOOM(1,875);
+  AR9331_SET_FREQ(1,8);
+  while (1){
+    Usart1_Buffer_Tx_Service();
+    Usart1_Buffer_Rx_Service();
+    u8 t[7];
+    AR9331_Read(t);
     i = 0;
     j=0;
-    if(FPGA_Clk_In())
-    {
-      while(1)
-      {
+    if(FPGA_Clk_In()){
+      k++;
+      while(1){
         u16 i = 0;
         u8 temp;
         temp =FPGA_Clk_In(); 
         a[j++] = FPGA_Data_Get()&0xff;
         FPGA_Clk_Next();
-        while(temp == FPGA_Clk_In() && i<20){i++;}
-        if(i == 20)
-        {
+        while(temp == FPGA_Clk_In() && i<TIMEOUT){i++;}
+        if(i == TIMEOUT){
           FPGA_Clk_Next();
+          break;
+        }
+        if(j>4000){
           break;
         }
       }
     }
-    if(j != 0)
-    {
+    if(j != 0){
+      if(j != 3001){
+        l++;
+      }
       Lcd_Curve1.finish_flag = 0;
       (Lcd_Curve1.Now_x) = 0;
-      for(int i=1;i<500;i++)
-      {
+      for(int i=1;i<500;i++){
         LCD_Curve_Show(&Lcd_Curve1,a[i],1);
       }
       char b[30];
-      sprintf(b,"NUM:%d LEN:%d   ",a[0],j);
+      sprintf(b,"NUM:%d LEN:%d COUNT:%dERROR:%d    ",a[0],j,k,l);
+      //sprintf(b,"SEND:%d,READ:%d  ",k&0xff,USART_ReceiveData(USART1));
       LCD_ShowString(0,0,16,b,RED);
+      j = 0;
+    }
+    if(MAIN_KEY.keysign){
+      static u16 pos = 875;
+      static u16 zoom = 875; 
+      static u16 freq_div = 4;
+      if(MAIN_KEY.keycode == 1){
+        pos += 5;
+      } 
+      if(MAIN_KEY.keycode == 2){
+        zoom += 5;
+      }
+      if(MAIN_KEY.keycode == 3){
+        freq_div +=2;
+      }
+      if(MAIN_KEY.keycode == 5){
+        pos -= 5;
+      }
+      if(MAIN_KEY.keycode == 6){
+        zoom -= 5;
+      }
+      if(MAIN_KEY.keycode == 7){
+        freq_div -=2;
+      }
+      AR9331_SET_FREQ(1,freq_div);
+      AR9331_SET_POS(1,pos);
+      AR9331_SET_ZOOM(1,zoom);
+      char b[30];
+      sprintf(b,"POS:%d ZOOM:%d FREQ:%dKhz  " ,pos,zoom,200*1000/freq_div);
+      LCD_ShowString(0,300,16,b,RED);
+      MAIN_KEY.keysign = 0;
     }
   }
 }
